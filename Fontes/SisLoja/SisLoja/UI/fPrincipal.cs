@@ -21,19 +21,55 @@ namespace SisLoja
             InitializeComponent();
         }
 
+        // --------- Variáveis --------- \\
+        int X = 0;
+        int Y = 0;
+
+
+        // ------ Movimento da Janela com o mouse ------- //
+        private void pTitle_MouseDown(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            X = this.Left - MousePosition.X;
+            Y = this.Top - MousePosition.Y;
+        }
+
+        private void pTitle_MouseMove(object sender, MouseEventArgs e)
+        {
+            if (e.Button != MouseButtons.Left) return;
+            this.Left = X + MousePosition.X;
+            this.Top = Y + MousePosition.Y;
+        }
+
+        private void label3_MouseDown(object sender, MouseEventArgs e)
+        {
+            pTitle_MouseDown(sender, e);
+        }
+
+        private void label3_MouseMove(object sender, MouseEventArgs e)
+        {
+            pTitle_MouseMove(sender, e);
+        }
+
+        private void lblVersion_MouseDown(object sender, MouseEventArgs e)
+        {
+            pTitle_MouseDown(sender, e);
+        }
+
+        private void lblVersion_MouseMove(object sender, MouseEventArgs e)
+        {
+            pTitle_MouseMove(sender, e);
+        }
+        // ---------------------------------------------- //
+
         private void BtnClose_Click(object sender, EventArgs e)
         {
             Application.Exit();
         }
 
-        private void BtnClose_MouseHover(object sender, EventArgs e)
+        private void lblMinimize_Click(object sender, EventArgs e)
         {
-            BtnClose.ForeColor = Color.LightGray;
-        }
-
-        private void BtnClose_MouseLeave(object sender, EventArgs e)
-        {
-            BtnClose.ForeColor = Color.Black;
+            this.WindowState = FormWindowState.Minimized;
         }
 
         private void btnHome_Click(object sender, EventArgs e)
@@ -47,5 +83,18 @@ namespace SisLoja
             instanciaHome.Show();
 
         }
+
+        private void btnRegister_Click(object sender, EventArgs e)
+        {
+            fRegister instanciaRegistro = new fRegister(this);
+            instanciaRegistro.Owner = this;
+            instanciaRegistro.TopLevel = false;
+            instanciaRegistro.AutoScroll = true;
+            pDashArea.Controls.Clear();
+            pDashArea.Controls.Add(instanciaRegistro);
+            instanciaRegistro.Show();
+
+        }
+
     }
 }
