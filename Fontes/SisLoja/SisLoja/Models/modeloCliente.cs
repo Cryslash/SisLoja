@@ -8,8 +8,15 @@ namespace SisLoja
 {
     public class modeloCliente
     {
+        int id;
         string nome, cpf, fone, whatsapp, email, cep, rua, bairro, cidade, uf;
         DateTime data;
+
+        public int Id
+        {
+            get { return id; }
+            set { id = value; }
+        }
 
         public DateTime Data
         {

@@ -68,7 +68,7 @@
             this.tbWhatsapp.Location = new System.Drawing.Point(814, 176);
             this.tbWhatsapp.Name = "tbWhatsapp";
             this.tbWhatsapp.Size = new System.Drawing.Size(155, 23);
-            this.tbWhatsapp.TabIndex = 26;
+            this.tbWhatsapp.TabIndex = 5;
             // 
             // label12
             // 
@@ -87,7 +87,7 @@
             this.tbEmail.Location = new System.Drawing.Point(107, 227);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(369, 23);
-            this.tbEmail.TabIndex = 28;
+            this.tbEmail.TabIndex = 6;
             // 
             // label4
             // 
@@ -106,7 +106,7 @@
             this.tbFone.Location = new System.Drawing.Point(643, 176);
             this.tbFone.Name = "tbFone";
             this.tbFone.Size = new System.Drawing.Size(155, 23);
-            this.tbFone.TabIndex = 25;
+            this.tbFone.TabIndex = 4;
             // 
             // label3
             // 
@@ -125,7 +125,7 @@
             this.tbCpf.Location = new System.Drawing.Point(422, 176);
             this.tbCpf.Name = "tbCpf";
             this.tbCpf.Size = new System.Drawing.Size(202, 23);
-            this.tbCpf.TabIndex = 23;
+            this.tbCpf.TabIndex = 3;
             // 
             // label2
             // 
@@ -144,7 +144,7 @@
             this.tbNome.Location = new System.Drawing.Point(109, 176);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(290, 23);
-            this.tbNome.TabIndex = 22;
+            this.tbNome.TabIndex = 2;
             // 
             // label1
             // 
@@ -193,7 +193,7 @@
             this.cbUf.Location = new System.Drawing.Point(726, 277);
             this.cbUf.Name = "cbUf";
             this.cbUf.Size = new System.Drawing.Size(121, 23);
-            this.cbUf.TabIndex = 36;
+            this.cbUf.TabIndex = 11;
             this.cbUf.Text = "UF";
             // 
             // label9
@@ -213,7 +213,7 @@
             this.tbCidade.Location = new System.Drawing.Point(109, 277);
             this.tbCidade.Name = "tbCidade";
             this.tbCidade.Size = new System.Drawing.Size(290, 23);
-            this.tbCidade.TabIndex = 35;
+            this.tbCidade.TabIndex = 9;
             // 
             // label5
             // 
@@ -232,7 +232,7 @@
             this.tbBairro.Location = new System.Drawing.Point(422, 277);
             this.tbBairro.Name = "tbBairro";
             this.tbBairro.Size = new System.Drawing.Size(282, 23);
-            this.tbBairro.TabIndex = 33;
+            this.tbBairro.TabIndex = 10;
             // 
             // label6
             // 
@@ -251,7 +251,7 @@
             this.tbRua.Location = new System.Drawing.Point(628, 227);
             this.tbRua.Name = "tbRua";
             this.tbRua.Size = new System.Drawing.Size(339, 23);
-            this.tbRua.TabIndex = 32;
+            this.tbRua.TabIndex = 8;
             // 
             // label7
             // 
@@ -270,7 +270,7 @@
             this.tbCep.Location = new System.Drawing.Point(488, 227);
             this.tbCep.Name = "tbCep";
             this.tbCep.Size = new System.Drawing.Size(134, 23);
-            this.tbCep.TabIndex = 31;
+            this.tbCep.TabIndex = 7;
             // 
             // label8
             // 
@@ -287,7 +287,7 @@
             this.tbPesquisar.Location = new System.Drawing.Point(109, 61);
             this.tbPesquisar.Name = "tbPesquisar";
             this.tbPesquisar.Size = new System.Drawing.Size(290, 23);
-            this.tbPesquisar.TabIndex = 41;
+            this.tbPesquisar.TabIndex = 1;
             // 
             // dtClientes
             // 
@@ -320,6 +320,7 @@
             this.dtClientes.Location = new System.Drawing.Point(106, 325);
             this.dtClientes.MultiSelect = false;
             this.dtClientes.Name = "dtClientes";
+            this.dtClientes.ReadOnly = true;
             dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
             dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Control;
@@ -332,6 +333,8 @@
             this.dtClientes.Size = new System.Drawing.Size(862, 295);
             this.dtClientes.StandardTab = true;
             this.dtClientes.TabIndex = 28;
+            this.dtClientes.Click += new System.EventHandler(this.dtClientes_Click);
+            this.dtClientes.DoubleClick += new System.EventHandler(this.dtClientes_DoubleClick);
             // 
             // btnConfirmar
             // 
@@ -341,10 +344,11 @@
             this.btnConfirmar.Location = new System.Drawing.Point(568, 45);
             this.btnConfirmar.Name = "btnConfirmar";
             this.btnConfirmar.Size = new System.Drawing.Size(123, 48);
-            this.btnConfirmar.TabIndex = 43;
+            this.btnConfirmar.TabIndex = 13;
             this.btnConfirmar.Text = "Confirmar";
             this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnConfirmar.UseVisualStyleBackColor = true;
+            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
             // 
             // btnCancelar
             // 
@@ -354,10 +358,11 @@
             this.btnCancelar.Location = new System.Drawing.Point(697, 45);
             this.btnCancelar.Name = "btnCancelar";
             this.btnCancelar.Size = new System.Drawing.Size(123, 48);
-            this.btnCancelar.TabIndex = 44;
+            this.btnCancelar.TabIndex = 14;
             this.btnCancelar.Text = "Cancelar";
             this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnCancelar.UseVisualStyleBackColor = true;
+            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
             // 
             // btnEditar
             // 
@@ -367,10 +372,11 @@
             this.btnEditar.Location = new System.Drawing.Point(422, 45);
             this.btnEditar.Name = "btnEditar";
             this.btnEditar.Size = new System.Drawing.Size(123, 48);
-            this.btnEditar.TabIndex = 45;
+            this.btnEditar.TabIndex = 12;
             this.btnEditar.Text = "Editar";
             this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnEditar.UseVisualStyleBackColor = true;
+            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
             // 
             // btnExcluir
             // 
@@ -380,10 +386,11 @@
             this.btnExcluir.Location = new System.Drawing.Point(844, 45);
             this.btnExcluir.Name = "btnExcluir";
             this.btnExcluir.Size = new System.Drawing.Size(123, 48);
-            this.btnExcluir.TabIndex = 46;
+            this.btnExcluir.TabIndex = 15;
             this.btnExcluir.Text = "Excluir";
             this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnExcluir.UseVisualStyleBackColor = true;
+            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
             // 
             // fConCliente
             // 
@@ -420,6 +427,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fConCliente";
             this.Load += new System.EventHandler(this.fConCliente_Load);
+            this.Shown += new System.EventHandler(this.fConCliente_Shown);
+            this.Click += new System.EventHandler(this.fConCliente_Click);
             ((System.ComponentModel.ISupportInitialize)(this.dtClientes)).EndInit();
             this.ResumeLayout(false);
             this.PerformLayout();
@@ -449,10 +458,10 @@
         private TextBox tbCep;
         private Label label8;
         private TextBox tbPesquisar;
-        private DataGridView dtClientes;
         private Button btnConfirmar;
         private Button btnCancelar;
         private Button btnEditar;
         private Button btnExcluir;
+        public DataGridView dtClientes;
     }
 }

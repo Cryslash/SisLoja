@@ -9,6 +9,13 @@ namespace SisLoja
 {
     class ClienteBLL
     {
+        public DataTable Listar_ClientesDAL()
+        {            
+            ClienteDAL clienteDal = new ClienteDAL();
+            DataTable dt = clienteDal.Listar_Clientes();
+            return dt;
+        }
+        
         public int Gravar_ClienteDAL(modeloCliente cliente)
         {
             //código 0 = sucesso
@@ -50,11 +57,16 @@ namespace SisLoja
             return code;
         }
 
-        public DataTable Listar_ClientesDAL()
-        {            
+        public void Atualizar_ClienteDAL(modeloCliente cliente)
+        {
+            ClienteDAL clienteDAL = new ClienteDAL();
+            clienteDAL.Atualizar_Cliente(cliente);
+        }
+
+        public void Excluir_ClienteDAL(modeloCliente cliente)
+        {
             ClienteDAL clienteDal = new ClienteDAL();
-            DataTable dt = clienteDal.Listar_Clientes();
-            return dt;
+            clienteDal.Excluir_Cliente(cliente);
         }
 
     }
