@@ -84,17 +84,24 @@ namespace SisLoja
 
         }
 
-        private void btnRegister_Click(object sender, EventArgs e)
+        private void btnRegistrar_Click(object sender, EventArgs e)
         {
             fRegister instanciaRegistro = new fRegister(this);
             instanciaRegistro.Owner = this;
-            instanciaRegistro.TopLevel = false;
-            instanciaRegistro.AutoScroll = true;
+            instanciaRegistro.TopLevel = false;            
             pDashArea.Controls.Clear();
             pDashArea.Controls.Add(instanciaRegistro);
             instanciaRegistro.Show();
-
         }
 
+        private void btnConsultar_Click(object sender, EventArgs e)
+        {
+            fConsultar instanciaConsulta = new fConsultar(this);
+            instanciaConsulta.Owner = this;
+            instanciaConsulta.TopLevel = false;
+            pDashArea.Controls.Clear();
+            pDashArea.Controls.Add(instanciaConsulta);
+            instanciaConsulta.Show();            
+        }
     }
 }

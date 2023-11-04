@@ -40,8 +40,8 @@
             this.lblVersion = new System.Windows.Forms.Label();
             this.pOptions = new System.Windows.Forms.Panel();
             this.btnSales = new System.Windows.Forms.Button();
-            this.btnStock = new System.Windows.Forms.Button();
-            this.btnRegister = new System.Windows.Forms.Button();
+            this.btnConsultar = new System.Windows.Forms.Button();
+            this.btnCadastrar = new System.Windows.Forms.Button();
             this.btnHome = new System.Windows.Forms.Button();
             this.pDashArea = new System.Windows.Forms.Panel();
             this.pTitle.SuspendLayout();
@@ -165,8 +165,8 @@
             // 
             this.pOptions.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(71)))), ((int)(((byte)(87)))));
             this.pOptions.Controls.Add(this.btnSales);
-            this.pOptions.Controls.Add(this.btnStock);
-            this.pOptions.Controls.Add(this.btnRegister);
+            this.pOptions.Controls.Add(this.btnConsultar);
+            this.pOptions.Controls.Add(this.btnCadastrar);
             this.pOptions.Controls.Add(this.btnHome);
             this.pOptions.Dock = System.Windows.Forms.DockStyle.Left;
             this.pOptions.Location = new System.Drawing.Point(0, 69);
@@ -192,42 +192,43 @@
             this.btnSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
             this.btnSales.UseVisualStyleBackColor = false;
             // 
-            // btnStock
+            // btnConsultar
             // 
-            this.btnStock.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(71)))), ((int)(((byte)(87)))));
-            this.btnStock.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnStock.FlatAppearance.BorderSize = 0;
-            this.btnStock.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnStock.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnStock.ForeColor = System.Drawing.Color.White;
-            this.btnStock.Image = ((System.Drawing.Image)(resources.GetObject("btnStock.Image")));
-            this.btnStock.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnStock.Location = new System.Drawing.Point(0, 234);
-            this.btnStock.Name = "btnStock";
-            this.btnStock.Size = new System.Drawing.Size(200, 57);
-            this.btnStock.TabIndex = 2;
-            this.btnStock.Text = "Estoque";
-            this.btnStock.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnStock.UseVisualStyleBackColor = false;
+            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(71)))), ((int)(((byte)(87)))));
+            this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnConsultar.FlatAppearance.BorderSize = 0;
+            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnConsultar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnConsultar.ForeColor = System.Drawing.Color.White;
+            this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
+            this.btnConsultar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnConsultar.Location = new System.Drawing.Point(0, 234);
+            this.btnConsultar.Name = "btnConsultar";
+            this.btnConsultar.Size = new System.Drawing.Size(200, 57);
+            this.btnConsultar.TabIndex = 2;
+            this.btnConsultar.Text = "Consultar";
+            this.btnConsultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnConsultar.UseVisualStyleBackColor = false;
+            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
             // 
-            // btnRegister
+            // btnCadastrar
             // 
-            this.btnRegister.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(71)))), ((int)(((byte)(87)))));
-            this.btnRegister.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnRegister.FlatAppearance.BorderSize = 0;
-            this.btnRegister.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnRegister.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnRegister.ForeColor = System.Drawing.Color.White;
-            this.btnRegister.Image = ((System.Drawing.Image)(resources.GetObject("btnRegister.Image")));
-            this.btnRegister.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
-            this.btnRegister.Location = new System.Drawing.Point(0, 150);
-            this.btnRegister.Name = "btnRegister";
-            this.btnRegister.Size = new System.Drawing.Size(200, 57);
-            this.btnRegister.TabIndex = 1;
-            this.btnRegister.Text = "Cadastrar";
-            this.btnRegister.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnRegister.UseVisualStyleBackColor = false;
-            this.btnRegister.Click += new System.EventHandler(this.btnRegister_Click);
+            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(71)))), ((int)(((byte)(87)))));
+            this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnCadastrar.FlatAppearance.BorderSize = 0;
+            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCadastrar.ForeColor = System.Drawing.Color.White;
+            this.btnCadastrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastrar.Image")));
+            this.btnCadastrar.ImageAlign = System.Drawing.ContentAlignment.MiddleLeft;
+            this.btnCadastrar.Location = new System.Drawing.Point(0, 150);
+            this.btnCadastrar.Name = "btnCadastrar";
+            this.btnCadastrar.Size = new System.Drawing.Size(200, 57);
+            this.btnCadastrar.TabIndex = 1;
+            this.btnCadastrar.Text = "Cadastrar";
+            this.btnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnCadastrar.UseVisualStyleBackColor = false;
+            this.btnCadastrar.Click += new System.EventHandler(this.btnRegistrar_Click);
             // 
             // btnHome
             // 
@@ -283,12 +284,12 @@
         private Panel pOptions;
         private Button btnHome;
         private Button btnSales;
-        private Button btnStock;
-        private Button btnRegister;
+        private Button btnConsultar;
         private Label lblVersion;
         private Label btnMinimize;
         private Button btnLogoff;
         private Button btnCfg;
         public Panel pDashArea;
+        public Button btnCadastrar;
     }
 }

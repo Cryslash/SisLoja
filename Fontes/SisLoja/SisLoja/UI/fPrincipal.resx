@@ -106,16 +106,20 @@
         BqEIfjEoG8EvBmUnJv49VfUFyqHztt9lyvoAAAAASUVORK5CYII=
 </value>
   </data>
-  <data name="btnStock.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnConsultar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAMhJREFUWEft
-        lIENgjAQRTsCozgSm+lGsIluUO+OF1Oiaa9YDJK+pIH2/v/5BELodA5NjHGQNcnainoH4uoR881ivuNK
-        XB1iHBd/fMi6cOxGPXiVkWMfYlDz3ay15gT1LhGW5X8IEc9ma8tEfBkMzSG+DHq/oQBxJykgx7nv4+N7
-        ZvaTAjOyFczaFNgCcb3AvgVErn+9138/3cvVsIEH9LUFDLarPbcnL5CDuH0LYHkjnZnQA/r/KpCDuPoC
-        rSG+DPrmEN/pHIkQnpXUoHFpnU/9AAAAAElFTkSuQmCC
+        iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EQAACxEBf2RfkQAAAYNJREFUWEftlk0yA1EUhXsuyijChNiCsAGFFdiF5VDBMhI7iVQwk7ICJhSD59x3
+        z1PdeVr63U41g/6qTrU+7/6cbq1K1vJvcTbuoS2OqIfOM7GaEDrLOd4uheWB+iF0jinAJHft8jgdnWEK
+        0IVCCPub0P70APy5fgjtNX8Di0xYVh02ripA5TnfsC+9cQGOaQO0Af40wBG0wdvq+O2At83D/bUCoL0P
+        3UDP0Aev11CfJeWgyMPbZNB6Cr36ITHin7D0Z7TOFgBte1BYPoIOoDVex5DwAu2yJUZrzAHktQsjWgXg
+        hxBXtGJYYA0gv2thQKsA/EM9dnNaMSywBnjTbtehVQD+uh67d1oxLLAGeNTupW/giVYMC6wBLrXbjWkV
+        gH+rx25IK4YF1gD72u2RZfLEHV7Dcvkr2GFLjNZU5hM6Y98mdCfmL8jyY7+oDK2rRH55D5qKCSTEALqA
+        5JuQD3MODaHyJ7eCofknf4C2edQMWHjuVzs3g3q0mwWLJUTCv+BZ9gUQecZxcC1mfwAAAABJRU5ErkJg
+        gg==
 </value>
   </data>
-  <data name="btnRegister.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="btnCadastrar.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAACAAAAAgCAYAAABzenr0AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAh9JREFUWEftlzFLw1AUhauDToK7iw5CC10cRUEQxEURxI4iiv4RF8FRdKlDdRBE

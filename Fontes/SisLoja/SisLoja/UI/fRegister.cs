@@ -21,19 +21,19 @@ namespace SisLoja.UI
         public fRegister( fPrincipal p)
         {
             //passando o formulario principal para a nova instancia criada. 
-            instanciaPrincipal = p;
+            this.instanciaPrincipal = p;
             InitializeComponent();            
         }
 
         private void btnCustomer_Click(object sender, EventArgs e)
         {
-            fCustomer Customer = new fCustomer();
-            Customer.Owner = instanciaPrincipal;
-            Customer.TopLevel = false;
-            Customer.AutoScroll = true;
+            fCadCliente Cliente = new fCadCliente(instanciaPrincipal);
+            Cliente.Owner = instanciaPrincipal;
+            Cliente.TopLevel = false;
+            Cliente.AutoScroll = true;
             instanciaPrincipal.pDashArea.Controls.Clear();
-            instanciaPrincipal.pDashArea.Controls.Add(Customer);
-            Customer.Show();
+            instanciaPrincipal.pDashArea.Controls.Add(Cliente);
+            Cliente.Show();
             
         }
     }

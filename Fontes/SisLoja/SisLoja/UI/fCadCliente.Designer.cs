@@ -1,6 +1,6 @@
 ﻿namespace SisLoja.UI
 {
-    partial class fCustomer
+    partial class fCadCliente
     {
         /// <summary>
         /// Required designer variable.
@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fCadCliente));
             this.label1 = new System.Windows.Forms.Label();
             this.tbNome = new System.Windows.Forms.TextBox();
             this.tbCpf = new System.Windows.Forms.TextBox();
@@ -45,11 +46,13 @@
             this.tbCep = new System.Windows.Forms.TextBox();
             this.label8 = new System.Windows.Forms.Label();
             this.label9 = new System.Windows.Forms.Label();
-            this.cbEstado = new System.Windows.Forms.ComboBox();
+            this.cbUf = new System.Windows.Forms.ComboBox();
             this.label10 = new System.Windows.Forms.Label();
             this.label11 = new System.Windows.Forms.Label();
             this.tbWhatsapp = new System.Windows.Forms.TextBox();
             this.label12 = new System.Windows.Forms.Label();
+            this.btnSalvar = new System.Windows.Forms.Button();
+            this.btnVoltar = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
             // label1
@@ -58,9 +61,9 @@
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label1.Location = new System.Drawing.Point(88, 148);
             this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 21);
+            this.label1.Size = new System.Drawing.Size(64, 21);
             this.label1.TabIndex = 0;
-            this.label1.Text = "Nome";
+            this.label1.Text = "Nome *";
             // 
             // tbNome
             // 
@@ -102,9 +105,9 @@
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.label3.Location = new System.Drawing.Point(697, 148);
             this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(67, 21);
+            this.label3.Size = new System.Drawing.Size(78, 21);
             this.label3.TabIndex = 4;
-            this.label3.Text = "Telefone";
+            this.label3.Text = "Telefone *";
             // 
             // tbEmail
             // 
@@ -206,16 +209,44 @@
             this.label9.TabIndex = 16;
             this.label9.Text = "Estado";
             // 
-            // cbEstado
+            // cbUf
             // 
-            this.cbEstado.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.cbEstado.FormattingEnabled = true;
-            this.cbEstado.Items.AddRange(new object[] {
-            "UF"});
-            this.cbEstado.Location = new System.Drawing.Point(453, 530);
-            this.cbEstado.Name = "cbEstado";
-            this.cbEstado.Size = new System.Drawing.Size(121, 29);
-            this.cbEstado.TabIndex = 10;
+            this.cbUf.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.cbUf.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbUf.FormattingEnabled = true;
+            this.cbUf.Items.AddRange(new object[] {
+            "AC",
+            "AL",
+            "AP",
+            "AM",
+            "BA",
+            "CE",
+            "DF",
+            "ES",
+            "GO",
+            "MA",
+            "MT",
+            "MS",
+            "MG",
+            "PR",
+            "PB",
+            "PA",
+            "PE",
+            "PI",
+            "RJ",
+            "RN",
+            "RS",
+            "RO",
+            "RR",
+            "SC",
+            "SE",
+            "SP",
+            "TO"});
+            this.cbUf.Location = new System.Drawing.Point(453, 530);
+            this.cbUf.Name = "cbUf";
+            this.cbUf.Size = new System.Drawing.Size(121, 29);
+            this.cbUf.TabIndex = 10;
+            this.cbUf.Text = "UF";
             // 
             // label10
             // 
@@ -255,16 +286,48 @@
             this.label12.TabIndex = 20;
             this.label12.Text = "Whatsapp";
             // 
-            // fCustomer
+            // btnSalvar
+            // 
+            this.btnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnSalvar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnSalvar.Image = ((System.Drawing.Image)(resources.GetObject("btnSalvar.Image")));
+            this.btnSalvar.Location = new System.Drawing.Point(872, 530);
+            this.btnSalvar.Name = "btnSalvar";
+            this.btnSalvar.Size = new System.Drawing.Size(107, 53);
+            this.btnSalvar.TabIndex = 21;
+            this.btnSalvar.Text = "Salvar";
+            this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnSalvar.UseVisualStyleBackColor = true;
+            this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            // 
+            // btnVoltar
+            // 
+            this.btnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnVoltar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnVoltar.Image = ((System.Drawing.Image)(resources.GetObject("btnVoltar.Image")));
+            this.btnVoltar.Location = new System.Drawing.Point(745, 530);
+            this.btnVoltar.Name = "btnVoltar";
+            this.btnVoltar.Size = new System.Drawing.Size(107, 53);
+            this.btnVoltar.TabIndex = 22;
+            this.btnVoltar.Text = "Voltar";
+            this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
+            this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
+            this.btnVoltar.UseVisualStyleBackColor = true;
+            this.btnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            // 
+            // fCadCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 660);
+            this.Controls.Add(this.btnVoltar);
+            this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.tbWhatsapp);
             this.Controls.Add(this.label12);
             this.Controls.Add(this.label11);
             this.Controls.Add(this.label10);
-            this.Controls.Add(this.cbEstado);
+            this.Controls.Add(this.cbUf);
             this.Controls.Add(this.label9);
             this.Controls.Add(this.tbCidade);
             this.Controls.Add(this.label5);
@@ -283,7 +346,7 @@
             this.Controls.Add(this.tbNome);
             this.Controls.Add(this.label1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "fCustomer";
+            this.Name = "fCadCliente";
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -308,10 +371,12 @@
         private TextBox tbCep;
         private Label label8;
         private Label label9;
-        private ComboBox cbEstado;
+        private ComboBox cbUf;
         private Label label10;
         private Label label11;
         private TextBox tbWhatsapp;
         private Label label12;
+        private Button btnSalvar;
+        private Button btnVoltar;
     }
 }
