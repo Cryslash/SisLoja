@@ -288,6 +288,7 @@
             this.tbPesquisar.Name = "tbPesquisar";
             this.tbPesquisar.Size = new System.Drawing.Size(290, 23);
             this.tbPesquisar.TabIndex = 1;
+            this.tbPesquisar.TextChanged += new System.EventHandler(this.tbPesquisar_TextChanged);
             // 
             // dtClientes
             // 

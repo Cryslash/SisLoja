@@ -43,8 +43,11 @@ namespace SisLoja.UI
         
         private void fConCliente_Click(object sender, EventArgs e)
         {
-            dtClientes.ClearSelection();
-            Desabilitar_Botoes();
+            if (btnConfirmar.Enabled != true)
+            {
+                dtClientes.ClearSelection();
+                Desabilitar_Botoes();
+            }
         }
 
         //----- Botões -----//
@@ -82,9 +85,12 @@ namespace SisLoja.UI
             tbBairro.Enabled = true;
             tbCidade.Enabled = true;
             cbUf.Enabled = true;
+            dtClientes.Enabled = false;
+            tbPesquisar.Enabled = false;
         }
         public void Desabilitar_Campos()
         {
+            Limpar_Campos();
             tbNome.Enabled = false;
             tbCpf.Enabled = false;
             tbFone.Enabled = false;
@@ -95,6 +101,8 @@ namespace SisLoja.UI
             tbBairro.Enabled = false;
             tbCidade.Enabled = false;
             cbUf.Enabled = false;
+            dtClientes.Enabled = true;
+            tbPesquisar.Enabled = true;
         }
 
         public void Limpar_Campos()
@@ -177,13 +185,20 @@ namespace SisLoja.UI
 
             clienteBLL.Atualizar_ClienteDAL(cliente);
             Listar_Clientes();
-            fConCliente_Click(sender, e);
+            Desabilitar_Botoes();
+            Desabilitar_Campos();
         }
 
         private void dtClientes_DoubleClick(object sender, EventArgs e)
         {
             if (dtClientes.SelectedRows.Count == 1)
                 btnEditar.PerformClick();
+        }
+
+        private void tbPesquisar_TextChanged(object sender, EventArgs e)
+        {
+            ClienteBLL clienteBLL = new ClienteBLL();
+            dtClientes.DataSource = clienteBLL.Pesquisar_ClienteDAL(tbPesquisar.Text);
         }
     }
 }

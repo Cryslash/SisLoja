@@ -15,6 +15,14 @@ namespace SisLoja
             DataTable dt = clienteDal.Listar_Clientes();
             return dt;
         }
+
+        public DataTable Pesquisar_ClienteDAL(string s)
+        {
+            DataTable dt = new DataTable();
+            ClienteDAL clienteDAL = new ClienteDAL();
+            dt = clienteDAL.Pesquisar_Cliente(s);
+            return dt;
+        }
         
         public int Gravar_ClienteDAL(modeloCliente cliente)
         {

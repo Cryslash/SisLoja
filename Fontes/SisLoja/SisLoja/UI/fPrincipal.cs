@@ -101,7 +101,7 @@ namespace SisLoja
             instanciaConsulta.TopLevel = false;
             pDashArea.Controls.Clear();
             pDashArea.Controls.Add(instanciaConsulta);
-            instanciaConsulta.Show();            
+            instanciaConsulta.Show();
         }
     }
 }

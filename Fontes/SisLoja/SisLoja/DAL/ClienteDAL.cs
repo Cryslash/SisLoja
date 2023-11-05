@@ -12,9 +12,51 @@ namespace SisLoja
         SqlConnection conexao = null;
 
         public string StringServer()
-        {            
-            string server = @"Data Source=Crys-PC;Initial Catalog=SisLoja;User Id=sa;pwd=123;";
+        {
+            XML_DB_INFO xml = XML_DB_INFO.LoadFromFile("cfg.xml");
+            string server = string.Format(@"Data Source={0};Initial Catalog=SisLoja;User Id={1};pwd={2};",xml.Server,xml.User,xml.Pass);
             return server;
+        }
+       
+        public DataTable Listar_Clientes() 
+        {
+            try
+            {
+                string server = StringServer();
+                conexao = new SqlConnection(server);
+                SqlCommand qrComando = new SqlCommand("SELECT ID, Nome, CPF, Telefone, Whatsapp, Email, Cep, Rua, Bairro," +
+                    " Cidade, Estado FROM Clientes WHERE EstaAtivo = 1", conexao);
+                SqlDataAdapter dados = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                dados.SelectCommand = qrComando;
+                dados.Fill(dt);
+                return dt;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }            
+        }
+
+        public DataTable Pesquisar_Cliente(string s) 
+        {
+            try                                            
+            {
+                string server = StringServer();
+                SqlDataAdapter dados = new SqlDataAdapter();
+                DataTable dt = new DataTable();
+                conexao = new SqlConnection(server);
+                SqlCommand qrComando = new SqlCommand("SELECT ID, Nome, CPF, Telefone, Whatsapp, Email, Cep, Rua, Bairro, " +
+                    " Cidade, Estado FROM Clientes WHERE (Nome LIKE '%'+@s+'%' OR Telefone LIKE '%'+@s+'%') AND EstaAtivo = 1", conexao);
+                qrComando.Parameters.AddWithValue("@s", s);
+                dados.SelectCommand = qrComando;
+                dados.Fill(dt);
+                return dt;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
         }
 
         public void Gravar_Cliente(modeloCliente cliente)
@@ -49,44 +91,6 @@ namespace SisLoja
             
         }
 
-        public DataTable Listar_Clientes() 
-        {
-            try
-            {
-                string server = StringServer();
-                conexao = new SqlConnection(server);
-                SqlCommand qrComando = new SqlCommand("SELECT ID, Nome, CPF, Telefone, Whatsapp, Email, Cep, Rua, Bairro," +
-                    " Cidade, Estado FROM Clientes WHERE EstaAtivo = 1", conexao);
-                SqlDataAdapter dados = new SqlDataAdapter();
-                DataTable dt = new DataTable();
-                dados.SelectCommand = qrComando;
-                dados.Fill(dt);
-                return dt;
-            }
-            catch (Exception erro)
-            {
-                throw erro;
-            }            
-        }
-
-        public void Excluir_Cliente(modeloCliente cliente) 
-        {
-            try
-            {
-                string server = StringServer();
-                conexao = new SqlConnection(server);
-                SqlCommand qrComando = new SqlCommand("UPDATE Clientes SET EstaAtivo = 0 WHERE ID= @id", conexao);
-                qrComando.Parameters.AddWithValue("@id", cliente.Id);
-                conexao.Open();
-                qrComando.ExecuteNonQuery();
-                conexao.Close();
-            }
-            catch (Exception erro)
-            {
-                throw erro;
-            }
-        }
-
         public void Atualizar_Cliente(modeloCliente cliente)
         {
             try
@@ -116,5 +120,25 @@ namespace SisLoja
                 throw erro;
             }
         }
+       
+        public void Excluir_Cliente(modeloCliente cliente) 
+        {
+            try
+            {
+                string server = StringServer();
+                conexao = new SqlConnection(server);
+                SqlCommand qrComando = new SqlCommand("UPDATE Clientes SET EstaAtivo = 0 WHERE ID= @id", conexao);
+                qrComando.Parameters.AddWithValue("@id", cliente.Id);
+                conexao.Open();
+                qrComando.ExecuteNonQuery();
+                conexao.Close();
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
+
+
     }
 }
