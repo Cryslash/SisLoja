@@ -65,6 +65,7 @@
             // 
             this.tbWhatsapp.Enabled = false;
             this.tbWhatsapp.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbWhatsapp.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbWhatsapp.Location = new System.Drawing.Point(814, 176);
             this.tbWhatsapp.Name = "tbWhatsapp";
             this.tbWhatsapp.Size = new System.Drawing.Size(155, 23);
@@ -74,6 +75,7 @@
             // 
             this.label12.AutoSize = true;
             this.label12.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label12.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label12.Location = new System.Drawing.Point(814, 158);
             this.label12.Name = "label12";
             this.label12.Size = new System.Drawing.Size(60, 15);
@@ -84,6 +86,7 @@
             // 
             this.tbEmail.Enabled = false;
             this.tbEmail.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbEmail.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbEmail.Location = new System.Drawing.Point(107, 227);
             this.tbEmail.Name = "tbEmail";
             this.tbEmail.Size = new System.Drawing.Size(369, 23);
@@ -93,6 +96,7 @@
             // 
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label4.Location = new System.Drawing.Point(107, 209);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 15);
@@ -103,6 +107,7 @@
             // 
             this.tbFone.Enabled = false;
             this.tbFone.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbFone.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbFone.Location = new System.Drawing.Point(643, 176);
             this.tbFone.Name = "tbFone";
             this.tbFone.Size = new System.Drawing.Size(155, 23);
@@ -112,6 +117,7 @@
             // 
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label3.Location = new System.Drawing.Point(643, 158);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(59, 15);
@@ -122,6 +128,7 @@
             // 
             this.tbCpf.Enabled = false;
             this.tbCpf.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbCpf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbCpf.Location = new System.Drawing.Point(422, 176);
             this.tbCpf.Name = "tbCpf";
             this.tbCpf.Size = new System.Drawing.Size(202, 23);
@@ -131,6 +138,7 @@
             // 
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label2.Location = new System.Drawing.Point(422, 158);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(28, 15);
@@ -141,6 +149,7 @@
             // 
             this.tbNome.Enabled = false;
             this.tbNome.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbNome.Location = new System.Drawing.Point(109, 176);
             this.tbNome.Name = "tbNome";
             this.tbNome.Size = new System.Drawing.Size(290, 23);
@@ -150,6 +159,7 @@
             // 
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label1.Location = new System.Drawing.Point(109, 158);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(48, 15);
@@ -161,6 +171,7 @@
             this.cbUf.Cursor = System.Windows.Forms.Cursors.Hand;
             this.cbUf.Enabled = false;
             this.cbUf.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.cbUf.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.cbUf.FormattingEnabled = true;
             this.cbUf.Items.AddRange(new object[] {
             "AC",
@@ -200,6 +211,7 @@
             // 
             this.label9.AutoSize = true;
             this.label9.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label9.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label9.Location = new System.Drawing.Point(726, 259);
             this.label9.Name = "label9";
             this.label9.Size = new System.Drawing.Size(42, 15);
@@ -210,6 +222,7 @@
             // 
             this.tbCidade.Enabled = false;
             this.tbCidade.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbCidade.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbCidade.Location = new System.Drawing.Point(109, 277);
             this.tbCidade.Name = "tbCidade";
             this.tbCidade.Size = new System.Drawing.Size(290, 23);
@@ -219,6 +232,7 @@
             // 
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label5.Location = new System.Drawing.Point(109, 259);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(44, 15);
@@ -229,6 +243,7 @@
             // 
             this.tbBairro.Enabled = false;
             this.tbBairro.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbBairro.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbBairro.Location = new System.Drawing.Point(422, 277);
             this.tbBairro.Name = "tbBairro";
             this.tbBairro.Size = new System.Drawing.Size(282, 23);
@@ -238,6 +253,7 @@
             // 
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label6.Location = new System.Drawing.Point(422, 259);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(38, 15);
@@ -248,6 +264,7 @@
             // 
             this.tbRua.Enabled = false;
             this.tbRua.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbRua.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbRua.Location = new System.Drawing.Point(628, 227);
             this.tbRua.Name = "tbRua";
             this.tbRua.Size = new System.Drawing.Size(339, 23);
@@ -257,6 +274,7 @@
             // 
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label7.Location = new System.Drawing.Point(628, 209);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(27, 15);
@@ -267,6 +285,7 @@
             // 
             this.tbCep.Enabled = false;
             this.tbCep.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbCep.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbCep.Location = new System.Drawing.Point(488, 227);
             this.tbCep.Name = "tbCep";
             this.tbCep.Size = new System.Drawing.Size(134, 23);
@@ -276,6 +295,7 @@
             // 
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 9F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.label8.Location = new System.Drawing.Point(488, 209);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(28, 15);
@@ -284,6 +304,7 @@
             // 
             // tbPesquisar
             // 
+            this.tbPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbPesquisar.Location = new System.Drawing.Point(109, 61);
             this.tbPesquisar.Name = "tbPesquisar";
             this.tbPesquisar.Size = new System.Drawing.Size(290, 23);
@@ -341,6 +362,7 @@
             // 
             this.btnConfirmar.Enabled = false;
             this.btnConfirmar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnConfirmar.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.Image")));
             this.btnConfirmar.Location = new System.Drawing.Point(568, 45);
             this.btnConfirmar.Name = "btnConfirmar";
@@ -355,6 +377,7 @@
             // 
             this.btnCancelar.Enabled = false;
             this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
             this.btnCancelar.Location = new System.Drawing.Point(697, 45);
             this.btnCancelar.Name = "btnCancelar";
@@ -369,6 +392,7 @@
             // 
             this.btnEditar.Enabled = false;
             this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
             this.btnEditar.Location = new System.Drawing.Point(422, 45);
             this.btnEditar.Name = "btnEditar";
@@ -383,6 +407,7 @@
             // 
             this.btnExcluir.Enabled = false;
             this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
             this.btnExcluir.Location = new System.Drawing.Point(844, 45);
             this.btnExcluir.Name = "btnExcluir";

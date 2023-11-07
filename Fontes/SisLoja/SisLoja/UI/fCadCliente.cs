@@ -12,15 +12,15 @@ namespace SisLoja.UI
 {
     public partial class fCadCliente : Form
     {
-        fPrincipal instanciaPrincipal = new fPrincipal();
-        public fCadCliente(fPrincipal p)
+        public fPrincipal instanciaPrincipal = null;
+        public fCadCliente()
         {
             InitializeComponent();
-            this.instanciaPrincipal = p;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
+            this.Close();
             instanciaPrincipal.btnCadastrar.PerformClick();
 
         }

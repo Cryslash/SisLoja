@@ -4,6 +4,9 @@
     <Compile Update="UI\fCadCliente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UI\fCadProduto.cs">
+      <SubType>Form</SubType>
+    </Compile>
     <Compile Update="UI\fConCliente.cs">
       <SubType>Form</SubType>
     </Compile>

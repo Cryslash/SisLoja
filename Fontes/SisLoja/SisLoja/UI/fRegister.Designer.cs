@@ -40,7 +40,7 @@
             this.btnCustomer.BackColor = System.Drawing.SystemColors.Control;
             this.btnCustomer.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCustomer.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCustomer.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnCustomer.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnCustomer.Image = ((System.Drawing.Image)(resources.GetObject("btnCustomer.Image")));
             this.btnCustomer.Location = new System.Drawing.Point(129, 87);
             this.btnCustomer.Name = "btnCustomer";
@@ -56,7 +56,7 @@
             this.btnProduct.BackColor = System.Drawing.SystemColors.Control;
             this.btnProduct.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProduct.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnProduct.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnProduct.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnProduct.Image = ((System.Drawing.Image)(resources.GetObject("btnProduct.Image")));
             this.btnProduct.Location = new System.Drawing.Point(364, 87);
             this.btnProduct.Name = "btnProduct";
@@ -65,13 +65,14 @@
             this.btnProduct.Text = "Cadastrar Produto";
             this.btnProduct.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnProduct.UseVisualStyleBackColor = false;
+            this.btnProduct.Click += new System.EventHandler(this.btnProduct_Click);
             // 
             // btnInn
             // 
             this.btnInn.BackColor = System.Drawing.SystemColors.Control;
             this.btnInn.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnInn.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnInn.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnInn.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnInn.Image = ((System.Drawing.Image)(resources.GetObject("btnInn.Image")));
             this.btnInn.Location = new System.Drawing.Point(596, 87);
             this.btnInn.Name = "btnInn";
@@ -86,7 +87,7 @@
             this.btnOut.BackColor = System.Drawing.SystemColors.Control;
             this.btnOut.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnOut.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
+            this.btnOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnOut.Image = ((System.Drawing.Image)(resources.GetObject("btnOut.Image")));
             this.btnOut.Location = new System.Drawing.Point(837, 87);
             this.btnOut.Name = "btnOut";

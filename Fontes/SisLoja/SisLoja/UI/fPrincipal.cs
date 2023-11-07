@@ -14,7 +14,8 @@ namespace SisLoja
 {
     public partial class fPrincipal : Form
     {
-        fHome instanciaHome = new fHome();
+        fHome instanciaHome = null;
+        fRegister instanciaRegistro = null;
 
         public fPrincipal()
         {            
@@ -74,7 +75,7 @@ namespace SisLoja
 
         private void btnHome_Click(object sender, EventArgs e)
         {
-            instanciaHome = new fHome();
+            fHome instanciaHome = new fHome();
             instanciaHome.Owner = this;
             instanciaHome.TopLevel = false;
             instanciaHome.AutoScroll = true;
@@ -86,9 +87,18 @@ namespace SisLoja
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            fRegister instanciaRegistro = new fRegister(this);
+            if (Application.OpenForms.OfType<fRegister>().Count() == 1)
+                try
+                {
+                    this.instanciaRegistro.Close();
+                }
+                catch
+                {   }
+         
+            instanciaRegistro = new fRegister();
             instanciaRegistro.Owner = this;
-            instanciaRegistro.TopLevel = false;            
+            instanciaRegistro.TopLevel = false;
+            instanciaRegistro.instanciaPrincipal = this;
             pDashArea.Controls.Clear();
             pDashArea.Controls.Add(instanciaRegistro);
             instanciaRegistro.Show();
