@@ -12,7 +12,8 @@ namespace SisLoja.UI
 {
     public partial class fCadCliente : Form
     {
-        public fPrincipal instanciaPrincipal = null;
+        public fPrincipal instanciaPrincipal;
+
         public fCadCliente()
         {
             InitializeComponent();
@@ -20,9 +21,7 @@ namespace SisLoja.UI
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Close();
             instanciaPrincipal.btnCadastrar.PerformClick();
-
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)

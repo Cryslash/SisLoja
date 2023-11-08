@@ -14,8 +14,8 @@ namespace SisLoja
 {
     public partial class fPrincipal : Form
     {
-        fHome instanciaHome = null;
-        fRegister instanciaRegistro = null;
+        fHome instanciaHome;
+        fRegister instanciaRegistro = new fRegister();
 
         public fPrincipal()
         {            
@@ -87,15 +87,14 @@ namespace SisLoja
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-            if (Application.OpenForms.OfType<fRegister>().Count() == 1)
+        /*    if (Application.OpenForms.OfType<fRegister>().Count() == 1)
                 try
                 {
                     this.instanciaRegistro.Close();
                 }
-                catch
-                {   }
-         
-            instanciaRegistro = new fRegister();
+                catch{   }
+        */ 
+           // instanciaRegistro = new fRegister();
             instanciaRegistro.Owner = this;
             instanciaRegistro.TopLevel = false;
             instanciaRegistro.instanciaPrincipal = this;

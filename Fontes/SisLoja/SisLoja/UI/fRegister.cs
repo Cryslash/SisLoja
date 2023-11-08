@@ -13,8 +13,12 @@ namespace SisLoja.UI
     public partial class fRegister : Form
     {
         //criando uma nova instancia do formulario principal.
-        public fPrincipal instanciaPrincipal = new fPrincipal();
-         
+        public fPrincipal instanciaPrincipal;
+        fCadCliente Cliente = new fCadCliente();
+        fCadProduto cadastroProd = new fCadProduto();
+        fCadEntrada cadastroEntrada = new fCadEntrada();
+
+
         //o metodo construtor recebe um parametro do tipo formulário principal.
         //o objetivo é passar o proprio formulário principal original para a nova
         //instancia criada anteriormente.
@@ -24,28 +28,36 @@ namespace SisLoja.UI
             InitializeComponent();            
         }
 
-        private void btnCustomer_Click(object sender, EventArgs e)
+        private void btnCliente_Click(object sender, EventArgs e)
         {
-            fCadCliente Cliente = new fCadCliente();
             Cliente.Owner = instanciaPrincipal;
             Cliente.TopLevel = false;
-            Cliente.AutoScroll = true;
             Cliente.instanciaPrincipal = this.instanciaPrincipal;
             instanciaPrincipal.pDashArea.Controls.Clear();
             instanciaPrincipal.pDashArea.Controls.Add(Cliente);
             Cliente.Show();
-            
         }
 
-        private void btnProduct_Click(object sender, EventArgs e)
+        private void btnProduto_Click(object sender, EventArgs e)
         {
-            fCadProduto cadastroProd = new fCadProduto();
-            cadastroProd.Owner = instanciaPrincipal;
+            cadastroProd.Owner = this.instanciaPrincipal;
             cadastroProd.TopLevel = false;
             cadastroProd.instanciaPrincipal = this.instanciaPrincipal;
             instanciaPrincipal.pDashArea.Controls.Clear();
             instanciaPrincipal.pDashArea.Controls.Add(cadastroProd);
             cadastroProd.Show();
+        }
+                
+        private void btnEntrada_Click(object sender, EventArgs e)
+        {
+            if (Application.OpenForms.OfType<fCadEntrada>().Count() == 0)
+                this.cadastroEntrada = new fCadEntrada();
+            cadastroEntrada.Owner = this.instanciaPrincipal;
+            cadastroEntrada.TopLevel = false;
+            cadastroEntrada.instanciaPrincipal = this.instanciaPrincipal;
+            instanciaPrincipal.pDashArea.Controls.Clear();
+            instanciaPrincipal.pDashArea.Controls.Add(cadastroEntrada);
+            cadastroEntrada.Show();
         }
     }
 }

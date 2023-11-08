@@ -12,7 +12,8 @@ namespace SisLoja.UI
 {
     public partial class fCadProduto : Form
     {
-        public fPrincipal instanciaPrincipal = new fPrincipal();
+        public fPrincipal instanciaPrincipal = null;
+        
 
         public fCadProduto()
         {
@@ -37,29 +38,32 @@ namespace SisLoja.UI
                 tbImg.Text = janela.FileName;
                 pbImg.Image = Image.FromFile(janela.FileName);
             }
-
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            this.Close();
             instanciaPrincipal.btnCadastrar.PerformClick();
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             modeloProduto produto = new modeloProduto();
+            ProdutoDAL DAL = new ProdutoDAL();
+            produto.Id = DAL.Proximo_ID_Disponivel(); 
             produto.CodBar = tbCodBar.Text;
             produto.QrCode = tbQrCode.Text;
             produto.Img = tbImg.Text;
             produto.Ref= tbRef.Text;
             produto.Nome = tbNome.Text;
             produto.Modelo = tbModelo.Text;
+            produto.Cor = tbCor.Text;
             produto.EstoqueMin = Convert.ToInt32(tbMin.Text);
             produto.PrecoVenda = Convert.ToDecimal(tbPreco.Text);
 
             produtoBLL BLL = new produtoBLL();
             BLL.Gravar_ProdutoDAL(produto);
+            MessageBox.Show("Produto cadastrado com sucesso.", "Mensagem do sistema.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            btnVoltar.PerformClick();
         }
     }
 }

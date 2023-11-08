@@ -9,7 +9,7 @@ namespace SisLoja
     public class modeloProduto
     {
         int id, estoque, estoquemin;
-        string codbar, qrcode, referencia, img, nome, modelo;
+        string codbar, qrcode, referencia, img, nome, modelo, cor;
         decimal precoVenda;
 
         public int Id
@@ -58,17 +58,15 @@ namespace SisLoja
             get { return modelo; }
             set { modelo = value; }
         }
+        public string Cor
+        {
+            get { return cor; }
+            set { cor = value; }
+        }
         public decimal PrecoVenda 
         { 
             get { return precoVenda; }
             set { precoVenda = value; }
         }
-
-
-
-        
-        
-
-        
     }
 }

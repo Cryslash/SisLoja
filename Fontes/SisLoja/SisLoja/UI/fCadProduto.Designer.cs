@@ -50,6 +50,8 @@
             this.label6 = new System.Windows.Forms.Label();
             this.btnVoltar = new System.Windows.Forms.Button();
             this.btnSalvar = new System.Windows.Forms.Button();
+            this.tbCor = new System.Windows.Forms.TextBox();
+            this.label8 = new System.Windows.Forms.Label();
             ((System.ComponentModel.ISupportInitialize)(this.pbImg)).BeginInit();
             ((System.ComponentModel.ISupportInitialize)(this.pbQrCod)).BeginInit();
             this.SuspendLayout();
@@ -135,7 +137,7 @@
             // 
             this.tbMin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbMin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tbMin.Location = new System.Drawing.Point(302, 331);
+            this.tbMin.Location = new System.Drawing.Point(302, 392);
             this.tbMin.Name = "tbMin";
             this.tbMin.Size = new System.Drawing.Size(100, 29);
             this.tbMin.TabIndex = 5;
@@ -146,7 +148,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label3.Location = new System.Drawing.Point(279, 307);
+            this.label3.Location = new System.Drawing.Point(279, 368);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 21);
             this.label3.TabIndex = 7;
@@ -156,7 +158,7 @@
             // 
             this.tbPreco.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbPreco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tbPreco.Location = new System.Drawing.Point(457, 331);
+            this.tbPreco.Location = new System.Drawing.Point(456, 392);
             this.tbPreco.Name = "tbPreco";
             this.tbPreco.Size = new System.Drawing.Size(100, 29);
             this.tbPreco.TabIndex = 6;
@@ -167,7 +169,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label4.Location = new System.Drawing.Point(439, 307);
+            this.label4.Location = new System.Drawing.Point(429, 368);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 21);
             this.label4.TabIndex = 9;
@@ -186,7 +188,7 @@
             // 
             this.tbQrCode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbQrCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tbQrCode.Location = new System.Drawing.Point(377, 401);
+            this.tbQrCode.Location = new System.Drawing.Point(377, 458);
             this.tbQrCode.Name = "tbQrCode";
             this.tbQrCode.Size = new System.Drawing.Size(179, 29);
             this.tbQrCode.TabIndex = 7;
@@ -196,7 +198,7 @@
             // 
             this.btnQrCod.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnQrCod.Image = ((System.Drawing.Image)(resources.GetObject("btnQrCod.Image")));
-            this.btnQrCod.Location = new System.Drawing.Point(564, 393);
+            this.btnQrCod.Location = new System.Drawing.Point(565, 450);
             this.btnQrCod.Name = "btnQrCod";
             this.btnQrCod.Size = new System.Drawing.Size(38, 37);
             this.btnQrCod.TabIndex = 8;
@@ -207,7 +209,7 @@
             // 
             this.tbRef.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbRef.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tbRef.Location = new System.Drawing.Point(325, 262);
+            this.tbRef.Location = new System.Drawing.Point(325, 259);
             this.tbRef.Name = "tbRef";
             this.tbRef.Size = new System.Drawing.Size(232, 29);
             this.tbRef.TabIndex = 4;
@@ -218,7 +220,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label7.Location = new System.Drawing.Point(473, 238);
+            this.label7.Location = new System.Drawing.Point(473, 235);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 21);
             this.label7.TabIndex = 16;
@@ -228,7 +230,7 @@
             // 
             this.tbCodBar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbCodBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tbCodBar.Location = new System.Drawing.Point(285, 486);
+            this.tbCodBar.Location = new System.Drawing.Point(284, 517);
             this.tbCodBar.Name = "tbCodBar";
             this.tbCodBar.Size = new System.Drawing.Size(272, 29);
             this.tbCodBar.TabIndex = 9;
@@ -239,7 +241,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label5.Location = new System.Drawing.Point(428, 462);
+            this.label5.Location = new System.Drawing.Point(417, 493);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(139, 21);
             this.label5.TabIndex = 18;
@@ -250,7 +252,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label6.Location = new System.Drawing.Point(500, 377);
+            this.label6.Location = new System.Drawing.Point(501, 434);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 21);
             this.label6.TabIndex = 20;
@@ -291,11 +293,34 @@
             this.btnSalvar.UseVisualStyleBackColor = false;
             this.btnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
             // 
+            // tbCor
+            // 
+            this.tbCor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.tbCor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.tbCor.Location = new System.Drawing.Point(324, 325);
+            this.tbCor.Name = "tbCor";
+            this.tbCor.Size = new System.Drawing.Size(232, 29);
+            this.tbCor.TabIndex = 25;
+            this.tbCor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label8
+            // 
+            this.label8.AutoSize = true;
+            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
+            this.label8.Location = new System.Drawing.Point(521, 301);
+            this.label8.Name = "label8";
+            this.label8.Size = new System.Drawing.Size(36, 21);
+            this.label8.TabIndex = 26;
+            this.label8.Text = "Cor";
+            // 
             // fCadProduto
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(1150, 660);
+            this.Controls.Add(this.tbCor);
+            this.Controls.Add(this.label8);
             this.Controls.Add(this.btnVoltar);
             this.Controls.Add(this.btnSalvar);
             this.Controls.Add(this.label6);
@@ -349,5 +374,7 @@
         private Label label6;
         private Button btnVoltar;
         private Button btnSalvar;
+        private TextBox tbCor;
+        private Label label8;
     }
 }
