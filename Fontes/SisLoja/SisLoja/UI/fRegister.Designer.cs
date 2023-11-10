@@ -37,7 +37,7 @@
             // 
             // btnCliente
             // 
-            this.btnCliente.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCliente.BackColor = System.Drawing.Color.White;
             this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCliente.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
@@ -53,7 +53,7 @@
             // 
             // btnProduto
             // 
-            this.btnProduto.BackColor = System.Drawing.SystemColors.Control;
+            this.btnProduto.BackColor = System.Drawing.Color.White;
             this.btnProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProduto.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnProduto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
@@ -69,7 +69,7 @@
             // 
             // btnEntrada
             // 
-            this.btnEntrada.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEntrada.BackColor = System.Drawing.Color.White;
             this.btnEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEntrada.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEntrada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
@@ -85,8 +85,9 @@
             // 
             // btnOut
             // 
-            this.btnOut.BackColor = System.Drawing.SystemColors.Control;
+            this.btnOut.BackColor = System.Drawing.Color.White;
             this.btnOut.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.btnOut.FlatAppearance.BorderSize = 0;
             this.btnOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.btnOut.Image = ((System.Drawing.Image)(resources.GetObject("btnOut.Image")));
@@ -97,11 +98,13 @@
             this.btnOut.Text = "Cadastrar Retirada";
             this.btnOut.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnOut.UseVisualStyleBackColor = false;
+            this.btnOut.Click += new System.EventHandler(this.btnOut_Click);
             // 
             // fRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1150, 660);
             this.Controls.Add(this.btnOut);
             this.Controls.Add(this.btnEntrada);

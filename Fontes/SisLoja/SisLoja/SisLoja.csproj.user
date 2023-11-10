@@ -25,5 +25,8 @@
     <Compile Update="UI\fRegister.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UI\fTerminal.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
 </Project>

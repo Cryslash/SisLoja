@@ -124,6 +124,7 @@
             this.btnCfg.Size = new System.Drawing.Size(48, 48);
             this.btnCfg.TabIndex = 5;
             this.btnCfg.UseVisualStyleBackColor = true;
+            this.btnCfg.Click += new System.EventHandler(this.btnCfg_Click);
             // 
             // btnLogoff
             // 

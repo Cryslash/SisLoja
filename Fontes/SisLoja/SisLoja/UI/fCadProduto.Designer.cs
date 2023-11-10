@@ -58,6 +58,7 @@
             // 
             // pbImg
             // 
+            this.pbImg.BackColor = System.Drawing.Color.White;
             this.pbImg.Image = ((System.Drawing.Image)(resources.GetObject("pbImg.Image")));
             this.pbImg.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbImg.InitialImage")));
             this.pbImg.Location = new System.Drawing.Point(613, 48);
@@ -69,7 +70,7 @@
             // 
             // tbImg
             // 
-            this.tbImg.BorderStyle = System.Windows.Forms.BorderStyle.FixedSingle;
+            this.tbImg.BackColor = System.Drawing.Color.White;
             this.tbImg.Enabled = false;
             this.tbImg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbImg.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
@@ -104,6 +105,7 @@
             // 
             // tbNome
             // 
+            this.tbNome.BackColor = System.Drawing.Color.White;
             this.tbNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbNome.Location = new System.Drawing.Point(181, 120);
@@ -114,6 +116,7 @@
             // 
             // tbModelo
             // 
+            this.tbModelo.BackColor = System.Drawing.Color.White;
             this.tbModelo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbModelo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbModelo.Location = new System.Drawing.Point(182, 187);
@@ -135,12 +138,13 @@
             // 
             // tbMin
             // 
+            this.tbMin.BackColor = System.Drawing.Color.White;
             this.tbMin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbMin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbMin.Location = new System.Drawing.Point(302, 392);
             this.tbMin.Name = "tbMin";
             this.tbMin.Size = new System.Drawing.Size(100, 29);
-            this.tbMin.TabIndex = 5;
+            this.tbMin.TabIndex = 6;
             this.tbMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label3
@@ -156,12 +160,13 @@
             // 
             // tbPreco
             // 
+            this.tbPreco.BackColor = System.Drawing.Color.White;
             this.tbPreco.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbPreco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbPreco.Location = new System.Drawing.Point(456, 392);
             this.tbPreco.Name = "tbPreco";
             this.tbPreco.Size = new System.Drawing.Size(100, 29);
-            this.tbPreco.TabIndex = 6;
+            this.tbPreco.TabIndex = 7;
             this.tbPreco.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
@@ -186,12 +191,13 @@
             // 
             // tbQrCode
             // 
+            this.tbQrCode.BackColor = System.Drawing.Color.White;
             this.tbQrCode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbQrCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbQrCode.Location = new System.Drawing.Point(377, 458);
             this.tbQrCode.Name = "tbQrCode";
             this.tbQrCode.Size = new System.Drawing.Size(179, 29);
-            this.tbQrCode.TabIndex = 7;
+            this.tbQrCode.TabIndex = 8;
             this.tbQrCode.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // btnQrCod
@@ -201,12 +207,13 @@
             this.btnQrCod.Location = new System.Drawing.Point(565, 450);
             this.btnQrCod.Name = "btnQrCod";
             this.btnQrCod.Size = new System.Drawing.Size(38, 37);
-            this.btnQrCod.TabIndex = 8;
+            this.btnQrCod.TabIndex = 9;
             this.btnQrCod.UseVisualStyleBackColor = true;
             this.btnQrCod.Click += new System.EventHandler(this.btnQrCod_Click);
             // 
             // tbRef
             // 
+            this.tbRef.BackColor = System.Drawing.Color.White;
             this.tbRef.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbRef.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbRef.Location = new System.Drawing.Point(325, 259);
@@ -228,12 +235,13 @@
             // 
             // tbCodBar
             // 
+            this.tbCodBar.BackColor = System.Drawing.Color.White;
             this.tbCodBar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbCodBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbCodBar.Location = new System.Drawing.Point(284, 517);
             this.tbCodBar.Name = "tbCodBar";
             this.tbCodBar.Size = new System.Drawing.Size(272, 29);
-            this.tbCodBar.TabIndex = 9;
+            this.tbCodBar.TabIndex = 10;
             this.tbCodBar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label5
@@ -268,7 +276,7 @@
             this.btnVoltar.Location = new System.Drawing.Point(564, 573);
             this.btnVoltar.Name = "btnVoltar";
             this.btnVoltar.Size = new System.Drawing.Size(107, 53);
-            this.btnVoltar.TabIndex = 24;
+            this.btnVoltar.TabIndex = 12;
             this.btnVoltar.Text = "Voltar";
             this.btnVoltar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnVoltar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -286,7 +294,7 @@
             this.btnSalvar.Location = new System.Drawing.Point(680, 573);
             this.btnSalvar.Name = "btnSalvar";
             this.btnSalvar.Size = new System.Drawing.Size(107, 53);
-            this.btnSalvar.TabIndex = 23;
+            this.btnSalvar.TabIndex = 11;
             this.btnSalvar.Text = "Salvar";
             this.btnSalvar.TextAlign = System.Drawing.ContentAlignment.MiddleRight;
             this.btnSalvar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
@@ -295,12 +303,13 @@
             // 
             // tbCor
             // 
+            this.tbCor.BackColor = System.Drawing.Color.White;
             this.tbCor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.tbCor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
             this.tbCor.Location = new System.Drawing.Point(324, 325);
             this.tbCor.Name = "tbCor";
             this.tbCor.Size = new System.Drawing.Size(232, 29);
-            this.tbCor.TabIndex = 25;
+            this.tbCor.TabIndex = 5;
             this.tbCor.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label8
@@ -318,6 +327,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1150, 660);
             this.Controls.Add(this.tbCor);
             this.Controls.Add(this.label8);

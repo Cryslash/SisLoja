@@ -59,5 +59,10 @@ namespace SisLoja.UI
             instanciaPrincipal.pDashArea.Controls.Add(cadastroEntrada);
             cadastroEntrada.Show();
         }
+
+        private void btnOut_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -112,5 +112,11 @@ namespace SisLoja
             pDashArea.Controls.Add(instanciaConsulta);
             instanciaConsulta.Show();
         }
+
+        private void btnCfg_Click(object sender, EventArgs e)
+        {
+            fTerminal terminal = new fTerminal();
+            terminal.Show();
+        }
     }
 }

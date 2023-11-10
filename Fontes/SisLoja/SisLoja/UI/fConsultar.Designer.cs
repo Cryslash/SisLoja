@@ -36,7 +36,7 @@
             // 
             // btnEstoque
             // 
-            this.btnEstoque.BackColor = System.Drawing.SystemColors.Control;
+            this.btnEstoque.BackColor = System.Drawing.Color.White;
             this.btnEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnEstoque.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEstoque.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -51,7 +51,7 @@
             // 
             // btnProduto
             // 
-            this.btnProduto.BackColor = System.Drawing.SystemColors.Control;
+            this.btnProduto.BackColor = System.Drawing.Color.White;
             this.btnProduto.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnProduto.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnProduto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -66,7 +66,7 @@
             // 
             // btnCliente
             // 
-            this.btnCliente.BackColor = System.Drawing.SystemColors.Control;
+            this.btnCliente.BackColor = System.Drawing.Color.White;
             this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
             this.btnCliente.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnCliente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
@@ -84,6 +84,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
+            this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1150, 660);
             this.Controls.Add(this.btnEstoque);
             this.Controls.Add(this.btnProduto);
