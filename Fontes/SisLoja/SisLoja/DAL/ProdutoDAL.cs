@@ -19,6 +19,30 @@ namespace SisLoja
             return server;
         }
 
+        public bool Apto_Cadastro(modeloProduto produto) 
+        {
+            try
+            {
+                string server = StringServer();
+                string teste = "";
+                conexao = new SqlConnection(server);
+                SqlCommand qrComando = new SqlCommand("SELECT CodBar FROM Produtos WHERE CodBar = @cod", conexao);
+                qrComando.Parameters.AddWithValue("@cod", produto.CodBar);
+                conexao.Open();
+                SqlDataReader dados = qrComando.ExecuteReader();
+                while (dados.Read())
+                {
+                    teste = dados["CodBar"].ToString();
+                }
+                if (teste == "")
+                    return true;
+                return false;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
         public void Gravar_Produto(modeloProduto produto)
         {
             try
@@ -65,7 +89,6 @@ namespace SisLoja
             }
 
         }
-
         public int Proximo_ID_Disponivel()
         {
             try
@@ -89,5 +112,6 @@ namespace SisLoja
             }
            
         }
+
     }
 }

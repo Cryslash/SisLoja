@@ -96,3 +96,5 @@ END
 SELECT * FROM Entradas;
 SELECT * FROM Produtos;
 SELECT * FROM Estoque;
+
+SELECT p.Nome, p.Modelo, p.Img, p.PrecoVenda FROM Estoque e, Produtos p WHERE e.QrCode = '10XX' AND e.ProdID = p.ID;

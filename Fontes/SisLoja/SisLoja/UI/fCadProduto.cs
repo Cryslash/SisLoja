@@ -48,8 +48,8 @@ namespace SisLoja.UI
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             modeloProduto produto = new modeloProduto();
-            ProdutoDAL DAL = new ProdutoDAL();
-            produto.Id = DAL.Proximo_ID_Disponivel(); 
+            produtoBLL BLL = new produtoBLL();
+            produto.Id = BLL.Proximo_ID_DisponivelDAL(); 
             produto.CodBar = tbCodBar.Text;
             produto.QrCode = tbQrCode.Text;
             produto.Img = tbImg.Text;
@@ -57,13 +57,51 @@ namespace SisLoja.UI
             produto.Nome = tbNome.Text;
             produto.Modelo = tbModelo.Text;
             produto.Cor = tbCor.Text;
-            produto.EstoqueMin = Convert.ToInt32(tbMin.Text);
-            produto.PrecoVenda = Convert.ToDecimal(tbPreco.Text);
+            try
+            {
+                produto.PrecoVenda = Convert.ToDecimal(tbPreco.Text);
+                produto.EstoqueMin = Convert.ToInt32(tbMin.Text);
+            }
+            catch{ }
+                        
+            if( MessageBox.Show("Deseja Salvar o Produto.", "Mensagem do sistema.",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+               int code = BLL.Gravar_ProdutoDAL(produto);
+                if (code == 0)
+                {
+                    MessageBox.Show("Produto Cadastrado Com Sucesso", "Mensagem do Sistema",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    Limpar_Campos();
+                    btnVoltar.PerformClick();
+                }
+                if (code == 1)
+                    MessageBox.Show("O Produto já se Encontra Cadastrado.", "Mensagem do Sistema",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                if (code == 2)
+                    MessageBox.Show("Verificar os Campos Informados.", "Erro do Sistema",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
 
-            produtoBLL BLL = new produtoBLL();
-            BLL.Gravar_ProdutoDAL(produto);
-            MessageBox.Show("Produto cadastrado com sucesso.", "Mensagem do sistema.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            btnVoltar.PerformClick();
+        private void Limpar_Campos()
+        {
+            tbImg.Text = String.Empty;
+            tbNome.Text = String.Empty;
+            tbModelo.Text = String.Empty;
+            tbRef.Text = String.Empty;
+            tbCor.Text = String.Empty;
+            tbMin.Text = String.Empty;
+            tbPreco.Text = String.Empty;
+            tbCodBar.Text = String.Empty;
+            tbQrCode.Text = String.Empty;
+            pbImg.Image = Image.FromFile("C:\\Users\\cryst\\Documents\\Projetos\\SistemaLoja\\Assets\\Images\\No-Image-Placeholder.png");
+        }
+
+        private void tbCodBar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+                this.btnSalvar.PerformClick();
         }
     }
 }

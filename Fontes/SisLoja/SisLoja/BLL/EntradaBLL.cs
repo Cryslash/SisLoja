@@ -47,10 +47,15 @@ namespace SisLoja
 
         public int Gravar_EntradaDAL(modeloEntrada entrada, string valor)
         {
-            if (Check_Decimal(valor) == false)
+            //    if (Check_Decimal(valor) == false)
+            //        return 1;
+            //    else
+            //        entrada.Valor = Convert.ToDecimal(valor);
+
+            if (entrada.Qtd == "" | entrada.Valor == 0)
+            {
                 return 1;
-            else
-                entrada.Valor = Convert.ToDecimal(valor);
+            }
 
             if (DAL.Gravar_Entrada(entrada) == 0)
             {

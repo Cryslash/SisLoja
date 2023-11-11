@@ -243,6 +243,7 @@
             this.tbCodBar.Size = new System.Drawing.Size(272, 29);
             this.tbCodBar.TabIndex = 10;
             this.tbCodBar.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbCodBar.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbCodBar_KeyDown);
             // 
             // label5
             // 

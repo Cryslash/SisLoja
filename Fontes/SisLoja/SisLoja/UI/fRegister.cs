@@ -58,6 +58,7 @@ namespace SisLoja.UI
             instanciaPrincipal.pDashArea.Controls.Clear();
             instanciaPrincipal.pDashArea.Controls.Add(cadastroEntrada);
             cadastroEntrada.Show();
+            cadastroEntrada.tbPesquisa.Focus();
         }
 
         private void btnOut_Click(object sender, EventArgs e)

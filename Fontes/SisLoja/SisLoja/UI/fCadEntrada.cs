@@ -51,13 +51,27 @@ namespace SisLoja.UI
                 entrada.Data = DateTime.Now;
                 entrada.Qtd = rtbQtd.Text; // exemplo 34:1,35:2,36:3,37:3,38:2,39:1
                 entrada.Cor = tbCor.Text;
-                int code = BLL.Gravar_EntradaDAL(entrada, tbPreco.Text);
-                if (code == 0)
-                    MessageBox.Show("Entrada realizada com sucesso.", "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                if (code == 1)
-                    MessageBox.Show("Falha ao registrar a entrada.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                try
+                {
+                    entrada.Valor = Convert.ToDecimal(tbPreco.Text);
+                }
+                catch
+                { }
+
+                if (MessageBox.Show("Deseja Realizar a Entrada dos Produtos?", "Mensagem do Sistema",
+                    MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                {
+                    int code = BLL.Gravar_EntradaDAL(entrada, tbPreco.Text);
+                    if (code == 0)
+                    {
+                        MessageBox.Show("Entrada realizada com sucesso.", "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        limpar_Campos();
+                    }
+                    if (code == 1)
+                        MessageBox.Show("Verificar os Campos Informados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
             }
-            limpar_Campos();
+            
         }
 
         private void limpar_Campos()
@@ -71,6 +85,15 @@ namespace SisLoja.UI
             tbPreco.Text = string.Empty;
             rtbQtd.Text = string.Empty;
             pbImg.Image = Image.FromFile("C:\\Users\\cryst\\Documents\\Projetos\\SistemaLoja\\Assets\\Images\\No-Image-Placeholder.png");
+        }
+
+        private void tbPesquisa_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                btnPesquisa.PerformClick();
+                tbPreco.Focus();
+            }
         }
     }
 }

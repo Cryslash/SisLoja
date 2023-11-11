@@ -60,6 +60,7 @@
             this.tbPesquisa.Name = "tbPesquisa";
             this.tbPesquisa.Size = new System.Drawing.Size(488, 29);
             this.tbPesquisa.TabIndex = 0;
+            this.tbPesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.tbPesquisa_KeyDown);
             // 
             // btnPesquisa
             // 
@@ -309,8 +310,6 @@
         }
 
         #endregion
-
-        private TextBox tbPesquisa;
         private Button btnPesquisa;
         private Label label1;
         private Label label2;
@@ -329,5 +328,6 @@
         private Button btnSalvar;
         private Label label7;
         private TextBox tbCor;
+        public TextBox tbPesquisa;
     }
 }
