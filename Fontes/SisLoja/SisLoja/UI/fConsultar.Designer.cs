@@ -30,7 +30,6 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fConsultar));
             this.btnEstoque = new System.Windows.Forms.Button();
-            this.btnProduto = new System.Windows.Forms.Button();
             this.btnCliente = new System.Windows.Forms.Button();
             this.SuspendLayout();
             // 
@@ -41,28 +40,14 @@
             this.btnEstoque.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
             this.btnEstoque.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
             this.btnEstoque.Image = ((System.Drawing.Image)(resources.GetObject("btnEstoque.Image")));
-            this.btnEstoque.Location = new System.Drawing.Point(611, 101);
+            this.btnEstoque.Location = new System.Drawing.Point(347, 101);
             this.btnEstoque.Name = "btnEstoque";
             this.btnEstoque.Size = new System.Drawing.Size(162, 167);
             this.btnEstoque.TabIndex = 5;
             this.btnEstoque.Text = "Consultar Estoque";
             this.btnEstoque.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
             this.btnEstoque.UseVisualStyleBackColor = false;
-            // 
-            // btnProduto
-            // 
-            this.btnProduto.BackColor = System.Drawing.Color.White;
-            this.btnProduto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProduto.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnProduto.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnProduto.Image")));
-            this.btnProduto.Location = new System.Drawing.Point(379, 101);
-            this.btnProduto.Name = "btnProduto";
-            this.btnProduto.Size = new System.Drawing.Size(162, 167);
-            this.btnProduto.TabIndex = 4;
-            this.btnProduto.Text = "Consultar Produto";
-            this.btnProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProduto.UseVisualStyleBackColor = false;
+            this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
             // 
             // btnCliente
             // 
@@ -87,7 +72,6 @@
             this.BackColor = System.Drawing.Color.White;
             this.ClientSize = new System.Drawing.Size(1150, 660);
             this.Controls.Add(this.btnEstoque);
-            this.Controls.Add(this.btnProduto);
             this.Controls.Add(this.btnCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fConsultar";
@@ -98,7 +82,6 @@
         #endregion
 
         private Button btnEstoque;
-        private Button btnProduto;
         private Button btnCliente;
     }
 }

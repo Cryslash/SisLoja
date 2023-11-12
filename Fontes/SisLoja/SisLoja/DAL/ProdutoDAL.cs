@@ -112,6 +112,25 @@ namespace SisLoja
             }
            
         }
+        public DataTable Carregar_Estoque()
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                string server = StringServer();
+                conexao = new SqlConnection(server);
+                SqlCommand qrComando = new SqlCommand("SELECT Img,CodBar,QrCode,Nome,Modelo,EstoqueMin,PrecoVenda" +
+                    " FROM Produtos WHERE EstaAtivo = 1", conexao);
+                SqlDataAdapter dados = new SqlDataAdapter();
+                dados.SelectCommand = qrComando;
+                dados.Fill(dt);
+                return dt;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
 
     }
 }

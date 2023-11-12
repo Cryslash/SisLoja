@@ -16,6 +16,7 @@ namespace SisLoja
     {
         fHome instanciaHome;
         fRegister instanciaRegistro = new fRegister();
+        fConsultar instanciaconsultar = new fConsultar();
 
         public fPrincipal()
         {            
@@ -87,14 +88,6 @@ namespace SisLoja
 
         private void btnRegistrar_Click(object sender, EventArgs e)
         {
-        /*    if (Application.OpenForms.OfType<fRegister>().Count() == 1)
-                try
-                {
-                    this.instanciaRegistro.Close();
-                }
-                catch{   }
-        */ 
-           // instanciaRegistro = new fRegister();
             instanciaRegistro.Owner = this;
             instanciaRegistro.TopLevel = false;
             instanciaRegistro.instanciaPrincipal = this;
@@ -104,13 +97,13 @@ namespace SisLoja
         }
 
         private void btnConsultar_Click(object sender, EventArgs e)
-        {
-            fConsultar instanciaConsulta = new fConsultar(this);
-            instanciaConsulta.Owner = this;
-            instanciaConsulta.TopLevel = false;
+        {            
+            instanciaconsultar.Owner = this;
+            instanciaconsultar.TopLevel = false;
+            instanciaconsultar.instanciaprincipal = this;
             pDashArea.Controls.Clear();
-            pDashArea.Controls.Add(instanciaConsulta);
-            instanciaConsulta.Show();
+            pDashArea.Controls.Add(instanciaconsultar);
+            instanciaconsultar.Show();
         }
 
         private void btnCfg_Click(object sender, EventArgs e)

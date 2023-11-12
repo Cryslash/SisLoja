@@ -12,23 +12,32 @@ namespace SisLoja.UI
 {
     public partial class fConsultar : Form
     {
-        fPrincipal instanciaprincipal = new fPrincipal();
+        public fPrincipal instanciaprincipal;
+        fConCliente instanciaconcliente = new fConCliente();
+        fConEstoque instanciaconestoque = new fConEstoque();
 
-        public fConsultar( fPrincipal p)
+        public fConsultar()
         {
             InitializeComponent();
-            instanciaprincipal = p;
         }
 
         private void btnCliente_Click(object sender, EventArgs e)
         {
-            fConCliente instanciaConsultar = new fConCliente();
-            instanciaConsultar.Owner = instanciaprincipal;
-            instanciaConsultar.TopLevel = false;
+            instanciaconcliente.Owner = instanciaprincipal;
+            instanciaconcliente.TopLevel = false;
             instanciaprincipal.pDashArea.Controls.Clear();
-            instanciaprincipal.pDashArea.Controls.Add(instanciaConsultar);
-            instanciaConsultar.Show();
-            
+            instanciaprincipal.pDashArea.Controls.Add(instanciaconcliente);
+            instanciaconcliente.Show();
+        }
+
+        private void btnEstoque_Click(object sender, EventArgs e)
+        {
+            instanciaconestoque.Owner = instanciaprincipal;
+            instanciaconestoque.TopLevel = false;
+            instanciaconestoque.instanciaprincipal = this.instanciaprincipal;
+            instanciaprincipal.pDashArea.Controls.Clear();
+            instanciaprincipal.pDashArea.Controls.Add(instanciaconestoque);
+            instanciaconestoque.Show();
         }
     }
 }

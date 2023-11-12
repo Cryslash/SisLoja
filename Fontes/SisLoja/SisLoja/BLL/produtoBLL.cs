@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using System.Data;
 
 namespace SisLoja
 {
@@ -29,6 +30,12 @@ namespace SisLoja
                 return 0;
             }
             return 1;
+        }
+
+        public DataTable Carregar_EstoqueDAL()
+        {
+            DataTable dt = DAL.Carregar_Estoque();
+            return dt;        
         }
     }
 }
