@@ -93,8 +93,19 @@ Preco DECIMAL(10,2) NOT NULL
 )
 END
 
+SELECT * FROM Clientes;
 SELECT * FROM Entradas;
 SELECT * FROM Produtos;
 SELECT * FROM Estoque;
 
-SELECT p.Nome, p.Modelo, p.Img, p.PrecoVenda FROM Estoque e, Produtos p WHERE e.QrCode = '10XX' AND e.ProdID = p.ID;
+
+
+
+
+
+
+INSERT INTO Produtos (Nome,PrecoVenda) VALUES('para excluir',10);
+
+SELECT p.Img, p.CodBar, p.QrCode, p.Referencia, p.Nome, p.Modelo, p.Cor, p.EstoqueMin, p.PrecoVenda,e.Num44,e.Num43,e.Num42,e.Num41,e.Num40,e.Num39,e.Num38,e.Num37,e.Num36,
+e.Num35,e.Num34,e.Num33,e.Num32,e.Num31,e.Num30,e.Num29, e.Num28,e.Num27,e.Num26,e.Num25,e.Num24,e.Num23,e.Num22,e.Num21,e.Num20,e.Num19,e.Num18 FROM Produtos p, Estoque e 
+WHERE p.Codbar = '7890333910205' AND p.ID = e.ProdID AND p.EstaAtivo = 1

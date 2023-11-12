@@ -106,29 +106,37 @@ namespace SisLoja.UI
         }
         private Color Ler_Cor(string cor) 
         {
-            if (cor == "Branco" | cor == "Branca")
+            if (cor.ToUpper() == "BRANCO" | cor.ToUpper() == "BRANCA")
             {
                 return Color.White;
             }
-            if (cor == "Preto" | cor == "Preta")
+            if (cor.ToUpper() == "PRETO" | cor.ToUpper() == "PRETA")
             {
                 return Color.Black;
             }
-            if (cor == "Bege" | cor == "Nude")
+            if (cor.ToUpper() == "BEGE" | cor.ToUpper() == "NUDE")
             {
                 return Color.Salmon;
             }
-            if (cor == "Dourado" | cor == "Dourada" | cor == "Gold")
+            if (cor.ToUpper() == "DOURADO" | cor.ToUpper() == "DOURADA" | cor.ToUpper() == "GOLD")
             {
                 return Color.Gold;
+            }
+            if (cor.ToUpper() == "ROXO" | cor.ToUpper() == "ROXA" | cor.ToUpper() == "LILAS")
+            {
+                return Color.Purple;
+            }
+            if (cor.ToUpper() == "ROSA" | cor.ToUpper() == "PINK")
+            {
+                return Color.Pink;
             }
             return Color.Transparent;
         }
         private void Mostrar_Cores_E_Numeros_Disponiveis(string qrcode)
         {
             DataTable disponiveis = BLL.Verificar_Cores_E_NumerosDAL(qrcode);
-            int Y = 27; //390
-            int pY = 15; //378
+            int Y = 27;
+            int pY = 15;
             Limpar_Dados();
             foreach (DataRow row in disponiveis.Rows )
             {
@@ -150,8 +158,6 @@ namespace SisLoja.UI
                         Label lbl = new Label();
                         lbl.Name = "lbl"+ number.ToString();
                         lbl.Text = number.ToString();
-                        //lbl.Font = new Font("Segoe UI", 18, FontStyle.Regular);
-                        //lbl.ForeColor = Color.FromArgb(51, 51, 51);
                         lbl.Font = new Font("Segoe UI", 18, FontStyle.Bold);
                         lbl.ForeColor = Color.White;
                         lbl.Location = new System.Drawing.Point(X, Y);

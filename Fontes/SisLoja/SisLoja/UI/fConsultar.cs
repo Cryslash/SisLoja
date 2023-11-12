@@ -28,6 +28,7 @@ namespace SisLoja.UI
             instanciaprincipal.pDashArea.Controls.Clear();
             instanciaprincipal.pDashArea.Controls.Add(instanciaconcliente);
             instanciaconcliente.Show();
+            instanciaconcliente.Listar_Clientes();
         }
 
         private void btnEstoque_Click(object sender, EventArgs e)

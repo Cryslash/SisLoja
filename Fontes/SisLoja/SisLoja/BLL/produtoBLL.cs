@@ -10,6 +10,11 @@ namespace SisLoja
     class produtoBLL
     {
         ProdutoDAL DAL = new ProdutoDAL();
+        public DataTable Carregar_EstoqueDAL()
+        {
+            DataTable dt = DAL.Carregar_Estoque();
+            return dt;        
+        }
         public int Proximo_ID_DisponivelDAL() 
         {
             int id = DAL.Proximo_ID_Disponivel();
@@ -19,23 +24,37 @@ namespace SisLoja
         {
             //code 0: Sucesso;
             //code 1: Produto já Cadastrado;            
-            //code 2: Verificar Campos;
+            //code 3: Verificar Campos;
+            int code = DAL.Apto_Cadastro(produto);
 
             if (produto.Nome == String.Empty | produto.PrecoVenda == 0)
-                return 2;
-            if (DAL.Apto_Cadastro(produto))
+                return 3;
+            if ( code == 0 )
             {
                 DAL.Gravar_Produto(produto);
-                DAL.Iniciar_Estoque(produto);
-                return 0;
+                return code;
             }
-            return 1;
-        }
-
-        public DataTable Carregar_EstoqueDAL()
+            return code;
+        } 
+        public int Atualizar_ProdutoDAL(modeloProduto produto)
         {
-            DataTable dt = DAL.Carregar_Estoque();
-            return dt;        
+            //code 0: Sucesso;
+            //code 1: Verificar Campos;
+
+            if (produto.Nome == String.Empty | produto.PrecoVenda == 0)
+                return 1;
+            DAL.Atualizar_Produto(produto);
+            return 0;            
+            
+        }
+        public DataTable Pesquisar_ProdutoDAL(string s) 
+        {
+            DataTable dt = DAL.Pesquisar_Produto(s);
+            return dt;
+        }
+        public void Excluir_ProdutoDAL(string code)
+        {
+            DAL.Excluir_Produto(code);
         }
     }
 }

@@ -70,16 +70,25 @@ namespace SisLoja.UI
                int code = BLL.Gravar_ProdutoDAL(produto);
                 if (code == 0)
                 {
-                    MessageBox.Show("Produto Cadastrado Com Sucesso", "Mensagem do Sistema",
+                    MessageBox.Show("Produto Cadastrado Com Sucesso.", "Mensagem do Sistema.",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpar_Campos();
                     btnVoltar.PerformClick();
                 }
                 if (code == 1)
-                    MessageBox.Show("O Produto já se Encontra Cadastrado.", "Mensagem do Sistema",
+                    MessageBox.Show("O Produto já se Encontra Cadastrado.", "Mensagem do Sistema.",
                         MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
                 if (code == 2)
-                    MessageBox.Show("Verificar os Campos Informados.", "Erro do Sistema",
+                    if (MessageBox.Show("O Produto se Encontra Inativo! Deseja Ativa-lo Novamente?", "Mensagem do Sistema.",
+                        MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        MessageBox.Show("O Produto foi ativado Novamente.","Mensagem do Sistema.",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        BLL.Atualizar_ProdutoDAL(produto);
+                        Limpar_Campos();
+                        btnVoltar.PerformClick();
+                    }
+                if (code == 3)
+                    MessageBox.Show("Verificar os Campos Informados.", "Erro do Sistema.",
                         MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
