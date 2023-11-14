@@ -146,6 +146,7 @@
             this.tbMin.Size = new System.Drawing.Size(100, 29);
             this.tbMin.TabIndex = 6;
             this.tbMin.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbMin.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbMin_KeyPress);
             // 
             // label3
             // 
@@ -168,6 +169,7 @@
             this.tbPreco.Size = new System.Drawing.Size(100, 29);
             this.tbPreco.TabIndex = 7;
             this.tbPreco.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.tbPreco.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.tbPreco_KeyPress);
             // 
             // label4
             // 

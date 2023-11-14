@@ -112,5 +112,28 @@ namespace SisLoja.UI
             if (e.KeyCode == Keys.Enter)
                 this.btnSalvar.PerformClick();
         }
+
+        private void tbPreco_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 46 | e.KeyChar == 44)
+            { 
+                 // . e ,
+            } else if (e.KeyChar == 8)
+            {
+                // backspace
+            } else if ((e.KeyChar < 48) || (e.KeyChar > 57))
+            { 
+                // 0 - 9
+                e.Handled = true;
+            }
+        }
+
+        private void tbMin_KeyPress(object sender, KeyPressEventArgs e)
+        {
+            if ((e.KeyChar < 48) || (e.KeyChar > 57))
+            {
+                e.Handled= true;
+            }
+        }
     }
 }

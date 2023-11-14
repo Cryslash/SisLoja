@@ -17,6 +17,7 @@ namespace SisLoja
         fHome instanciaHome;
         fRegister instanciaRegistro = new fRegister();
         fConsultar instanciaconsultar = new fConsultar();
+        fVendas instanciavenda = new fVendas();
 
         public fPrincipal()
         {            
@@ -110,6 +111,17 @@ namespace SisLoja
         {
             fTerminal terminal = new fTerminal();
             terminal.Show();
+        }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            instanciavenda.Owner = this;
+            instanciavenda.TopLevel = false;
+            instanciavenda.instanciaprincipal = this;
+            pDashArea.Controls.Clear();
+            pDashArea.Controls.Add(instanciavenda);
+            instanciavenda.Show();
+            instanciavenda.tbCodBar.Focus();
         }
     }
 }

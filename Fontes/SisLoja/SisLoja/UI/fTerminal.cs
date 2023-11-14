@@ -149,7 +149,7 @@ namespace SisLoja.UI
                 p.BackColor = Ler_Cor(row["Cor"].ToString());
                 p.Location = new System.Drawing.Point(61, pY);
                 pNumeros.Controls.Add(p);
-                pY = pY + 76;
+                pY += 76;
                 foreach (DataColumn col in disponiveis.Columns)
                 {
                     if (Convert.ToInt32(row["Num" + number].ToString()) > 0)
@@ -163,12 +163,12 @@ namespace SisLoja.UI
                         lbl.Location = new System.Drawing.Point(X, Y);
                         lbl.Size = new Size(44, 32);
                         pNumeros.Controls.Add(lbl);
-                        X = X + 50;
+                        X += 50;
                     }
                     if (number < 44)
                 number++;
                 }
-                Y = Y + 74;
+                Y += 74;
             }
         }
     }
