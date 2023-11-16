@@ -25,35 +25,35 @@ namespace SisLoja.UI
 
         private void btnPesquisa_Click(object sender, EventArgs e)
         {
-            modeloProduto produto = BLL.Buscar_ProdutoDAL(tbPesquisa.Text);
+            modeloProduto produto = BLL.Buscar_ProdutoDAL(ktbPesquisa.Text);
             id = produto.Id;
             qrcode = produto.QrCode;
-            tbCodBar.Text = produto.CodBar;
-            tbNome.Text = produto.Nome;
-            tbModelo.Text = produto.Modelo;
-            tbCor.Text = produto.Cor;
-            tbRef.Text = produto.Ref;
+            ktbCodBar.Text = produto.CodBar;
+            ktbNome.Text = produto.Nome;
+            ktbModelo.Text = produto.Modelo;
+            ktbCor.Text = produto.Cor;
+            ktbRef.Text = produto.Ref;
             pbImg.ImageLocation = produto.Img;
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            instanciaPrincipal.btnCadastrar.PerformClick();
+            instanciaPrincipal.btnRegistrar_Click(sender, e);
         }
        
         private void btnSalvar_Click(object sender, EventArgs e)
         {
-            if (tbCodBar.Text != String.Empty)
+            if (ktbCodBar.Text != String.Empty)
             {
                 modeloEntrada entrada = new modeloEntrada();
                 entrada.ProdID = id;
                 entrada.QrCode = qrcode;
                 entrada.Data = DateTime.Now;
-                entrada.Qtd = rtbQtd.Text; // exemplo 34:1,35:2,36:3,37:3,38:2,39:1
-                entrada.Cor = tbCor.Text;
+                entrada.Qtd = krtbQtd.Text; // exemplo 34:1,35:2,36:3,37:3,38:2,39:1
+                entrada.Cor = ktbCor.Text;
                 try
                 {
-                    entrada.Valor = Convert.ToDecimal(tbPreco.Text);
+                    entrada.Valor = Convert.ToDecimal(ktbPreco.Text);
                 }
                 catch
                 { }
@@ -61,7 +61,7 @@ namespace SisLoja.UI
                 if (MessageBox.Show("Deseja Realizar a Entrada dos Produtos?", "Mensagem do Sistema",
                     MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 {
-                    int code = BLL.Gravar_EntradaDAL(entrada, tbPreco.Text);
+                    int code = BLL.Gravar_EntradaDAL(entrada, ktbPreco.Text);
                     if (code == 0)
                     {
                         MessageBox.Show("Entrada realizada com sucesso.", "Mensagem do sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
@@ -71,19 +71,18 @@ namespace SisLoja.UI
                         MessageBox.Show("Verificar os Campos Informados.", "Erro", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
-            
         }
 
         private void limpar_Campos()
         {
-            tbPesquisa.Text = string.Empty;
-            tbCodBar.Text = string.Empty;
-            tbModelo.Text = string.Empty;
-            tbNome.Text = string.Empty;
-            tbCor.Text = string.Empty;
-            tbRef.Text = string.Empty;
-            tbPreco.Text = string.Empty;
-            rtbQtd.Text = string.Empty;
+            ktbPesquisa.Text = string.Empty;
+            ktbCodBar.Text = string.Empty;
+            ktbModelo.Text = string.Empty;
+            ktbNome.Text = string.Empty;
+            ktbCor.Text = string.Empty;
+            ktbRef.Text = string.Empty;
+            ktbPreco.Text = string.Empty;
+            krtbQtd.Text = string.Empty;
             pbImg.Image = Image.FromFile("C:\\Users\\cryst\\Documents\\Projetos\\SistemaLoja\\Assets\\Images\\No-Image-Placeholder.png");
         }
 
@@ -91,9 +90,14 @@ namespace SisLoja.UI
         {
             if (e.KeyCode == Keys.Enter)
             {
-                btnPesquisa.PerformClick();
-                tbPreco.Focus();
+                kbtnPesquisa.PerformClick();
+                ktbPreco.Focus();
             }
+        }
+
+        private void ktbPesquisa_KeyDown(object sender, KeyEventArgs e)
+        {
+            kbtnPesquisa.PerformClick();
         }
     }
 }

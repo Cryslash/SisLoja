@@ -44,6 +44,10 @@
               "target": "Package",
               "version": "[2.2.5, )"
             },
+            "Krypton.Toolkit": {
+              "target": "Package",
+              "version": "[80.23.11.318, )"
+            },
             "QRCoder": {
               "target": "Package",
               "version": "[1.4.3, )"

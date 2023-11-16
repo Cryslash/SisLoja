@@ -29,87 +29,269 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fRegister));
-            this.btnCliente = new System.Windows.Forms.Button();
-            this.btnProduto = new System.Windows.Forms.Button();
-            this.btnEntrada = new System.Windows.Forms.Button();
-            this.btnOut = new System.Windows.Forms.Button();
+            this.kbtCliente = new Krypton.Toolkit.KryptonButton();
+            this.kbtnProduto = new Krypton.Toolkit.KryptonButton();
+            this.kbtEntrada = new Krypton.Toolkit.KryptonButton();
+            this.kbtnSaida = new Krypton.Toolkit.KryptonButton();
             this.SuspendLayout();
             // 
-            // btnCliente
+            // kbtCliente
             // 
-            this.btnCliente.BackColor = System.Drawing.Color.White;
-            this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCliente.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCliente.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnCliente.Image")));
-            this.btnCliente.Location = new System.Drawing.Point(129, 87);
-            this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(162, 167);
-            this.btnCliente.TabIndex = 0;
-            this.btnCliente.Text = "Cadastrar Cliente";
-            this.btnCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCliente.UseVisualStyleBackColor = false;
-            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            this.kbtCliente.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.kbtCliente.Location = new System.Drawing.Point(151, 153);
+            this.kbtCliente.Name = "kbtCliente";
+            this.kbtCliente.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtCliente.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtCliente.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtCliente.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtCliente.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtCliente.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kbtCliente.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kbtCliente.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtCliente.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtCliente.OverrideFocus.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtCliente.OverrideFocus.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtCliente.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtCliente.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.kbtCliente.Size = new System.Drawing.Size(201, 87);
+            this.kbtCliente.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtCliente.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtCliente.StateCommon.Back.ColorAngle = 40F;
+            this.kbtCliente.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtCliente.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtCliente.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtCliente.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
+            this.kbtCliente.StateCommon.Border.Rounding = 25F;
+            this.kbtCliente.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kbtCliente.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kbtCliente.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kbtCliente.StateCommon.Content.ShortText.MultiLine = Krypton.Toolkit.InheritBool.True;
+            this.kbtCliente.StateCommon.Content.ShortText.MultiLineH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.kbtCliente.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Far;
+            this.kbtCliente.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtCliente.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtCliente.StateNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtCliente.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtCliente.StateNormal.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtCliente.StateNormal.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kbtCliente.StateNormal.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kbtCliente.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtCliente.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtCliente.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtCliente.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtCliente.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtCliente.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kbtCliente.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kbtCliente.TabIndex = 4;
+            this.kbtCliente.Values.Image = ((System.Drawing.Image)(resources.GetObject("kbtCliente.Values.Image")));
+            this.kbtCliente.Values.Text = "Cadastrar\r\nCliente";
+            this.kbtCliente.Click += new System.EventHandler(this.kbtnCliente_Click);
             // 
-            // btnProduto
+            // kbtnProduto
             // 
-            this.btnProduto.BackColor = System.Drawing.Color.White;
-            this.btnProduto.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnProduto.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnProduto.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnProduto.Image = ((System.Drawing.Image)(resources.GetObject("btnProduto.Image")));
-            this.btnProduto.Location = new System.Drawing.Point(364, 87);
-            this.btnProduto.Name = "btnProduto";
-            this.btnProduto.Size = new System.Drawing.Size(162, 167);
-            this.btnProduto.TabIndex = 1;
-            this.btnProduto.Text = "Cadastrar Produto";
-            this.btnProduto.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnProduto.UseVisualStyleBackColor = false;
-            this.btnProduto.Click += new System.EventHandler(this.btnProduto_Click);
+            this.kbtnProduto.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.kbtnProduto.Location = new System.Drawing.Point(418, 153);
+            this.kbtnProduto.Name = "kbtnProduto";
+            this.kbtnProduto.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnProduto.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnProduto.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnProduto.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnProduto.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtnProduto.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kbtnProduto.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kbtnProduto.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtnProduto.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtnProduto.OverrideFocus.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtnProduto.OverrideFocus.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtnProduto.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtnProduto.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.kbtnProduto.Size = new System.Drawing.Size(201, 87);
+            this.kbtnProduto.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnProduto.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnProduto.StateCommon.Back.ColorAngle = 40F;
+            this.kbtnProduto.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnProduto.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnProduto.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtnProduto.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
+            this.kbtnProduto.StateCommon.Border.Rounding = 25F;
+            this.kbtnProduto.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kbtnProduto.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kbtnProduto.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kbtnProduto.StateCommon.Content.ShortText.MultiLine = Krypton.Toolkit.InheritBool.True;
+            this.kbtnProduto.StateCommon.Content.ShortText.MultiLineH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.kbtnProduto.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Far;
+            this.kbtnProduto.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnProduto.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnProduto.StateNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnProduto.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnProduto.StateNormal.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtnProduto.StateNormal.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kbtnProduto.StateNormal.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kbtnProduto.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtnProduto.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtnProduto.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtnProduto.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtnProduto.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtnProduto.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kbtnProduto.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kbtnProduto.TabIndex = 8;
+            this.kbtnProduto.Values.Image = ((System.Drawing.Image)(resources.GetObject("kbtnProduto.Values.Image")));
+            this.kbtnProduto.Values.Text = "Cadastrar\r\nProduto";
+            this.kbtnProduto.Click += new System.EventHandler(this.kbtnProduto_Click);
             // 
-            // btnEntrada
+            // kbtEntrada
             // 
-            this.btnEntrada.BackColor = System.Drawing.Color.White;
-            this.btnEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEntrada.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEntrada.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnEntrada.Image = ((System.Drawing.Image)(resources.GetObject("btnEntrada.Image")));
-            this.btnEntrada.Location = new System.Drawing.Point(596, 87);
-            this.btnEntrada.Name = "btnEntrada";
-            this.btnEntrada.Size = new System.Drawing.Size(162, 167);
-            this.btnEntrada.TabIndex = 2;
-            this.btnEntrada.Text = "Cadastrar Entrada";
-            this.btnEntrada.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEntrada.UseVisualStyleBackColor = false;
-            this.btnEntrada.Click += new System.EventHandler(this.btnEntrada_Click);
+            this.kbtEntrada.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.kbtEntrada.Location = new System.Drawing.Point(687, 153);
+            this.kbtEntrada.Name = "kbtEntrada";
+            this.kbtEntrada.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtEntrada.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtEntrada.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtEntrada.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtEntrada.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtEntrada.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kbtEntrada.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kbtEntrada.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtEntrada.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtEntrada.OverrideFocus.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtEntrada.OverrideFocus.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtEntrada.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtEntrada.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.kbtEntrada.Size = new System.Drawing.Size(201, 87);
+            this.kbtEntrada.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtEntrada.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtEntrada.StateCommon.Back.ColorAngle = 40F;
+            this.kbtEntrada.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtEntrada.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtEntrada.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtEntrada.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
+            this.kbtEntrada.StateCommon.Border.Rounding = 25F;
+            this.kbtEntrada.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kbtEntrada.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kbtEntrada.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kbtEntrada.StateCommon.Content.ShortText.MultiLine = Krypton.Toolkit.InheritBool.True;
+            this.kbtEntrada.StateCommon.Content.ShortText.MultiLineH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.kbtEntrada.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Far;
+            this.kbtEntrada.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtEntrada.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtEntrada.StateNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtEntrada.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtEntrada.StateNormal.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtEntrada.StateNormal.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kbtEntrada.StateNormal.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kbtEntrada.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtEntrada.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtEntrada.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtEntrada.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtEntrada.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtEntrada.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kbtEntrada.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kbtEntrada.TabIndex = 9;
+            this.kbtEntrada.Values.Image = ((System.Drawing.Image)(resources.GetObject("kbtEntrada.Values.Image")));
+            this.kbtEntrada.Values.Text = "Cadastrar\r\nEntrada";
+            this.kbtEntrada.Click += new System.EventHandler(this.kbtnEntrada_Click);
             // 
-            // btnOut
+            // kbtnSaida
             // 
-            this.btnOut.BackColor = System.Drawing.Color.White;
-            this.btnOut.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnOut.FlatAppearance.BorderSize = 0;
-            this.btnOut.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnOut.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnOut.Image = ((System.Drawing.Image)(resources.GetObject("btnOut.Image")));
-            this.btnOut.Location = new System.Drawing.Point(837, 87);
-            this.btnOut.Name = "btnOut";
-            this.btnOut.Size = new System.Drawing.Size(162, 167);
-            this.btnOut.TabIndex = 3;
-            this.btnOut.Text = "Cadastrar Retirada";
-            this.btnOut.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnOut.UseVisualStyleBackColor = false;
-            this.btnOut.Click += new System.EventHandler(this.btnOut_Click);
+            this.kbtnSaida.Cursor = System.Windows.Forms.Cursors.Hand;
+            this.kbtnSaida.Location = new System.Drawing.Point(151, 307);
+            this.kbtnSaida.Name = "kbtnSaida";
+            this.kbtnSaida.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnSaida.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnSaida.OverrideDefault.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnSaida.OverrideDefault.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnSaida.OverrideDefault.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtnSaida.OverrideDefault.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kbtnSaida.OverrideDefault.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kbtnSaida.OverrideFocus.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtnSaida.OverrideFocus.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtnSaida.OverrideFocus.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtnSaida.OverrideFocus.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtnSaida.OverrideFocus.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtnSaida.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            this.kbtnSaida.Size = new System.Drawing.Size(201, 87);
+            this.kbtnSaida.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnSaida.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnSaida.StateCommon.Back.ColorAngle = 40F;
+            this.kbtnSaida.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnSaida.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnSaida.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtnSaida.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
+            this.kbtnSaida.StateCommon.Border.Rounding = 25F;
+            this.kbtnSaida.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kbtnSaida.StateCommon.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kbtnSaida.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
+            this.kbtnSaida.StateCommon.Content.ShortText.MultiLine = Krypton.Toolkit.InheritBool.True;
+            this.kbtnSaida.StateCommon.Content.ShortText.MultiLineH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            this.kbtnSaida.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Far;
+            this.kbtnSaida.StateNormal.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnSaida.StateNormal.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnSaida.StateNormal.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnSaida.StateNormal.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
+            this.kbtnSaida.StateNormal.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtnSaida.StateNormal.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kbtnSaida.StateNormal.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kbtnSaida.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtnSaida.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtnSaida.StateTracking.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtnSaida.StateTracking.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
+            this.kbtnSaida.StateTracking.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
+            | Krypton.Toolkit.PaletteDrawBorders.Left) 
+            | Krypton.Toolkit.PaletteDrawBorders.Right)));
+            this.kbtnSaida.StateTracking.Content.ShortText.Color1 = System.Drawing.Color.White;
+            this.kbtnSaida.StateTracking.Content.ShortText.Color2 = System.Drawing.Color.White;
+            this.kbtnSaida.TabIndex = 10;
+            this.kbtnSaida.Values.Image = ((System.Drawing.Image)(resources.GetObject("kbtnSaida.Values.Image")));
+            this.kbtnSaida.Values.Text = "Cadastrar\r\nSaída";
             // 
             // fRegister
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1150, 660);
-            this.Controls.Add(this.btnOut);
-            this.Controls.Add(this.btnEntrada);
-            this.Controls.Add(this.btnProduto);
-            this.Controls.Add(this.btnCliente);
+            this.ClientSize = new System.Drawing.Size(1250, 680);
+            this.Controls.Add(this.kbtnSaida);
+            this.Controls.Add(this.kbtEntrada);
+            this.Controls.Add(this.kbtnProduto);
+            this.Controls.Add(this.kbtCliente);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "fRegister";
             this.ResumeLayout(false);
@@ -117,10 +299,9 @@
         }
 
         #endregion
-
-        private Button btnCliente;
-        private Button btnProduto;
-        private Button btnEntrada;
-        private Button btnOut;
+        private Krypton.Toolkit.KryptonButton kbtCliente;
+        private Krypton.Toolkit.KryptonButton kbtnProduto;
+        private Krypton.Toolkit.KryptonButton kbtEntrada;
+        private Krypton.Toolkit.KryptonButton kbtnSaida;
     }
 }

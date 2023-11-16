@@ -13,21 +13,12 @@ namespace SisLoja.UI
     public partial class fCadProduto : Form
     {
         public fPrincipal instanciaPrincipal = null;
-        
+        string imgpath;
 
         public fCadProduto()
         {
             InitializeComponent();
         }
-
-        private void btnQrCod_Click(object sender, EventArgs e)
-        {
-            QRCoder.QRCodeGenerator gen = new QRCoder.QRCodeGenerator();
-            var dados = gen.CreateQrCode(tbQrCode.Text, QRCoder.QRCodeGenerator.ECCLevel.H);
-            var qrcode = new QRCoder.QRCode(dados);
-            pbQrCod.Image = qrcode.GetGraphic(50);
-        }
-
         private void btnImg_Click(object sender, EventArgs e)
         {
             OpenFileDialog janela = new OpenFileDialog();
@@ -35,14 +26,14 @@ namespace SisLoja.UI
             janela.Filter = "All Files|*.*|JPG Image|*.jpg|PNG Image|*.png";
             if (janela.ShowDialog() == System.Windows.Forms.DialogResult.OK)
             {
-                tbImg.Text = janela.FileName;
+                imgpath = janela.FileName;
                 pbImg.Image = Image.FromFile(janela.FileName);
             }
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            instanciaPrincipal.btnCadastrar.PerformClick();
+            instanciaPrincipal.btnRegistrar_Click(sender, e);
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
@@ -50,17 +41,17 @@ namespace SisLoja.UI
             modeloProduto produto = new modeloProduto();
             produtoBLL BLL = new produtoBLL();
             produto.Id = BLL.Proximo_ID_DisponivelDAL(); 
-            produto.CodBar = tbCodBar.Text;
-            produto.QrCode = tbQrCode.Text;
-            produto.Img = tbImg.Text;
-            produto.Ref= tbRef.Text;
-            produto.Nome = tbNome.Text;
-            produto.Modelo = tbModelo.Text;
-            produto.Cor = tbCor.Text;
+            produto.CodBar = ktbCodBar.Text;
+            produto.QrCode = ktbQrCode.Text;
+            produto.Img = imgpath;
+            produto.Ref= ktbRef.Text;
+            produto.Nome = ktbNome.Text;
+            produto.Modelo = ktbModelo.Text;
+            produto.Cor = ktbCor.Text;
             try
             {
-                produto.PrecoVenda = Convert.ToDecimal(tbPreco.Text);
-                produto.EstoqueMin = Convert.ToInt32(tbMin.Text);
+                produto.PrecoVenda = Convert.ToDecimal(ktbPreco.Text);
+                produto.EstoqueMin = Convert.ToInt32(ktbMin.Text);
             }
             catch{ }
                         
@@ -73,7 +64,7 @@ namespace SisLoja.UI
                     MessageBox.Show("Produto Cadastrado Com Sucesso.", "Mensagem do Sistema.",
                         MessageBoxButtons.OK, MessageBoxIcon.Information);
                     Limpar_Campos();
-                    btnVoltar.PerformClick();
+                    kbtnVoltar.PerformClick();
                 }
                 if (code == 1)
                     MessageBox.Show("O Produto já se Encontra Cadastrado.", "Mensagem do Sistema.",
@@ -85,7 +76,7 @@ namespace SisLoja.UI
                         MessageBox.Show("O Produto foi ativado Novamente.","Mensagem do Sistema.",MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BLL.Atualizar_ProdutoDAL(produto);
                         Limpar_Campos();
-                        btnVoltar.PerformClick();
+                        kbtnVoltar.PerformClick();
                     }
                 if (code == 3)
                     MessageBox.Show("Verificar os Campos Informados.", "Erro do Sistema.",
@@ -95,22 +86,21 @@ namespace SisLoja.UI
 
         private void Limpar_Campos()
         {
-            tbImg.Text = String.Empty;
-            tbNome.Text = String.Empty;
-            tbModelo.Text = String.Empty;
-            tbRef.Text = String.Empty;
-            tbCor.Text = String.Empty;
-            tbMin.Text = String.Empty;
-            tbPreco.Text = String.Empty;
-            tbCodBar.Text = String.Empty;
-            tbQrCode.Text = String.Empty;
+            ktbNome.Text = String.Empty;
+            ktbModelo.Text = String.Empty;
+            ktbRef.Text = String.Empty;
+            ktbCor.Text = String.Empty;
+            ktbMin.Text = String.Empty;
+            ktbPreco.Text = String.Empty;
+            ktbCodBar.Text = String.Empty;
+            ktbQrCode.Text = String.Empty;
             pbImg.Image = Image.FromFile("C:\\Users\\cryst\\Documents\\Projetos\\SistemaLoja\\Assets\\Images\\No-Image-Placeholder.png");
         }
 
         private void tbCodBar_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
-                this.btnSalvar.PerformClick();
+                this.kbtnSalvar.PerformClick();
         }
 
         private void tbPreco_KeyPress(object sender, KeyPressEventArgs e)
@@ -134,6 +124,14 @@ namespace SisLoja.UI
             {
                 e.Handled= true;
             }
+        }
+
+        private void ktbQrCode_Leave(object sender, EventArgs e)
+        {
+            QRCoder.QRCodeGenerator gen = new QRCoder.QRCodeGenerator();
+            var dados = gen.CreateQrCode(ktbQrCode.Text, QRCoder.QRCodeGenerator.ECCLevel.H);
+            var qrcode = new QRCoder.QRCode(dados);
+            pbQrCod.Image = qrcode.GetGraphic(50);
         }
     }
 }

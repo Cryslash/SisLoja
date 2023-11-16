@@ -1,12 +1,13 @@
 {
   "version": 2,
-  "dgSpecHash": "uLRyAiMnQlMf+KLOBRE2nEZyM5f+hNPgI0Y+a1j3nIia3QUI/w/dM1Z0Q3oJrenP7AVqyOsJ4iu1gXf9YGBi6g==",
+  "dgSpecHash": "K9lQiydVzqo0zcfBUnQTbjws5OGKNSHY6VXc1Iqk/zEUSluEMLK8dAjPSVtPa8musTwuQq/pTcM+GzWHOfxnsA==",
   "success": true,
   "projectFilePath": "C:\\Users\\cryst\\Documents\\Projetos\\SistemaLoja\\Fontes\\SisLoja\\SisLoja\\SisLoja.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\cryst\\.nuget\\packages\\aforge\\2.2.5\\aforge.2.2.5.nupkg.sha512",
     "C:\\Users\\cryst\\.nuget\\packages\\aforge.video\\2.2.5\\aforge.video.2.2.5.nupkg.sha512",
     "C:\\Users\\cryst\\.nuget\\packages\\aforge.video.directshow\\2.2.5\\aforge.video.directshow.2.2.5.nupkg.sha512",
+    "C:\\Users\\cryst\\.nuget\\packages\\krypton.toolkit\\80.23.11.318\\krypton.toolkit.80.23.11.318.nupkg.sha512",
     "C:\\Users\\cryst\\.nuget\\packages\\microsoft.netcore.platforms\\3.1.0\\microsoft.netcore.platforms.3.1.0.nupkg.sha512",
     "C:\\Users\\cryst\\.nuget\\packages\\microsoft.win32.registry\\4.7.0\\microsoft.win32.registry.4.7.0.nupkg.sha512",
     "C:\\Users\\cryst\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",

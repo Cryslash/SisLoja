@@ -35,6 +35,18 @@
           "lib/AForge.Video.DirectShow.dll": {}
         }
       },
+      "Krypton.Toolkit/80.23.11.318": {
+        "type": "package",
+        "compile": {
+          "lib/net6.0-windows7.0/Krypton.Toolkit.dll": {}
+        },
+        "runtime": {
+          "lib/net6.0-windows7.0/Krypton.Toolkit.dll": {}
+        },
+        "frameworkReferences": [
+          "Microsoft.WindowsDesktop.App.WindowsForms"
+        ]
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {
         "type": "package",
         "compile": {
@@ -268,6 +280,38 @@
         "aforge.video.directshow.nuspec",
         "lib/AForge.Video.DirectShow.dll",
         "lib/AForge.Video.DirectShow.xml"
+      ]
+    },
+    "Krypton.Toolkit/80.23.11.318": {
+      "sha512": "RMQxq+lSk9MQ13iwR1YzWusBAGDDTmxrNRUOy7dk7YJhT7P44U1dWq09RFm/NtKiOmJmPBvsCh7IZ+CR4lMRug==",
+      "type": "package",
+      "path": "krypton.toolkit/80.23.11.318",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "Krypton Stable.png",
+        "License.md",
+        "README.md",
+        "krypton.toolkit.80.23.11.318.nupkg.sha512",
+        "krypton.toolkit.nuspec",
+        "lib/net462/Krypton.Toolkit.dll",
+        "lib/net462/Krypton.Toolkit.xml",
+        "lib/net47/Krypton.Toolkit.dll",
+        "lib/net47/Krypton.Toolkit.xml",
+        "lib/net471/Krypton.Toolkit.dll",
+        "lib/net471/Krypton.Toolkit.xml",
+        "lib/net472/Krypton.Toolkit.dll",
+        "lib/net472/Krypton.Toolkit.xml",
+        "lib/net48/Krypton.Toolkit.dll",
+        "lib/net48/Krypton.Toolkit.xml",
+        "lib/net481/Krypton.Toolkit.dll",
+        "lib/net481/Krypton.Toolkit.xml",
+        "lib/net6.0-windows7.0/Krypton.Toolkit.dll",
+        "lib/net6.0-windows7.0/Krypton.Toolkit.xml",
+        "lib/net7.0-windows7.0/Krypton.Toolkit.dll",
+        "lib/net7.0-windows7.0/Krypton.Toolkit.xml",
+        "lib/net8.0-windows7.0/Krypton.Toolkit.dll",
+        "lib/net8.0-windows7.0/Krypton.Toolkit.xml"
       ]
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
@@ -752,6 +796,7 @@
   "projectFileDependencyGroups": {
     "net6.0-windows7.0": [
       "AForge.Video.DirectShow >= 2.2.5",
+      "Krypton.Toolkit >= 80.23.11.318",
       "QRCoder >= 1.4.3",
       "System.Data.SqlClient >= 4.8.5",
       "ZXing.Net >= 0.16.6"
@@ -799,6 +844,10 @@
           "AForge.Video.DirectShow": {
             "target": "Package",
             "version": "[2.2.5, )"
+          },
+          "Krypton.Toolkit": {
+            "target": "Package",
+            "version": "[80.23.11.318, )"
           },
           "QRCoder": {
             "target": "Package",

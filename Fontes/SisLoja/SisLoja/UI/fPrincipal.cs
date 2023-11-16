@@ -9,15 +9,17 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 using SisLoja;
 using SisLoja.UI;
+using Krypton.Toolkit;
 
 namespace SisLoja
 {
-    public partial class fPrincipal : Form
+    public partial class fPrincipal : KryptonForm
     {
         fHome instanciaHome;
         fRegister instanciaRegistro = new fRegister();
-        fConsultar instanciaconsultar = new fConsultar();
+        public fConsultar instanciaconsultar = new fConsultar();
         fVendas instanciavenda = new fVendas();
+        public fDashArea pDashArea = new fDashArea();
 
         public fPrincipal()
         {            
@@ -28,16 +30,16 @@ namespace SisLoja
         int X = 0;
         int Y = 0;
 
-
+        
         // ------ Movimento da Janela com o mouse ------- //
-        private void pTitle_MouseDown(object sender, MouseEventArgs e)
+        private void pSkin_MouseDown(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left) return;
             X = this.Left - MousePosition.X;
             Y = this.Top - MousePosition.Y;
         }
 
-        private void pTitle_MouseMove(object sender, MouseEventArgs e)
+        private void pSkin_MouseMove(object sender, MouseEventArgs e)
         {
             if (e.Button != MouseButtons.Left) return;
             this.Left = X + MousePosition.X;
@@ -46,22 +48,22 @@ namespace SisLoja
 
         private void label3_MouseDown(object sender, MouseEventArgs e)
         {
-            pTitle_MouseDown(sender, e);
+         //   pTitle_MouseDown(sender, e);
         }
 
         private void label3_MouseMove(object sender, MouseEventArgs e)
         {
-            pTitle_MouseMove(sender, e);
+            pSkin_MouseMove(sender, e);
         }
 
         private void lblVersion_MouseDown(object sender, MouseEventArgs e)
         {
-            pTitle_MouseDown(sender, e);
+            pSkin_MouseDown(sender, e);
         }
 
         private void lblVersion_MouseMove(object sender, MouseEventArgs e)
         {
-            pTitle_MouseMove(sender, e);
+            pSkin_MouseMove(sender, e);
         }
         // ---------------------------------------------- //
 
@@ -87,7 +89,7 @@ namespace SisLoja
 
         }
 
-        private void btnRegistrar_Click(object sender, EventArgs e)
+        public void btnRegistrar_Click(object sender, EventArgs e)
         {
             instanciaRegistro.Owner = this;
             instanciaRegistro.TopLevel = false;
@@ -97,7 +99,7 @@ namespace SisLoja
             instanciaRegistro.Show();
         }
 
-        private void btnConsultar_Click(object sender, EventArgs e)
+        public void btnConsultar_Click(object sender, EventArgs e)
         {            
             instanciaconsultar.Owner = this;
             instanciaconsultar.TopLevel = false;
@@ -123,5 +125,25 @@ namespace SisLoja
             instanciavenda.Show();
             instanciavenda.tbCodBar.Focus();
         }
+
+        private void fPrincipal_Load(object sender, EventArgs e)
+        {
+            //carregar painel lado esquerdo
+            MenuLado menu = new MenuLado();
+            menu.TopLevel = false;
+            menu.Location = new System.Drawing.Point(10, 15);
+            menu.instanciaprincipal = this;
+            this.pSkin.Controls.Add(menu);
+            menu.Show();
+            //carregar dasharea
+            pDashArea.TopLevel = false;
+            pDashArea.Location = new System.Drawing.Point(74, 28);
+            pDashArea.instanciaprincipal = this;
+            this.pSkin.Controls.Add(pDashArea);
+            pDashArea.Show();
+
+        }
+
+       
     }
 }

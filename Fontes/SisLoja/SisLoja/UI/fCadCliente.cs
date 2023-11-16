@@ -21,30 +21,30 @@ namespace SisLoja.UI
 
         private void btnVoltar_Click(object sender, EventArgs e)
         {
-            instanciaPrincipal.btnCadastrar.PerformClick();
+            instanciaPrincipal.btnRegistrar_Click(sender, e);
         }
 
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             modeloCliente cliente = new modeloCliente();
             cliente.Data = DateTime.Now;
-            cliente.Nome = tbNome.Text;
-            cliente.Cpf = tbCpf.Text;
-            cliente.Fone = tbFone.Text;
-            cliente.Whatsapp = tbWhatsapp.Text;
-            cliente.Email = tbEmail.Text;
-            cliente.Cep = tbCep.Text;
-            cliente.Rua = tbRua.Text;
-            cliente.Bairro = tbBairro.Text;
-            cliente.Cidade = tbCidade.Text;
-            cliente.Uf = cbUf.Text;
+            cliente.Nome = ktbNome.Text;
+            cliente.Cpf = ktbCpf.Text;
+            cliente.Fone = ktbFone.Text;
+            cliente.Whatsapp = ktbWhatsapp.Text;
+            cliente.Email = ktbEmail.Text;
+            cliente.Cep = ktbCep.Text;
+            cliente.Rua = ktbRua.Text;
+            cliente.Bairro = ktbBairro.Text;
+            cliente.Cidade = ktbCidade.Text;
+            cliente.Uf = kcbUf.Text;
 
             ClienteBLL clienteBll = new ClienteBLL();
             int code = clienteBll.Gravar_ClienteDAL(cliente);
             if (code == 0)
             {
                 MessageBox.Show("Cliente cadastrado com sucesso.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                btnVoltar.PerformClick();
+                kbtnVoltar.PerformClick();
             }
             if (code == 1)
               MessageBox.Show("Verifique os campos digitados.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);

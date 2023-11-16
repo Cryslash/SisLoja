@@ -36,6 +36,14 @@
           }
         }
       },
+      "Krypton.Toolkit/80.23.11.318": {
+        "runtime": {
+          "lib/net6.0-windows7.0/Krypton.Toolkit.dll": {
+            "assemblyVersion": "80.23.11.318",
+            "fileVersion": "80.23.11.318"
+          }
+        }
+      },
       "Microsoft.NETCore.Platforms/3.1.0": {},
       "Microsoft.Win32.Registry/4.7.0": {
         "dependencies": {
@@ -249,6 +257,13 @@
       "sha512": "sha512-pEch6felU/RGAbl0A7yjaQjsGxwiRFU9R+qBqR92wQo++XhzPLeQaZHnAPIBYaG7MfoqtjgCDkK4z3Tra4VQ3w==",
       "path": "aforge.video.directshow/2.2.5",
       "hashPath": "aforge.video.directshow.2.2.5.nupkg.sha512"
+    },
+    "Krypton.Toolkit/80.23.11.318": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-RMQxq+lSk9MQ13iwR1YzWusBAGDDTmxrNRUOy7dk7YJhT7P44U1dWq09RFm/NtKiOmJmPBvsCh7IZ+CR4lMRug==",
+      "path": "krypton.toolkit/80.23.11.318",
+      "hashPath": "krypton.toolkit.80.23.11.318.nupkg.sha512"
     },
     "Microsoft.NETCore.Platforms/3.1.0": {
       "type": "package",
