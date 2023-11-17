@@ -28,703 +28,906 @@
         /// </summary>
         private void InitializeComponent()
         {
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fConEstoque));
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle3 = new System.Windows.Forms.DataGridViewCellStyle();
-            this.label1 = new System.Windows.Forms.Label();
-            this.tbNome = new System.Windows.Forms.TextBox();
-            this.tbModelo = new System.Windows.Forms.TextBox();
-            this.label2 = new System.Windows.Forms.Label();
-            this.tbCodeBar = new System.Windows.Forms.TextBox();
-            this.label3 = new System.Windows.Forms.Label();
-            this.tbQrCode = new System.Windows.Forms.TextBox();
-            this.label4 = new System.Windows.Forms.Label();
-            this.tbRef = new System.Windows.Forms.TextBox();
-            this.label5 = new System.Windows.Forms.Label();
-            this.tbPesquisar = new System.Windows.Forms.TextBox();
-            this.btnExcluir = new System.Windows.Forms.Button();
-            this.btnEditar = new System.Windows.Forms.Button();
-            this.btnCancelar = new System.Windows.Forms.Button();
-            this.btnConfirmar = new System.Windows.Forms.Button();
-            this.dtEstoque = new System.Windows.Forms.DataGridView();
-            this.Imagem = new System.Windows.Forms.DataGridViewImageColumn();
-            this.CodBar = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.QrCode = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Referencia = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Nome = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Modelo = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.Cor = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.EstoqueMin = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.PrecoVenda = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num44 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num43 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num42 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num41 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num40 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num39 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num38 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num37 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num36 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num35 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num34 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num33 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num32 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num31 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num30 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num29 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num28 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num27 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num26 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num25 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num24 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num23 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num22 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num21 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num20 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num19 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.num18 = new System.Windows.Forms.DataGridViewTextBoxColumn();
-            this.tbMin = new System.Windows.Forms.TextBox();
-            this.label6 = new System.Windows.Forms.Label();
-            this.tbPreco = new System.Windows.Forms.TextBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.tbCor = new System.Windows.Forms.TextBox();
-            this.label8 = new System.Windows.Forms.Label();
-            this.btnImg = new System.Windows.Forms.Button();
-            ((System.ComponentModel.ISupportInitialize)(this.dtEstoque)).BeginInit();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            dtEstoque = new DataGridView();
+            Imagem = new DataGridViewImageColumn();
+            CodBar = new DataGridViewTextBoxColumn();
+            QrCode = new DataGridViewTextBoxColumn();
+            Referencia = new DataGridViewTextBoxColumn();
+            Nome = new DataGridViewTextBoxColumn();
+            Modelo = new DataGridViewTextBoxColumn();
+            Cor = new DataGridViewTextBoxColumn();
+            EstoqueMin = new DataGridViewTextBoxColumn();
+            PrecoVenda = new DataGridViewTextBoxColumn();
+            num44 = new DataGridViewTextBoxColumn();
+            num43 = new DataGridViewTextBoxColumn();
+            num42 = new DataGridViewTextBoxColumn();
+            num41 = new DataGridViewTextBoxColumn();
+            num40 = new DataGridViewTextBoxColumn();
+            num39 = new DataGridViewTextBoxColumn();
+            num38 = new DataGridViewTextBoxColumn();
+            num37 = new DataGridViewTextBoxColumn();
+            num36 = new DataGridViewTextBoxColumn();
+            num35 = new DataGridViewTextBoxColumn();
+            num34 = new DataGridViewTextBoxColumn();
+            num33 = new DataGridViewTextBoxColumn();
+            num32 = new DataGridViewTextBoxColumn();
+            num31 = new DataGridViewTextBoxColumn();
+            num30 = new DataGridViewTextBoxColumn();
+            num29 = new DataGridViewTextBoxColumn();
+            num28 = new DataGridViewTextBoxColumn();
+            num27 = new DataGridViewTextBoxColumn();
+            num26 = new DataGridViewTextBoxColumn();
+            num25 = new DataGridViewTextBoxColumn();
+            num24 = new DataGridViewTextBoxColumn();
+            num23 = new DataGridViewTextBoxColumn();
+            num22 = new DataGridViewTextBoxColumn();
+            num21 = new DataGridViewTextBoxColumn();
+            num20 = new DataGridViewTextBoxColumn();
+            num19 = new DataGridViewTextBoxColumn();
+            num18 = new DataGridViewTextBoxColumn();
+            label6 = new Label();
+            label7 = new Label();
+            label8 = new Label();
+            kbtnExcluir = new Krypton.Toolkit.KryptonButton();
+            kbtnCancelar = new Krypton.Toolkit.KryptonButton();
+            kbtnConfirmar = new Krypton.Toolkit.KryptonButton();
+            kbtnEditar = new Krypton.Toolkit.KryptonButton();
+            ktbPesquisar = new Krypton.Toolkit.KryptonTextBox();
+            ktbCodeBar = new Krypton.Toolkit.KryptonTextBox();
+            ktbRef = new Krypton.Toolkit.KryptonTextBox();
+            ktbModelo = new Krypton.Toolkit.KryptonTextBox();
+            ktbCor = new Krypton.Toolkit.KryptonTextBox();
+            ktbQrCode = new Krypton.Toolkit.KryptonTextBox();
+            ktbNome = new Krypton.Toolkit.KryptonTextBox();
+            ktbMin = new Krypton.Toolkit.KryptonTextBox();
+            ktbPreco = new Krypton.Toolkit.KryptonTextBox();
+            kbtnImg = new Krypton.Toolkit.KryptonButton();
+            pictureBox1 = new PictureBox();
+            label10 = new Label();
+            ((System.ComponentModel.ISupportInitialize)dtEstoque).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label1.Location = new System.Drawing.Point(242, 151);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(53, 21);
-            this.label1.TabIndex = 1;
-            this.label1.Text = "Nome";
-            // 
-            // tbNome
-            // 
-            this.tbNome.Enabled = false;
-            this.tbNome.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbNome.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tbNome.Location = new System.Drawing.Point(242, 175);
-            this.tbNome.Name = "tbNome";
-            this.tbNome.Size = new System.Drawing.Size(290, 29);
-            this.tbNome.TabIndex = 6;
-            // 
-            // tbModelo
-            // 
-            this.tbModelo.Enabled = false;
-            this.tbModelo.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbModelo.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tbModelo.Location = new System.Drawing.Point(596, 113);
-            this.tbModelo.Name = "tbModelo";
-            this.tbModelo.Size = new System.Drawing.Size(210, 29);
-            this.tbModelo.TabIndex = 7;
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(51, 51, 51);
+            label1.Location = new Point(69, 224);
+            label1.Name = "label1";
+            label1.Size = new Size(53, 21);
+            label1.TabIndex = 1;
+            label1.Text = "Nome";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label2.Location = new System.Drawing.Point(596, 89);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(63, 21);
-            this.label2.TabIndex = 3;
-            this.label2.Text = "Modelo";
-            // 
-            // tbCodeBar
-            // 
-            this.tbCodeBar.Enabled = false;
-            this.tbCodeBar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbCodeBar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tbCodeBar.Location = new System.Drawing.Point(26, 114);
-            this.tbCodeBar.Name = "tbCodeBar";
-            this.tbCodeBar.Size = new System.Drawing.Size(210, 29);
-            this.tbCodeBar.TabIndex = 2;
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(51, 51, 51);
+            label2.Location = new Point(370, 223);
+            label2.Name = "label2";
+            label2.Size = new Size(63, 21);
+            label2.TabIndex = 3;
+            label2.Text = "Modelo";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label3.Location = new System.Drawing.Point(25, 90);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 21);
-            this.label3.TabIndex = 5;
-            this.label3.Text = "Código de Barras";
-            // 
-            // tbQrCode
-            // 
-            this.tbQrCode.Enabled = false;
-            this.tbQrCode.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbQrCode.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tbQrCode.Location = new System.Drawing.Point(26, 175);
-            this.tbQrCode.Name = "tbQrCode";
-            this.tbQrCode.Size = new System.Drawing.Size(210, 29);
-            this.tbQrCode.TabIndex = 5;
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.FromArgb(51, 51, 51);
+            label3.Location = new Point(75, 153);
+            label3.Name = "label3";
+            label3.Size = new Size(129, 21);
+            label3.TabIndex = 5;
+            label3.Text = "Código de Barras";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label4.Location = new System.Drawing.Point(26, 150);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(64, 21);
-            this.label4.TabIndex = 7;
-            this.label4.Text = "QrCode";
-            // 
-            // tbRef
-            // 
-            this.tbRef.Enabled = false;
-            this.tbRef.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbRef.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tbRef.Location = new System.Drawing.Point(242, 114);
-            this.tbRef.Name = "tbRef";
-            this.tbRef.Size = new System.Drawing.Size(210, 29);
-            this.tbRef.TabIndex = 3;
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.FromArgb(51, 51, 51);
+            label4.Location = new Point(244, 153);
+            label4.Name = "label4";
+            label4.Size = new Size(64, 21);
+            label4.TabIndex = 7;
+            label4.Text = "QrCode";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label5.Location = new System.Drawing.Point(242, 89);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(83, 21);
-            this.label5.TabIndex = 9;
-            this.label5.Text = "Referência";
-            // 
-            // tbPesquisar
-            // 
-            this.tbPesquisar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbPesquisar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tbPesquisar.Location = new System.Drawing.Point(134, 41);
-            this.tbPesquisar.Name = "tbPesquisar";
-            this.tbPesquisar.Size = new System.Drawing.Size(364, 29);
-            this.tbPesquisar.TabIndex = 1;
-            this.tbPesquisar.TextChanged += new System.EventHandler(this.tbPesquisar_TextChanged);
-            // 
-            // btnExcluir
-            // 
-            this.btnExcluir.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnExcluir.Enabled = false;
-            this.btnExcluir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnExcluir.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnExcluir.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnExcluir.Image = ((System.Drawing.Image)(resources.GetObject("btnExcluir.Image")));
-            this.btnExcluir.Location = new System.Drawing.Point(925, 30);
-            this.btnExcluir.Name = "btnExcluir";
-            this.btnExcluir.Size = new System.Drawing.Size(123, 48);
-            this.btnExcluir.TabIndex = 14;
-            this.btnExcluir.Text = "Excluir";
-            this.btnExcluir.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnExcluir.UseVisualStyleBackColor = true;
-            this.btnExcluir.Click += new System.EventHandler(this.btnExcluir_Click);
-            // 
-            // btnEditar
-            // 
-            this.btnEditar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEditar.Enabled = false;
-            this.btnEditar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnEditar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEditar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnEditar.Image = ((System.Drawing.Image)(resources.GetObject("btnEditar.Image")));
-            this.btnEditar.Location = new System.Drawing.Point(536, 30);
-            this.btnEditar.Name = "btnEditar";
-            this.btnEditar.Size = new System.Drawing.Size(123, 48);
-            this.btnEditar.TabIndex = 11;
-            this.btnEditar.Text = "Editar";
-            this.btnEditar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnEditar.UseVisualStyleBackColor = true;
-            this.btnEditar.Click += new System.EventHandler(this.btnEditar_Click);
-            // 
-            // btnCancelar
-            // 
-            this.btnCancelar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCancelar.Enabled = false;
-            this.btnCancelar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCancelar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCancelar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnCancelar.Image = ((System.Drawing.Image)(resources.GetObject("btnCancelar.Image")));
-            this.btnCancelar.Location = new System.Drawing.Point(795, 30);
-            this.btnCancelar.Name = "btnCancelar";
-            this.btnCancelar.Size = new System.Drawing.Size(123, 48);
-            this.btnCancelar.TabIndex = 13;
-            this.btnCancelar.Text = "Cancelar";
-            this.btnCancelar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCancelar.UseVisualStyleBackColor = true;
-            this.btnCancelar.Click += new System.EventHandler(this.btnCancelar_Click);
-            // 
-            // btnConfirmar
-            // 
-            this.btnConfirmar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConfirmar.Enabled = false;
-            this.btnConfirmar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConfirmar.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnConfirmar.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.btnConfirmar.Image = ((System.Drawing.Image)(resources.GetObject("btnConfirmar.Image")));
-            this.btnConfirmar.Location = new System.Drawing.Point(666, 30);
-            this.btnConfirmar.Name = "btnConfirmar";
-            this.btnConfirmar.Size = new System.Drawing.Size(123, 48);
-            this.btnConfirmar.TabIndex = 12;
-            this.btnConfirmar.Text = "Confirmar";
-            this.btnConfirmar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnConfirmar.UseVisualStyleBackColor = true;
-            this.btnConfirmar.Click += new System.EventHandler(this.btnConfirmar_Click);
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.FromArgb(51, 51, 51);
+            label5.Location = new Point(406, 153);
+            label5.Name = "label5";
+            label5.Size = new Size(83, 21);
+            label5.TabIndex = 9;
+            label5.Text = "Referência";
             // 
             // dtEstoque
             // 
-            this.dtEstoque.AllowUserToAddRows = false;
-            this.dtEstoque.AllowUserToDeleteRows = false;
-            this.dtEstoque.AllowUserToResizeRows = false;
-            this.dtEstoque.BackgroundColor = System.Drawing.Color.White;
-            this.dtEstoque.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.dtEstoque.CellBorderStyle = System.Windows.Forms.DataGridViewCellBorderStyle.None;
-            this.dtEstoque.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(71)))), ((int)(((byte)(87)))));
-            dataGridViewCellStyle1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.Padding = new System.Windows.Forms.Padding(0, 7, 0, 7);
-            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(72)))), ((int)(((byte)(71)))), ((int)(((byte)(87)))));
-            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dtEstoque.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            this.dtEstoque.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            this.dtEstoque.Columns.AddRange(new System.Windows.Forms.DataGridViewColumn[] {
-            this.Imagem,
-            this.CodBar,
-            this.QrCode,
-            this.Referencia,
-            this.Nome,
-            this.Modelo,
-            this.Cor,
-            this.EstoqueMin,
-            this.PrecoVenda,
-            this.num44,
-            this.num43,
-            this.num42,
-            this.num41,
-            this.num40,
-            this.num39,
-            this.num38,
-            this.num37,
-            this.num36,
-            this.num35,
-            this.num34,
-            this.num33,
-            this.num32,
-            this.num31,
-            this.num30,
-            this.num29,
-            this.num28,
-            this.num27,
-            this.num26,
-            this.num25,
-            this.num24,
-            this.num23,
-            this.num22,
-            this.num21,
-            this.num20,
-            this.num19,
-            this.num18});
-            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle2.BackColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.ControlText;
-            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(147)))), ((int)(((byte)(147)))), ((int)(((byte)(147)))));
-            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.Color.White;
-            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtEstoque.DefaultCellStyle = dataGridViewCellStyle2;
-            this.dtEstoque.EnableHeadersVisualStyles = false;
-            this.dtEstoque.Location = new System.Drawing.Point(24, 210);
-            this.dtEstoque.MultiSelect = false;
-            this.dtEstoque.Name = "dtEstoque";
-            this.dtEstoque.ReadOnly = true;
-            dataGridViewCellStyle3.BackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.SelectionBackColor = System.Drawing.SystemColors.Control;
-            dataGridViewCellStyle3.SelectionForeColor = System.Drawing.SystemColors.Control;
-            this.dtEstoque.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
-            this.dtEstoque.RowHeadersVisible = false;
-            this.dtEstoque.RowTemplate.Height = 100;
-            this.dtEstoque.RowTemplate.ReadOnly = true;
-            this.dtEstoque.RowTemplate.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.dtEstoque.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
-            this.dtEstoque.Size = new System.Drawing.Size(1104, 438);
-            this.dtEstoque.StandardTab = true;
-            this.dtEstoque.TabIndex = 29;
-            this.dtEstoque.Click += new System.EventHandler(this.dtEstoque_Click);
-            this.dtEstoque.DoubleClick += new System.EventHandler(this.dtEstoque_DoubleClick);
+            dtEstoque.AllowUserToAddRows = false;
+            dtEstoque.AllowUserToDeleteRows = false;
+            dtEstoque.AllowUserToResizeRows = false;
+            dtEstoque.BackgroundColor = Color.White;
+            dtEstoque.BorderStyle = BorderStyle.None;
+            dtEstoque.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dtEstoque.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(37, 77, 113);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(0, 7, 0, 7);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 77, 113);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dtEstoque.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
+            dtEstoque.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtEstoque.Columns.AddRange(new DataGridViewColumn[] { Imagem, CodBar, QrCode, Referencia, Nome, Modelo, Cor, EstoqueMin, PrecoVenda, num44, num43, num42, num41, num40, num39, num38, num37, num36, num35, num34, num33, num32, num31, num30, num29, num28, num27, num26, num25, num24, num23, num22, num21, num20, num19, num18 });
+            dtEstoque.Cursor = Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(147, 147, 147);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dtEstoque.DefaultCellStyle = dataGridViewCellStyle2;
+            dtEstoque.EnableHeadersVisualStyles = false;
+            dtEstoque.Location = new Point(66, 304);
+            dtEstoque.MultiSelect = false;
+            dtEstoque.Name = "dtEstoque";
+            dtEstoque.ReadOnly = true;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.Control;
+            dtEstoque.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
+            dtEstoque.RowHeadersVisible = false;
+            dtEstoque.RowTemplate.Height = 75;
+            dtEstoque.RowTemplate.ReadOnly = true;
+            dtEstoque.RowTemplate.Resizable = DataGridViewTriState.False;
+            dtEstoque.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtEstoque.Size = new Size(1066, 284);
+            dtEstoque.StandardTab = true;
+            dtEstoque.TabIndex = 29;
+            dtEstoque.Click += dtEstoque_Click;
+            dtEstoque.DoubleClick += dtEstoque_DoubleClick;
             // 
             // Imagem
             // 
-            this.Imagem.Frozen = true;
-            this.Imagem.HeaderText = "Imagem";
-            this.Imagem.ImageLayout = System.Windows.Forms.DataGridViewImageCellLayout.Zoom;
-            this.Imagem.Name = "Imagem";
-            this.Imagem.ReadOnly = true;
-            this.Imagem.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.Imagem.Width = 150;
+            Imagem.Frozen = true;
+            Imagem.HeaderText = "Imagem";
+            Imagem.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            Imagem.Name = "Imagem";
+            Imagem.ReadOnly = true;
+            Imagem.Resizable = DataGridViewTriState.False;
+            Imagem.Width = 150;
             // 
             // CodBar
             // 
-            this.CodBar.HeaderText = "Codigo de Barras";
-            this.CodBar.Name = "CodBar";
-            this.CodBar.ReadOnly = true;
-            this.CodBar.Resizable = System.Windows.Forms.DataGridViewTriState.False;
-            this.CodBar.Width = 160;
+            CodBar.HeaderText = "Codigo de Barras";
+            CodBar.Name = "CodBar";
+            CodBar.ReadOnly = true;
+            CodBar.Resizable = DataGridViewTriState.False;
+            CodBar.Width = 160;
             // 
             // QrCode
             // 
-            this.QrCode.HeaderText = "QrCode";
-            this.QrCode.Name = "QrCode";
-            this.QrCode.ReadOnly = true;
+            QrCode.HeaderText = "QrCode";
+            QrCode.Name = "QrCode";
+            QrCode.ReadOnly = true;
             // 
             // Referencia
             // 
-            this.Referencia.HeaderText = "Referencia";
-            this.Referencia.Name = "Referencia";
-            this.Referencia.ReadOnly = true;
+            Referencia.HeaderText = "Referencia";
+            Referencia.Name = "Referencia";
+            Referencia.ReadOnly = true;
             // 
             // Nome
             // 
-            this.Nome.HeaderText = "Nome";
-            this.Nome.Name = "Nome";
-            this.Nome.ReadOnly = true;
+            Nome.HeaderText = "Nome";
+            Nome.Name = "Nome";
+            Nome.ReadOnly = true;
             // 
             // Modelo
             // 
-            this.Modelo.HeaderText = "Modelo";
-            this.Modelo.Name = "Modelo";
-            this.Modelo.ReadOnly = true;
+            Modelo.HeaderText = "Modelo";
+            Modelo.Name = "Modelo";
+            Modelo.ReadOnly = true;
             // 
             // Cor
             // 
-            this.Cor.HeaderText = "Cor";
-            this.Cor.Name = "Cor";
-            this.Cor.ReadOnly = true;
+            Cor.HeaderText = "Cor";
+            Cor.Name = "Cor";
+            Cor.ReadOnly = true;
             // 
             // EstoqueMin
             // 
-            this.EstoqueMin.HeaderText = "Estoque Mín.";
-            this.EstoqueMin.Name = "EstoqueMin";
-            this.EstoqueMin.ReadOnly = true;
-            this.EstoqueMin.Width = 150;
+            EstoqueMin.HeaderText = "Estoque Mín.";
+            EstoqueMin.Name = "EstoqueMin";
+            EstoqueMin.ReadOnly = true;
+            EstoqueMin.Width = 150;
             // 
             // PrecoVenda
             // 
-            this.PrecoVenda.HeaderText = "Preço de Venda";
-            this.PrecoVenda.Name = "PrecoVenda";
-            this.PrecoVenda.ReadOnly = true;
-            this.PrecoVenda.Width = 150;
+            PrecoVenda.HeaderText = "Preço de Venda";
+            PrecoVenda.Name = "PrecoVenda";
+            PrecoVenda.ReadOnly = true;
+            PrecoVenda.Width = 150;
             // 
             // num44
             // 
-            this.num44.HeaderText = "Num44";
-            this.num44.Name = "num44";
-            this.num44.ReadOnly = true;
+            num44.HeaderText = "Num44";
+            num44.Name = "num44";
+            num44.ReadOnly = true;
             // 
             // num43
             // 
-            this.num43.HeaderText = "Num43";
-            this.num43.Name = "num43";
-            this.num43.ReadOnly = true;
+            num43.HeaderText = "Num43";
+            num43.Name = "num43";
+            num43.ReadOnly = true;
             // 
             // num42
             // 
-            this.num42.HeaderText = "Num42";
-            this.num42.Name = "num42";
-            this.num42.ReadOnly = true;
+            num42.HeaderText = "Num42";
+            num42.Name = "num42";
+            num42.ReadOnly = true;
             // 
             // num41
             // 
-            this.num41.HeaderText = "Num41";
-            this.num41.Name = "num41";
-            this.num41.ReadOnly = true;
+            num41.HeaderText = "Num41";
+            num41.Name = "num41";
+            num41.ReadOnly = true;
             // 
             // num40
             // 
-            this.num40.HeaderText = "Num40";
-            this.num40.Name = "num40";
-            this.num40.ReadOnly = true;
+            num40.HeaderText = "Num40";
+            num40.Name = "num40";
+            num40.ReadOnly = true;
             // 
             // num39
             // 
-            this.num39.HeaderText = "Num39";
-            this.num39.Name = "num39";
-            this.num39.ReadOnly = true;
+            num39.HeaderText = "Num39";
+            num39.Name = "num39";
+            num39.ReadOnly = true;
             // 
             // num38
             // 
-            this.num38.HeaderText = "Num38";
-            this.num38.Name = "num38";
-            this.num38.ReadOnly = true;
+            num38.HeaderText = "Num38";
+            num38.Name = "num38";
+            num38.ReadOnly = true;
             // 
             // num37
             // 
-            this.num37.HeaderText = "Num37";
-            this.num37.Name = "num37";
-            this.num37.ReadOnly = true;
+            num37.HeaderText = "Num37";
+            num37.Name = "num37";
+            num37.ReadOnly = true;
             // 
             // num36
             // 
-            this.num36.HeaderText = "Num36";
-            this.num36.Name = "num36";
-            this.num36.ReadOnly = true;
+            num36.HeaderText = "Num36";
+            num36.Name = "num36";
+            num36.ReadOnly = true;
             // 
             // num35
             // 
-            this.num35.HeaderText = "Num35";
-            this.num35.Name = "num35";
-            this.num35.ReadOnly = true;
+            num35.HeaderText = "Num35";
+            num35.Name = "num35";
+            num35.ReadOnly = true;
             // 
             // num34
             // 
-            this.num34.HeaderText = "Num34";
-            this.num34.Name = "num34";
-            this.num34.ReadOnly = true;
+            num34.HeaderText = "Num34";
+            num34.Name = "num34";
+            num34.ReadOnly = true;
             // 
             // num33
             // 
-            this.num33.HeaderText = "Num33";
-            this.num33.Name = "num33";
-            this.num33.ReadOnly = true;
+            num33.HeaderText = "Num33";
+            num33.Name = "num33";
+            num33.ReadOnly = true;
             // 
             // num32
             // 
-            this.num32.HeaderText = "Num32";
-            this.num32.Name = "num32";
-            this.num32.ReadOnly = true;
+            num32.HeaderText = "Num32";
+            num32.Name = "num32";
+            num32.ReadOnly = true;
             // 
             // num31
             // 
-            this.num31.HeaderText = "Num31";
-            this.num31.Name = "num31";
-            this.num31.ReadOnly = true;
+            num31.HeaderText = "Num31";
+            num31.Name = "num31";
+            num31.ReadOnly = true;
             // 
             // num30
             // 
-            this.num30.HeaderText = "Num30";
-            this.num30.Name = "num30";
-            this.num30.ReadOnly = true;
+            num30.HeaderText = "Num30";
+            num30.Name = "num30";
+            num30.ReadOnly = true;
             // 
             // num29
             // 
-            this.num29.HeaderText = "Num29";
-            this.num29.Name = "num29";
-            this.num29.ReadOnly = true;
+            num29.HeaderText = "Num29";
+            num29.Name = "num29";
+            num29.ReadOnly = true;
             // 
             // num28
             // 
-            this.num28.HeaderText = "Num28";
-            this.num28.Name = "num28";
-            this.num28.ReadOnly = true;
+            num28.HeaderText = "Num28";
+            num28.Name = "num28";
+            num28.ReadOnly = true;
             // 
             // num27
             // 
-            this.num27.HeaderText = "Num27";
-            this.num27.Name = "num27";
-            this.num27.ReadOnly = true;
+            num27.HeaderText = "Num27";
+            num27.Name = "num27";
+            num27.ReadOnly = true;
             // 
             // num26
             // 
-            this.num26.HeaderText = "Num26";
-            this.num26.Name = "num26";
-            this.num26.ReadOnly = true;
+            num26.HeaderText = "Num26";
+            num26.Name = "num26";
+            num26.ReadOnly = true;
             // 
             // num25
             // 
-            this.num25.HeaderText = "Num25";
-            this.num25.Name = "num25";
-            this.num25.ReadOnly = true;
+            num25.HeaderText = "Num25";
+            num25.Name = "num25";
+            num25.ReadOnly = true;
             // 
             // num24
             // 
-            this.num24.HeaderText = "Num24";
-            this.num24.Name = "num24";
-            this.num24.ReadOnly = true;
+            num24.HeaderText = "Num24";
+            num24.Name = "num24";
+            num24.ReadOnly = true;
             // 
             // num23
             // 
-            this.num23.HeaderText = "Num23";
-            this.num23.Name = "num23";
-            this.num23.ReadOnly = true;
+            num23.HeaderText = "Num23";
+            num23.Name = "num23";
+            num23.ReadOnly = true;
             // 
             // num22
             // 
-            this.num22.HeaderText = "Num22";
-            this.num22.Name = "num22";
-            this.num22.ReadOnly = true;
+            num22.HeaderText = "Num22";
+            num22.Name = "num22";
+            num22.ReadOnly = true;
             // 
             // num21
             // 
-            this.num21.HeaderText = "Num21";
-            this.num21.Name = "num21";
-            this.num21.ReadOnly = true;
+            num21.HeaderText = "Num21";
+            num21.Name = "num21";
+            num21.ReadOnly = true;
             // 
             // num20
             // 
-            this.num20.HeaderText = "Num20";
-            this.num20.Name = "num20";
-            this.num20.ReadOnly = true;
+            num20.HeaderText = "Num20";
+            num20.Name = "num20";
+            num20.ReadOnly = true;
             // 
             // num19
             // 
-            this.num19.HeaderText = "Num19";
-            this.num19.Name = "num19";
-            this.num19.ReadOnly = true;
+            num19.HeaderText = "Num19";
+            num19.Name = "num19";
+            num19.ReadOnly = true;
             // 
             // num18
             // 
-            this.num18.HeaderText = "Num18";
-            this.num18.Name = "num18";
-            this.num18.ReadOnly = true;
-            // 
-            // tbMin
-            // 
-            this.tbMin.Enabled = false;
-            this.tbMin.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbMin.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tbMin.Location = new System.Drawing.Point(596, 175);
-            this.tbMin.Name = "tbMin";
-            this.tbMin.Size = new System.Drawing.Size(210, 29);
-            this.tbMin.TabIndex = 9;
+            num18.HeaderText = "Num18";
+            num18.Name = "num18";
+            num18.ReadOnly = true;
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label6.Location = new System.Drawing.Point(596, 151);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(123, 21);
-            this.label6.TabIndex = 30;
-            this.label6.Text = "Estoque Mínimo";
-            // 
-            // tbPreco
-            // 
-            this.tbPreco.Enabled = false;
-            this.tbPreco.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbPreco.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tbPreco.Location = new System.Drawing.Point(838, 175);
-            this.tbPreco.Name = "tbPreco";
-            this.tbPreco.Size = new System.Drawing.Size(210, 29);
-            this.tbPreco.TabIndex = 10;
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.FromArgb(51, 51, 51);
+            label6.Location = new Point(823, 223);
+            label6.Name = "label6";
+            label6.Size = new Size(123, 21);
+            label6.TabIndex = 30;
+            label6.Text = "Estoque Mínimo";
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label7.Location = new System.Drawing.Point(838, 151);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(117, 21);
-            this.label7.TabIndex = 32;
-            this.label7.Text = "Preço de Venda";
-            // 
-            // tbCor
-            // 
-            this.tbCor.Enabled = false;
-            this.tbCor.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.tbCor.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.tbCor.Location = new System.Drawing.Point(838, 113);
-            this.tbCor.Name = "tbCor";
-            this.tbCor.Size = new System.Drawing.Size(210, 29);
-            this.tbCor.TabIndex = 8;
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.FromArgb(51, 51, 51);
+            label7.Location = new Point(986, 223);
+            label7.Name = "label7";
+            label7.Size = new Size(117, 21);
+            label7.TabIndex = 32;
+            label7.Text = "Preço de Venda";
             // 
             // label8
             // 
-            this.label8.AutoSize = true;
-            this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label8.Location = new System.Drawing.Point(838, 89);
-            this.label8.Name = "label8";
-            this.label8.Size = new System.Drawing.Size(35, 21);
-            this.label8.TabIndex = 34;
-            this.label8.Text = "Cor";
+            label8.AutoSize = true;
+            label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label8.ForeColor = Color.FromArgb(51, 51, 51);
+            label8.Location = new Point(662, 223);
+            label8.Name = "label8";
+            label8.Size = new Size(35, 21);
+            label8.TabIndex = 34;
+            label8.Text = "Cor";
             // 
-            // btnImg
+            // kbtnExcluir
             // 
-            this.btnImg.Enabled = false;
-            this.btnImg.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnImg.Location = new System.Drawing.Point(466, 113);
-            this.btnImg.Name = "btnImg";
-            this.btnImg.Size = new System.Drawing.Size(32, 32);
-            this.btnImg.TabIndex = 4;
-            this.btnImg.Text = "...";
-            this.btnImg.UseVisualStyleBackColor = true;
-            this.btnImg.Click += new System.EventHandler(this.btnImg_Click);
+            kbtnExcluir.Cursor = Cursors.Hand;
+            kbtnExcluir.Enabled = false;
+            kbtnExcluir.Location = new Point(492, 619);
+            kbtnExcluir.Name = "kbtnExcluir";
+            kbtnExcluir.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnExcluir.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnExcluir.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kbtnExcluir.Size = new Size(136, 40);
+            kbtnExcluir.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnExcluir.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnExcluir.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnExcluir.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnExcluir.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnExcluir.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            kbtnExcluir.StateCommon.Border.Rounding = 15F;
+            kbtnExcluir.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            kbtnExcluir.StateCommon.Content.ShortText.Color1 = Color.White;
+            kbtnExcluir.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            kbtnExcluir.StateDisabled.Back.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnExcluir.StateDisabled.Back.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnExcluir.StateDisabled.Border.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnExcluir.StateDisabled.Border.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnExcluir.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnExcluir.StateDisabled.Content.ShortText.Color1 = Color.FromArgb(51, 51, 51);
+            kbtnExcluir.StateDisabled.Content.ShortText.Color2 = Color.FromArgb(51, 51, 51);
+            kbtnExcluir.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
+            kbtnExcluir.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
+            kbtnExcluir.TabIndex = 14;
+            kbtnExcluir.Values.Image = (Image)resources.GetObject("kbtnExcluir.Values.Image");
+            kbtnExcluir.Values.ImageStates.ImageCheckedNormal = null;
+            kbtnExcluir.Values.ImageStates.ImageCheckedPressed = null;
+            kbtnExcluir.Values.ImageStates.ImageCheckedTracking = null;
+            kbtnExcluir.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kbtnExcluir.Values.ImageStates.ImageDisabled");
+            kbtnExcluir.Values.Text = "Excluir";
+            kbtnExcluir.Click += btnExcluir_Click;
+            // 
+            // kbtnCancelar
+            // 
+            kbtnCancelar.Cursor = Cursors.Hand;
+            kbtnCancelar.Enabled = false;
+            kbtnCancelar.Location = new Point(350, 619);
+            kbtnCancelar.Name = "kbtnCancelar";
+            kbtnCancelar.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnCancelar.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnCancelar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kbtnCancelar.Size = new Size(136, 40);
+            kbtnCancelar.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnCancelar.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnCancelar.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnCancelar.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnCancelar.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnCancelar.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            kbtnCancelar.StateCommon.Border.Rounding = 15F;
+            kbtnCancelar.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            kbtnCancelar.StateCommon.Content.ShortText.Color1 = Color.White;
+            kbtnCancelar.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            kbtnCancelar.StateDisabled.Back.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnCancelar.StateDisabled.Back.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnCancelar.StateDisabled.Border.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnCancelar.StateDisabled.Border.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnCancelar.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnCancelar.StateDisabled.Content.ShortText.Color1 = Color.FromArgb(51, 51, 51);
+            kbtnCancelar.StateDisabled.Content.ShortText.Color2 = Color.FromArgb(51, 51, 51);
+            kbtnCancelar.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
+            kbtnCancelar.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
+            kbtnCancelar.TabIndex = 12;
+            kbtnCancelar.Values.Image = (Image)resources.GetObject("kbtnCancelar.Values.Image");
+            kbtnCancelar.Values.ImageStates.ImageCheckedNormal = null;
+            kbtnCancelar.Values.ImageStates.ImageCheckedPressed = null;
+            kbtnCancelar.Values.ImageStates.ImageCheckedTracking = null;
+            kbtnCancelar.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kbtnCancelar.Values.ImageStates.ImageDisabled");
+            kbtnCancelar.Values.Text = "Cancelar";
+            kbtnCancelar.Click += btnCancelar_Click;
+            // 
+            // kbtnConfirmar
+            // 
+            kbtnConfirmar.Cursor = Cursors.Hand;
+            kbtnConfirmar.Enabled = false;
+            kbtnConfirmar.Location = new Point(208, 619);
+            kbtnConfirmar.Name = "kbtnConfirmar";
+            kbtnConfirmar.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnConfirmar.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnConfirmar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kbtnConfirmar.Size = new Size(136, 40);
+            kbtnConfirmar.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnConfirmar.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnConfirmar.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnConfirmar.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnConfirmar.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnConfirmar.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            kbtnConfirmar.StateCommon.Border.Rounding = 15F;
+            kbtnConfirmar.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            kbtnConfirmar.StateCommon.Content.ShortText.Color1 = Color.White;
+            kbtnConfirmar.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            kbtnConfirmar.StateDisabled.Back.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnConfirmar.StateDisabled.Back.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnConfirmar.StateDisabled.Border.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnConfirmar.StateDisabled.Border.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnConfirmar.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnConfirmar.StateDisabled.Content.ShortText.Color1 = Color.FromArgb(51, 51, 51);
+            kbtnConfirmar.StateDisabled.Content.ShortText.Color2 = Color.FromArgb(51, 51, 51);
+            kbtnConfirmar.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
+            kbtnConfirmar.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
+            kbtnConfirmar.TabIndex = 11;
+            kbtnConfirmar.Values.Image = (Image)resources.GetObject("kbtnConfirmar.Values.Image");
+            kbtnConfirmar.Values.ImageStates.ImageCheckedNormal = null;
+            kbtnConfirmar.Values.ImageStates.ImageCheckedPressed = null;
+            kbtnConfirmar.Values.ImageStates.ImageCheckedTracking = null;
+            kbtnConfirmar.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kbtnConfirmar.Values.ImageStates.ImageDisabled");
+            kbtnConfirmar.Values.Text = "Aceitar";
+            kbtnConfirmar.Click += btnConfirmar_Click;
+            // 
+            // kbtnEditar
+            // 
+            kbtnEditar.Cursor = Cursors.Hand;
+            kbtnEditar.Enabled = false;
+            kbtnEditar.Location = new Point(66, 619);
+            kbtnEditar.Name = "kbtnEditar";
+            kbtnEditar.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnEditar.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnEditar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kbtnEditar.Size = new Size(136, 40);
+            kbtnEditar.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnEditar.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnEditar.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnEditar.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnEditar.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnEditar.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            kbtnEditar.StateCommon.Border.Rounding = 15F;
+            kbtnEditar.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            kbtnEditar.StateCommon.Content.ShortText.Color1 = Color.White;
+            kbtnEditar.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            kbtnEditar.StateDisabled.Back.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnEditar.StateDisabled.Back.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnEditar.StateDisabled.Border.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnEditar.StateDisabled.Border.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnEditar.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnEditar.StateDisabled.Content.ShortText.Color1 = Color.FromArgb(51, 51, 51);
+            kbtnEditar.StateDisabled.Content.ShortText.Color2 = Color.FromArgb(51, 51, 51);
+            kbtnEditar.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
+            kbtnEditar.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
+            kbtnEditar.TabIndex = 13;
+            kbtnEditar.Values.Image = (Image)resources.GetObject("kbtnEditar.Values.Image");
+            kbtnEditar.Values.ImageStates.ImageCheckedNormal = null;
+            kbtnEditar.Values.ImageStates.ImageCheckedPressed = null;
+            kbtnEditar.Values.ImageStates.ImageCheckedTracking = null;
+            kbtnEditar.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kbtnEditar.Values.ImageStates.ImageDisabled");
+            kbtnEditar.Values.Text = "Editar";
+            kbtnEditar.Click += btnEditar_Click;
+            // 
+            // ktbPesquisar
+            // 
+            ktbPesquisar.Location = new Point(66, 105);
+            ktbPesquisar.Name = "ktbPesquisar";
+            ktbPesquisar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            ktbPesquisar.Size = new Size(318, 36);
+            ktbPesquisar.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbPesquisar.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbPesquisar.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbPesquisar.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbPesquisar.StateActive.Border.Rounding = 20F;
+            ktbPesquisar.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbPesquisar.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbPesquisar.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
+            ktbPesquisar.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbPesquisar.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbPesquisar.StateDisabled.Border.Color1 = Color.FromArgb(242, 241, 242);
+            ktbPesquisar.StateDisabled.Border.Color2 = Color.FromArgb(242, 241, 242);
+            ktbPesquisar.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbPesquisar.StateDisabled.Border.Rounding = 20F;
+            ktbPesquisar.StateDisabled.Content.Color1 = Color.Gray;
+            ktbPesquisar.StateDisabled.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbPesquisar.TabIndex = 1;
+            ktbPesquisar.TextChanged += tbPesquisar_TextChanged;
+            // 
+            // ktbCodeBar
+            // 
+            ktbCodeBar.Enabled = false;
+            ktbCodeBar.Location = new Point(66, 176);
+            ktbCodeBar.Name = "ktbCodeBar";
+            ktbCodeBar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            ktbCodeBar.Size = new Size(138, 36);
+            ktbCodeBar.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbCodeBar.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbCodeBar.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbCodeBar.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbCodeBar.StateActive.Border.Rounding = 20F;
+            ktbCodeBar.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbCodeBar.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbCodeBar.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
+            ktbCodeBar.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbCodeBar.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbCodeBar.StateDisabled.Border.Color1 = Color.FromArgb(242, 241, 242);
+            ktbCodeBar.StateDisabled.Border.Color2 = Color.FromArgb(242, 241, 242);
+            ktbCodeBar.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbCodeBar.StateDisabled.Border.Rounding = 20F;
+            ktbCodeBar.StateDisabled.Content.Color1 = Color.Gray;
+            ktbCodeBar.StateDisabled.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbCodeBar.TabIndex = 2;
+            // 
+            // ktbRef
+            // 
+            ktbRef.Location = new Point(392, 176);
+            ktbRef.Name = "ktbRef";
+            ktbRef.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            ktbRef.Size = new Size(136, 36);
+            ktbRef.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbRef.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbRef.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbRef.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbRef.StateActive.Border.Rounding = 20F;
+            ktbRef.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbRef.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbRef.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
+            ktbRef.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbRef.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbRef.StateDisabled.Border.Color1 = Color.FromArgb(242, 241, 242);
+            ktbRef.StateDisabled.Border.Color2 = Color.FromArgb(242, 241, 242);
+            ktbRef.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbRef.StateDisabled.Border.Rounding = 20F;
+            ktbRef.TabIndex = 4;
+            // 
+            // ktbModelo
+            // 
+            ktbModelo.Location = new Point(357, 247);
+            ktbModelo.Name = "ktbModelo";
+            ktbModelo.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            ktbModelo.Size = new Size(265, 36);
+            ktbModelo.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbModelo.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbModelo.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbModelo.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbModelo.StateActive.Border.Rounding = 20F;
+            ktbModelo.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbModelo.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbModelo.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
+            ktbModelo.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbModelo.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbModelo.StateDisabled.Border.Color1 = Color.FromArgb(242, 241, 242);
+            ktbModelo.StateDisabled.Border.Color2 = Color.FromArgb(242, 241, 242);
+            ktbModelo.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbModelo.StateDisabled.Border.Rounding = 20F;
+            ktbModelo.TabIndex = 7;
+            // 
+            // ktbCor
+            // 
+            ktbCor.Location = new Point(650, 246);
+            ktbCor.Name = "ktbCor";
+            ktbCor.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            ktbCor.Size = new Size(136, 36);
+            ktbCor.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbCor.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbCor.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbCor.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbCor.StateActive.Border.Rounding = 20F;
+            ktbCor.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbCor.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbCor.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
+            ktbCor.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbCor.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbCor.StateDisabled.Border.Color1 = Color.FromArgb(242, 241, 242);
+            ktbCor.StateDisabled.Border.Color2 = Color.FromArgb(242, 241, 242);
+            ktbCor.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbCor.StateDisabled.Border.Rounding = 20F;
+            ktbCor.TabIndex = 8;
+            // 
+            // ktbQrCode
+            // 
+            ktbQrCode.Location = new Point(229, 177);
+            ktbQrCode.Name = "ktbQrCode";
+            ktbQrCode.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            ktbQrCode.Size = new Size(136, 36);
+            ktbQrCode.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbQrCode.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbQrCode.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbQrCode.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbQrCode.StateActive.Border.Rounding = 20F;
+            ktbQrCode.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbQrCode.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbQrCode.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
+            ktbQrCode.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbQrCode.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbQrCode.StateDisabled.Border.Color1 = Color.FromArgb(242, 241, 242);
+            ktbQrCode.StateDisabled.Border.Color2 = Color.FromArgb(242, 241, 242);
+            ktbQrCode.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbQrCode.StateDisabled.Border.Rounding = 20F;
+            ktbQrCode.TabIndex = 3;
+            // 
+            // ktbNome
+            // 
+            ktbNome.Location = new Point(66, 247);
+            ktbNome.Name = "ktbNome";
+            ktbNome.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            ktbNome.Size = new Size(265, 36);
+            ktbNome.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbNome.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbNome.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbNome.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbNome.StateActive.Border.Rounding = 20F;
+            ktbNome.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbNome.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbNome.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
+            ktbNome.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbNome.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbNome.StateDisabled.Border.Color1 = Color.FromArgb(242, 241, 242);
+            ktbNome.StateDisabled.Border.Color2 = Color.FromArgb(242, 241, 242);
+            ktbNome.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbNome.StateDisabled.Border.Rounding = 20F;
+            ktbNome.TabIndex = 6;
+            // 
+            // ktbMin
+            // 
+            ktbMin.Location = new Point(812, 246);
+            ktbMin.Name = "ktbMin";
+            ktbMin.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            ktbMin.Size = new Size(134, 36);
+            ktbMin.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbMin.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbMin.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbMin.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbMin.StateActive.Border.Rounding = 20F;
+            ktbMin.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbMin.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbMin.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
+            ktbMin.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbMin.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbMin.StateDisabled.Border.Color1 = Color.FromArgb(242, 241, 242);
+            ktbMin.StateDisabled.Border.Color2 = Color.FromArgb(242, 241, 242);
+            ktbMin.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbMin.StateDisabled.Border.Rounding = 20F;
+            ktbMin.TabIndex = 9;
+            // 
+            // ktbPreco
+            // 
+            ktbPreco.Location = new Point(974, 246);
+            ktbPreco.Name = "ktbPreco";
+            ktbPreco.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            ktbPreco.Size = new Size(134, 36);
+            ktbPreco.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbPreco.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbPreco.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbPreco.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbPreco.StateActive.Border.Rounding = 20F;
+            ktbPreco.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbPreco.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbPreco.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
+            ktbPreco.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbPreco.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbPreco.StateDisabled.Border.Color1 = Color.FromArgb(242, 241, 242);
+            ktbPreco.StateDisabled.Border.Color2 = Color.FromArgb(242, 241, 242);
+            ktbPreco.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbPreco.StateDisabled.Border.Rounding = 20F;
+            ktbPreco.TabIndex = 10;
+            // 
+            // kbtnImg
+            // 
+            kbtnImg.Cursor = Cursors.Hand;
+            kbtnImg.Enabled = false;
+            kbtnImg.Location = new Point(554, 172);
+            kbtnImg.Name = "kbtnImg";
+            kbtnImg.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnImg.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnImg.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kbtnImg.Size = new Size(159, 40);
+            kbtnImg.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnImg.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnImg.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnImg.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnImg.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnImg.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            kbtnImg.StateCommon.Border.Rounding = 15F;
+            kbtnImg.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            kbtnImg.StateCommon.Content.ShortText.Color1 = Color.White;
+            kbtnImg.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            kbtnImg.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Far;
+            kbtnImg.StateDisabled.Back.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnImg.StateDisabled.Back.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnImg.StateDisabled.Border.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnImg.StateDisabled.Border.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnImg.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnImg.StateDisabled.Content.ShortText.Color1 = Color.FromArgb(51, 51, 51);
+            kbtnImg.StateDisabled.Content.ShortText.Color2 = Color.FromArgb(51, 51, 51);
+            kbtnImg.StateDisabled.Content.ShortText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            kbtnImg.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
+            kbtnImg.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
+            kbtnImg.TabIndex = 5;
+            kbtnImg.Values.Image = (Image)resources.GetObject("kbtnImg.Values.Image");
+            kbtnImg.Values.ImageStates.ImageCheckedNormal = null;
+            kbtnImg.Values.ImageStates.ImageCheckedPressed = null;
+            kbtnImg.Values.ImageStates.ImageCheckedTracking = null;
+            kbtnImg.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kbtnImg.Values.ImageStates.ImageDisabled");
+            kbtnImg.Values.Text = "Selec. imagem";
+            kbtnImg.Click += btnImg_Click;
+            // 
+            // pictureBox1
+            // 
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(66, 47);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(32, 32);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 58;
+            pictureBox1.TabStop = false;
+            // 
+            // label10
+            // 
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.ForeColor = Color.FromArgb(37, 77, 113);
+            label10.Location = new Point(117, 56);
+            label10.Name = "label10";
+            label10.Size = new Size(73, 23);
+            label10.TabIndex = 57;
+            label10.Text = "Estoque";
             // 
             // fConEstoque
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1154, 660);
-            this.Controls.Add(this.btnImg);
-            this.Controls.Add(this.tbCor);
-            this.Controls.Add(this.label8);
-            this.Controls.Add(this.tbPreco);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.tbMin);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.dtEstoque);
-            this.Controls.Add(this.btnExcluir);
-            this.Controls.Add(this.btnEditar);
-            this.Controls.Add(this.btnCancelar);
-            this.Controls.Add(this.btnConfirmar);
-            this.Controls.Add(this.tbPesquisar);
-            this.Controls.Add(this.tbRef);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.tbQrCode);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.tbCodeBar);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.tbModelo);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.tbNome);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "fConEstoque";
-            this.Load += new System.EventHandler(this.fConEstoque_Load);
-            this.Click += new System.EventHandler(this.fConEstoque_Click);
-            ((System.ComponentModel.ISupportInitialize)(this.dtEstoque)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(1250, 680);
+            Controls.Add(pictureBox1);
+            Controls.Add(label10);
+            Controls.Add(kbtnImg);
+            Controls.Add(ktbPreco);
+            Controls.Add(ktbMin);
+            Controls.Add(ktbNome);
+            Controls.Add(ktbQrCode);
+            Controls.Add(ktbCor);
+            Controls.Add(ktbModelo);
+            Controls.Add(ktbRef);
+            Controls.Add(ktbCodeBar);
+            Controls.Add(ktbPesquisar);
+            Controls.Add(kbtnExcluir);
+            Controls.Add(kbtnCancelar);
+            Controls.Add(kbtnConfirmar);
+            Controls.Add(kbtnEditar);
+            Controls.Add(label8);
+            Controls.Add(label7);
+            Controls.Add(label6);
+            Controls.Add(dtEstoque);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "fConEstoque";
+            Load += fConEstoque_Load;
+            Click += fConEstoque_Click;
+            ((System.ComponentModel.ISupportInitialize)dtEstoque).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
         private Label label1;
-        private TextBox tbNome;
-        private TextBox tbModelo;
         private Label label2;
-        private TextBox tbCodeBar;
         private Label label3;
-        private TextBox tbQrCode;
         private Label label4;
-        private TextBox tbRef;
         private Label label5;
-        private TextBox tbPesquisar;
-        private Button btnExcluir;
-        private Button btnEditar;
-        private Button btnCancelar;
-        private Button btnConfirmar;
         public DataGridView dtEstoque;
-        private TextBox tbMin;
         private Label label6;
-        private TextBox tbPreco;
         private Label label7;
-        private TextBox tbCor;
         private Label label8;
-        private Button btnImg;
         private DataGridViewImageColumn Imagem;
         private DataGridViewTextBoxColumn CodBar;
         private DataGridViewTextBoxColumn QrCode;
@@ -761,5 +964,21 @@
         private DataGridViewTextBoxColumn num20;
         private DataGridViewTextBoxColumn num19;
         private DataGridViewTextBoxColumn num18;
+        private Krypton.Toolkit.KryptonButton kbtnExcluir;
+        private Krypton.Toolkit.KryptonButton kbtnCancelar;
+        private Krypton.Toolkit.KryptonButton kbtnConfirmar;
+        private Krypton.Toolkit.KryptonButton kbtnEditar;
+        private Krypton.Toolkit.KryptonTextBox ktbPesquisar;
+        private Krypton.Toolkit.KryptonTextBox ktbCodeBar;
+        private Krypton.Toolkit.KryptonTextBox ktbRef;
+        private Krypton.Toolkit.KryptonTextBox ktbModelo;
+        private Krypton.Toolkit.KryptonTextBox ktbCor;
+        private Krypton.Toolkit.KryptonTextBox ktbQrCode;
+        private Krypton.Toolkit.KryptonTextBox ktbNome;
+        private Krypton.Toolkit.KryptonTextBox ktbMin;
+        private Krypton.Toolkit.KryptonTextBox ktbPreco;
+        private Krypton.Toolkit.KryptonButton kbtnImg;
+        private PictureBox pictureBox1;
+        private Label label10;
     }
 }

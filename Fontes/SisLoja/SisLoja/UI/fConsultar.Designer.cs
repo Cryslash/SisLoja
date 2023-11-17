@@ -29,59 +29,130 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fConsultar));
-            this.btnEstoque = new System.Windows.Forms.Button();
-            this.btnCliente = new System.Windows.Forms.Button();
-            this.SuspendLayout();
+            kbtCliente = new Krypton.Toolkit.KryptonButton();
+            kbtnEstoque = new Krypton.Toolkit.KryptonButton();
+            SuspendLayout();
             // 
-            // btnEstoque
+            // kbtCliente
             // 
-            this.btnEstoque.BackColor = System.Drawing.Color.White;
-            this.btnEstoque.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnEstoque.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnEstoque.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnEstoque.Image = ((System.Drawing.Image)(resources.GetObject("btnEstoque.Image")));
-            this.btnEstoque.Location = new System.Drawing.Point(347, 101);
-            this.btnEstoque.Name = "btnEstoque";
-            this.btnEstoque.Size = new System.Drawing.Size(162, 167);
-            this.btnEstoque.TabIndex = 5;
-            this.btnEstoque.Text = "Consultar Estoque";
-            this.btnEstoque.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnEstoque.UseVisualStyleBackColor = false;
-            this.btnEstoque.Click += new System.EventHandler(this.btnEstoque_Click);
+            kbtCliente.Cursor = Cursors.Hand;
+            kbtCliente.Location = new Point(151, 153);
+            kbtCliente.Name = "kbtCliente";
+            kbtCliente.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtCliente.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtCliente.OverrideDefault.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtCliente.OverrideDefault.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtCliente.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtCliente.OverrideDefault.Content.ShortText.Color1 = Color.White;
+            kbtCliente.OverrideDefault.Content.ShortText.Color2 = Color.White;
+            kbtCliente.OverrideFocus.Back.Color1 = Color.FromArgb(80, 60, 90);
+            kbtCliente.OverrideFocus.Back.Color2 = Color.FromArgb(80, 60, 90);
+            kbtCliente.OverrideFocus.Border.Color1 = Color.FromArgb(80, 60, 90);
+            kbtCliente.OverrideFocus.Border.Color2 = Color.FromArgb(80, 60, 90);
+            kbtCliente.OverrideFocus.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtCliente.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kbtCliente.Size = new Size(201, 87);
+            kbtCliente.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtCliente.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtCliente.StateCommon.Back.ColorAngle = 40F;
+            kbtCliente.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtCliente.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtCliente.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtCliente.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
+            kbtCliente.StateCommon.Border.Rounding = 25F;
+            kbtCliente.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            kbtCliente.StateCommon.Content.ShortText.Color1 = Color.White;
+            kbtCliente.StateCommon.Content.ShortText.Color2 = Color.White;
+            kbtCliente.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            kbtCliente.StateCommon.Content.ShortText.MultiLine = Krypton.Toolkit.InheritBool.True;
+            kbtCliente.StateCommon.Content.ShortText.MultiLineH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            kbtCliente.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Far;
+            kbtCliente.StateNormal.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtCliente.StateNormal.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtCliente.StateNormal.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtCliente.StateNormal.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtCliente.StateNormal.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtCliente.StateNormal.Content.ShortText.Color1 = Color.White;
+            kbtCliente.StateNormal.Content.ShortText.Color2 = Color.White;
+            kbtCliente.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
+            kbtCliente.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
+            kbtCliente.StateTracking.Border.Color1 = Color.FromArgb(80, 60, 90);
+            kbtCliente.StateTracking.Border.Color2 = Color.FromArgb(80, 60, 90);
+            kbtCliente.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtCliente.StateTracking.Content.ShortText.Color1 = Color.White;
+            kbtCliente.StateTracking.Content.ShortText.Color2 = Color.White;
+            kbtCliente.TabIndex = 6;
+            kbtCliente.Values.Image = (Image)resources.GetObject("kbtCliente.Values.Image");
+            kbtCliente.Values.Text = "Consultar\r\nClientes";
+            kbtCliente.Click += btnCliente_Click;
             // 
-            // btnCliente
+            // kbtnEstoque
             // 
-            this.btnCliente.BackColor = System.Drawing.Color.White;
-            this.btnCliente.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCliente.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCliente.ForeColor = System.Drawing.SystemColors.ActiveCaptionText;
-            this.btnCliente.Image = ((System.Drawing.Image)(resources.GetObject("btnCliente.Image")));
-            this.btnCliente.Location = new System.Drawing.Point(144, 101);
-            this.btnCliente.Name = "btnCliente";
-            this.btnCliente.Size = new System.Drawing.Size(162, 167);
-            this.btnCliente.TabIndex = 3;
-            this.btnCliente.Text = "Consultar Cliente";
-            this.btnCliente.TextAlign = System.Drawing.ContentAlignment.BottomCenter;
-            this.btnCliente.UseVisualStyleBackColor = false;
-            this.btnCliente.Click += new System.EventHandler(this.btnCliente_Click);
+            kbtnEstoque.Cursor = Cursors.Hand;
+            kbtnEstoque.Location = new Point(418, 153);
+            kbtnEstoque.Name = "kbtnEstoque";
+            kbtnEstoque.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnEstoque.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnEstoque.OverrideDefault.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnEstoque.OverrideDefault.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnEstoque.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnEstoque.OverrideDefault.Content.ShortText.Color1 = Color.White;
+            kbtnEstoque.OverrideDefault.Content.ShortText.Color2 = Color.White;
+            kbtnEstoque.OverrideFocus.Back.Color1 = Color.FromArgb(80, 60, 90);
+            kbtnEstoque.OverrideFocus.Back.Color2 = Color.FromArgb(80, 60, 90);
+            kbtnEstoque.OverrideFocus.Border.Color1 = Color.FromArgb(80, 60, 90);
+            kbtnEstoque.OverrideFocus.Border.Color2 = Color.FromArgb(80, 60, 90);
+            kbtnEstoque.OverrideFocus.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnEstoque.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kbtnEstoque.Size = new Size(201, 87);
+            kbtnEstoque.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnEstoque.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnEstoque.StateCommon.Back.ColorAngle = 40F;
+            kbtnEstoque.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnEstoque.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnEstoque.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnEstoque.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.None;
+            kbtnEstoque.StateCommon.Border.Rounding = 25F;
+            kbtnEstoque.StateCommon.Content.ShortText.Color1 = Color.White;
+            kbtnEstoque.StateCommon.Content.ShortText.Color2 = Color.White;
+            kbtnEstoque.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            kbtnEstoque.StateCommon.Content.ShortText.MultiLine = Krypton.Toolkit.InheritBool.True;
+            kbtnEstoque.StateCommon.Content.ShortText.MultiLineH = Krypton.Toolkit.PaletteRelativeAlign.Near;
+            kbtnEstoque.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Far;
+            kbtnEstoque.StateNormal.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnEstoque.StateNormal.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnEstoque.StateNormal.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnEstoque.StateNormal.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnEstoque.StateNormal.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnEstoque.StateNormal.Content.ShortText.Color1 = Color.White;
+            kbtnEstoque.StateNormal.Content.ShortText.Color2 = Color.White;
+            kbtnEstoque.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
+            kbtnEstoque.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
+            kbtnEstoque.StateTracking.Border.Color1 = Color.FromArgb(80, 60, 90);
+            kbtnEstoque.StateTracking.Border.Color2 = Color.FromArgb(80, 60, 90);
+            kbtnEstoque.StateTracking.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnEstoque.StateTracking.Content.ShortText.Color1 = Color.White;
+            kbtnEstoque.StateTracking.Content.ShortText.Color2 = Color.White;
+            kbtnEstoque.TabIndex = 7;
+            kbtnEstoque.Values.Image = (Image)resources.GetObject("kbtnEstoque.Values.Image");
+            kbtnEstoque.Values.Text = "Consultar\r\nEstoque";
+            kbtnEstoque.Click += btnEstoque_Click;
             // 
             // fConsultar
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1150, 660);
-            this.Controls.Add(this.btnEstoque);
-            this.Controls.Add(this.btnCliente);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "fConsultar";
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(1250, 680);
+            Controls.Add(kbtnEstoque);
+            Controls.Add(kbtCliente);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "fConsultar";
+            ResumeLayout(false);
         }
 
         #endregion
-
-        private Button btnEstoque;
-        private Button btnCliente;
+        private Krypton.Toolkit.KryptonButton kbtCliente;
+        private Krypton.Toolkit.KryptonButton kbtnEstoque;
     }
 }

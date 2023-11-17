@@ -62,7 +62,7 @@
             this.pbImg.BackColor = System.Drawing.Color.White;
             this.pbImg.Image = ((System.Drawing.Image)(resources.GetObject("pbImg.Image")));
             this.pbImg.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbImg.InitialImage")));
-            this.pbImg.Location = new System.Drawing.Point(496, 103);
+            this.pbImg.Location = new System.Drawing.Point(569, 128);
             this.pbImg.Name = "pbImg";
             this.pbImg.Size = new System.Drawing.Size(224, 224);
             this.pbImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -74,7 +74,7 @@
             this.label1.AutoSize = true;
             this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label1.Location = new System.Drawing.Point(383, 170);
+            this.label1.Location = new System.Drawing.Point(241, 200);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(72, 21);
             this.label1.TabIndex = 3;
@@ -85,7 +85,7 @@
             this.label2.AutoSize = true;
             this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label2.Location = new System.Drawing.Point(386, 235);
+            this.label2.Location = new System.Drawing.Point(464, 200);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(69, 21);
             this.label2.TabIndex = 5;
@@ -96,7 +96,7 @@
             this.label3.AutoSize = true;
             this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label3.Location = new System.Drawing.Point(177, 368);
+            this.label3.Location = new System.Drawing.Point(262, 269);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(135, 21);
             this.label3.TabIndex = 7;
@@ -107,7 +107,7 @@
             this.label4.AutoSize = true;
             this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label4.Location = new System.Drawing.Point(330, 368);
+            this.label4.Location = new System.Drawing.Point(415, 269);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(128, 21);
             this.label4.TabIndex = 9;
@@ -115,7 +115,7 @@
             // 
             // pbQrCod
             // 
-            this.pbQrCod.Location = new System.Drawing.Point(496, 332);
+            this.pbQrCod.Location = new System.Drawing.Point(569, 352);
             this.pbQrCod.Name = "pbQrCod";
             this.pbQrCod.Size = new System.Drawing.Size(224, 224);
             this.pbQrCod.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
@@ -127,7 +127,7 @@
             this.label7.AutoSize = true;
             this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label7.Location = new System.Drawing.Point(180, 301);
+            this.label7.Location = new System.Drawing.Point(267, 386);
             this.label7.Name = "label7";
             this.label7.Size = new System.Drawing.Size(91, 21);
             this.label7.TabIndex = 16;
@@ -138,7 +138,7 @@
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label5.Location = new System.Drawing.Point(316, 489);
+            this.label5.Location = new System.Drawing.Point(404, 460);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(139, 21);
             this.label5.TabIndex = 18;
@@ -149,7 +149,7 @@
             this.label6.AutoSize = true;
             this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label6.Location = new System.Drawing.Point(400, 428);
+            this.label6.Location = new System.Drawing.Point(485, 386);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(58, 21);
             this.label6.TabIndex = 20;
@@ -160,7 +160,7 @@
             this.label8.AutoSize = true;
             this.label8.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label8.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label8.Location = new System.Drawing.Point(419, 302);
+            this.label8.Location = new System.Drawing.Point(206, 268);
             this.label8.Name = "label8";
             this.label8.Size = new System.Drawing.Size(36, 21);
             this.label8.TabIndex = 26;
@@ -168,10 +168,10 @@
             // 
             // ktbNome
             // 
-            this.ktbNome.Location = new System.Drawing.Point(101, 194);
+            this.ktbNome.Location = new System.Drawing.Point(116, 224);
             this.ktbNome.Name = "ktbNome";
             this.ktbNome.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.ktbNome.Size = new System.Drawing.Size(364, 36);
+            this.ktbNome.Size = new System.Drawing.Size(211, 36);
             this.ktbNome.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
             this.ktbNome.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ktbNome.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -189,10 +189,10 @@
             // 
             // ktbModelo
             // 
-            this.ktbModelo.Location = new System.Drawing.Point(101, 259);
+            this.ktbModelo.Location = new System.Drawing.Point(339, 224);
             this.ktbModelo.Name = "ktbModelo";
             this.ktbModelo.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.ktbModelo.Size = new System.Drawing.Size(364, 36);
+            this.ktbModelo.Size = new System.Drawing.Size(211, 36);
             this.ktbModelo.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
             this.ktbModelo.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ktbModelo.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -210,10 +210,10 @@
             // 
             // ktbRef
             // 
-            this.ktbRef.Location = new System.Drawing.Point(101, 325);
+            this.ktbRef.Location = new System.Drawing.Point(213, 410);
             this.ktbRef.Name = "ktbRef";
             this.ktbRef.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.ktbRef.Size = new System.Drawing.Size(179, 36);
+            this.ktbRef.Size = new System.Drawing.Size(152, 36);
             this.ktbRef.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
             this.ktbRef.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ktbRef.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -231,10 +231,10 @@
             // 
             // ktbCor
             // 
-            this.ktbCor.Location = new System.Drawing.Point(286, 325);
+            this.ktbCor.Location = new System.Drawing.Point(111, 292);
             this.ktbCor.Name = "ktbCor";
             this.ktbCor.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.ktbCor.Size = new System.Drawing.Size(179, 36);
+            this.ktbCor.Size = new System.Drawing.Size(145, 36);
             this.ktbCor.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
             this.ktbCor.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ktbCor.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -252,10 +252,10 @@
             // 
             // ktbMin
             // 
-            this.ktbMin.Location = new System.Drawing.Point(221, 391);
+            this.ktbMin.Location = new System.Drawing.Point(262, 292);
             this.ktbMin.Name = "ktbMin";
             this.ktbMin.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.ktbMin.Size = new System.Drawing.Size(100, 36);
+            this.ktbMin.Size = new System.Drawing.Size(144, 36);
             this.ktbMin.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
             this.ktbMin.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ktbMin.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -273,10 +273,10 @@
             // 
             // ktbPreco
             // 
-            this.ktbPreco.Location = new System.Drawing.Point(365, 389);
+            this.ktbPreco.Location = new System.Drawing.Point(415, 290);
             this.ktbPreco.Name = "ktbPreco";
             this.ktbPreco.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.ktbPreco.Size = new System.Drawing.Size(100, 36);
+            this.ktbPreco.Size = new System.Drawing.Size(135, 36);
             this.ktbPreco.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
             this.ktbPreco.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
             this.ktbPreco.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
@@ -294,7 +294,7 @@
             // 
             // ktbQrCode
             // 
-            this.ktbQrCode.Location = new System.Drawing.Point(286, 452);
+            this.ktbQrCode.Location = new System.Drawing.Point(371, 410);
             this.ktbQrCode.Name = "ktbQrCode";
             this.ktbQrCode.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.ktbQrCode.Size = new System.Drawing.Size(179, 36);
@@ -316,7 +316,7 @@
             // 
             // ktbCodBar
             // 
-            this.ktbCodBar.Location = new System.Drawing.Point(199, 511);
+            this.ktbCodBar.Location = new System.Drawing.Point(284, 484);
             this.ktbCodBar.Name = "ktbCodBar";
             this.ktbCodBar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             this.ktbCodBar.Size = new System.Drawing.Size(266, 36);
@@ -338,12 +338,12 @@
             // kbtnVoltar
             // 
             this.kbtnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kbtnVoltar.Location = new System.Drawing.Point(199, 591);
+            this.kbtnVoltar.Location = new System.Drawing.Point(71, 601);
             this.kbtnVoltar.Name = "kbtnVoltar";
             this.kbtnVoltar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
             this.kbtnVoltar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
             this.kbtnVoltar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.kbtnVoltar.Size = new System.Drawing.Size(124, 40);
+            this.kbtnVoltar.Size = new System.Drawing.Size(121, 40);
             this.kbtnVoltar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
             this.kbtnVoltar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
             this.kbtnVoltar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
@@ -366,12 +366,12 @@
             // kbtnSalvar
             // 
             this.kbtnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kbtnSalvar.Location = new System.Drawing.Point(341, 591);
+            this.kbtnSalvar.Location = new System.Drawing.Point(213, 601);
             this.kbtnSalvar.Name = "kbtnSalvar";
             this.kbtnSalvar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
             this.kbtnSalvar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
             this.kbtnSalvar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.kbtnSalvar.Size = new System.Drawing.Size(124, 40);
+            this.kbtnSalvar.Size = new System.Drawing.Size(121, 40);
             this.kbtnSalvar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
             this.kbtnSalvar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
             this.kbtnSalvar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
@@ -394,9 +394,9 @@
             // pictureBox1
             // 
             this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(62, 32);
+            this.pictureBox1.Location = new System.Drawing.Point(71, 61);
             this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(48, 48);
+            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
             this.pictureBox1.TabIndex = 39;
             this.pictureBox1.TabStop = false;
@@ -404,18 +404,18 @@
             // label10
             // 
             this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
+            this.label10.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
             this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.label10.Location = new System.Drawing.Point(136, 43);
+            this.label10.Location = new System.Drawing.Point(119, 68);
             this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(177, 25);
+            this.label10.Size = new System.Drawing.Size(157, 23);
             this.label10.TabIndex = 38;
             this.label10.Text = "Cadastrar Produto";
             // 
             // kbtnImg
             // 
             this.kbtnImg.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kbtnImg.Location = new System.Drawing.Point(306, 115);
+            this.kbtnImg.Location = new System.Drawing.Point(391, 149);
             this.kbtnImg.Name = "kbtnImg";
             this.kbtnImg.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
             this.kbtnImg.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));

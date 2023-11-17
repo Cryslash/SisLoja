@@ -43,7 +43,7 @@ namespace SisLoja.UI
         
         private void fConCliente_Click(object sender, EventArgs e)
         {
-            if (btnConfirmar.Enabled != true)
+            if (kbtnConfirmar.Enabled != true)
             {
                 dtClientes.ClearSelection();
                 Desabilitar_Botoes();
@@ -54,69 +54,69 @@ namespace SisLoja.UI
 
         public void Habilitar_Edicao() 
         {
-            btnEditar.Enabled = true;
-            btnExcluir.Enabled = true;
+            kbtnEditar.Enabled = true;
+            kbtnExcluir.Enabled = true;
         }
 
         public void Habilitar_Acao()
         {
-            btnConfirmar.Enabled = true;
-            btnCancelar.Enabled = true;
+            kbtnConfirmar.Enabled = true;
+            kbtnCancelar.Enabled = true;
         }
 
         public void Desabilitar_Botoes() 
         {
-            btnEditar.Enabled=false;
-            btnConfirmar.Enabled = false;
-            btnCancelar.Enabled = false;
-            btnExcluir.Enabled = false;                
+            kbtnEditar.Enabled=false;
+            kbtnConfirmar.Enabled = false;
+            kbtnCancelar.Enabled = false;
+            kbtnExcluir.Enabled = false;                
         }
 
         //--- Campos ---//
         public void Habilitar_Campos() 
         {
-            tbNome.Enabled = true;
-            tbCpf.Enabled = true;
-            tbFone.Enabled = true;
-            tbWhatsapp.Enabled = true;
-            tbEmail.Enabled = true;
-            tbCep.Enabled = true;
-            tbRua.Enabled = true;
-            tbBairro.Enabled = true;
-            tbCidade.Enabled = true;
-            cbUf.Enabled = true;
+            ktbNome.Enabled = true;
+            ktbCpf.Enabled = true;
+            ktbFone.Enabled = true;
+            ktbWhatsapp.Enabled = true;
+            ktbEmail.Enabled = true;
+            ktbCep.Enabled = true;
+            ktbRua.Enabled = true;
+            ktbBairro.Enabled = true;
+            ktbCidade.Enabled = true;
+            kcbUf.Enabled = true;
             dtClientes.Enabled = false;
-            tbPesquisar.Enabled = false;
+            ktbPesquisar.Enabled = false;
         }
         public void Desabilitar_Campos()
         {
             Limpar_Campos();
-            tbNome.Enabled = false;
-            tbCpf.Enabled = false;
-            tbFone.Enabled = false;
-            tbWhatsapp.Enabled = false;
-            tbEmail.Enabled = false;
-            tbCep.Enabled = false;
-            tbRua.Enabled = false;
-            tbBairro.Enabled = false;
-            tbCidade.Enabled = false;
-            cbUf.Enabled = false;
+            ktbNome.Enabled = false;
+            ktbCpf.Enabled = false;
+            ktbFone.Enabled = false;
+            ktbWhatsapp.Enabled = false;
+            ktbEmail.Enabled = false;
+            ktbCep.Enabled = false;
+            ktbRua.Enabled = false;
+            ktbBairro.Enabled = false;
+            ktbCidade.Enabled = false;
+            kcbUf.Enabled = false;
             dtClientes.Enabled = true;
-            tbPesquisar.Enabled = true;
+            ktbPesquisar.Enabled = true;
         }
 
         public void Limpar_Campos()
         {
-            tbNome.Text = String.Empty;
-            tbCpf.Text = String.Empty;
-            tbFone.Text = String.Empty;
-            tbWhatsapp.Text = String.Empty;
-            tbEmail.Text = String.Empty;
-            tbCep.Text = String.Empty;
-            tbRua.Text = String.Empty;
-            tbBairro.Text = String.Empty;
-            tbCidade.Text = String.Empty;
-            cbUf.Text = "UF";
+            ktbNome.Text = String.Empty;
+            ktbCpf.Text = String.Empty;
+            ktbFone.Text = String.Empty;
+            ktbWhatsapp.Text = String.Empty;
+            ktbEmail.Text = String.Empty;
+            ktbCep.Text = String.Empty;
+            ktbRua.Text = String.Empty;
+            ktbBairro.Text = String.Empty;
+            ktbCidade.Text = String.Empty;
+            kcbUf.Text = "UF";
         }
 
         private void dtClientes_Click(object sender, EventArgs e)
@@ -133,16 +133,16 @@ namespace SisLoja.UI
             Habilitar_Campos();
             Desabilitar_Botoes();
             Habilitar_Acao();
-            tbNome.Text = dtClientes.SelectedRows[0].Cells[1].Value.ToString();
-            tbCpf.Text = dtClientes.SelectedRows[0].Cells[2].Value.ToString();
-            tbFone.Text = dtClientes.SelectedRows[0].Cells[3].Value.ToString();
-            tbWhatsapp.Text = dtClientes.SelectedRows[0].Cells[4].Value.ToString();
-            tbEmail.Text = dtClientes.SelectedRows[0].Cells[5].Value.ToString();
-            tbCep.Text = dtClientes.SelectedRows[0].Cells[6].Value.ToString();
-            tbRua.Text = dtClientes.SelectedRows[0].Cells[7].Value.ToString();
-            tbBairro.Text = dtClientes.SelectedRows[0].Cells[8].Value.ToString();
-            tbCidade.Text = dtClientes.SelectedRows[0].Cells[9].Value.ToString();
-            cbUf.Text = dtClientes.SelectedRows[0].Cells[10].Value.ToString();
+            ktbNome.Text = dtClientes.SelectedRows[0].Cells[1].Value.ToString();
+            ktbCpf.Text = dtClientes.SelectedRows[0].Cells[2].Value.ToString();
+            ktbFone.Text = dtClientes.SelectedRows[0].Cells[3].Value.ToString();
+            ktbWhatsapp.Text = dtClientes.SelectedRows[0].Cells[4].Value.ToString();
+            ktbEmail.Text = dtClientes.SelectedRows[0].Cells[5].Value.ToString();
+            ktbCep.Text = dtClientes.SelectedRows[0].Cells[6].Value.ToString();
+            ktbRua.Text = dtClientes.SelectedRows[0].Cells[7].Value.ToString();
+            ktbBairro.Text = dtClientes.SelectedRows[0].Cells[8].Value.ToString();
+            ktbCidade.Text = dtClientes.SelectedRows[0].Cells[9].Value.ToString();
+            kcbUf.Text = dtClientes.SelectedRows[0].Cells[10].Value.ToString();
 
         }
 
@@ -172,16 +172,16 @@ namespace SisLoja.UI
             ClienteBLL clienteBLL = new ClienteBLL();
 
             cliente.Id = Convert.ToInt32(dtClientes.SelectedRows[0].Cells[0].Value);
-            cliente.Nome = tbNome.Text;
-            cliente.Cpf = tbCpf.Text;
-            cliente.Fone = tbFone.Text;
-            cliente.Whatsapp = tbWhatsapp.Text;
-            cliente.Email = tbEmail.Text;
-            cliente.Cep = tbCep.Text;
-            cliente.Rua = tbRua.Text;
-            cliente.Bairro = tbBairro.Text;
-            cliente.Cidade = tbCidade.Text;
-            cliente.Uf = cbUf.Text;
+            cliente.Nome = ktbNome.Text;
+            cliente.Cpf = ktbCpf.Text;
+            cliente.Fone = ktbFone.Text;
+            cliente.Whatsapp = ktbWhatsapp.Text;
+            cliente.Email = ktbEmail.Text;
+            cliente.Cep = ktbCep.Text;
+            cliente.Rua = ktbRua.Text;
+            cliente.Bairro = ktbBairro.Text;
+            cliente.Cidade = ktbCidade.Text;
+            cliente.Uf = kcbUf.Text;
 
             clienteBLL.Atualizar_ClienteDAL(cliente);
             Listar_Clientes();
@@ -192,13 +192,13 @@ namespace SisLoja.UI
         private void dtClientes_DoubleClick(object sender, EventArgs e)
         {
             if (dtClientes.SelectedRows.Count == 1)
-                btnEditar.PerformClick();
+                kbtnEditar.PerformClick();
         }
 
         private void tbPesquisar_TextChanged(object sender, EventArgs e)
         {
             ClienteBLL clienteBLL = new ClienteBLL();
-            dtClientes.DataSource = clienteBLL.Pesquisar_ClienteDAL(tbPesquisar.Text);
+            dtClientes.DataSource = clienteBLL.Pesquisar_ClienteDAL(ktbPesquisar.Text);
         }
     }
 }

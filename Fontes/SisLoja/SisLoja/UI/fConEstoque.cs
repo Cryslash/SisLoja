@@ -24,59 +24,59 @@ namespace SisLoja.UI
         //-------Botoes -------//
         private void Desabilitar_Botoes()
         {
-            btnEditar.Enabled= false;
-            btnConfirmar.Enabled = false;
-            btnCancelar.Enabled = false;
-            btnExcluir.Enabled = false;
+            kbtnEditar.Enabled= false;
+            kbtnConfirmar.Enabled = false;
+            kbtnCancelar.Enabled = false;
+            kbtnExcluir.Enabled = false;
         }
         private void Habilitar_Edicao()
         {
-            btnEditar.Enabled = true;
-            btnExcluir.Enabled = true;
+            kbtnEditar.Enabled = true;
+            kbtnExcluir.Enabled = true;
         }
         private void Habilitar_Acao()
         {
-            btnConfirmar.Enabled = true;
-            btnCancelar.Enabled = true;
+            kbtnConfirmar.Enabled = true;
+            kbtnCancelar.Enabled = true;
         }
         // -------Campos ------//
 
          private void Habilitar_Campos() 
         {
-            tbCor.Enabled = true;
-            tbNome.Enabled = true;
-            tbPreco.Enabled = true;
-            tbModelo.Enabled = true;
-            tbQrCode.Enabled = true;
-            tbMin.Enabled = true;
-            tbRef.Enabled = true;
-            btnImg.Enabled = true;
+            ktbCor.Enabled = true;
+            ktbNome.Enabled = true;
+            ktbPreco.Enabled = true;
+            ktbModelo.Enabled = true;
+            ktbQrCode.Enabled = true;
+            ktbMin.Enabled = true;
+            ktbRef.Enabled = true;
+            kbtnImg.Enabled = true;
             dtEstoque.Enabled = false;
-            tbPesquisar.Enabled = false;
+            ktbPesquisar.Enabled = false;
         }
         private void Desabilitar_Campos()
         {
-            tbCor.Enabled = false;
-            tbNome.Enabled = false;
-            tbPreco.Enabled = false;
-            tbModelo.Enabled = false;
-            tbQrCode.Enabled = false;
-            tbMin.Enabled = false;
-            tbRef.Enabled = false;
-            btnImg.Enabled = false;
+            ktbCor.Enabled = false;
+            ktbNome.Enabled = false;
+            ktbPreco.Enabled = false;
+            ktbModelo.Enabled = false;
+            ktbQrCode.Enabled = false;
+            ktbMin.Enabled = false;
+            ktbRef.Enabled = false;
+            kbtnImg.Enabled = false;
             dtEstoque.Enabled = true;
-            tbPesquisar.Enabled = true;
+            ktbPesquisar.Enabled = true;
         }
         private void Limpar_Campos()
         {
-            tbCodeBar.Text = string.Empty;
-            tbCor.Text = string.Empty;
-            tbNome.Text = string.Empty;
-            tbPreco.Text = string.Empty;
-            tbModelo.Text = string.Empty;
-            tbQrCode.Text = string.Empty;
-            tbMin.Text = string.Empty;
-            tbRef.Text = string.Empty;
+            ktbCodeBar.Text = string.Empty;
+            ktbCor.Text = string.Empty;
+            ktbNome.Text = string.Empty;
+            ktbPreco.Text = string.Empty;
+            ktbModelo.Text = string.Empty;
+            ktbQrCode.Text = string.Empty;
+            ktbMin.Text = string.Empty;
+            ktbRef.Text = string.Empty;
         }
 
         private void Carregar_Estoque()
@@ -94,7 +94,7 @@ namespace SisLoja.UI
             }
             dtEstoque.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             dtEstoque.ClearSelection();
-            tbPesquisar.Focus();
+            ktbPesquisar.Focus();
 
         }
         private void fConEstoque_Load(object sender, EventArgs e)
@@ -104,19 +104,19 @@ namespace SisLoja.UI
 
         private void btnEditar_Click(object sender, EventArgs e)
         {
-            tbCodeBar.Text = dtEstoque.SelectedRows[0].Cells[1].Value.ToString();
-            tbQrCode.Text = dtEstoque.SelectedRows[0].Cells[2].Value.ToString();
-            tbRef.Text = dtEstoque.SelectedRows[0].Cells[3].Value.ToString();
-            tbNome.Text = dtEstoque.SelectedRows[0].Cells[4].Value.ToString();
-            tbModelo.Text = dtEstoque.SelectedRows[0].Cells[5].Value.ToString();
-            tbCor.Text = dtEstoque.SelectedRows[0].Cells[6].Value.ToString();
-            tbMin.Text = dtEstoque.SelectedRows[0].Cells[7].Value.ToString();
-            tbPreco.Text = dtEstoque.SelectedRows[0].Cells[8].Value.ToString();
+            ktbCodeBar.Text = dtEstoque.SelectedRows[0].Cells[1].Value.ToString();
+            ktbQrCode.Text = dtEstoque.SelectedRows[0].Cells[2].Value.ToString();
+            ktbRef.Text = dtEstoque.SelectedRows[0].Cells[3].Value.ToString();
+            ktbNome.Text = dtEstoque.SelectedRows[0].Cells[4].Value.ToString();
+            ktbModelo.Text = dtEstoque.SelectedRows[0].Cells[5].Value.ToString();
+            ktbCor.Text = dtEstoque.SelectedRows[0].Cells[6].Value.ToString();
+            ktbMin.Text = dtEstoque.SelectedRows[0].Cells[7].Value.ToString();
+            ktbPreco.Text = dtEstoque.SelectedRows[0].Cells[8].Value.ToString();
 
             Desabilitar_Botoes();
             Habilitar_Acao();
             Habilitar_Campos();
-            tbRef.Focus();
+            ktbQrCode.Focus();
         }
         private void btnCancelar_Click(object sender, EventArgs e)
         {
@@ -136,12 +136,12 @@ namespace SisLoja.UI
         private void dtEstoque_DoubleClick(object sender, EventArgs e)
         {
             if (dtEstoque.SelectedRows.Count == 1)
-                btnEditar.PerformClick();
+                kbtnEditar.PerformClick();
         }
 
         private void fConEstoque_Click(object sender, EventArgs e)
         {
-            if (btnConfirmar.Enabled == false)
+            if (kbtnConfirmar.Enabled == false)
             {
                 Desabilitar_Botoes();
                 dtEstoque.ClearSelection();
@@ -151,17 +151,17 @@ namespace SisLoja.UI
         private void btnConfirmar_Click(object sender, EventArgs e)
         {
             modeloProduto produto = new modeloProduto();
-            produto.CodBar = tbCodeBar.Text;
-            produto.QrCode = tbQrCode.Text;
-            produto.Ref = tbRef.Text;
-            produto.Nome = tbNome.Text;
-            produto.Modelo = tbModelo.Text;
-            produto.Cor = tbCor.Text;
+            produto.CodBar = ktbCodeBar.Text;
+            produto.QrCode = ktbQrCode.Text;
+            produto.Ref = ktbRef.Text;
+            produto.Nome = ktbNome.Text;
+            produto.Modelo = ktbModelo.Text;
+            produto.Cor = ktbCor.Text;
             produto.Img = imgAtualizada;
             try
             {
-            produto.EstoqueMin = Convert.ToInt32(tbMin.Text);
-            produto.PrecoVenda = Convert.ToDecimal(tbPreco.Text);
+            produto.EstoqueMin = Convert.ToInt32(ktbMin.Text);
+            produto.PrecoVenda = Convert.ToDecimal(ktbPreco.Text);
 
             }
             catch{ }
@@ -204,7 +204,7 @@ namespace SisLoja.UI
         {
             dtEstoque.Rows.Clear();
             Image img;
-            DataTable dt = BLL.Pesquisar_ProdutoDAL(tbPesquisar.Text);
+            DataTable dt = BLL.Pesquisar_ProdutoDAL(ktbPesquisar.Text);
 
             foreach (DataRow row in dt.Rows)
             {
@@ -228,7 +228,7 @@ namespace SisLoja.UI
                 Desabilitar_Botoes();
                 Carregar_Estoque();
                 dtEstoque.ClearSelection();
-                tbPesquisar.Focus();
+                ktbPesquisar.Focus();
             }
         }
     }
