@@ -40,11 +40,11 @@ namespace SisLoja.UI
         {
             modeloProduto produto = new modeloProduto();
             produtoBLL BLL = new produtoBLL();
-            produto.Id = BLL.Proximo_ID_DisponivelDAL(); 
+            produto.Id = BLL.Proximo_ID_DisponivelDAL();
             produto.CodBar = ktbCodBar.Text;
             produto.QrCode = ktbQrCode.Text;
             produto.Img = imgpath;
-            produto.Ref= ktbRef.Text;
+            produto.Ref = ktbRef.Text;
             produto.Nome = ktbNome.Text;
             produto.Modelo = ktbModelo.Text;
             produto.Cor = ktbCor.Text;
@@ -53,12 +53,12 @@ namespace SisLoja.UI
                 produto.PrecoVenda = Convert.ToDecimal(ktbPreco.Text);
                 produto.EstoqueMin = Convert.ToInt32(ktbMin.Text);
             }
-            catch{ }
-                        
-            if( MessageBox.Show("Deseja Salvar o Produto.", "Mensagem do sistema.",
+            catch { }
+
+            if (MessageBox.Show("Deseja Salvar o Produto.", "Mensagem do sistema.",
                 MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
             {
-               int code = BLL.Gravar_ProdutoDAL(produto);
+                int code = BLL.Gravar_ProdutoDAL(produto);
                 if (code == 0)
                 {
                     MessageBox.Show("Produto Cadastrado Com Sucesso.", "Mensagem do Sistema.",
@@ -73,7 +73,7 @@ namespace SisLoja.UI
                     if (MessageBox.Show("O Produto se Encontra Inativo! Deseja Ativa-lo Novamente?", "Mensagem do Sistema.",
                         MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     {
-                        MessageBox.Show("O Produto foi ativado Novamente.","Mensagem do Sistema.",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                        MessageBox.Show("O Produto foi ativado Novamente.", "Mensagem do Sistema.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                         BLL.Atualizar_ProdutoDAL(produto);
                         Limpar_Campos();
                         kbtnVoltar.PerformClick();
@@ -106,13 +106,15 @@ namespace SisLoja.UI
         private void tbPreco_KeyPress(object sender, KeyPressEventArgs e)
         {
             if (e.KeyChar == 46 | e.KeyChar == 44)
-            { 
-                 // . e ,
-            } else if (e.KeyChar == 8)
+            {
+                // . e ,
+            }
+            else if (e.KeyChar == 8)
             {
                 // backspace
-            } else if ((e.KeyChar < 48) || (e.KeyChar > 57))
-            { 
+            }
+            else if ((e.KeyChar < 48) || (e.KeyChar > 57))
+            {
                 // 0 - 9
                 e.Handled = true;
             }
@@ -122,7 +124,7 @@ namespace SisLoja.UI
         {
             if ((e.KeyChar < 48) || (e.KeyChar > 57))
             {
-                e.Handled= true;
+                e.Handled = true;
             }
         }
 

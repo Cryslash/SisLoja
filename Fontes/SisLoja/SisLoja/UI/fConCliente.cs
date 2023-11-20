@@ -12,6 +12,8 @@ namespace SisLoja.UI
 {
     public partial class fConCliente : Form
     {
+        public fPrincipal instanciaprincipal;
+
         public fConCliente()
         {
             InitializeComponent();
@@ -28,7 +30,7 @@ namespace SisLoja.UI
             catch (Exception erro)
             {
                 MessageBox.Show("Erro na Conexão com o banco de dados." + erro, "Mensagem do Sistema",
-                                 MessageBoxButtons.OK, MessageBoxIcon.Error);                
+                                 MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
         private void fConCliente_Load(object sender, EventArgs e)
@@ -40,7 +42,7 @@ namespace SisLoja.UI
         {
             dtClientes.ClearSelection();
         }
-        
+
         private void fConCliente_Click(object sender, EventArgs e)
         {
             if (kbtnConfirmar.Enabled != true)
@@ -52,7 +54,7 @@ namespace SisLoja.UI
 
         //----- Botões -----//
 
-        public void Habilitar_Edicao() 
+        public void Habilitar_Edicao()
         {
             kbtnEditar.Enabled = true;
             kbtnExcluir.Enabled = true;
@@ -64,16 +66,16 @@ namespace SisLoja.UI
             kbtnCancelar.Enabled = true;
         }
 
-        public void Desabilitar_Botoes() 
+        public void Desabilitar_Botoes()
         {
-            kbtnEditar.Enabled=false;
+            kbtnEditar.Enabled = false;
             kbtnConfirmar.Enabled = false;
             kbtnCancelar.Enabled = false;
-            kbtnExcluir.Enabled = false;                
+            kbtnExcluir.Enabled = false;
         }
 
         //--- Campos ---//
-        public void Habilitar_Campos() 
+        public void Habilitar_Campos()
         {
             ktbNome.Enabled = true;
             ktbCpf.Enabled = true;
@@ -156,14 +158,18 @@ namespace SisLoja.UI
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            ClienteBLL clienteBll = new ClienteBLL();
-            modeloCliente cliente = new modeloCliente();
-            cliente.Id = Convert.ToInt32(dtClientes.SelectedRows[0].Cells[0].Value);
-            clienteBll.Excluir_ClienteDAL(cliente);
-            MessageBox.Show("Cliente exluido com sucesso", "Mensagem do sistema", 
-                MessageBoxButtons.OK, MessageBoxIcon.Information);
-            Listar_Clientes();
-            fConCliente_Click(sender, e);
+            if (MessageBox.Show("Deseja Excluir o Cliente?", "Mensagem do Sistema", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                ClienteBLL clienteBll = new ClienteBLL();
+                modeloCliente cliente = new modeloCliente();
+                cliente.Id = Convert.ToInt32(dtClientes.SelectedRows[0].Cells[0].Value);
+                clienteBll.Excluir_ClienteDAL(cliente);
+                MessageBox.Show("Cliente exluido com sucesso", "Mensagem do sistema",
+                    MessageBoxButtons.OK, MessageBoxIcon.Information);
+                Listar_Clientes();
+                fConCliente_Click(sender, e);
+            }
         }
 
         private void btnConfirmar_Click(object sender, EventArgs e)
@@ -199,6 +205,18 @@ namespace SisLoja.UI
         {
             ClienteBLL clienteBLL = new ClienteBLL();
             dtClientes.DataSource = clienteBLL.Pesquisar_ClienteDAL(ktbPesquisar.Text);
+        }
+
+        private void btnFechar_Click(object sender, EventArgs e)
+        {
+            kbtnCancelar.PerformClick();
+            this.instanciaprincipal.btnConsultar_Click(sender, e);
+        }
+
+        private void kbtnVoltar_Click(object sender, EventArgs e)
+        {
+            kbtnCancelar.PerformClick();
+            this.instanciaprincipal.btnConsultar_Click(sender, e);
         }
     }
 }

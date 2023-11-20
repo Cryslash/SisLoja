@@ -19,6 +19,33 @@ namespace SisLoja.UI
             InitializeComponent();
         }
 
+        private void ApenasNumeros(object sender, KeyPressEventArgs e)
+        {
+            if (e.KeyChar == 8)
+            {
+                // backspace
+            }
+            else if ((e.KeyChar < 48) || (e.KeyChar > 57))
+            {
+                // 0 - 9
+                e.Handled = true;
+            }
+        }
+
+        private void LimparCampos()
+        { 
+            ktbNome.Text = string.Empty;
+            ktbCpf.Text = string.Empty;
+            ktbFone.Text = string.Empty;
+            ktbWhatsapp.Text = string.Empty;
+            ktbEmail.Text = string.Empty;
+            ktbCep.Text = string.Empty;
+            ktbRua.Text = string.Empty;
+            ktbBairro.Text = string.Empty;
+            ktbCidade.Text = string.Empty;
+            kcbUf.Text = "UF";
+        }
+
         private void btnVoltar_Click(object sender, EventArgs e)
         {
             instanciaPrincipal.btnRegistrar_Click(sender, e);
@@ -44,13 +71,12 @@ namespace SisLoja.UI
             if (code == 0)
             {
                 MessageBox.Show("Cliente cadastrado com sucesso.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                LimparCampos();
                 kbtnVoltar.PerformClick();
             }
             if (code == 1)
-              MessageBox.Show("Verifique os campos digitados.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            if (code == 2)  
-            MessageBox.Show("Nome e telefone obrigatórios.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
-            
+                MessageBox.Show("Nome e telefone obrigatórios.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
         }
     }
 }

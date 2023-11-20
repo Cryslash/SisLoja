@@ -24,7 +24,7 @@ namespace SisLoja.UI
         //-------Botoes -------//
         private void Desabilitar_Botoes()
         {
-            kbtnEditar.Enabled= false;
+            kbtnEditar.Enabled = false;
             kbtnConfirmar.Enabled = false;
             kbtnCancelar.Enabled = false;
             kbtnExcluir.Enabled = false;
@@ -41,7 +41,7 @@ namespace SisLoja.UI
         }
         // -------Campos ------//
 
-         private void Habilitar_Campos() 
+        private void Habilitar_Campos()
         {
             ktbCor.Enabled = true;
             ktbNome.Enabled = true;
@@ -130,7 +130,7 @@ namespace SisLoja.UI
         {
             if (dtEstoque.SelectedRows.Count == 1)
             {
-                Habilitar_Edicao();            
+                Habilitar_Edicao();
             }
         }
         private void dtEstoque_DoubleClick(object sender, EventArgs e)
@@ -160,14 +160,14 @@ namespace SisLoja.UI
             produto.Img = imgAtualizada;
             try
             {
-            produto.EstoqueMin = Convert.ToInt32(ktbMin.Text);
-            produto.PrecoVenda = Convert.ToDecimal(ktbPreco.Text);
+                produto.EstoqueMin = Convert.ToInt32(ktbMin.Text);
+                produto.PrecoVenda = Convert.ToDecimal(ktbPreco.Text);
 
             }
-            catch{ }
+            catch { }
 
             int code;
-            if(MessageBox.Show("Confirma as Alterações no Produto?","Mensagem do Sistema",MessageBoxButtons.YesNo,
+            if (MessageBox.Show("Confirma as Alterações no Produto?", "Mensagem do Sistema", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 produtoBLL BLL = new produtoBLL();
@@ -178,12 +178,12 @@ namespace SisLoja.UI
                         MessageBoxIcon.Information);
                     Limpar_Campos();
                     Desabilitar_Campos();
-                    Desabilitar_Botoes();                    
+                    Desabilitar_Botoes();
                     Carregar_Estoque();
                     dtEstoque.ClearSelection();
                     imgAtualizada = "";
                 }
-                if(code == 1)
+                if (code == 1)
                     MessageBox.Show("Verifique os Campos Informados.", "Mensagem do Sistema", MessageBoxButtons.OK,
                         MessageBoxIcon.Error);
             }
@@ -219,7 +219,7 @@ namespace SisLoja.UI
 
         private void btnExcluir_Click(object sender, EventArgs e)
         {
-            if(MessageBox.Show("Deseja Excluir o Produto?","Mensagem do Sistema",MessageBoxButtons.YesNo,
+            if (MessageBox.Show("Deseja Excluir o Produto?", "Mensagem do Sistema", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 BLL.Excluir_ProdutoDAL(dtEstoque.SelectedRows[0].Cells[1].Value.ToString());
@@ -230,6 +230,12 @@ namespace SisLoja.UI
                 dtEstoque.ClearSelection();
                 ktbPesquisar.Focus();
             }
+        }
+
+        private void kbtnVoltar_Click(object sender, EventArgs e)
+        {
+            kbtnCancelar.PerformClick();
+            this.instanciaprincipal.btnConsultar_Click(sender, e);
         }
     }
 }

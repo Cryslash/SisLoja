@@ -25,10 +25,12 @@ namespace SisLoja.UI
         {
             instanciaconcliente.Owner = instanciaprincipal;
             instanciaconcliente.TopLevel = false;
+            instanciaconcliente.instanciaprincipal = this.instanciaprincipal;
             instanciaprincipal.pDashArea.Controls.Clear();
             instanciaprincipal.pDashArea.Controls.Add(instanciaconcliente);
             instanciaconcliente.Show();
             instanciaconcliente.Listar_Clientes();
+            instanciaconcliente.ktbPesquisar.Focus();
         }
 
         private void btnEstoque_Click(object sender, EventArgs e)
@@ -39,6 +41,7 @@ namespace SisLoja.UI
             instanciaprincipal.pDashArea.Controls.Clear();
             instanciaprincipal.pDashArea.Controls.Add(instanciaconestoque);
             instanciaconestoque.Show();
+            instanciaconestoque.ktbPesquisar.Focus();
         }
     }
 }

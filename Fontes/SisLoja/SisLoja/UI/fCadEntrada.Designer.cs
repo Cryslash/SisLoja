@@ -29,421 +29,384 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fCadEntrada));
-            this.label1 = new System.Windows.Forms.Label();
-            this.label2 = new System.Windows.Forms.Label();
-            this.label3 = new System.Windows.Forms.Label();
-            this.label4 = new System.Windows.Forms.Label();
-            this.label5 = new System.Windows.Forms.Label();
-            this.label6 = new System.Windows.Forms.Label();
-            this.pbImg = new System.Windows.Forms.PictureBox();
-            this.label7 = new System.Windows.Forms.Label();
-            this.ktbPesquisa = new Krypton.Toolkit.KryptonTextBox();
-            this.ktbCodBar = new Krypton.Toolkit.KryptonTextBox();
-            this.ktbNome = new Krypton.Toolkit.KryptonTextBox();
-            this.ktbModelo = new Krypton.Toolkit.KryptonTextBox();
-            this.ktbCor = new Krypton.Toolkit.KryptonTextBox();
-            this.ktbRef = new Krypton.Toolkit.KryptonTextBox();
-            this.ktbPreco = new Krypton.Toolkit.KryptonTextBox();
-            this.kbtnVoltar = new Krypton.Toolkit.KryptonButton();
-            this.kbtnSalvar = new Krypton.Toolkit.KryptonButton();
-            this.krtbQtd = new Krypton.Toolkit.KryptonRichTextBox();
-            this.pictureBox1 = new System.Windows.Forms.PictureBox();
-            this.label10 = new System.Windows.Forms.Label();
-            this.kbtnPesquisa = new Krypton.Toolkit.KryptonButton();
-            ((System.ComponentModel.ISupportInitialize)(this.pbImg)).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).BeginInit();
-            this.SuspendLayout();
+            label1 = new Label();
+            label2 = new Label();
+            label3 = new Label();
+            label4 = new Label();
+            label5 = new Label();
+            label6 = new Label();
+            pbImg = new PictureBox();
+            label7 = new Label();
+            ktbPesquisa = new Krypton.Toolkit.KryptonTextBox();
+            ktbCodBar = new Krypton.Toolkit.KryptonTextBox();
+            ktbNome = new Krypton.Toolkit.KryptonTextBox();
+            ktbModelo = new Krypton.Toolkit.KryptonTextBox();
+            ktbCor = new Krypton.Toolkit.KryptonTextBox();
+            ktbRef = new Krypton.Toolkit.KryptonTextBox();
+            ktbPreco = new Krypton.Toolkit.KryptonTextBox();
+            kbtnVoltar = new Krypton.Toolkit.KryptonButton();
+            kbtnSalvar = new Krypton.Toolkit.KryptonButton();
+            krtbQtd = new Krypton.Toolkit.KryptonRichTextBox();
+            pictureBox1 = new PictureBox();
+            label10 = new Label();
+            kbtnPesquisa = new Krypton.Toolkit.KryptonButton();
+            ((System.ComponentModel.ISupportInitialize)pbImg).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            SuspendLayout();
             // 
             // label1
             // 
-            this.label1.AutoSize = true;
-            this.label1.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label1.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label1.Location = new System.Drawing.Point(71, 396);
-            this.label1.Name = "label1";
-            this.label1.Size = new System.Drawing.Size(91, 21);
-            this.label1.TabIndex = 4;
-            this.label1.Text = "Quantidade";
+            label1.AutoSize = true;
+            label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label1.ForeColor = Color.FromArgb(51, 51, 51);
+            label1.Location = new Point(71, 396);
+            label1.Name = "label1";
+            label1.Size = new Size(91, 21);
+            label1.TabIndex = 4;
+            label1.Text = "Quantidade";
             // 
             // label2
             // 
-            this.label2.AutoSize = true;
-            this.label2.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label2.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label2.Location = new System.Drawing.Point(278, 321);
-            this.label2.Name = "label2";
-            this.label2.Size = new System.Drawing.Size(114, 21);
-            this.label2.TabIndex = 6;
-            this.label2.Text = "Preço de Custo";
+            label2.AutoSize = true;
+            label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label2.ForeColor = Color.FromArgb(51, 51, 51);
+            label2.Location = new Point(278, 321);
+            label2.Name = "label2";
+            label2.Size = new Size(114, 21);
+            label2.TabIndex = 6;
+            label2.Text = "Preço de Custo";
             // 
             // label3
             // 
-            this.label3.AutoSize = true;
-            this.label3.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label3.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label3.Location = new System.Drawing.Point(71, 198);
-            this.label3.Name = "label3";
-            this.label3.Size = new System.Drawing.Size(129, 21);
-            this.label3.TabIndex = 9;
-            this.label3.Text = "Código de Barras";
+            label3.AutoSize = true;
+            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label3.ForeColor = Color.FromArgb(51, 51, 51);
+            label3.Location = new Point(71, 198);
+            label3.Name = "label3";
+            label3.Size = new Size(129, 21);
+            label3.TabIndex = 9;
+            label3.Text = "Código de Barras";
             // 
             // label4
             // 
-            this.label4.AutoSize = true;
-            this.label4.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label4.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label4.Location = new System.Drawing.Point(71, 321);
-            this.label4.Name = "label4";
-            this.label4.Size = new System.Drawing.Size(83, 21);
-            this.label4.TabIndex = 11;
-            this.label4.Text = "Referência";
+            label4.AutoSize = true;
+            label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label4.ForeColor = Color.FromArgb(51, 51, 51);
+            label4.Location = new Point(71, 321);
+            label4.Name = "label4";
+            label4.Size = new Size(83, 21);
+            label4.TabIndex = 11;
+            label4.Text = "Referência";
             // 
             // label5
             // 
-            this.label5.AutoSize = true;
-            this.label5.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label5.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label5.Location = new System.Drawing.Point(278, 198);
-            this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(66, 21);
-            this.label5.TabIndex = 13;
-            this.label5.Text = "Produto";
+            label5.AutoSize = true;
+            label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label5.ForeColor = Color.FromArgb(51, 51, 51);
+            label5.Location = new Point(278, 198);
+            label5.Name = "label5";
+            label5.Size = new Size(66, 21);
+            label5.TabIndex = 13;
+            label5.Text = "Produto";
             // 
             // label6
             // 
-            this.label6.AutoSize = true;
-            this.label6.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label6.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label6.Location = new System.Drawing.Point(71, 259);
-            this.label6.Name = "label6";
-            this.label6.Size = new System.Drawing.Size(63, 21);
-            this.label6.TabIndex = 15;
-            this.label6.Text = "Modelo";
+            label6.AutoSize = true;
+            label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label6.ForeColor = Color.FromArgb(51, 51, 51);
+            label6.Location = new Point(71, 259);
+            label6.Name = "label6";
+            label6.Size = new Size(63, 21);
+            label6.TabIndex = 15;
+            label6.Text = "Modelo";
             // 
             // pbImg
             // 
-            this.pbImg.Image = ((System.Drawing.Image)(resources.GetObject("pbImg.Image")));
-            this.pbImg.InitialImage = ((System.Drawing.Image)(resources.GetObject("pbImg.InitialImage")));
-            this.pbImg.Location = new System.Drawing.Point(520, 198);
-            this.pbImg.Name = "pbImg";
-            this.pbImg.Size = new System.Drawing.Size(224, 224);
-            this.pbImg.SizeMode = System.Windows.Forms.PictureBoxSizeMode.Zoom;
-            this.pbImg.TabIndex = 16;
-            this.pbImg.TabStop = false;
+            pbImg.Image = (Image)resources.GetObject("pbImg.Image");
+            pbImg.InitialImage = (Image)resources.GetObject("pbImg.InitialImage");
+            pbImg.Location = new Point(520, 198);
+            pbImg.Name = "pbImg";
+            pbImg.Size = new Size(224, 224);
+            pbImg.SizeMode = PictureBoxSizeMode.Zoom;
+            pbImg.TabIndex = 16;
+            pbImg.TabStop = false;
             // 
             // label7
             // 
-            this.label7.AutoSize = true;
-            this.label7.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.label7.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.label7.Location = new System.Drawing.Point(277, 259);
-            this.label7.Name = "label7";
-            this.label7.Size = new System.Drawing.Size(35, 21);
-            this.label7.TabIndex = 26;
-            this.label7.Text = "Cor";
+            label7.AutoSize = true;
+            label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            label7.ForeColor = Color.FromArgb(51, 51, 51);
+            label7.Location = new Point(277, 259);
+            label7.Name = "label7";
+            label7.Size = new Size(35, 21);
+            label7.TabIndex = 26;
+            label7.Text = "Cor";
             // 
             // ktbPesquisa
             // 
-            this.ktbPesquisa.Location = new System.Drawing.Point(71, 141);
-            this.ktbPesquisa.Name = "ktbPesquisa";
-            this.ktbPesquisa.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.ktbPesquisa.Size = new System.Drawing.Size(332, 36);
-            this.ktbPesquisa.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
-            this.ktbPesquisa.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ktbPesquisa.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ktbPesquisa.StateActive.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ktbPesquisa.StateActive.Border.Rounding = 20F;
-            this.ktbPesquisa.StateActive.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ktbPesquisa.StateActive.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ktbPesquisa.StateActive.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.ktbPesquisa.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ktbPesquisa.TabIndex = 1;
-            this.ktbPesquisa.KeyDown += new System.Windows.Forms.KeyEventHandler(this.ktbPesquisa_KeyDown);
+            ktbPesquisa.Location = new Point(71, 141);
+            ktbPesquisa.Name = "ktbPesquisa";
+            ktbPesquisa.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            ktbPesquisa.Size = new Size(332, 36);
+            ktbPesquisa.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbPesquisa.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbPesquisa.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbPesquisa.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbPesquisa.StateActive.Border.Rounding = 20F;
+            ktbPesquisa.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbPesquisa.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbPesquisa.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
+            ktbPesquisa.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbPesquisa.TabIndex = 1;
+            ktbPesquisa.KeyDown += ktbPesquisa_KeyDown;
             // 
             // ktbCodBar
             // 
-            this.ktbCodBar.Location = new System.Drawing.Point(71, 222);
-            this.ktbCodBar.Name = "ktbCodBar";
-            this.ktbCodBar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.ktbCodBar.Size = new System.Drawing.Size(200, 36);
-            this.ktbCodBar.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
-            this.ktbCodBar.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ktbCodBar.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ktbCodBar.StateActive.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ktbCodBar.StateActive.Border.Rounding = 20F;
-            this.ktbCodBar.StateActive.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ktbCodBar.StateActive.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ktbCodBar.StateActive.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.ktbCodBar.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ktbCodBar.TabIndex = 3;
+            ktbCodBar.Location = new Point(71, 222);
+            ktbCodBar.Name = "ktbCodBar";
+            ktbCodBar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            ktbCodBar.Size = new Size(200, 36);
+            ktbCodBar.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbCodBar.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbCodBar.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbCodBar.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbCodBar.StateActive.Border.Rounding = 20F;
+            ktbCodBar.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbCodBar.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbCodBar.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
+            ktbCodBar.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbCodBar.TabIndex = 3;
             // 
             // ktbNome
             // 
-            this.ktbNome.Location = new System.Drawing.Point(277, 220);
-            this.ktbNome.Name = "ktbNome";
-            this.ktbNome.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.ktbNome.Size = new System.Drawing.Size(200, 36);
-            this.ktbNome.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
-            this.ktbNome.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ktbNome.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ktbNome.StateActive.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ktbNome.StateActive.Border.Rounding = 20F;
-            this.ktbNome.StateActive.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ktbNome.StateActive.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ktbNome.StateActive.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.ktbNome.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ktbNome.TabIndex = 4;
+            ktbNome.Location = new Point(277, 220);
+            ktbNome.Name = "ktbNome";
+            ktbNome.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            ktbNome.Size = new Size(200, 36);
+            ktbNome.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbNome.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbNome.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbNome.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbNome.StateActive.Border.Rounding = 20F;
+            ktbNome.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbNome.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbNome.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
+            ktbNome.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbNome.TabIndex = 4;
             // 
             // ktbModelo
             // 
-            this.ktbModelo.Location = new System.Drawing.Point(71, 283);
-            this.ktbModelo.Name = "ktbModelo";
-            this.ktbModelo.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.ktbModelo.Size = new System.Drawing.Size(200, 36);
-            this.ktbModelo.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
-            this.ktbModelo.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ktbModelo.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ktbModelo.StateActive.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ktbModelo.StateActive.Border.Rounding = 20F;
-            this.ktbModelo.StateActive.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ktbModelo.StateActive.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ktbModelo.StateActive.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.ktbModelo.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ktbModelo.TabIndex = 5;
+            ktbModelo.Location = new Point(71, 283);
+            ktbModelo.Name = "ktbModelo";
+            ktbModelo.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            ktbModelo.Size = new Size(200, 36);
+            ktbModelo.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbModelo.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbModelo.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbModelo.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbModelo.StateActive.Border.Rounding = 20F;
+            ktbModelo.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbModelo.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbModelo.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
+            ktbModelo.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbModelo.TabIndex = 5;
             // 
             // ktbCor
             // 
-            this.ktbCor.Location = new System.Drawing.Point(278, 283);
-            this.ktbCor.Name = "ktbCor";
-            this.ktbCor.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.ktbCor.Size = new System.Drawing.Size(199, 36);
-            this.ktbCor.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
-            this.ktbCor.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ktbCor.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ktbCor.StateActive.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ktbCor.StateActive.Border.Rounding = 20F;
-            this.ktbCor.StateActive.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ktbCor.StateActive.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ktbCor.StateActive.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.ktbCor.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ktbCor.TabIndex = 6;
+            ktbCor.Location = new Point(278, 283);
+            ktbCor.Name = "ktbCor";
+            ktbCor.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            ktbCor.Size = new Size(199, 36);
+            ktbCor.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbCor.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbCor.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbCor.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbCor.StateActive.Border.Rounding = 20F;
+            ktbCor.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbCor.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbCor.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
+            ktbCor.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbCor.TabIndex = 6;
             // 
             // ktbRef
             // 
-            this.ktbRef.Location = new System.Drawing.Point(71, 345);
-            this.ktbRef.Name = "ktbRef";
-            this.ktbRef.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.ktbRef.Size = new System.Drawing.Size(200, 36);
-            this.ktbRef.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
-            this.ktbRef.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ktbRef.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ktbRef.StateActive.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ktbRef.StateActive.Border.Rounding = 20F;
-            this.ktbRef.StateActive.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ktbRef.StateActive.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ktbRef.StateActive.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.ktbRef.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ktbRef.TabIndex = 7;
+            ktbRef.Location = new Point(71, 345);
+            ktbRef.Name = "ktbRef";
+            ktbRef.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            ktbRef.Size = new Size(200, 36);
+            ktbRef.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbRef.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbRef.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbRef.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbRef.StateActive.Border.Rounding = 20F;
+            ktbRef.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbRef.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbRef.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
+            ktbRef.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbRef.TabIndex = 7;
             // 
             // ktbPreco
             // 
-            this.ktbPreco.Location = new System.Drawing.Point(278, 345);
-            this.ktbPreco.Name = "ktbPreco";
-            this.ktbPreco.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.ktbPreco.Size = new System.Drawing.Size(199, 36);
-            this.ktbPreco.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
-            this.ktbPreco.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ktbPreco.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.ktbPreco.StateActive.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ktbPreco.StateActive.Border.Rounding = 20F;
-            this.ktbPreco.StateActive.Content.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(51)))), ((int)(((byte)(51)))), ((int)(((byte)(51)))));
-            this.ktbPreco.StateActive.Content.Font = new System.Drawing.Font("Segoe UI", 12F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.ktbPreco.StateActive.Content.Padding = new System.Windows.Forms.Padding(10, 0, 10, 0);
-            this.ktbPreco.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.ktbPreco.TabIndex = 8;
+            ktbPreco.Location = new Point(278, 345);
+            ktbPreco.Name = "ktbPreco";
+            ktbPreco.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            ktbPreco.Size = new Size(199, 36);
+            ktbPreco.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbPreco.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbPreco.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbPreco.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbPreco.StateActive.Border.Rounding = 20F;
+            ktbPreco.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbPreco.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbPreco.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
+            ktbPreco.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbPreco.TabIndex = 8;
             // 
             // kbtnVoltar
             // 
-            this.kbtnVoltar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kbtnVoltar.Location = new System.Drawing.Point(71, 591);
-            this.kbtnVoltar.Name = "kbtnVoltar";
-            this.kbtnVoltar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnVoltar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnVoltar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.kbtnVoltar.Size = new System.Drawing.Size(121, 40);
-            this.kbtnVoltar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnVoltar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnVoltar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnVoltar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnVoltar.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kbtnVoltar.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kbtnVoltar.StateCommon.Border.Rounding = 15F;
-            this.kbtnVoltar.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kbtnVoltar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.kbtnVoltar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kbtnVoltar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.kbtnVoltar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.kbtnVoltar.TabIndex = 11;
-            this.kbtnVoltar.Values.Image = ((System.Drawing.Image)(resources.GetObject("kbtnVoltar.Values.Image")));
-            this.kbtnVoltar.Values.Text = "Voltar";
-            this.kbtnVoltar.Click += new System.EventHandler(this.btnVoltar_Click);
+            kbtnVoltar.Cursor = Cursors.Hand;
+            kbtnVoltar.Location = new Point(71, 591);
+            kbtnVoltar.Name = "kbtnVoltar";
+            kbtnVoltar.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnVoltar.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnVoltar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kbtnVoltar.Size = new Size(121, 40);
+            kbtnVoltar.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnVoltar.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnVoltar.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnVoltar.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnVoltar.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnVoltar.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            kbtnVoltar.StateCommon.Border.Rounding = 15F;
+            kbtnVoltar.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            kbtnVoltar.StateCommon.Content.ShortText.Color1 = Color.White;
+            kbtnVoltar.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            kbtnVoltar.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
+            kbtnVoltar.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
+            kbtnVoltar.TabIndex = 11;
+            kbtnVoltar.Values.Image = (Image)resources.GetObject("kbtnVoltar.Values.Image");
+            kbtnVoltar.Values.Text = "Voltar";
+            kbtnVoltar.Click += btnVoltar_Click;
             // 
             // kbtnSalvar
             // 
-            this.kbtnSalvar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kbtnSalvar.Location = new System.Drawing.Point(215, 591);
-            this.kbtnSalvar.Name = "kbtnSalvar";
-            this.kbtnSalvar.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnSalvar.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnSalvar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.kbtnSalvar.Size = new System.Drawing.Size(121, 40);
-            this.kbtnSalvar.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnSalvar.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnSalvar.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnSalvar.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnSalvar.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kbtnSalvar.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kbtnSalvar.StateCommon.Border.Rounding = 15F;
-            this.kbtnSalvar.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kbtnSalvar.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.kbtnSalvar.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kbtnSalvar.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.kbtnSalvar.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.kbtnSalvar.TabIndex = 10;
-            this.kbtnSalvar.Values.Image = ((System.Drawing.Image)(resources.GetObject("kbtnSalvar.Values.Image")));
-            this.kbtnSalvar.Values.Text = "Salvar";
-            this.kbtnSalvar.Click += new System.EventHandler(this.btnSalvar_Click);
+            kbtnSalvar.Cursor = Cursors.Hand;
+            kbtnSalvar.Location = new Point(215, 591);
+            kbtnSalvar.Name = "kbtnSalvar";
+            kbtnSalvar.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnSalvar.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnSalvar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kbtnSalvar.Size = new Size(121, 40);
+            kbtnSalvar.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnSalvar.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnSalvar.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnSalvar.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnSalvar.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnSalvar.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            kbtnSalvar.StateCommon.Border.Rounding = 15F;
+            kbtnSalvar.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            kbtnSalvar.StateCommon.Content.ShortText.Color1 = Color.White;
+            kbtnSalvar.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            kbtnSalvar.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
+            kbtnSalvar.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
+            kbtnSalvar.TabIndex = 10;
+            kbtnSalvar.Values.Image = (Image)resources.GetObject("kbtnSalvar.Values.Image");
+            kbtnSalvar.Values.Text = "Salvar";
+            kbtnSalvar.Click += btnSalvar_Click;
             // 
             // krtbQtd
             // 
-            this.krtbQtd.Location = new System.Drawing.Point(71, 420);
-            this.krtbQtd.Name = "krtbQtd";
-            this.krtbQtd.Size = new System.Drawing.Size(406, 78);
-            this.krtbQtd.StateActive.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(242)))), ((int)(((byte)(241)))), ((int)(((byte)(242)))));
-            this.krtbQtd.StateActive.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.krtbQtd.StateActive.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(224)))), ((int)(((byte)(224)))), ((int)(((byte)(224)))));
-            this.krtbQtd.StateActive.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.krtbQtd.StateActive.Border.Rounding = 20F;
-            this.krtbQtd.TabIndex = 9;
-            this.krtbQtd.Text = "";
+            krtbQtd.Location = new Point(71, 420);
+            krtbQtd.Name = "krtbQtd";
+            krtbQtd.Size = new Size(406, 78);
+            krtbQtd.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            krtbQtd.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            krtbQtd.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            krtbQtd.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            krtbQtd.StateActive.Border.Rounding = 20F;
+            krtbQtd.TabIndex = 9;
+            krtbQtd.Text = "";
             // 
             // pictureBox1
             // 
-            this.pictureBox1.Image = ((System.Drawing.Image)(resources.GetObject("pictureBox1.Image")));
-            this.pictureBox1.Location = new System.Drawing.Point(71, 61);
-            this.pictureBox1.Name = "pictureBox1";
-            this.pictureBox1.Size = new System.Drawing.Size(32, 32);
-            this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.CenterImage;
-            this.pictureBox1.TabIndex = 41;
-            this.pictureBox1.TabStop = false;
+            pictureBox1.Image = (Image)resources.GetObject("pictureBox1.Image");
+            pictureBox1.Location = new Point(71, 61);
+            pictureBox1.Name = "pictureBox1";
+            pictureBox1.Size = new Size(32, 32);
+            pictureBox1.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox1.TabIndex = 41;
+            pictureBox1.TabStop = false;
             // 
             // label10
             // 
-            this.label10.AutoSize = true;
-            this.label10.Font = new System.Drawing.Font("Segoe UI", 12.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point);
-            this.label10.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.label10.Location = new System.Drawing.Point(119, 68);
-            this.label10.Name = "label10";
-            this.label10.Size = new System.Drawing.Size(154, 23);
-            this.label10.TabIndex = 40;
-            this.label10.Text = "Cadastrar Entrada";
+            label10.AutoSize = true;
+            label10.Font = new Font("Segoe UI", 12.75F, FontStyle.Bold, GraphicsUnit.Point);
+            label10.ForeColor = Color.FromArgb(37, 77, 113);
+            label10.Location = new Point(119, 68);
+            label10.Name = "label10";
+            label10.Size = new Size(154, 23);
+            label10.TabIndex = 40;
+            label10.Text = "Cadastrar Entrada";
             // 
             // kbtnPesquisa
             // 
-            this.kbtnPesquisa.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.kbtnPesquisa.Location = new System.Drawing.Point(409, 140);
-            this.kbtnPesquisa.Name = "kbtnPesquisa";
-            this.kbtnPesquisa.OverrideDefault.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnPesquisa.OverrideDefault.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnPesquisa.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            this.kbtnPesquisa.Size = new System.Drawing.Size(68, 40);
-            this.kbtnPesquisa.StateCommon.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnPesquisa.StateCommon.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnPesquisa.StateCommon.Border.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnPesquisa.StateCommon.Border.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.kbtnPesquisa.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.kbtnPesquisa.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            this.kbtnPesquisa.StateCommon.Border.Rounding = 15F;
-            this.kbtnPesquisa.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            this.kbtnPesquisa.StateCommon.Content.ShortText.Color1 = System.Drawing.Color.White;
-            this.kbtnPesquisa.StateCommon.Content.ShortText.Font = new System.Drawing.Font("Segoe UI", 14.25F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.kbtnPesquisa.StateTracking.Back.Color1 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.kbtnPesquisa.StateTracking.Back.Color2 = System.Drawing.Color.FromArgb(((int)(((byte)(80)))), ((int)(((byte)(60)))), ((int)(((byte)(90)))));
-            this.kbtnPesquisa.TabIndex = 42;
-            this.kbtnPesquisa.Values.Image = ((System.Drawing.Image)(resources.GetObject("kbtnPesquisa.Values.Image")));
-            this.kbtnPesquisa.Values.Text = "";
-            this.kbtnPesquisa.Click += new System.EventHandler(this.btnPesquisa_Click);
+            kbtnPesquisa.Cursor = Cursors.Hand;
+            kbtnPesquisa.Location = new Point(409, 140);
+            kbtnPesquisa.Name = "kbtnPesquisa";
+            kbtnPesquisa.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnPesquisa.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnPesquisa.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kbtnPesquisa.Size = new Size(68, 40);
+            kbtnPesquisa.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnPesquisa.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnPesquisa.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnPesquisa.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnPesquisa.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnPesquisa.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            kbtnPesquisa.StateCommon.Border.Rounding = 15F;
+            kbtnPesquisa.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            kbtnPesquisa.StateCommon.Content.ShortText.Color1 = Color.White;
+            kbtnPesquisa.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            kbtnPesquisa.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
+            kbtnPesquisa.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
+            kbtnPesquisa.TabIndex = 42;
+            kbtnPesquisa.Values.Image = (Image)resources.GetObject("kbtnPesquisa.Values.Image");
+            kbtnPesquisa.Values.Text = "";
+            kbtnPesquisa.Click += btnPesquisa_Click;
             // 
             // fCadEntrada
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
-            this.ClientSize = new System.Drawing.Size(1250, 680);
-            this.Controls.Add(this.kbtnPesquisa);
-            this.Controls.Add(this.pictureBox1);
-            this.Controls.Add(this.label10);
-            this.Controls.Add(this.krtbQtd);
-            this.Controls.Add(this.kbtnVoltar);
-            this.Controls.Add(this.kbtnSalvar);
-            this.Controls.Add(this.ktbPreco);
-            this.Controls.Add(this.ktbRef);
-            this.Controls.Add(this.ktbCor);
-            this.Controls.Add(this.ktbModelo);
-            this.Controls.Add(this.ktbNome);
-            this.Controls.Add(this.ktbCodBar);
-            this.Controls.Add(this.ktbPesquisa);
-            this.Controls.Add(this.label7);
-            this.Controls.Add(this.pbImg);
-            this.Controls.Add(this.label6);
-            this.Controls.Add(this.label5);
-            this.Controls.Add(this.label4);
-            this.Controls.Add(this.label3);
-            this.Controls.Add(this.label2);
-            this.Controls.Add(this.label1);
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "fCadEntrada";
-            ((System.ComponentModel.ISupportInitialize)(this.pbImg)).EndInit();
-            ((System.ComponentModel.ISupportInitialize)(this.pictureBox1)).EndInit();
-            this.ResumeLayout(false);
-            this.PerformLayout();
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.White;
+            ClientSize = new Size(1250, 680);
+            Controls.Add(kbtnPesquisa);
+            Controls.Add(pictureBox1);
+            Controls.Add(label10);
+            Controls.Add(krtbQtd);
+            Controls.Add(kbtnVoltar);
+            Controls.Add(kbtnSalvar);
+            Controls.Add(ktbPreco);
+            Controls.Add(ktbRef);
+            Controls.Add(ktbCor);
+            Controls.Add(ktbModelo);
+            Controls.Add(ktbNome);
+            Controls.Add(ktbCodBar);
+            Controls.Add(ktbPesquisa);
+            Controls.Add(label7);
+            Controls.Add(pbImg);
+            Controls.Add(label6);
+            Controls.Add(label5);
+            Controls.Add(label4);
+            Controls.Add(label3);
+            Controls.Add(label2);
+            Controls.Add(label1);
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "fCadEntrada";
+            ((System.ComponentModel.ISupportInitialize)pbImg).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion

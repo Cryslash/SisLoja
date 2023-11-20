@@ -30,6 +30,7 @@ namespace SisLoja.UI
             instanciaPrincipal.pDashArea.Controls.Clear();
             instanciaPrincipal.pDashArea.Controls.Add(Cliente);
             Cliente.Show();
+            Cliente.ktbNome.Focus();
         }
 
         private void kbtnProduto_Click(object sender, EventArgs e)

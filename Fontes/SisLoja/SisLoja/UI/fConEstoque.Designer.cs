@@ -93,8 +93,11 @@
             kbtnImg = new Krypton.Toolkit.KryptonButton();
             pictureBox1 = new PictureBox();
             label10 = new Label();
+            pictureBox2 = new PictureBox();
+            kbtnVoltar = new Krypton.Toolkit.KryptonButton();
             ((System.ComponentModel.ISupportInitialize)dtEstoque).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             SuspendLayout();
             // 
             // label1
@@ -102,7 +105,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label1.ForeColor = Color.FromArgb(51, 51, 51);
-            label1.Location = new Point(69, 224);
+            label1.Location = new Point(73, 198);
             label1.Name = "label1";
             label1.Size = new Size(53, 21);
             label1.TabIndex = 1;
@@ -113,7 +116,7 @@
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label2.ForeColor = Color.FromArgb(51, 51, 51);
-            label2.Location = new Point(370, 223);
+            label2.Location = new Point(376, 198);
             label2.Name = "label2";
             label2.Size = new Size(63, 21);
             label2.TabIndex = 3;
@@ -124,7 +127,7 @@
             label3.AutoSize = true;
             label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label3.ForeColor = Color.FromArgb(51, 51, 51);
-            label3.Location = new Point(75, 153);
+            label3.Location = new Point(73, 128);
             label3.Name = "label3";
             label3.Size = new Size(129, 21);
             label3.TabIndex = 5;
@@ -135,7 +138,7 @@
             label4.AutoSize = true;
             label4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label4.ForeColor = Color.FromArgb(51, 51, 51);
-            label4.Location = new Point(244, 153);
+            label4.Location = new Point(246, 128);
             label4.Name = "label4";
             label4.Size = new Size(64, 21);
             label4.TabIndex = 7;
@@ -146,7 +149,7 @@
             label5.AutoSize = true;
             label5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label5.ForeColor = Color.FromArgb(51, 51, 51);
-            label5.Location = new Point(406, 153);
+            label5.Location = new Point(420, 129);
             label5.Name = "label5";
             label5.Size = new Size(83, 21);
             label5.TabIndex = 9;
@@ -182,7 +185,7 @@
             dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
             dtEstoque.DefaultCellStyle = dataGridViewCellStyle2;
             dtEstoque.EnableHeadersVisualStyles = false;
-            dtEstoque.Location = new Point(66, 304);
+            dtEstoque.Location = new Point(64, 279);
             dtEstoque.MultiSelect = false;
             dtEstoque.Name = "dtEstoque";
             dtEstoque.ReadOnly = true;
@@ -432,7 +435,7 @@
             label6.AutoSize = true;
             label6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label6.ForeColor = Color.FromArgb(51, 51, 51);
-            label6.Location = new Point(823, 223);
+            label6.Location = new Point(844, 198);
             label6.Name = "label6";
             label6.Size = new Size(123, 21);
             label6.TabIndex = 30;
@@ -443,7 +446,7 @@
             label7.AutoSize = true;
             label7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label7.ForeColor = Color.FromArgb(51, 51, 51);
-            label7.Location = new Point(986, 223);
+            label7.Location = new Point(1008, 198);
             label7.Name = "label7";
             label7.Size = new Size(117, 21);
             label7.TabIndex = 32;
@@ -454,7 +457,7 @@
             label8.AutoSize = true;
             label8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             label8.ForeColor = Color.FromArgb(51, 51, 51);
-            label8.Location = new Point(662, 223);
+            label8.Location = new Point(677, 198);
             label8.Name = "label8";
             label8.Size = new Size(35, 21);
             label8.TabIndex = 34;
@@ -464,7 +467,7 @@
             // 
             kbtnExcluir.Cursor = Cursors.Hand;
             kbtnExcluir.Enabled = false;
-            kbtnExcluir.Location = new Point(492, 619);
+            kbtnExcluir.Location = new Point(651, 603);
             kbtnExcluir.Name = "kbtnExcluir";
             kbtnExcluir.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
             kbtnExcluir.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
@@ -502,7 +505,7 @@
             // 
             kbtnCancelar.Cursor = Cursors.Hand;
             kbtnCancelar.Enabled = false;
-            kbtnCancelar.Location = new Point(350, 619);
+            kbtnCancelar.Location = new Point(509, 603);
             kbtnCancelar.Name = "kbtnCancelar";
             kbtnCancelar.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
             kbtnCancelar.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
@@ -540,7 +543,7 @@
             // 
             kbtnConfirmar.Cursor = Cursors.Hand;
             kbtnConfirmar.Enabled = false;
-            kbtnConfirmar.Location = new Point(208, 619);
+            kbtnConfirmar.Location = new Point(367, 603);
             kbtnConfirmar.Name = "kbtnConfirmar";
             kbtnConfirmar.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
             kbtnConfirmar.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
@@ -578,7 +581,7 @@
             // 
             kbtnEditar.Cursor = Cursors.Hand;
             kbtnEditar.Enabled = false;
-            kbtnEditar.Location = new Point(66, 619);
+            kbtnEditar.Location = new Point(225, 603);
             kbtnEditar.Name = "kbtnEditar";
             kbtnEditar.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
             kbtnEditar.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
@@ -614,17 +617,17 @@
             // 
             // ktbPesquisar
             // 
-            ktbPesquisar.Location = new Point(66, 105);
+            ktbPesquisar.Location = new Point(966, 63);
             ktbPesquisar.Name = "ktbPesquisar";
             ktbPesquisar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            ktbPesquisar.Size = new Size(318, 36);
+            ktbPesquisar.Size = new Size(134, 29);
             ktbPesquisar.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
             ktbPesquisar.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
             ktbPesquisar.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
             ktbPesquisar.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             ktbPesquisar.StateActive.Border.Rounding = 20F;
             ktbPesquisar.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
-            ktbPesquisar.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbPesquisar.StateActive.Content.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
             ktbPesquisar.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbPesquisar.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             ktbPesquisar.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
@@ -633,14 +636,15 @@
             ktbPesquisar.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             ktbPesquisar.StateDisabled.Border.Rounding = 20F;
             ktbPesquisar.StateDisabled.Content.Color1 = Color.Gray;
-            ktbPesquisar.StateDisabled.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbPesquisar.StateDisabled.Content.Font = new Font("Segoe UI", 8F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbPesquisar.StateDisabled.Content.Padding = new Padding(10, -1, -1, -1);
             ktbPesquisar.TabIndex = 1;
             ktbPesquisar.TextChanged += tbPesquisar_TextChanged;
             // 
             // ktbCodeBar
             // 
             ktbCodeBar.Enabled = false;
-            ktbCodeBar.Location = new Point(66, 176);
+            ktbCodeBar.Location = new Point(64, 151);
             ktbCodeBar.Name = "ktbCodeBar";
             ktbCodeBar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             ktbCodeBar.Size = new Size(138, 36);
@@ -664,7 +668,7 @@
             // 
             // ktbRef
             // 
-            ktbRef.Location = new Point(392, 176);
+            ktbRef.Location = new Point(406, 152);
             ktbRef.Name = "ktbRef";
             ktbRef.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             ktbRef.Size = new Size(136, 36);
@@ -686,7 +690,7 @@
             // 
             // ktbModelo
             // 
-            ktbModelo.Location = new Point(357, 247);
+            ktbModelo.Location = new Point(363, 222);
             ktbModelo.Name = "ktbModelo";
             ktbModelo.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             ktbModelo.Size = new Size(265, 36);
@@ -708,7 +712,7 @@
             // 
             // ktbCor
             // 
-            ktbCor.Location = new Point(650, 246);
+            ktbCor.Location = new Point(663, 221);
             ktbCor.Name = "ktbCor";
             ktbCor.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             ktbCor.Size = new Size(136, 36);
@@ -730,7 +734,7 @@
             // 
             // ktbQrCode
             // 
-            ktbQrCode.Location = new Point(229, 177);
+            ktbQrCode.Location = new Point(234, 152);
             ktbQrCode.Name = "ktbQrCode";
             ktbQrCode.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             ktbQrCode.Size = new Size(136, 36);
@@ -752,7 +756,7 @@
             // 
             // ktbNome
             // 
-            ktbNome.Location = new Point(66, 247);
+            ktbNome.Location = new Point(64, 222);
             ktbNome.Name = "ktbNome";
             ktbNome.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             ktbNome.Size = new Size(265, 36);
@@ -774,7 +778,7 @@
             // 
             // ktbMin
             // 
-            ktbMin.Location = new Point(812, 246);
+            ktbMin.Location = new Point(833, 221);
             ktbMin.Name = "ktbMin";
             ktbMin.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             ktbMin.Size = new Size(134, 36);
@@ -796,7 +800,7 @@
             // 
             // ktbPreco
             // 
-            ktbPreco.Location = new Point(974, 246);
+            ktbPreco.Location = new Point(996, 221);
             ktbPreco.Name = "ktbPreco";
             ktbPreco.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             ktbPreco.Size = new Size(134, 36);
@@ -820,7 +824,7 @@
             // 
             kbtnImg.Cursor = Cursors.Hand;
             kbtnImg.Enabled = false;
-            kbtnImg.Location = new Point(554, 172);
+            kbtnImg.Location = new Point(573, 149);
             kbtnImg.Name = "kbtnImg";
             kbtnImg.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
             kbtnImg.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
@@ -877,12 +881,50 @@
             label10.TabIndex = 57;
             label10.Text = "Estoque";
             // 
+            // pictureBox2
+            // 
+            pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
+            pictureBox2.Location = new Point(1106, 65);
+            pictureBox2.Name = "pictureBox2";
+            pictureBox2.Size = new Size(24, 24);
+            pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;
+            pictureBox2.TabIndex = 60;
+            pictureBox2.TabStop = false;
+            // 
+            // kbtnVoltar
+            // 
+            kbtnVoltar.Cursor = Cursors.Hand;
+            kbtnVoltar.Location = new Point(64, 603);
+            kbtnVoltar.Name = "kbtnVoltar";
+            kbtnVoltar.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnVoltar.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnVoltar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kbtnVoltar.Size = new Size(121, 40);
+            kbtnVoltar.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnVoltar.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnVoltar.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnVoltar.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnVoltar.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnVoltar.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            kbtnVoltar.StateCommon.Border.Rounding = 15F;
+            kbtnVoltar.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            kbtnVoltar.StateCommon.Content.ShortText.Color1 = Color.White;
+            kbtnVoltar.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            kbtnVoltar.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
+            kbtnVoltar.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
+            kbtnVoltar.TabIndex = 64;
+            kbtnVoltar.Values.Image = (Image)resources.GetObject("kbtnVoltar.Values.Image");
+            kbtnVoltar.Values.Text = "Voltar";
+            kbtnVoltar.Click += kbtnVoltar_Click;
+            // 
             // fConEstoque
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1250, 680);
+            Controls.Add(kbtnVoltar);
+            Controls.Add(pictureBox2);
             Controls.Add(pictureBox1);
             Controls.Add(label10);
             Controls.Add(kbtnImg);
@@ -914,6 +956,7 @@
             Click += fConEstoque_Click;
             ((System.ComponentModel.ISupportInitialize)dtEstoque).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -968,7 +1011,6 @@
         private Krypton.Toolkit.KryptonButton kbtnCancelar;
         private Krypton.Toolkit.KryptonButton kbtnConfirmar;
         private Krypton.Toolkit.KryptonButton kbtnEditar;
-        private Krypton.Toolkit.KryptonTextBox ktbPesquisar;
         private Krypton.Toolkit.KryptonTextBox ktbCodeBar;
         private Krypton.Toolkit.KryptonTextBox ktbRef;
         private Krypton.Toolkit.KryptonTextBox ktbModelo;
@@ -980,5 +1022,8 @@
         private Krypton.Toolkit.KryptonButton kbtnImg;
         private PictureBox pictureBox1;
         private Label label10;
+        private PictureBox pictureBox2;
+        public Krypton.Toolkit.KryptonTextBox ktbPesquisar;
+        private Krypton.Toolkit.KryptonButton kbtnVoltar;
     }
 }

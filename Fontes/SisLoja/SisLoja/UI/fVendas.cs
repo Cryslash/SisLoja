@@ -24,11 +24,11 @@ namespace SisLoja.UI
             InitializeComponent();
         }
 
-        private void Limpar_Campos() 
+        private void Limpar_Campos()
         {
-            tbCodBar.Text = string.Empty;
-            tbQtd.Text = string.Empty;
-            tbNum.Text = string.Empty;
+            tbCodBar.Text = "cód barras";
+            tbQtd.Text = "qtd";
+            tbNum.Text = "núm";
         }
 
         private void Atualizar_Info(int qtd, decimal valor)
@@ -48,7 +48,7 @@ namespace SisLoja.UI
             {
                 produto = BLL.BuscarProdutoDAL(tbCodBar.Text);
                 pbImg.ImageLocation = produto.Img;
-                lblProduto.Text = String.Format("{0} - {1} - {2}",produto.Nome, produto.Modelo, produto.Ref);
+                lblProduto.Text = String.Format("{0} - {1} - {2}", produto.Nome, produto.Modelo, produto.Ref);
                 lblPreco.Text = string.Format("R$ {0}", produto.PrecoVenda.ToString());
                 tbNum.Focus();
             }
@@ -56,11 +56,12 @@ namespace SisLoja.UI
 
         private void tbQtd_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 Image img = Image.FromFile(produto.Img);
-                string info = string.Format("{0} - {1} - num {2} - {3}", produto.Nome, produto.Modelo,tbNum.Text, produto.Ref);
-                dtListaProdutos.Rows.Add(img, info,tbQtd.Text,produto.PrecoVenda);
+                string info = string.Format("{0} - {1} {2} {3} - núm {4}", produto.CodBar, produto.Nome,
+                    produto.Ref, produto.Modelo, tbNum.Text);
+                dtListaProdutos.Rows.Add(img, info, tbQtd.Text, produto.PrecoVenda);
                 Atualizar_Info(Convert.ToInt32(tbQtd.Text), produto.PrecoVenda);
                 Limpar_Campos();
                 tbCodBar.Focus();
@@ -69,11 +70,44 @@ namespace SisLoja.UI
 
         private void tbNum_KeyDown(object sender, KeyEventArgs e)
         {
-            if(e.KeyCode == Keys.Enter)
+            if (e.KeyCode == Keys.Enter)
             {
                 if (tbNum.Text.Length > 0)
                     tbQtd.Focus();
             }
+        }
+
+        private void tbCodBar_Enter(object sender, EventArgs e)
+        {
+            tbCodBar.Text = string.Empty;
+        }
+
+        private void tbCodBar_Leave(object sender, EventArgs e)
+        {
+            if (tbCodBar.Text == string.Empty)
+                tbCodBar.Text = "cód. barras";
+        }
+
+        private void tbNum_Enter(object sender, EventArgs e)
+        {
+            tbNum.Text = string.Empty;
+        }
+
+        private void tbNum_Leave(object sender, EventArgs e)
+        {
+            if (tbNum.Text == string.Empty)
+                tbNum.Text = "núm";
+        }
+
+        private void tbQtd_Enter(object sender, EventArgs e)
+        {
+            tbQtd.Text = string.Empty;
+        }
+
+        private void tbQtd_Leave(object sender, EventArgs e)
+        {
+            if (tbQtd.Text == string.Empty)
+                tbQtd.Text = "qtd";
         }
     }
 }

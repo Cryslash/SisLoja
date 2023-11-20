@@ -40,7 +40,7 @@ namespace SisLoja.UI
         {
             instanciaPrincipal.btnRegistrar_Click(sender, e);
         }
-       
+
         private void btnSalvar_Click(object sender, EventArgs e)
         {
             if (ktbCodBar.Text != String.Empty)

@@ -115,7 +115,7 @@ namespace SisLoja
             terminal.Show();
         }
 
-        private void btnSales_Click(object sender, EventArgs e)
+        public void btnSales_Click(object sender, EventArgs e)
         {
             instanciavenda.Owner = this;
             instanciavenda.TopLevel = false;

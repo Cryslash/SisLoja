@@ -29,128 +29,126 @@
         private void InitializeComponent()
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuLado));
-            this.pSkin = new System.Windows.Forms.Panel();
-            this.btnClose = new System.Windows.Forms.Button();
-            this.btnSales = new System.Windows.Forms.Button();
-            this.btnConsultar = new System.Windows.Forms.Button();
-            this.btnCadastrar = new System.Windows.Forms.Button();
-            this.btnHome = new System.Windows.Forms.Button();
-            this.pSkin.SuspendLayout();
-            this.SuspendLayout();
+            pSkin = new Panel();
+            btnClose = new Button();
+            btnSales = new Button();
+            btnConsultar = new Button();
+            btnCadastrar = new Button();
+            btnHome = new Button();
+            pSkin.SuspendLayout();
+            SuspendLayout();
             // 
             // pSkin
             // 
-            this.pSkin.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.pSkin.Controls.Add(this.btnClose);
-            this.pSkin.Controls.Add(this.btnSales);
-            this.pSkin.Controls.Add(this.btnConsultar);
-            this.pSkin.Controls.Add(this.btnCadastrar);
-            this.pSkin.Controls.Add(this.btnHome);
-            this.pSkin.Dock = System.Windows.Forms.DockStyle.Fill;
-            this.pSkin.Location = new System.Drawing.Point(0, 0);
-            this.pSkin.Name = "pSkin";
-            this.pSkin.Size = new System.Drawing.Size(44, 702);
-            this.pSkin.TabIndex = 7;
+            pSkin.BackColor = Color.FromArgb(37, 77, 113);
+            pSkin.Controls.Add(btnClose);
+            pSkin.Controls.Add(btnSales);
+            pSkin.Controls.Add(btnConsultar);
+            pSkin.Controls.Add(btnCadastrar);
+            pSkin.Controls.Add(btnHome);
+            pSkin.Dock = DockStyle.Fill;
+            pSkin.Location = new Point(0, 0);
+            pSkin.Name = "pSkin";
+            pSkin.Size = new Size(44, 702);
+            pSkin.TabIndex = 7;
             // 
             // btnClose
             // 
-            this.btnClose.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.btnClose.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnClose.FlatAppearance.BorderSize = 0;
-            this.btnClose.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnClose.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnClose.ForeColor = System.Drawing.Color.White;
-            this.btnClose.Image = ((System.Drawing.Image)(resources.GetObject("btnClose.Image")));
-            this.btnClose.Location = new System.Drawing.Point(5, 628);
-            this.btnClose.Name = "btnClose";
-            this.btnClose.Size = new System.Drawing.Size(32, 32);
-            this.btnClose.TabIndex = 8;
-            this.btnClose.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnClose.UseVisualStyleBackColor = false;
-            this.btnClose.Click += new System.EventHandler(this.btnClose_Click);
+            btnClose.BackColor = Color.FromArgb(37, 77, 113);
+            btnClose.Cursor = Cursors.Hand;
+            btnClose.FlatAppearance.BorderSize = 0;
+            btnClose.FlatStyle = FlatStyle.Flat;
+            btnClose.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnClose.ForeColor = Color.White;
+            btnClose.Image = (Image)resources.GetObject("btnClose.Image");
+            btnClose.Location = new Point(5, 628);
+            btnClose.Name = "btnClose";
+            btnClose.Size = new Size(32, 32);
+            btnClose.TabIndex = 8;
+            btnClose.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnClose.UseVisualStyleBackColor = false;
+            btnClose.Click += btnClose_Click;
             // 
             // btnSales
             // 
-            this.btnSales.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.btnSales.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnSales.FlatAppearance.BorderSize = 0;
-            this.btnSales.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSales.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnSales.ForeColor = System.Drawing.Color.White;
-            this.btnSales.Image = ((System.Drawing.Image)(resources.GetObject("btnSales.Image")));
-            this.btnSales.Location = new System.Drawing.Point(5, 390);
-            this.btnSales.Name = "btnSales";
-            this.btnSales.Size = new System.Drawing.Size(32, 32);
-            this.btnSales.TabIndex = 7;
-            this.btnSales.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnSales.UseVisualStyleBackColor = false;
+            btnSales.BackColor = Color.FromArgb(37, 77, 113);
+            btnSales.Cursor = Cursors.Hand;
+            btnSales.FlatAppearance.BorderSize = 0;
+            btnSales.FlatStyle = FlatStyle.Flat;
+            btnSales.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnSales.ForeColor = Color.White;
+            btnSales.Image = (Image)resources.GetObject("btnSales.Image");
+            btnSales.Location = new Point(5, 390);
+            btnSales.Name = "btnSales";
+            btnSales.Size = new Size(32, 32);
+            btnSales.TabIndex = 7;
+            btnSales.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnSales.UseVisualStyleBackColor = false;
+            btnSales.Click += btnSales_Click;
             // 
             // btnConsultar
             // 
-            this.btnConsultar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.btnConsultar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnConsultar.FlatAppearance.BorderSize = 0;
-            this.btnConsultar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnConsultar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnConsultar.ForeColor = System.Drawing.Color.White;
-            this.btnConsultar.Image = ((System.Drawing.Image)(resources.GetObject("btnConsultar.Image")));
-            this.btnConsultar.Location = new System.Drawing.Point(5, 311);
-            this.btnConsultar.Name = "btnConsultar";
-            this.btnConsultar.Size = new System.Drawing.Size(32, 32);
-            this.btnConsultar.TabIndex = 6;
-            this.btnConsultar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnConsultar.UseVisualStyleBackColor = false;
-            this.btnConsultar.Click += new System.EventHandler(this.btnConsultar_Click);
+            btnConsultar.BackColor = Color.FromArgb(37, 77, 113);
+            btnConsultar.Cursor = Cursors.Hand;
+            btnConsultar.FlatAppearance.BorderSize = 0;
+            btnConsultar.FlatStyle = FlatStyle.Flat;
+            btnConsultar.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnConsultar.ForeColor = Color.White;
+            btnConsultar.Image = (Image)resources.GetObject("btnConsultar.Image");
+            btnConsultar.Location = new Point(5, 311);
+            btnConsultar.Name = "btnConsultar";
+            btnConsultar.Size = new Size(32, 32);
+            btnConsultar.TabIndex = 6;
+            btnConsultar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnConsultar.UseVisualStyleBackColor = false;
+            btnConsultar.Click += btnConsultar_Click;
             // 
             // btnCadastrar
             // 
-            this.btnCadastrar.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.btnCadastrar.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnCadastrar.FlatAppearance.BorderSize = 0;
-            this.btnCadastrar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnCadastrar.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnCadastrar.ForeColor = System.Drawing.Color.White;
-            this.btnCadastrar.Image = ((System.Drawing.Image)(resources.GetObject("btnCadastrar.Image")));
-            this.btnCadastrar.Location = new System.Drawing.Point(5, 224);
-            this.btnCadastrar.Name = "btnCadastrar";
-            this.btnCadastrar.Size = new System.Drawing.Size(32, 32);
-            this.btnCadastrar.TabIndex = 5;
-            this.btnCadastrar.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnCadastrar.UseVisualStyleBackColor = false;
-            this.btnCadastrar.Click += new System.EventHandler(this.btnCadastrar_Click);
+            btnCadastrar.BackColor = Color.FromArgb(37, 77, 113);
+            btnCadastrar.Cursor = Cursors.Hand;
+            btnCadastrar.FlatAppearance.BorderSize = 0;
+            btnCadastrar.FlatStyle = FlatStyle.Flat;
+            btnCadastrar.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCadastrar.ForeColor = Color.White;
+            btnCadastrar.Image = (Image)resources.GetObject("btnCadastrar.Image");
+            btnCadastrar.Location = new Point(5, 224);
+            btnCadastrar.Name = "btnCadastrar";
+            btnCadastrar.Size = new Size(32, 32);
+            btnCadastrar.TabIndex = 5;
+            btnCadastrar.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCadastrar.UseVisualStyleBackColor = false;
+            btnCadastrar.Click += btnCadastrar_Click;
             // 
             // btnHome
             // 
-            this.btnHome.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(37)))), ((int)(((byte)(77)))), ((int)(((byte)(113)))));
-            this.btnHome.Cursor = System.Windows.Forms.Cursors.Hand;
-            this.btnHome.FlatAppearance.BorderSize = 0;
-            this.btnHome.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnHome.Font = new System.Drawing.Font("Segoe UI", 15.75F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point);
-            this.btnHome.ForeColor = System.Drawing.Color.White;
-            this.btnHome.Image = global::SisLoja.Properties.Resources.Casa_32;
-            this.btnHome.Location = new System.Drawing.Point(5, 136);
-            this.btnHome.Name = "btnHome";
-            this.btnHome.Size = new System.Drawing.Size(32, 32);
-            this.btnHome.TabIndex = 4;
-            this.btnHome.TextImageRelation = System.Windows.Forms.TextImageRelation.ImageBeforeText;
-            this.btnHome.UseVisualStyleBackColor = false;
+            btnHome.BackColor = Color.FromArgb(37, 77, 113);
+            btnHome.Cursor = Cursors.Hand;
+            btnHome.FlatAppearance.BorderSize = 0;
+            btnHome.FlatStyle = FlatStyle.Flat;
+            btnHome.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnHome.ForeColor = Color.White;
+            btnHome.Image = Properties.Resources.Casa_32;
+            btnHome.Location = new Point(5, 136);
+            btnHome.Name = "btnHome";
+            btnHome.Size = new Size(32, 32);
+            btnHome.TabIndex = 4;
+            btnHome.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnHome.UseVisualStyleBackColor = false;
             // 
             // MenuLado
             // 
-            this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
-            this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.ClientSize = new System.Drawing.Size(44, 702);
-            this.Controls.Add(this.pSkin);
-            this.CornerRoundingRadius = 25F;
-            this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
-            this.Name = "MenuLado";
-            this.StateCommon.Border.DrawBorders = ((Krypton.Toolkit.PaletteDrawBorders)((((Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom) 
-            | Krypton.Toolkit.PaletteDrawBorders.Left) 
-            | Krypton.Toolkit.PaletteDrawBorders.Right)));
-            this.StateCommon.Border.Rounding = 25F;
-            this.pSkin.ResumeLayout(false);
-            this.ResumeLayout(false);
-
+            AutoScaleDimensions = new SizeF(7F, 15F);
+            AutoScaleMode = AutoScaleMode.Font;
+            ClientSize = new Size(44, 702);
+            Controls.Add(pSkin);
+            CornerRoundingRadius = 25F;
+            FormBorderStyle = FormBorderStyle.None;
+            Name = "MenuLado";
+            StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            StateCommon.Border.Rounding = 25F;
+            pSkin.ResumeLayout(false);
+            ResumeLayout(false);
         }
 
         #endregion

@@ -33,5 +33,10 @@ namespace SisLoja.UI
         {
             instanciaprincipal.btnConsultar_Click(sender, e);
         }
+
+        private void btnSales_Click(object sender, EventArgs e)
+        {
+            instanciaprincipal.btnSales_Click(sender, e);
+        }
     }
 }
