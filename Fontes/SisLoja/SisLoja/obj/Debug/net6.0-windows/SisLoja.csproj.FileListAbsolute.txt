@@ -42,3 +42,4 @@ C:\Users\cryst\Documents\Projetos\SistemaLoja\Fontes\SisLoja\SisLoja\obj\Debug\n
 C:\Users\cryst\Documents\Projetos\SistemaLoja\Fontes\SisLoja\SisLoja\obj\Debug\net6.0-windows\SisLoja.UI.MenuLado.resources
 C:\Users\cryst\Documents\Projetos\SistemaLoja\Fontes\SisLoja\SisLoja\obj\Debug\net6.0-windows\SisLoja.UI.fDashArea.resources
 C:\Users\cryst\Documents\Projetos\SistemaLoja\Fontes\SisLoja\SisLoja\obj\Debug\net6.0-windows\SisLoja.sourcelink.json
+C:\Users\cryst\Documents\Projetos\SistemaLoja\Fontes\SisLoja\SisLoja\obj\Debug\net6.0-windows\SisLoja.UI.popCliente.resources

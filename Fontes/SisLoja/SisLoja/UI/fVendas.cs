@@ -3,10 +3,12 @@ using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
 using System.Drawing;
+using System.Drawing.Configuration;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using Krypton.Toolkit;
 
 namespace SisLoja.UI
 {
@@ -15,6 +17,7 @@ namespace SisLoja.UI
         public fPrincipal instanciaprincipal;
         VendasBLL BLL = new VendasBLL();
         modeloProduto produto = new modeloProduto();
+        modeloCliente cliente = new modeloCliente();
 
         int numitens;
         decimal valorparcial, valortotal;
@@ -108,6 +111,27 @@ namespace SisLoja.UI
         {
             if (tbQtd.Text == string.Empty)
                 tbQtd.Text = "qtd";
+        }
+
+        private void timer_Tick(object sender, EventArgs e)
+        {
+            lblHoras.Text = DateTime.Now.ToString("HH:mm:ss");
+            lblData.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+        }
+
+        private void fVendas_Load(object sender, EventArgs e)
+        {
+            timer.Start();
+            lblCodVenda.Text = string.Format("#00{0}", Convert.ToString(BLL.Proximo_ID_VendaDAL()));
+        }
+
+        private void kbtnCliente_Click(object sender, EventArgs e)
+        {
+            popCliente popup = new popCliente();
+            popup.StartPosition = FormStartPosition.CenterParent;
+            popup.cliente = this.cliente;
+            popup.vendas = this;
+            popup.ShowDialog();
         }
     }
 }

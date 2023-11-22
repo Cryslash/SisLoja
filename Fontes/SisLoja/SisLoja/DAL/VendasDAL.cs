@@ -62,5 +62,51 @@ namespace SisLoja
             }
         }
 
+        public int Proximo_ID_Venda()
+        {
+            try
+            {
+                int id = 0;
+                string server = StringServer();
+                conexao = new SqlConnection(server);
+                SqlCommand qrComando = new SqlCommand("SELECT TOP 1 ID FROM Vendas ORDER BY ID DESC", conexao);
+                conexao.Open();
+                SqlDataReader dados = qrComando.ExecuteReader();
+                while (dados.Read()) 
+                {
+                    id = Convert.ToInt32(dados["ID"]) + 1;
+                }
+                conexao.Close();
+                return id;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+
+        }
+
+        public DataTable PesquisarCliente(string s)
+        {
+            try
+            {
+                DataTable dt = new DataTable();
+                string server = StringServer();
+                conexao = new SqlConnection (server);
+                SqlCommand qrComando = new SqlCommand("SELECT ID,Nome,CPF FROM Clientes WHERE (Nome LIKE '%'+@nome+'%' OR CPF LIKE '%'+@cpf+'%') AND EstaAtivo = 1",conexao);
+                qrComando.Parameters.AddWithValue("@nome", s);
+                qrComando.Parameters.AddWithValue("@cpf", s);
+                SqlDataAdapter dados = new SqlDataAdapter();
+                dados.SelectCommand = qrComando;
+                dados.Fill(dt);
+                return dt;
+                
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
+
     }
 }
