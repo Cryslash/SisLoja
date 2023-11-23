@@ -98,12 +98,13 @@ CREATE TABLE Vendas(
 ID INT PRIMARY KEY NOT NULL,
 Data DATETIME,
 ClienteID INT FOREIGN KEY REFERENCES Clientes(ID),
+TipoPagamento INT,
 Valor DECIMAL(10,2) NOT NULL DEFAULT(0),
 Descontos DECIMAL(10,2) NOT NULL DEFAULT(0)
 )
+INSERT INTO Vendas (ID,Valor,Descontos) Values(1234,0,0); 
 END
 
-INSERT INTO Vendas (ID,Valor,Descontos) Values(1234,0,0); 
 
 
 
@@ -111,11 +112,9 @@ SELECT * FROM Clientes;
 SELECT * FROM Entradas;
 SELECT * FROM Produtos;
 SELECT * FROM Estoque;
+SELECT * FROM Vendas;
 
 SELECT TOP 1 ID FROM Vendas ORDER BY ID DESC;
-
-
-
 
 
 INSERT INTO Produtos (Nome,PrecoVenda) VALUES('para excluir',10);

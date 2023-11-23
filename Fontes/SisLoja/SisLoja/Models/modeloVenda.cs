@@ -8,7 +8,7 @@ namespace SisLoja
 {
     internal class modeloVenda
     {
-        int id, clienteid;
+        int id, clienteid, tipopagamento;
         decimal valor, descontos;
         DateTime data;
         
@@ -26,6 +26,11 @@ namespace SisLoja
         {
             get { return clienteid; }
             set { clienteid = value; }
+        }
+        public int TipoPagamento
+        {
+            get { return tipopagamento; }
+            set { tipopagamento = value; }
         }
         public decimal Valor
         {

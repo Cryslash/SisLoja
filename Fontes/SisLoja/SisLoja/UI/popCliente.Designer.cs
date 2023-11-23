@@ -181,6 +181,7 @@
             StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
             StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             StateCommon.Border.Rounding = 25F;
+            FormClosing += popCliente_FormClosing;
             pSkin.ResumeLayout(false);
             pSkin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtCliente).EndInit();

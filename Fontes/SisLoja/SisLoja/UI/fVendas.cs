@@ -62,9 +62,9 @@ namespace SisLoja.UI
             if (e.KeyCode == Keys.Enter)
             {
                 Image img = Image.FromFile(produto.Img);
-                string info = string.Format("{0} - {1} {2} {3} - núm {4}", produto.CodBar, produto.Nome,
+                string info = string.Format("{0}-{1} {2} {3}-Num{4}", produto.CodBar, produto.Nome,
                     produto.Ref, produto.Modelo, tbNum.Text);
-                dtListaProdutos.Rows.Add(img, info, tbQtd.Text, produto.PrecoVenda);
+                dtProdutos.Rows.Add(img, info, tbQtd.Text, produto.PrecoVenda);
                 Atualizar_Info(Convert.ToInt32(tbQtd.Text), produto.PrecoVenda);
                 Limpar_Campos();
                 tbCodBar.Focus();
@@ -128,10 +128,43 @@ namespace SisLoja.UI
         private void kbtnCliente_Click(object sender, EventArgs e)
         {
             popCliente popup = new popCliente();
-            popup.StartPosition = FormStartPosition.CenterParent;
+            popup.StartPosition = FormStartPosition.CenterScreen;
             popup.cliente = this.cliente;
             popup.vendas = this;
-            popup.ShowDialog();
+            popup.Show();
+        }
+
+
+        private List<modeloProduto> SalvarItens()
+        {
+            List<modeloProduto> lista = new List<modeloProduto>();
+
+            foreach (DataGridViewRow row in dtProdutos.Rows)
+            {
+                produto = new modeloProduto();
+                string[] info = row.Cells[1].Value.ToString().Split('-');
+                produto.CodBar = info[0].ToString();
+                produto.Nome = info[1].ToString();
+                
+                //construindo o nome da propriedade.
+                string nomepropriedade = info[2].ToString();
+
+                //acessando a propriedade pelo nome construido.(reflaction)
+                var propriedade = produto.GetType().GetProperty(nomepropriedade);
+
+                //testando se a propriedade existe e atribuindo valor.
+                if (propriedade != null)
+                    propriedade.SetValue(produto, Convert.ToInt32(row.Cells[2].Value.ToString()));
+
+                lista.Add(produto);
+            }
+            return lista;
+        }
+
+
+        private void kbnFinalizar_Click(object sender, EventArgs e)
+        {
+            SalvarItens();
         }
     }
 }

@@ -30,10 +30,10 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fVendas));
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             pInfo = new Panel();
             kbnFinalizar = new Krypton.Toolkit.KryptonButton();
             kbnTipoPagamento = new Krypton.Toolkit.KryptonButton();
@@ -46,7 +46,7 @@
             pLista = new Panel();
             lblCliente = new Label();
             lblData = new Label();
-            dtListaProdutos = new DataGridView();
+            dtProdutos = new DataGridView();
             Imagem = new DataGridViewImageColumn();
             Nome = new DataGridViewTextBoxColumn();
             Qtd = new DataGridViewTextBoxColumn();
@@ -65,7 +65,7 @@
             timer = new System.Windows.Forms.Timer(components);
             pInfo.SuspendLayout();
             pLista.SuspendLayout();
-            ((System.ComponentModel.ISupportInitialize)dtListaProdutos).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtProdutos).BeginInit();
             pUltimoItem.SuspendLayout();
             pBottom.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)pbImg).BeginInit();
@@ -91,7 +91,6 @@
             // kbnFinalizar
             // 
             kbnFinalizar.Cursor = Cursors.Hand;
-            kbnFinalizar.Enabled = false;
             kbnFinalizar.Location = new Point(40, 608);
             kbnFinalizar.Name = "kbnFinalizar";
             kbnFinalizar.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
@@ -124,6 +123,7 @@
             kbnFinalizar.Values.ImageStates.ImageCheckedTracking = null;
             kbnFinalizar.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kbnFinalizar.Values.ImageStates.ImageDisabled");
             kbnFinalizar.Values.Text = "Finalizar Venda [F5]";
+            kbnFinalizar.Click += kbnFinalizar_Click;
             // 
             // kbnTipoPagamento
             // 
@@ -276,7 +276,7 @@
             pLista.BackColor = Color.White;
             pLista.Controls.Add(lblCliente);
             pLista.Controls.Add(lblData);
-            pLista.Controls.Add(dtListaProdutos);
+            pLista.Controls.Add(dtProdutos);
             pLista.Controls.Add(lblCodVenda);
             pLista.Controls.Add(lblHoras);
             pLista.Dock = DockStyle.Fill;
@@ -307,54 +307,54 @@
             lblData.TabIndex = 31;
             lblData.Text = "terça 21 de novembro de 2023";
             // 
-            // dtListaProdutos
+            // dtProdutos
             // 
-            dtListaProdutos.AllowUserToAddRows = false;
-            dtListaProdutos.AllowUserToDeleteRows = false;
-            dtListaProdutos.AllowUserToResizeRows = false;
-            dtListaProdutos.BackgroundColor = Color.White;
-            dtListaProdutos.BorderStyle = BorderStyle.None;
-            dtListaProdutos.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dtListaProdutos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle1.BackColor = Color.FromArgb(37, 77, 113);
-            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle1.ForeColor = Color.FromArgb(246, 247, 251);
-            dataGridViewCellStyle1.Padding = new Padding(0, 7, 0, 7);
-            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 77, 113);
-            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(246, 247, 251);
-            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
-            dtListaProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
-            dtListaProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtListaProdutos.Columns.AddRange(new DataGridViewColumn[] { Imagem, Nome, Qtd, Valor });
-            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle3.BackColor = Color.White;
-            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle3.ForeColor = Color.FromArgb(64, 70, 77);
-            dataGridViewCellStyle3.SelectionBackColor = Color.White;
-            dataGridViewCellStyle3.SelectionForeColor = Color.FromArgb(64, 70, 77);
-            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
-            dtListaProdutos.DefaultCellStyle = dataGridViewCellStyle3;
-            dtListaProdutos.Enabled = false;
-            dtListaProdutos.EnableHeadersVisualStyles = false;
-            dtListaProdutos.Location = new Point(33, 102);
-            dtListaProdutos.MultiSelect = false;
-            dtListaProdutos.Name = "dtListaProdutos";
-            dtListaProdutos.ReadOnly = true;
-            dataGridViewCellStyle4.BackColor = SystemColors.Control;
-            dataGridViewCellStyle4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle4.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle4.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle4.SelectionForeColor = SystemColors.Control;
-            dtListaProdutos.RowHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dtListaProdutos.RowHeadersVisible = false;
-            dtListaProdutos.RowTemplate.Height = 50;
-            dtListaProdutos.RowTemplate.ReadOnly = true;
-            dtListaProdutos.RowTemplate.Resizable = DataGridViewTriState.False;
-            dtListaProdutos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dtListaProdutos.Size = new Size(875, 295);
-            dtListaProdutos.StandardTab = true;
-            dtListaProdutos.TabIndex = 30;
+            dtProdutos.AllowUserToAddRows = false;
+            dtProdutos.AllowUserToDeleteRows = false;
+            dtProdutos.AllowUserToResizeRows = false;
+            dtProdutos.BackgroundColor = Color.White;
+            dtProdutos.BorderStyle = BorderStyle.None;
+            dtProdutos.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dtProdutos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle5.BackColor = Color.FromArgb(37, 77, 113);
+            dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle5.ForeColor = Color.FromArgb(246, 247, 251);
+            dataGridViewCellStyle5.Padding = new Padding(0, 7, 0, 7);
+            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(37, 77, 113);
+            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(246, 247, 251);
+            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
+            dtProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dtProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtProdutos.Columns.AddRange(new DataGridViewColumn[] { Imagem, Nome, Qtd, Valor });
+            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle7.BackColor = Color.White;
+            dataGridViewCellStyle7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle7.ForeColor = Color.FromArgb(64, 70, 77);
+            dataGridViewCellStyle7.SelectionBackColor = Color.White;
+            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(64, 70, 77);
+            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
+            dtProdutos.DefaultCellStyle = dataGridViewCellStyle7;
+            dtProdutos.Enabled = false;
+            dtProdutos.EnableHeadersVisualStyles = false;
+            dtProdutos.Location = new Point(33, 102);
+            dtProdutos.MultiSelect = false;
+            dtProdutos.Name = "dtProdutos";
+            dtProdutos.ReadOnly = true;
+            dataGridViewCellStyle8.BackColor = SystemColors.Control;
+            dataGridViewCellStyle8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle8.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle8.SelectionForeColor = SystemColors.Control;
+            dtProdutos.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dtProdutos.RowHeadersVisible = false;
+            dtProdutos.RowTemplate.Height = 50;
+            dtProdutos.RowTemplate.ReadOnly = true;
+            dtProdutos.RowTemplate.Resizable = DataGridViewTriState.False;
+            dtProdutos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtProdutos.Size = new Size(875, 295);
+            dtProdutos.StandardTab = true;
+            dtProdutos.TabIndex = 30;
             // 
             // Imagem
             // 
@@ -367,8 +367,8 @@
             // 
             // Nome
             // 
-            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Nome.DefaultCellStyle = dataGridViewCellStyle2;
+            dataGridViewCellStyle6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            Nome.DefaultCellStyle = dataGridViewCellStyle6;
             Nome.HeaderText = "Produto";
             Nome.Name = "Nome";
             Nome.ReadOnly = true;
@@ -565,7 +565,7 @@
             pInfo.PerformLayout();
             pLista.ResumeLayout(false);
             pLista.PerformLayout();
-            ((System.ComponentModel.ISupportInitialize)dtListaProdutos).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtProdutos).EndInit();
             pUltimoItem.ResumeLayout(false);
             pUltimoItem.PerformLayout();
             pBottom.ResumeLayout(false);
@@ -582,7 +582,7 @@
         private Label lblDesc;
         private Label lblNumItens;
         private Panel pLista;
-        public DataGridView dtListaProdutos;
+        public DataGridView dtProdutos;
         private Label lblCodVenda;
         private Label lblHoras;
         private Panel pUltimoItem;

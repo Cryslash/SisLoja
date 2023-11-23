@@ -30,12 +30,19 @@ namespace SisLoja.UI
 
         private void kbtnConfirmar_Click(object sender, EventArgs e)
         {
-            cliente.Id = Convert.ToInt32(dtCliente.SelectedRows[0].Cells[0].Value.ToString());
-            cliente.Nome = dtCliente.SelectedRows[0].Cells[1].Value.ToString();
-            cliente.Cpf = dtCliente.SelectedRows[0].Cells[2].Value.ToString();
+            if (dtCliente.SelectedRows.Count > 0)
+            {
+                cliente.Id = Convert.ToInt32(dtCliente.SelectedRows[0].Cells[0].Value.ToString());
+                cliente.Nome = dtCliente.SelectedRows[0].Cells[1].Value.ToString();
+                cliente.Cpf = dtCliente.SelectedRows[0].Cells[2].Value.ToString();
 
-            vendas.lblCliente.Text = string.Format("Cliente: {0}", cliente.Nome);
-            this.Close();
+                vendas.lblCliente.Text = string.Format("Cliente: {0}", cliente.Nome);
+                this.Close();
+            }
+        }
+
+        private void popCliente_FormClosing(object sender, FormClosingEventArgs e)
+        {
             vendas.tbCodBar.Focus();
         }
     }
