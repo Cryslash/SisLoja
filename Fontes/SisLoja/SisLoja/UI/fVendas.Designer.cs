@@ -30,10 +30,9 @@
         {
             components = new System.ComponentModel.Container();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fVendas));
-            DataGridViewCellStyle dataGridViewCellStyle5 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             pInfo = new Panel();
             kbnFinalizar = new Krypton.Toolkit.KryptonButton();
             kbnTipoPagamento = new Krypton.Toolkit.KryptonButton();
@@ -44,13 +43,15 @@
             lblDesc = new Label();
             lblNumItens = new Label();
             pLista = new Panel();
+            pbUnlock = new PictureBox();
             lblCliente = new Label();
             lblData = new Label();
             dtProdutos = new DataGridView();
-            Imagem = new DataGridViewImageColumn();
-            Nome = new DataGridViewTextBoxColumn();
-            Qtd = new DataGridViewTextBoxColumn();
-            Valor = new DataGridViewTextBoxColumn();
+            img = new DataGridViewImageColumn();
+            nome = new DataGridViewTextBoxColumn();
+            qtd = new DataGridViewTextBoxColumn();
+            precovenda = new DataGridViewTextBoxColumn();
+            acao = new DataGridViewImageColumn();
             lblCodVenda = new Label();
             lblHoras = new Label();
             kryptonCustomPaletteBase1 = new Krypton.Toolkit.KryptonCustomPaletteBase(components);
@@ -65,6 +66,7 @@
             timer = new System.Windows.Forms.Timer(components);
             pInfo.SuspendLayout();
             pLista.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)pbUnlock).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtProdutos).BeginInit();
             pUltimoItem.SuspendLayout();
             pBottom.SuspendLayout();
@@ -274,6 +276,7 @@
             // pLista
             // 
             pLista.BackColor = Color.White;
+            pLista.Controls.Add(pbUnlock);
             pLista.Controls.Add(lblCliente);
             pLista.Controls.Add(lblData);
             pLista.Controls.Add(dtProdutos);
@@ -284,6 +287,18 @@
             pLista.Name = "pLista";
             pLista.Size = new Size(945, 680);
             pLista.TabIndex = 7;
+            // 
+            // pbUnlock
+            // 
+            pbUnlock.Cursor = Cursors.Hand;
+            pbUnlock.Image = (Image)resources.GetObject("pbUnlock.Image");
+            pbUnlock.Location = new Point(914, 112);
+            pbUnlock.Name = "pbUnlock";
+            pbUnlock.Size = new Size(24, 24);
+            pbUnlock.SizeMode = PictureBoxSizeMode.Zoom;
+            pbUnlock.TabIndex = 33;
+            pbUnlock.TabStop = false;
+            pbUnlock.Click += pbUnlock_Click;
             // 
             // lblCliente
             // 
@@ -316,37 +331,38 @@
             dtProdutos.BorderStyle = BorderStyle.None;
             dtProdutos.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dtProdutos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle5.BackColor = Color.FromArgb(37, 77, 113);
-            dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle5.ForeColor = Color.FromArgb(246, 247, 251);
-            dataGridViewCellStyle5.Padding = new Padding(0, 7, 0, 7);
-            dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(37, 77, 113);
-            dataGridViewCellStyle5.SelectionForeColor = Color.FromArgb(246, 247, 251);
-            dataGridViewCellStyle5.WrapMode = DataGridViewTriState.True;
-            dtProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(37, 77, 113);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.FromArgb(246, 247, 251);
+            dataGridViewCellStyle1.Padding = new Padding(0, 7, 0, 7);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 77, 113);
+            dataGridViewCellStyle1.SelectionForeColor = Color.FromArgb(246, 247, 251);
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dtProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dtProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtProdutos.Columns.AddRange(new DataGridViewColumn[] { Imagem, Nome, Qtd, Valor });
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleCenter;
-            dataGridViewCellStyle7.BackColor = Color.White;
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.FromArgb(64, 70, 77);
-            dataGridViewCellStyle7.SelectionBackColor = Color.White;
-            dataGridViewCellStyle7.SelectionForeColor = Color.FromArgb(64, 70, 77);
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.False;
-            dtProdutos.DefaultCellStyle = dataGridViewCellStyle7;
+            dtProdutos.Columns.AddRange(new DataGridViewColumn[] { img, nome, qtd, precovenda, acao });
+            dtProdutos.Cursor = Cursors.Hand;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = Color.FromArgb(64, 70, 77);
+            dataGridViewCellStyle2.SelectionBackColor = Color.White;
+            dataGridViewCellStyle2.SelectionForeColor = Color.FromArgb(64, 70, 77);
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dtProdutos.DefaultCellStyle = dataGridViewCellStyle2;
             dtProdutos.Enabled = false;
             dtProdutos.EnableHeadersVisualStyles = false;
             dtProdutos.Location = new Point(33, 102);
             dtProdutos.MultiSelect = false;
             dtProdutos.Name = "dtProdutos";
             dtProdutos.ReadOnly = true;
-            dataGridViewCellStyle8.BackColor = SystemColors.Control;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle8.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle8.SelectionForeColor = SystemColors.Control;
-            dtProdutos.RowHeadersDefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.Control;
+            dtProdutos.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dtProdutos.RowHeadersVisible = false;
             dtProdutos.RowTemplate.Height = 50;
             dtProdutos.RowTemplate.ReadOnly = true;
@@ -355,38 +371,49 @@
             dtProdutos.Size = new Size(875, 295);
             dtProdutos.StandardTab = true;
             dtProdutos.TabIndex = 30;
+            dtProdutos.CellContentClick += dtProdutos_CellContentClick;
             // 
-            // Imagem
+            // img
             // 
-            Imagem.HeaderText = "Imagem";
-            Imagem.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            Imagem.Name = "Imagem";
-            Imagem.ReadOnly = true;
-            Imagem.Resizable = DataGridViewTriState.False;
-            Imagem.Width = 75;
+            img.DataPropertyName = "Img";
+            img.HeaderText = "Imagem";
+            img.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            img.Name = "img";
+            img.ReadOnly = true;
             // 
-            // Nome
+            // nome
             // 
-            dataGridViewCellStyle6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            Nome.DefaultCellStyle = dataGridViewCellStyle6;
-            Nome.HeaderText = "Produto";
-            Nome.Name = "Nome";
-            Nome.ReadOnly = true;
-            Nome.Width = 500;
+            nome.DataPropertyName = "Nome";
+            nome.HeaderText = "Nome";
+            nome.Name = "nome";
+            nome.ReadOnly = true;
+            nome.Width = 550;
             // 
-            // Qtd
+            // qtd
             // 
-            Qtd.HeaderText = "Qtd.";
-            Qtd.Name = "Qtd";
-            Qtd.ReadOnly = true;
-            Qtd.Width = 75;
+            qtd.DataPropertyName = "Qtd";
+            qtd.HeaderText = "Qtd.";
+            qtd.Name = "qtd";
+            qtd.ReadOnly = true;
+            qtd.Width = 75;
             // 
-            // Valor
+            // precovenda
             // 
-            Valor.HeaderText = "Valor un.";
-            Valor.Name = "Valor";
-            Valor.ReadOnly = true;
-            Valor.Width = 150;
+            precovenda.DataPropertyName = "PrecoVenda";
+            precovenda.HeaderText = "Valor";
+            precovenda.Name = "precovenda";
+            precovenda.ReadOnly = true;
+            precovenda.Width = 75;
+            // 
+            // acao
+            // 
+            acao.HeaderText = "Ação";
+            acao.Image = (Image)resources.GetObject("acao.Image");
+            acao.Name = "acao";
+            acao.ReadOnly = true;
+            acao.Resizable = DataGridViewTriState.True;
+            acao.ToolTipText = "Remover";
+            acao.Width = 50;
             // 
             // lblCodVenda
             // 
@@ -414,6 +441,7 @@
             // 
             kryptonCustomPaletteBase1.BaseFont = new Font("Segoe UI", 9F, FontStyle.Regular, GraphicsUnit.Point);
             kryptonCustomPaletteBase1.BaseFontSize = 9F;
+            kryptonCustomPaletteBase1.BasePaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             kryptonCustomPaletteBase1.BasePaletteType = Krypton.Toolkit.BasePaletteType.Custom;
             kryptonCustomPaletteBase1.ButtonSpecs.DropDown.ColorMap = Color.FromArgb(37, 77, 113);
             kryptonCustomPaletteBase1.ButtonStyles.ButtonCustom1.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
@@ -422,6 +450,7 @@
             kryptonCustomPaletteBase1.ButtonStyles.ButtonCustom1.OverrideDefault.Border.Color1 = Color.FromArgb(37, 77, 113);
             kryptonCustomPaletteBase1.ButtonStyles.ButtonCustom1.OverrideDefault.Border.Color2 = Color.FromArgb(37, 77, 113);
             kryptonCustomPaletteBase1.ButtonStyles.ButtonCustom1.OverrideDefault.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kryptonCustomPaletteBase1.ButtonStyles.ButtonCustom1.OverrideDefault.Border.Rounding = 15F;
             kryptonCustomPaletteBase1.ButtonStyles.ButtonCustom1.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
             kryptonCustomPaletteBase1.ButtonStyles.ButtonCustom1.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
             kryptonCustomPaletteBase1.ButtonStyles.ButtonCustom1.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
@@ -565,6 +594,7 @@
             pInfo.PerformLayout();
             pLista.ResumeLayout(false);
             pLista.PerformLayout();
+            ((System.ComponentModel.ISupportInitialize)pbUnlock).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtProdutos).EndInit();
             pUltimoItem.ResumeLayout(false);
             pUltimoItem.PerformLayout();
@@ -599,11 +629,13 @@
         private Krypton.Toolkit.KryptonButton kbnDesconto;
         private Krypton.Toolkit.KryptonButton kbtnCliente;
         private Krypton.Toolkit.KryptonCustomPaletteBase kryptonCustomPaletteBase1;
-        private DataGridViewImageColumn Imagem;
-        private DataGridViewTextBoxColumn Nome;
-        private DataGridViewTextBoxColumn Qtd;
-        private DataGridViewTextBoxColumn Valor;
         public Label lblCliente;
         public Panel pBottom;
+        private DataGridViewImageColumn img;
+        private DataGridViewTextBoxColumn nome;
+        private DataGridViewTextBoxColumn qtd;
+        private DataGridViewTextBoxColumn precovenda;
+        private DataGridViewImageColumn acao;
+        private PictureBox pbUnlock;
     }
 }

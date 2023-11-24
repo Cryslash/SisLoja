@@ -16,8 +16,12 @@ namespace SisLoja.UI
     {
         public fPrincipal instanciaprincipal;
         VendasBLL BLL = new VendasBLL();
-        modeloProduto produto = new modeloProduto();
+        modeloProduto modeloproduto = new modeloProduto();
         modeloCliente cliente = new modeloCliente();
+        // List<modeloProduto> listaprodutos = new List<modeloProduto>();
+        List<modeloListaDeProdutos> listaprodutos = new List<modeloListaDeProdutos>();
+        bool locked = false;
+
 
         int numitens;
         decimal valorparcial, valortotal;
@@ -34,11 +38,20 @@ namespace SisLoja.UI
             tbNum.Text = "núm";
         }
 
-        private void Atualizar_Info(int qtd, decimal valor)
+        private void Atualizar_Info(int qtd, decimal valor, string operacao)
         {
-            numitens++;
-            valorparcial += valor * qtd;
-            valortotal += valor * qtd;
+            if (operacao == "somar")
+            {
+                numitens++;
+                valorparcial += valor * qtd;
+                valortotal += valor * qtd;
+            }
+            if (operacao == "subtrair")
+            {
+                numitens--;
+                valorparcial -= valor * qtd;
+                valortotal -= valor * qtd;
+            }
 
             lblNumItens.Text = string.Format("Número de Itens: {0}", numitens);
             lblValorParcial.Text = string.Format("Total Parcial: {0} R$", valorparcial);
@@ -49,23 +62,48 @@ namespace SisLoja.UI
         {
             if (e.KeyCode == Keys.Enter)
             {
-                produto = BLL.BuscarProdutoDAL(tbCodBar.Text);
-                pbImg.ImageLocation = produto.Img;
-                lblProduto.Text = String.Format("{0} - {1} - {2}", produto.Nome, produto.Modelo, produto.Ref);
-                lblPreco.Text = string.Format("R$ {0}", produto.PrecoVenda.ToString());
+                modeloproduto = BLL.BuscarProdutoDAL(tbCodBar.Text);
+                pbImg.ImageLocation = modeloproduto.Img;
+                lblProduto.Text = String.Format("{0} - {1} - {2}", modeloproduto.Nome, modeloproduto.Modelo, modeloproduto.Ref);
+                lblPreco.Text = string.Format("R$ {0}", modeloproduto.PrecoVenda.ToString());
                 tbNum.Focus();
             }
+        }
+
+        public void AdicionarProduto(modeloProduto prod)
+        {
+            modeloListaDeProdutos itemlista = new modeloListaDeProdutos();
+            Atualizar_Info(int.Parse(tbQtd.Text), prod.PrecoVenda, "somar");
+
+            itemlista.Img = Image.FromFile(prod.Img);
+            itemlista.Nome = String.Format("{0}-{1} {2} {3}-Num{4}", prod.CodBar, prod.Nome, prod.Modelo, prod.Ref, tbNum.Text);
+            itemlista.Qtd = int.Parse(tbQtd.Text);
+            itemlista.PrecoVenda = prod.PrecoVenda;
+            listaprodutos.Add(itemlista);
+        }
+
+        public void RemoverProduto(int i)
+        {
+            modeloListaDeProdutos itemlista = new modeloListaDeProdutos();
+            itemlista = listaprodutos.ElementAt(i);
+            Atualizar_Info(itemlista.Qtd, itemlista.PrecoVenda, "subtrair");
+            listaprodutos.RemoveAt(i);
+        }
+
+        private void AtualizarDtProdutos()
+        {
+            BindingList<modeloListaDeProdutos> dados = new BindingList<modeloListaDeProdutos>(listaprodutos);
+            dtProdutos.DataSource = dados;
         }
 
         private void tbQtd_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                Image img = Image.FromFile(produto.Img);
-                string info = string.Format("{0}-{1} {2} {3}-Num{4}", produto.CodBar, produto.Nome,
-                    produto.Ref, produto.Modelo, tbNum.Text);
-                dtProdutos.Rows.Add(img, info, tbQtd.Text, produto.PrecoVenda);
-                Atualizar_Info(Convert.ToInt32(tbQtd.Text), produto.PrecoVenda);
+                // modeloproduto.Qtd = Convert.ToInt32(tbQtd.Text);
+                // modeloproduto.Num = Convert.ToInt32(tbNum.Text);
+                AdicionarProduto(modeloproduto);
+                AtualizarDtProdutos();
                 Limpar_Campos();
                 tbCodBar.Focus();
             }
@@ -134,37 +172,66 @@ namespace SisLoja.UI
             popup.Show();
         }
 
-
-        private List<modeloProduto> SalvarItens()
+        private void kbnFinalizar_Click(object sender, EventArgs e)
         {
-            List<modeloProduto> lista = new List<modeloProduto>();
 
-            foreach (DataGridViewRow row in dtProdutos.Rows)
-            {
-                produto = new modeloProduto();
-                string[] info = row.Cells[1].Value.ToString().Split('-');
-                produto.CodBar = info[0].ToString();
-                produto.Nome = info[1].ToString();
-                
-                //construindo o nome da propriedade.
-                string nomepropriedade = info[2].ToString();
+        }
 
-                //acessando a propriedade pelo nome construido.(reflaction)
-                var propriedade = produto.GetType().GetProperty(nomepropriedade);
-
-                //testando se a propriedade existe e atribuindo valor.
-                if (propriedade != null)
-                    propriedade.SetValue(produto, Convert.ToInt32(row.Cells[2].Value.ToString()));
-
-                lista.Add(produto);
-            }
-            return lista;
+        private void dtProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
+        {
+            dtProdutos.CellClick += DataGridView_RemoverLinha;
         }
 
 
-        private void kbnFinalizar_Click(object sender, EventArgs e)
+        private void DataGridView_RemoverLinha(object sender, DataGridViewCellEventArgs e)
         {
-            SalvarItens();
+            // Verificar se o botão foi clicado e se não é o cabeçalho da coluna            
+            if (e.RowIndex >= 0 && e.RowIndex < dtProdutos.Rows.Count && e.ColumnIndex == dtProdutos.Columns["acao"].Index && dtProdutos.Columns[e.ColumnIndex] is DataGridViewImageColumn)
+            {
+                if (locked == false)
+                {
+                    if (MessageBox.Show("Deseja remover o produto da lista?", "Mensagem do sistema.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                    {
+                        RemoverProduto(e.RowIndex);
+                        AtualizarDtProdutos();
+                        locked = true;
+                        dtProdutos.Enabled = false;
+                        Limpar_Campos();
+                        tbCodBar.Focus();
+                    }
+                }
+            }
+            //if (e.ColumnIndex != dtProdutos.Columns["acao"].Index)
+            //{
+            //    dtProdutos.ClearSelection();
+            //    tbCodBar.Focus();
+            //}
+            //// Verificar se o botão foi clicado e se não é o cabeçalho da coluna
+            //else if (e.RowIndex >= 0 && e.RowIndex <= dtProdutos.Rows.Count && e.ColumnIndex == dtProdutos.Columns["acao"].Index && dtProdutos.Columns[e.ColumnIndex] is DataGridViewImageColumn)
+            //{
+            //    foreach (DataGridViewRow row in dtProdutos.Rows)
+            //    {
+            //        if (MessageBox.Show("Deseja remover o produto da lista?", "Mensagem do sistema.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+            //        {
+            //            var linha = dtProdutos.Rows[e.RowIndex];
+            //            //Atualizar a contagem no painel direito
+            //            Atualizar_Info(Convert.ToInt32(linha.Cells[2].Value), Convert.ToDecimal(linha.Cells[3].Value), "subtrair");
+            //            //Atualizar_Info(Convert.ToInt32(dtProdutos.SelectedRows[0].Cells[2].Value), Convert.ToDecimal(dtProdutos.SelectedRows[0].Cells[3].Value), "subtrair");
+
+            //            // Remover a linha correspondente ao botão clicado
+            //            dtProdutos.Rows.Remove(linha);
+            //            //dtProdutos.Rows.RemoveAt(e.RowIndex);
+            //            //dtProdutos.ClearSelection();
+            //        }
+            //        break;
+            //    }
+            //}
+        }
+
+        private void pbUnlock_Click(object sender, EventArgs e)
+        {
+            locked = false;
+            dtProdutos.Enabled = true;
         }
     }
 }
