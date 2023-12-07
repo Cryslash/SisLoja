@@ -43,6 +43,9 @@
     <Compile Update="UI\popCliente.cs">
       <SubType>Form</SubType>
     </Compile>
+    <Compile Update="UI\popTipoPagamento.cs">
+      <SubType>Form</SubType>
+    </Compile>
   </ItemGroup>
   <ItemGroup>
     <EmbeddedResource Update="UI\fCadCliente.resx">

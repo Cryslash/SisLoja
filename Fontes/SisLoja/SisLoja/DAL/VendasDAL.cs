@@ -62,6 +62,29 @@ namespace SisLoja
             }
         }
 
+        public bool Numero_Disponivel(string codbar, int num, int qtd)
+        {
+            try
+            {
+                string server = StringServer();
+                conexao = new SqlConnection(server);
+                SqlCommand qrComando = new SqlCommand("SELECT e.* FROM Estoque e, Produtos p WHERE e.ProdID = p.ID AND p.CodBar = @codbar", conexao);
+                qrComando.Parameters.AddWithValue("@codbar", codbar);
+                conexao.Open();
+                SqlDataReader dados = qrComando.ExecuteReader();
+                while (dados.Read())
+                {
+                    if (int.Parse(dados["Num"+num].ToString()) >= qtd)
+                    return true;
+                }
+                return false;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
+
         public int Proximo_ID_Venda()
         {
             try

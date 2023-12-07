@@ -6,10 +6,10 @@ using System.Threading.Tasks;
 
 namespace SisLoja
 {
-    internal class modeloVenda
+    public class modeloVenda
     {
         int id, clienteid, tipopagamento;
-        decimal valor, descontos;
+        decimal valorvenda, descontos, valorpago;
         DateTime data;
         
         public int Id
@@ -32,10 +32,15 @@ namespace SisLoja
             get { return tipopagamento; }
             set { tipopagamento = value; }
         }
-        public decimal Valor
+        public decimal ValorVenda
         {
-            get { return valor; }
-            set { valor = value; }        
+            get { return valorvenda; }
+            set { valorvenda = value; }        
+        }
+        public decimal ValorPago
+        {
+            get { return valorpago; }
+            set { valorpago = value; }
         }
         public decimal Descontos
         {

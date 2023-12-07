@@ -18,11 +18,9 @@ namespace SisLoja.UI
         VendasBLL BLL = new VendasBLL();
         modeloProduto modeloproduto = new modeloProduto();
         modeloCliente cliente = new modeloCliente();
-        // List<modeloProduto> listaprodutos = new List<modeloProduto>();
+        modeloVenda dadosvenda = new modeloVenda();
         List<modeloListaDeProdutos> listaprodutos = new List<modeloListaDeProdutos>();
         bool locked = false;
-
-
         int numitens;
         decimal valorparcial, valortotal;
 
@@ -31,6 +29,7 @@ namespace SisLoja.UI
             InitializeComponent();
         }
 
+        //Limpar tbcodbar, tbqtd e tbnum
         private void Limpar_Campos()
         {
             tbCodBar.Text = "cód barras";
@@ -38,6 +37,7 @@ namespace SisLoja.UI
             tbNum.Text = "núm";
         }
 
+        //Atualizar informações do painel direito
         private void Atualizar_Info(int qtd, decimal valor, string operacao)
         {
             if (operacao == "somar")
@@ -68,8 +68,13 @@ namespace SisLoja.UI
                 lblPreco.Text = string.Format("R$ {0}", modeloproduto.PrecoVenda.ToString());
                 tbNum.Focus();
             }
+            else
+            { 
+                fVendas_KeyDown(sender, e);
+            }
         }
 
+        //Adicionar um produto a listaproduto
         public void AdicionarProduto(modeloProduto prod)
         {
             modeloListaDeProdutos itemlista = new modeloListaDeProdutos();
@@ -82,6 +87,7 @@ namespace SisLoja.UI
             listaprodutos.Add(itemlista);
         }
 
+        //Remover um produto da listaproduto
         public void RemoverProduto(int i)
         {
             modeloListaDeProdutos itemlista = new modeloListaDeProdutos();
@@ -90,6 +96,7 @@ namespace SisLoja.UI
             listaprodutos.RemoveAt(i);
         }
 
+        //Atualiza o DataSource do DtProdutos
         private void AtualizarDtProdutos()
         {
             BindingList<modeloListaDeProdutos> dados = new BindingList<modeloListaDeProdutos>(listaprodutos);
@@ -100,12 +107,46 @@ namespace SisLoja.UI
         {
             if (e.KeyCode == Keys.Enter)
             {
-                // modeloproduto.Qtd = Convert.ToInt32(tbQtd.Text);
-                // modeloproduto.Num = Convert.ToInt32(tbNum.Text);
-                AdicionarProduto(modeloproduto);
-                AtualizarDtProdutos();
-                Limpar_Campos();
-                tbCodBar.Focus();
+                try
+                {
+                    // Verificando se o produto já existe no GridView, e caso exista, pegando
+                    // a quantidade e salvando na variavel qtd.
+                    int qtd = 0;
+                    if (dtProdutos.Rows.Count > 0)
+                    {
+                        foreach (DataGridViewRow row in dtProdutos.Rows)
+                        {
+                            if (row.Cells[1].Value != null)
+                            {
+                                string[] texto = row.Cells[2].FormattedValue.ToString().Split('-');
+                                if (tbCodBar.Text == texto[0] && tbNum.Text == texto[2].Replace("Num", ""))
+                                    qtd += int.Parse(row.Cells[3].Value.ToString());
+                            }
+                        }
+                    }
+
+                    //Executando o Método para verificar se o produto está disponível no estoque.
+                    if (BLL.Numero_DisponivelDAL(tbCodBar.Text, int.Parse(tbNum.Text), int.Parse(tbQtd.Text) + qtd))
+                    {
+                        // modeloproduto.Qtd = Convert.ToInt32(tbQtd.Text);
+                        // modeloproduto.Num = Convert.ToInt32(tbNum.Text);
+                        AdicionarProduto(modeloproduto);
+                        AtualizarDtProdutos();
+                        Limpar_Campos();
+                        tbCodBar.Focus();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Não existe quantidade suficiente em estoque.", "Mensagem do sistema.",
+                            MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                        tbQtd.Text = string.Empty;
+                        tbQtd.Focus();
+                    }
+                }
+                catch (Exception erro)
+                {
+                    Console.WriteLine("Erro ao processar a linha: " + erro.Message);
+                }
             }
         }
 
@@ -165,11 +206,11 @@ namespace SisLoja.UI
 
         private void kbtnCliente_Click(object sender, EventArgs e)
         {
-            popCliente popup = new popCliente();
-            popup.StartPosition = FormStartPosition.CenterScreen;
-            popup.cliente = this.cliente;
-            popup.vendas = this;
-            popup.Show();
+            popCliente popupCliente = new popCliente();
+            popupCliente.StartPosition = FormStartPosition.CenterScreen;
+            popupCliente.cliente = this.cliente;
+            popupCliente.fvendas = this;
+            popupCliente.Show();
         }
 
         private void kbnFinalizar_Click(object sender, EventArgs e)
@@ -201,37 +242,44 @@ namespace SisLoja.UI
                     }
                 }
             }
-            //if (e.ColumnIndex != dtProdutos.Columns["acao"].Index)
-            //{
-            //    dtProdutos.ClearSelection();
-            //    tbCodBar.Focus();
-            //}
-            //// Verificar se o botão foi clicado e se não é o cabeçalho da coluna
-            //else if (e.RowIndex >= 0 && e.RowIndex <= dtProdutos.Rows.Count && e.ColumnIndex == dtProdutos.Columns["acao"].Index && dtProdutos.Columns[e.ColumnIndex] is DataGridViewImageColumn)
-            //{
-            //    foreach (DataGridViewRow row in dtProdutos.Rows)
-            //    {
-            //        if (MessageBox.Show("Deseja remover o produto da lista?", "Mensagem do sistema.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
-            //        {
-            //            var linha = dtProdutos.Rows[e.RowIndex];
-            //            //Atualizar a contagem no painel direito
-            //            Atualizar_Info(Convert.ToInt32(linha.Cells[2].Value), Convert.ToDecimal(linha.Cells[3].Value), "subtrair");
-            //            //Atualizar_Info(Convert.ToInt32(dtProdutos.SelectedRows[0].Cells[2].Value), Convert.ToDecimal(dtProdutos.SelectedRows[0].Cells[3].Value), "subtrair");
-
-            //            // Remover a linha correspondente ao botão clicado
-            //            dtProdutos.Rows.Remove(linha);
-            //            //dtProdutos.Rows.RemoveAt(e.RowIndex);
-            //            //dtProdutos.ClearSelection();
-            //        }
-            //        break;
-            //    }
-            //}
         }
-
+        //destrava o dtProdutos para remover uma linha
         private void pbUnlock_Click(object sender, EventArgs e)
         {
             locked = false;
             dtProdutos.Enabled = true;
+        }
+
+        private void kbnDesconto_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void kbnTipoPagamento_Click(object sender, EventArgs e)
+        {
+            popTipoPagamento popPgto = new popTipoPagamento();
+            popPgto.StartPosition = FormStartPosition.CenterScreen;
+            popPgto.dadosvenda = this.dadosvenda;
+            popPgto.fvendas = this;
+            popPgto.Show();
+        }
+
+        private void fVendas_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.F2)
+            {
+                kbtnCliente.PerformClick();
+            }
+            if (e.KeyCode == Keys.F3)
+            {
+            }
+            if (e.KeyCode == Keys.F4)
+            {
+                kbnTipoPagamento.PerformClick();
+            }
+            if (e.KeyCode == Keys.F5)
+            {
+            }
         }
     }
 }

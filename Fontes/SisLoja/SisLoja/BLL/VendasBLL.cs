@@ -19,11 +19,14 @@ namespace SisLoja
         {
             return DAL.Proximo_ID_Venda();
         }
-
         public DataTable PesquisarClienteDAL(string s)
         {
             DataTable dt = DAL.PesquisarCliente(s);
             return dt;
+        }
+        public bool Numero_DisponivelDAL(string codbar, int num, int qtd)
+        {
+            return DAL.Numero_Disponivel(codbar, num, qtd);
         }
     }
 }

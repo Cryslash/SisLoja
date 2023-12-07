@@ -159,6 +159,7 @@
             ktbNome.StateDisabled.Border.Rounding = 20F;
             ktbNome.TabIndex = 7;
             ktbNome.TextChanged += ktbNome_TextChanged;
+            ktbNome.KeyDown += ktbNome_KeyDown;
             // 
             // popCliente
             // 
@@ -182,6 +183,7 @@
             StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
             StateCommon.Border.Rounding = 25F;
             FormClosing += popCliente_FormClosing;
+            KeyDown += popCliente_KeyDown;
             pSkin.ResumeLayout(false);
             pSkin.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)dtCliente).EndInit();

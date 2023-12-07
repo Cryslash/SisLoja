@@ -34,6 +34,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             pInfo = new Panel();
+            lblTipoPgto = new Label();
             kbnFinalizar = new Krypton.Toolkit.KryptonButton();
             kbnTipoPagamento = new Krypton.Toolkit.KryptonButton();
             kbnDesconto = new Krypton.Toolkit.KryptonButton();
@@ -47,11 +48,11 @@
             lblCliente = new Label();
             lblData = new Label();
             dtProdutos = new DataGridView();
-            img = new DataGridViewImageColumn();
-            nome = new DataGridViewTextBoxColumn();
-            qtd = new DataGridViewTextBoxColumn();
-            precovenda = new DataGridViewTextBoxColumn();
-            acao = new DataGridViewImageColumn();
+            Img = new DataGridViewImageColumn();
+            Nome = new DataGridViewTextBoxColumn();
+            Qtd = new DataGridViewTextBoxColumn();
+            Valor = new DataGridViewTextBoxColumn();
+            Acao = new DataGridViewImageColumn();
             lblCodVenda = new Label();
             lblHoras = new Label();
             kryptonCustomPaletteBase1 = new Krypton.Toolkit.KryptonCustomPaletteBase(components);
@@ -76,6 +77,7 @@
             // pInfo
             // 
             pInfo.BackColor = Color.FromArgb(246, 247, 251);
+            pInfo.Controls.Add(lblTipoPgto);
             pInfo.Controls.Add(kbnFinalizar);
             pInfo.Controls.Add(kbnTipoPagamento);
             pInfo.Controls.Add(kbnDesconto);
@@ -89,6 +91,19 @@
             pInfo.Name = "pInfo";
             pInfo.Size = new Size(305, 680);
             pInfo.TabIndex = 6;
+            // 
+            // lblTipoPgto
+            // 
+            lblTipoPgto.AutoSize = true;
+            lblTipoPgto.BackColor = Color.Transparent;
+            lblTipoPgto.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTipoPgto.ForeColor = Color.FromArgb(64, 70, 77);
+            lblTipoPgto.Location = new Point(40, 311);
+            lblTipoPgto.Name = "lblTipoPgto";
+            lblTipoPgto.Size = new Size(117, 25);
+            lblTipoPgto.TabIndex = 18;
+            lblTipoPgto.Text = "Forma Pgto: ";
+            lblTipoPgto.Visible = false;
             // 
             // kbnFinalizar
             // 
@@ -158,6 +173,7 @@
             kbnTipoPagamento.TabIndex = 16;
             kbnTipoPagamento.Values.Image = (Image)resources.GetObject("kbnTipoPagamento.Values.Image");
             kbnTipoPagamento.Values.Text = "Forma Pagamento [F4]";
+            kbnTipoPagamento.Click += kbnTipoPagamento_Click;
             // 
             // kbnDesconto
             // 
@@ -190,6 +206,7 @@
             kbnDesconto.TabIndex = 15;
             kbnDesconto.Values.Image = (Image)resources.GetObject("kbnDesconto.Values.Image");
             kbnDesconto.Values.Text = "Descontos [F3]";
+            kbnDesconto.Click += kbnDesconto_Click;
             // 
             // kbtnCliente
             // 
@@ -341,7 +358,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dtProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dtProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtProdutos.Columns.AddRange(new DataGridViewColumn[] { img, nome, qtd, precovenda, acao });
+            dtProdutos.Columns.AddRange(new DataGridViewColumn[] { Img, Nome, Qtd, Valor, Acao });
             dtProdutos.Cursor = Cursors.Hand;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.White;
@@ -373,47 +390,45 @@
             dtProdutos.TabIndex = 30;
             dtProdutos.CellContentClick += dtProdutos_CellContentClick;
             // 
-            // img
+            // Img
             // 
-            img.DataPropertyName = "Img";
-            img.HeaderText = "Imagem";
-            img.ImageLayout = DataGridViewImageCellLayout.Zoom;
-            img.Name = "img";
-            img.ReadOnly = true;
+            Img.DataPropertyName = "Img";
+            Img.HeaderText = "Imagem";
+            Img.ImageLayout = DataGridViewImageCellLayout.Zoom;
+            Img.Name = "Img";
+            Img.ReadOnly = true;
             // 
-            // nome
+            // Nome
             // 
-            nome.DataPropertyName = "Nome";
-            nome.HeaderText = "Nome";
-            nome.Name = "nome";
-            nome.ReadOnly = true;
-            nome.Width = 550;
+            Nome.DataPropertyName = "Nome";
+            Nome.HeaderText = "Nome";
+            Nome.Name = "Nome";
+            Nome.ReadOnly = true;
+            Nome.Width = 550;
             // 
-            // qtd
+            // Qtd
             // 
-            qtd.DataPropertyName = "Qtd";
-            qtd.HeaderText = "Qtd.";
-            qtd.Name = "qtd";
-            qtd.ReadOnly = true;
-            qtd.Width = 75;
+            Qtd.DataPropertyName = "Qtd";
+            Qtd.HeaderText = "Qtd.";
+            Qtd.Name = "Qtd";
+            Qtd.ReadOnly = true;
+            Qtd.Width = 75;
             // 
-            // precovenda
+            // Valor
             // 
-            precovenda.DataPropertyName = "PrecoVenda";
-            precovenda.HeaderText = "Valor";
-            precovenda.Name = "precovenda";
-            precovenda.ReadOnly = true;
-            precovenda.Width = 75;
+            Valor.DataPropertyName = "PrecoVenda";
+            Valor.HeaderText = "Valor";
+            Valor.Name = "Valor";
+            Valor.ReadOnly = true;
+            Valor.Width = 75;
             // 
-            // acao
+            // Acao
             // 
-            acao.HeaderText = "Ação";
-            acao.Image = (Image)resources.GetObject("acao.Image");
-            acao.Name = "acao";
-            acao.ReadOnly = true;
-            acao.Resizable = DataGridViewTriState.True;
-            acao.ToolTipText = "Remover";
-            acao.Width = 50;
+            Acao.HeaderText = "Ação";
+            Acao.Image = (Image)resources.GetObject("Acao.Image");
+            Acao.Name = "Acao";
+            Acao.ReadOnly = true;
+            Acao.Width = 50;
             // 
             // lblCodVenda
             // 
@@ -589,7 +604,7 @@
             Name = "fVendas";
             Text = "BKP";
             Load += fVendas_Load;
-            KeyDown += tbCodBar_KeyDown;
+            KeyDown += fVendas_KeyDown;
             pInfo.ResumeLayout(false);
             pInfo.PerformLayout();
             pLista.ResumeLayout(false);
@@ -631,11 +646,12 @@
         private Krypton.Toolkit.KryptonCustomPaletteBase kryptonCustomPaletteBase1;
         public Label lblCliente;
         public Panel pBottom;
-        private DataGridViewImageColumn img;
-        private DataGridViewTextBoxColumn nome;
-        private DataGridViewTextBoxColumn qtd;
-        private DataGridViewTextBoxColumn precovenda;
-        private DataGridViewImageColumn acao;
         private PictureBox pbUnlock;
+        private DataGridViewImageColumn Img;
+        private DataGridViewTextBoxColumn Nome;
+        private DataGridViewTextBoxColumn Qtd;
+        private DataGridViewTextBoxColumn Valor;
+        private DataGridViewImageColumn Acao;
+        public Label lblTipoPgto;
     }
 }
