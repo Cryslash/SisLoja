@@ -27,6 +27,10 @@ namespace SisLoja
         public bool Numero_DisponivelDAL(string codbar, int num, int qtd)
         {
             return DAL.Numero_Disponivel(codbar, num, qtd);
+        }        
+        public void GravarVendaDAL(modeloVenda dadosvenda, List<modeloListaDeProdutos> listaprodutos)
+        {
+            DAL.GravarVenda(dadosvenda, listaprodutos);
         }
     }
 }

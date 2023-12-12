@@ -8,6 +8,7 @@ namespace SisLoja
 {
     public class modeloListaDeProdutos
     {
+        public int ID { get; set; }
         public Image Img { get; set; }
         public string Nome { get; set;}
         public int Qtd { get; set; }

@@ -43,6 +43,7 @@ namespace SisLoja.UI
 
         private void popCliente_FormClosing(object sender, FormClosingEventArgs e)
         {
+            fvendas.dadosvenda.ClienteId = cliente.Id;
             fvendas.tbCodBar.Focus();
         }
 

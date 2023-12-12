@@ -32,6 +32,7 @@ namespace SisLoja
                 SqlDataReader dados = qrComando.ExecuteReader();
                 while (dados.Read())
                 {
+                    produto.Id = int.Parse(dados["ID"].ToString());
                     produto.CodBar = codbar;
                     produto.Img = dados["Img"].ToString();
                     produto.Nome = dados["Nome"].ToString();
@@ -131,5 +132,41 @@ namespace SisLoja
             }
         }
 
+        public void GravarVenda(modeloVenda dadosvenda, List<modeloListaDeProdutos> listaprodutos)
+        {
+            try
+            {
+                string server = StringServer();
+                conexao = new SqlConnection(server);
+                
+                string qr = "BEGIN TRANSACTION; INSERT INTO Vendas(ID,Data,ClienteID,TipoPagamento,ValorVenda," +
+                    "ValorPago,Descontos) VALUES(@id,@data,@clienteid,@tipopgto,@valorvenda,@valorpago,@descontos);";
+                foreach (modeloListaDeProdutos produto in listaprodutos)
+                {
+                    string[] num = produto.Nome.Split('-');
+                    qr += string.Format("INSERT INTO ItemsVenda (VendaID,ProdID,Num,Qtd) VALUES({0},{1},{2},{3});", dadosvenda.Id, produto.ID,
+                        num[2].Replace("Num", ""), produto.Qtd);
+
+                    qr += string.Format("UPDATE Estoque SET {0} = {0} - {1} WHERE ProdID = {2};", num[2], produto.Qtd, produto.ID);
+                }
+                qr += "COMMIT";
+
+                SqlCommand qrComando = new SqlCommand(qr, conexao);
+                qrComando.Parameters.AddWithValue("@id", dadosvenda.Id);
+                qrComando.Parameters.AddWithValue("@data", DateTime.Now );
+                qrComando.Parameters.AddWithValue("@clienteid", dadosvenda.ClienteId);
+                qrComando.Parameters.AddWithValue("@tipopgto", dadosvenda.TipoPagamento);
+                qrComando.Parameters.AddWithValue("@valorvenda", dadosvenda.ValorVenda);
+                qrComando.Parameters.AddWithValue("@valorpago", dadosvenda.ValorPago);
+                qrComando.Parameters.AddWithValue("@descontos", dadosvenda.Descontos);
+                conexao.Open();
+                qrComando.ExecuteNonQuery();
+                conexao.Close();
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
     }
 }

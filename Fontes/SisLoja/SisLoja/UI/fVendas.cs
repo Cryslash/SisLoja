@@ -16,11 +16,13 @@ namespace SisLoja.UI
     {
         public fPrincipal instanciaprincipal;
         VendasBLL BLL = new VendasBLL();
-        modeloProduto modeloproduto = new modeloProduto();
         modeloCliente cliente = new modeloCliente();
-        modeloVenda dadosvenda = new modeloVenda();
+        modeloProduto modeloproduto = new modeloProduto();
+        public modeloVenda dadosvenda = new modeloVenda();
         List<modeloListaDeProdutos> listaprodutos = new List<modeloListaDeProdutos>();
         bool locked = false;
+
+        //variáveis painel info
         int numitens;
         decimal valorparcial, valortotal;
 
@@ -29,49 +31,37 @@ namespace SisLoja.UI
             InitializeComponent();
         }
 
-        //Limpar tbcodbar, tbqtd e tbnum
-        private void Limpar_Campos()
+        //Eventos do Form fVendas
+        private void fVendas_Load(object sender, EventArgs e)
         {
-            tbCodBar.Text = "cód barras";
-            tbQtd.Text = "qtd";
-            tbNum.Text = "núm";
+            timer.Start();
+            dadosvenda.Id = BLL.Proximo_ID_VendaDAL();
+            lblCodVenda.Text = string.Format("#00{0}", Convert.ToString(dadosvenda.Id));
         }
 
-        //Atualizar informações do painel direito
-        private void Atualizar_Info(int qtd, decimal valor, string operacao)
+        private void fVendas_KeyDown(object sender, KeyEventArgs e)
         {
-            if (operacao == "somar")
+            if (e.KeyCode == Keys.F2)
             {
-                numitens++;
-                valorparcial += valor * qtd;
-                valortotal += valor * qtd;
+                kbtnCliente.PerformClick();
             }
-            if (operacao == "subtrair")
+            if (e.KeyCode == Keys.F3)
             {
-                numitens--;
-                valorparcial -= valor * qtd;
-                valortotal -= valor * qtd;
             }
-
-            lblNumItens.Text = string.Format("Número de Itens: {0}", numitens);
-            lblValorParcial.Text = string.Format("Total Parcial: {0} R$", valorparcial);
-            lblValorTotal.Text = string.Format("{0}", valortotal);
+            if (e.KeyCode == Keys.F4)
+            {
+                kbnTipoPagamento.PerformClick();
+            }
+            if (e.KeyCode == Keys.F5)
+            {
+            }
         }
 
-        private void tbCodBar_KeyDown(object sender, KeyEventArgs e)
+        //Evento Relógio
+        private void timer_Tick(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.Enter)
-            {
-                modeloproduto = BLL.BuscarProdutoDAL(tbCodBar.Text);
-                pbImg.ImageLocation = modeloproduto.Img;
-                lblProduto.Text = String.Format("{0} - {1} - {2}", modeloproduto.Nome, modeloproduto.Modelo, modeloproduto.Ref);
-                lblPreco.Text = string.Format("R$ {0}", modeloproduto.PrecoVenda.ToString());
-                tbNum.Focus();
-            }
-            else
-            { 
-                fVendas_KeyDown(sender, e);
-            }
+            lblHoras.Text = DateTime.Now.ToString("HH:mm:ss");
+            lblData.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
         }
 
         //Adicionar um produto a listaproduto
@@ -80,6 +70,7 @@ namespace SisLoja.UI
             modeloListaDeProdutos itemlista = new modeloListaDeProdutos();
             Atualizar_Info(int.Parse(tbQtd.Text), prod.PrecoVenda, "somar");
 
+            itemlista.ID = prod.Id;
             itemlista.Img = Image.FromFile(prod.Img);
             itemlista.Nome = String.Format("{0}-{1} {2} {3}-Num{4}", prod.CodBar, prod.Nome, prod.Modelo, prod.Ref, tbNum.Text);
             itemlista.Qtd = int.Parse(tbQtd.Text);
@@ -103,6 +94,34 @@ namespace SisLoja.UI
             dtProdutos.DataSource = dados;
         }
 
+        //Comportamento das TextBoxes
+        private void tbCodBar_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                modeloproduto = BLL.BuscarProdutoDAL(tbCodBar.Text);
+                pbImg.ImageLocation = modeloproduto.Img;
+                lblProduto.Text = String.Format("{0} - {1} - {2}", modeloproduto.Nome, modeloproduto.Modelo, modeloproduto.Ref);
+                lblPreco.Text = string.Format("R$ {0}", modeloproduto.PrecoVenda.ToString());
+                tbNum.Focus();
+            }
+            else
+            {
+                fVendas_KeyDown(sender, e);
+            }
+        }
+
+        private void tbCodBar_Enter(object sender, EventArgs e)
+        {
+            tbCodBar.Text = string.Empty;
+        }
+
+        private void tbCodBar_Leave(object sender, EventArgs e)
+        {
+            if (tbCodBar.Text == string.Empty)
+                tbCodBar.Text = "cód. barras";
+        }
+
         private void tbQtd_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -118,9 +137,9 @@ namespace SisLoja.UI
                         {
                             if (row.Cells[1].Value != null)
                             {
-                                string[] texto = row.Cells[2].FormattedValue.ToString().Split('-');
+                                string[] texto = row.Cells[3].FormattedValue.ToString().Split('-');
                                 if (tbCodBar.Text == texto[0] && tbNum.Text == texto[2].Replace("Num", ""))
-                                    qtd += int.Parse(row.Cells[3].Value.ToString());
+                                    qtd += int.Parse(row.Cells[4].Value.ToString());
                             }
                         }
                     }
@@ -150,6 +169,17 @@ namespace SisLoja.UI
             }
         }
 
+        private void tbQtd_Enter(object sender, EventArgs e)
+        {
+            tbQtd.Text = string.Empty;
+        }
+
+        private void tbQtd_Leave(object sender, EventArgs e)
+        {
+            if (tbQtd.Text == string.Empty)
+                tbQtd.Text = "qtd";
+        }
+
         private void tbNum_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
@@ -157,17 +187,6 @@ namespace SisLoja.UI
                 if (tbNum.Text.Length > 0)
                     tbQtd.Focus();
             }
-        }
-
-        private void tbCodBar_Enter(object sender, EventArgs e)
-        {
-            tbCodBar.Text = string.Empty;
-        }
-
-        private void tbCodBar_Leave(object sender, EventArgs e)
-        {
-            if (tbCodBar.Text == string.Empty)
-                tbCodBar.Text = "cód. barras";
         }
 
         private void tbNum_Enter(object sender, EventArgs e)
@@ -180,50 +199,23 @@ namespace SisLoja.UI
             if (tbNum.Text == string.Empty)
                 tbNum.Text = "núm";
         }
-
-        private void tbQtd_Enter(object sender, EventArgs e)
+                
+        //Limpar tbcodbar, tbqtd e tbnum
+        private void Limpar_Campos()
         {
-            tbQtd.Text = string.Empty;
+            tbCodBar.Text = "cód barras";
+            tbQtd.Text = "qtd";
+            tbNum.Text = "núm";
+        }
+                
+        //destrava o dtProdutos para remover uma linha
+        private void pbUnlock_Click(object sender, EventArgs e)
+        {
+            locked = false;
+            dtProdutos.Enabled = true;
         }
 
-        private void tbQtd_Leave(object sender, EventArgs e)
-        {
-            if (tbQtd.Text == string.Empty)
-                tbQtd.Text = "qtd";
-        }
-
-        private void timer_Tick(object sender, EventArgs e)
-        {
-            lblHoras.Text = DateTime.Now.ToString("HH:mm:ss");
-            lblData.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
-        }
-
-        private void fVendas_Load(object sender, EventArgs e)
-        {
-            timer.Start();
-            lblCodVenda.Text = string.Format("#00{0}", Convert.ToString(BLL.Proximo_ID_VendaDAL()));
-        }
-
-        private void kbtnCliente_Click(object sender, EventArgs e)
-        {
-            popCliente popupCliente = new popCliente();
-            popupCliente.StartPosition = FormStartPosition.CenterScreen;
-            popupCliente.cliente = this.cliente;
-            popupCliente.fvendas = this;
-            popupCliente.Show();
-        }
-
-        private void kbnFinalizar_Click(object sender, EventArgs e)
-        {
-
-        }
-
-        private void dtProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
-        {
-            dtProdutos.CellClick += DataGridView_RemoverLinha;
-        }
-
-
+        //remover linha do dtProdutos
         private void DataGridView_RemoverLinha(object sender, DataGridViewCellEventArgs e)
         {
             // Verificar se o botão foi clicado e se não é o cabeçalho da coluna            
@@ -243,11 +235,41 @@ namespace SisLoja.UI
                 }
             }
         }
-        //destrava o dtProdutos para remover uma linha
-        private void pbUnlock_Click(object sender, EventArgs e)
+
+        private void dtProdutos_CellContentClick(object sender, DataGridViewCellEventArgs e)
         {
-            locked = false;
-            dtProdutos.Enabled = true;
+            dtProdutos.CellClick += DataGridView_RemoverLinha;
+        }
+
+        //Atualizar informações do painel direito
+        private void Atualizar_Info(int qtd, decimal valor, string operacao)
+        {
+            if (operacao == "somar")
+            {
+                numitens++;
+                valorparcial += valor * qtd;
+                valortotal += valor * qtd;
+            }
+            if (operacao == "subtrair")
+            {
+                numitens--;
+                valorparcial -= valor * qtd;
+                valortotal -= valor * qtd;
+            }
+
+            lblNumItens.Text = string.Format("Número de Itens: {0}", numitens);
+            lblValorParcial.Text = string.Format("Total Parcial: {0} R$", valorparcial);
+            lblValorTotal.Text = string.Format("{0}", valortotal);
+        }
+
+        //botões painel direito.
+        private void kbtnCliente_Click(object sender, EventArgs e)
+        {
+            popCliente popupCliente = new popCliente();
+            popupCliente.StartPosition = FormStartPosition.CenterScreen;
+            popupCliente.cliente = this.cliente;
+            popupCliente.fvendas = this;
+            popupCliente.Show();
         }
 
         private void kbnDesconto_Click(object sender, EventArgs e)
@@ -264,21 +286,16 @@ namespace SisLoja.UI
             popPgto.Show();
         }
 
-        private void fVendas_KeyDown(object sender, KeyEventArgs e)
+        private void kbnFinalizar_Click(object sender, EventArgs e)
         {
-            if (e.KeyCode == Keys.F2)
+            dadosvenda.Data = DateTime.Now;
+            dadosvenda.ValorVenda = Convert.ToDecimal(lblValorTotal.Text);
+            dadosvenda.ValorPago = 0;
+            dadosvenda.Descontos = 0;
+            if ( MessageBox.Show("Deseja encerrar a venda?","Mensagem do Sistema", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == DialogResult.Yes)
             {
-                kbtnCliente.PerformClick();
-            }
-            if (e.KeyCode == Keys.F3)
-            {
-            }
-            if (e.KeyCode == Keys.F4)
-            {
-                kbnTipoPagamento.PerformClick();
-            }
-            if (e.KeyCode == Keys.F5)
-            {
+                BLL.GravarVendaDAL(dadosvenda, listaprodutos);
             }
         }
     }
