@@ -74,7 +74,53 @@ namespace SisLoja.UI
             }
             else
             {
-                fvendas.lblTipoPgto.Visible = false;
+                fvendas.lblValorPago.Visible = false;
+            }
+        }
+
+        private void TBTextChanged(object sender, EventArgs e)
+        {
+            // 10,501
+            bool tirarzero = false;
+            //if (((TextBox)sender).Text[0] == '0' && ((TextBox)sender).Text.Length >= 4)
+            if (((TextBox)sender).Text[3] == '0' && ((TextBox)sender).Text.Length >= 7)
+            {
+                tirarzero = true;
+            }
+
+            string texto = ((TextBox)sender).Text.Replace(",","").Replace("R$ ","");
+            if (tirarzero)
+                texto = texto.Substring(1);
+            string textocorrigido = texto;
+
+            if (texto.Length < 3)
+            {
+                for (int i = 0; i < texto.Length; i++)
+                {
+                    textocorrigido = string.Format("0{0}", texto);
+                }
+            }
+
+            StringBuilder builder = new StringBuilder(textocorrigido);
+            int posicaovirgula = builder.Length - 2;
+
+            builder.Insert(posicaovirgula, ",");
+            string textofinal = string.Format("R$ {0}",builder.ToString());
+            
+            ((TextBox)sender).Text = textofinal;
+            ((TextBox)sender).SelectionStart = textofinal.Length;
+        }
+
+        private void TBKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                dadosvenda.ValorPago = Convert.ToDecimal(((TextBox)sender).Text.Replace("R$ ",""));
+                fvendas.lblValorPago.Visible = true;
+                fvendas.lblValorPago.Text = string.Format("Valor Pago: R$ {0}",dadosvenda.ValorPago.ToString());
+                fvendas.lblTroco.Visible = true;
+                fvendas.lblTroco.Text = string.Format("Troco: R$ {0}", dadosvenda.ValorPago - Convert.ToDecimal(fvendas.lblValorTotal.Text));
+                this.Close();
             }
         }
 
@@ -91,11 +137,14 @@ namespace SisLoja.UI
             tb.Location = new Point(48, 83);
             tb.Font = new Font("Segoe UI", 19, FontStyle.Bold);
             tb.BackColor = Color.FromArgb(37, 77, 113);
-            //tb.RightToLeft = RightToLeft.Yes;
             tb.TextAlign = HorizontalAlignment.Center;
             tb.ForeColor = Color.White;
             tb.BorderStyle = BorderStyle.None;
-
+            tb.Text = "R$ 0,00";
+            tb.SelectionStart = tb.Text.Length;
+            tb.TextChanged += TBTextChanged;
+            tb.KeyDown += TBKeyDown;
+            
             this.pSkin.Controls.Add(tb);
             tb.Focus();
         }

@@ -34,8 +34,9 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             pInfo = new Panel();
+            lblTroco = new Label();
             lblDescricao = new Label();
-            lblTipoPgto = new Label();
+            lblValorPago = new Label();
             kbnFinalizar = new Krypton.Toolkit.KryptonButton();
             kbnTipoPagamento = new Krypton.Toolkit.KryptonButton();
             kbnDesconto = new Krypton.Toolkit.KryptonButton();
@@ -77,8 +78,9 @@
             // pInfo
             // 
             pInfo.BackColor = Color.FromArgb(246, 247, 251);
+            pInfo.Controls.Add(lblTroco);
             pInfo.Controls.Add(lblDescricao);
-            pInfo.Controls.Add(lblTipoPgto);
+            pInfo.Controls.Add(lblValorPago);
             pInfo.Controls.Add(kbnFinalizar);
             pInfo.Controls.Add(kbnTipoPagamento);
             pInfo.Controls.Add(kbnDesconto);
@@ -93,6 +95,19 @@
             pInfo.Size = new Size(305, 680);
             pInfo.TabIndex = 6;
             // 
+            // lblTroco
+            // 
+            lblTroco.AutoSize = true;
+            lblTroco.BackColor = Color.Transparent;
+            lblTroco.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblTroco.ForeColor = Color.FromArgb(64, 70, 77);
+            lblTroco.Location = new Point(40, 348);
+            lblTroco.Name = "lblTroco";
+            lblTroco.Size = new Size(62, 25);
+            lblTroco.TabIndex = 51;
+            lblTroco.Text = "Troco:";
+            lblTroco.Visible = false;
+            // 
             // lblDescricao
             // 
             lblDescricao.BackColor = Color.Black;
@@ -106,18 +121,18 @@
             lblDescricao.TabIndex = 50;
             lblDescricao.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // lblTipoPgto
+            // lblValorPago
             // 
-            lblTipoPgto.AutoSize = true;
-            lblTipoPgto.BackColor = Color.Transparent;
-            lblTipoPgto.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblTipoPgto.ForeColor = Color.FromArgb(64, 70, 77);
-            lblTipoPgto.Location = new Point(40, 311);
-            lblTipoPgto.Name = "lblTipoPgto";
-            lblTipoPgto.Size = new Size(117, 25);
-            lblTipoPgto.TabIndex = 18;
-            lblTipoPgto.Text = "Forma Pgto: ";
-            lblTipoPgto.Visible = false;
+            lblValorPago.AutoSize = true;
+            lblValorPago.BackColor = Color.Transparent;
+            lblValorPago.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblValorPago.ForeColor = Color.FromArgb(64, 70, 77);
+            lblValorPago.Location = new Point(40, 310);
+            lblValorPago.Name = "lblValorPago";
+            lblValorPago.Size = new Size(107, 25);
+            lblValorPago.TabIndex = 18;
+            lblValorPago.Text = "Valor Pago:";
+            lblValorPago.Visible = false;
             // 
             // kbnFinalizar
             // 
@@ -624,7 +639,6 @@
         #endregion
 
         private Panel pInfo;
-        private Label lblValorTotal;
         private Label lblValorParcial;
         private Label lblDesc;
         private Label lblNumItens;
@@ -653,7 +667,9 @@
         private DataGridViewTextBoxColumn Qtd;
         private DataGridViewTextBoxColumn Valor;
         private DataGridViewImageColumn Acao;
-        public Label lblTipoPgto;
+        public Label lblValorPago;
         public Label lblDescricao;
+        public Label lblTroco;
+        public Label lblValorTotal;
     }
 }

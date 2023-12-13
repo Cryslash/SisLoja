@@ -290,7 +290,6 @@ namespace SisLoja.UI
         {
             dadosvenda.Data = DateTime.Now;
             dadosvenda.ValorVenda = Convert.ToDecimal(lblValorTotal.Text);
-            dadosvenda.ValorPago = 0;
             dadosvenda.Descontos = 0;
             if ( MessageBox.Show("Deseja encerrar a venda?","Mensagem do Sistema", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes)
