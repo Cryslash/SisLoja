@@ -138,11 +138,20 @@ namespace SisLoja
             {
                 string server = StringServer();
                 conexao = new SqlConnection(server);
-                
-                string qr = "BEGIN TRANSACTION; INSERT INTO Vendas(ID,Data,ClienteID,TipoPagamento,ValorVenda," +
-                    "ValorPago,Descontos) VALUES(@id,@data,@clienteid,@tipopgto,@valorvenda,@valorpago,@descontos);";
+
+                string qr = "BEGIN TRANSACTION; INSERT INTO Vendas(ID,Data,";
+                  if (dadosvenda.ClienteId != 0)
+                    qr += "ClienteID,";
+
+                qr += "TipoPagamento,ValorVenda,ValorPago,Descontos) VALUES(@id,@data,";
+                if (dadosvenda.ClienteId != 0)
+                    qr += "@clienteid,";
+
+                qr += "@tipopgto,@valorvenda,@valorpago,@descontos);";
                 foreach (modeloListaDeProdutos produto in listaprodutos)
                 {
+                    //dividindo a string Nome em 3 partes, a terceira parte(índice 2) possui a informação do número
+                    //ex: 7890333910205 - Sandalia BeautyMoon 1020 - num38
                     string[] num = produto.Nome.Split('-');
                     qr += string.Format("INSERT INTO ItemsVenda (VendaID,ProdID,Num,Qtd) VALUES({0},{1},{2},{3});", dadosvenda.Id, produto.ID,
                         num[2].Replace("Num", ""), produto.Qtd);

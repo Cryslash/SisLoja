@@ -15,7 +15,7 @@ namespace SisLoja.UI
     {
         public modeloVenda dadosvenda;
         public fVendas fvendas;
-
+        
         public popTipoPagamento()
         {
             InitializeComponent();
@@ -30,7 +30,8 @@ namespace SisLoja.UI
             if (e.KeyCode == Keys.D1)
             {
                 dadosvenda.TipoPagamento = 1;
-                this.Close();
+                TelaValor();
+                //this.Close();
             }
             if (e.KeyCode == Keys.D2)
             {
@@ -67,13 +68,36 @@ namespace SisLoja.UI
         {
             if (dadosvenda.TipoPagamento > 0)
             {
-                fvendas.lblTipoPgto.Text = string.Format("Forma de Pagamento: {0}", CodigoVenda(dadosvenda.TipoPagamento));
-                fvendas.lblTipoPgto.Visible = true;
+                fvendas.lblDescricao.Text = string.Format("Forma de Pagamento: {0}", CodigoVenda(dadosvenda.TipoPagamento));
+                //fvendas.lblTipoPgto.Text = string.Format("Forma de Pagamento: {0}", CodigoVenda(dadosvenda.TipoPagamento));
+                //fvendas.lblTipoPgto.Visible = true;
             }
             else
             {
                 fvendas.lblTipoPgto.Visible = false;
             }
+        }
+
+        private void TelaValor()
+        {
+            lblDinheiro.Visible = false;
+            lblPix.Visible = false;
+            lblCredito.Visible = false;
+            lblDebito.Visible = false;
+
+            TextBox tb = new TextBox();
+            
+            tb.Size = new Size(287, 23);
+            tb.Location = new Point(48, 83);
+            tb.Font = new Font("Segoe UI", 19, FontStyle.Bold);
+            tb.BackColor = Color.FromArgb(37, 77, 113);
+            //tb.RightToLeft = RightToLeft.Yes;
+            tb.TextAlign = HorizontalAlignment.Center;
+            tb.ForeColor = Color.White;
+            tb.BorderStyle = BorderStyle.None;
+
+            this.pSkin.Controls.Add(tb);
+            tb.Focus();
         }
     }
 }

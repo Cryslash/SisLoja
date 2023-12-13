@@ -29,20 +29,20 @@
         private void InitializeComponent()
         {
             pSkin = new Panel();
-            label4 = new Label();
-            label3 = new Label();
-            label2 = new Label();
-            label1 = new Label();
+            lblDebito = new Label();
+            lblCredito = new Label();
+            lblPix = new Label();
+            lblDinheiro = new Label();
             pSkin.SuspendLayout();
             SuspendLayout();
             // 
             // pSkin
             // 
             pSkin.BackColor = Color.FromArgb(37, 77, 113);
-            pSkin.Controls.Add(label4);
-            pSkin.Controls.Add(label3);
-            pSkin.Controls.Add(label2);
-            pSkin.Controls.Add(label1);
+            pSkin.Controls.Add(lblDebito);
+            pSkin.Controls.Add(lblCredito);
+            pSkin.Controls.Add(lblPix);
+            pSkin.Controls.Add(lblDinheiro);
             pSkin.Dock = DockStyle.Fill;
             pSkin.ForeColor = Color.White;
             pSkin.Location = new Point(0, 0);
@@ -50,49 +50,49 @@
             pSkin.Size = new Size(387, 228);
             pSkin.TabIndex = 1;
             // 
-            // label4
+            // lblDebito
             // 
-            label4.AutoSize = true;
-            label4.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label4.Location = new Point(48, 170);
-            label4.Name = "label4";
-            label4.Size = new Size(202, 30);
-            label4.TabIndex = 17;
-            label4.Text = "4 - Cartão de Débito";
-            label4.TextAlign = ContentAlignment.TopCenter;
+            lblDebito.AutoSize = true;
+            lblDebito.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDebito.Location = new Point(48, 170);
+            lblDebito.Name = "lblDebito";
+            lblDebito.Size = new Size(202, 30);
+            lblDebito.TabIndex = 17;
+            lblDebito.Text = "4 - Cartão de Débito";
+            lblDebito.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label3
+            // lblCredito
             // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(48, 123);
-            label3.Name = "label3";
-            label3.Size = new Size(207, 30);
-            label3.TabIndex = 16;
-            label3.Text = "3 - Cartão de Crédito";
-            label3.TextAlign = ContentAlignment.TopCenter;
+            lblCredito.AutoSize = true;
+            lblCredito.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblCredito.Location = new Point(48, 123);
+            lblCredito.Name = "lblCredito";
+            lblCredito.Size = new Size(207, 30);
+            lblCredito.TabIndex = 16;
+            lblCredito.Text = "3 - Cartão de Crédito";
+            lblCredito.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label2
+            // lblPix
             // 
-            label2.AutoSize = true;
-            label2.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(48, 76);
-            label2.Name = "label2";
-            label2.Size = new Size(71, 30);
-            label2.TabIndex = 15;
-            label2.Text = "2 - Pix";
-            label2.TextAlign = ContentAlignment.TopCenter;
+            lblPix.AutoSize = true;
+            lblPix.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblPix.Location = new Point(48, 76);
+            lblPix.Name = "lblPix";
+            lblPix.Size = new Size(71, 30);
+            lblPix.TabIndex = 15;
+            lblPix.Text = "2 - Pix";
+            lblPix.TextAlign = ContentAlignment.TopCenter;
             // 
-            // label1
+            // lblDinheiro
             // 
-            label1.AutoSize = true;
-            label1.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            label1.Location = new Point(48, 29);
-            label1.Name = "label1";
-            label1.Size = new Size(123, 30);
-            label1.TabIndex = 14;
-            label1.Text = "1 - Dinheiro";
-            label1.TextAlign = ContentAlignment.TopCenter;
+            lblDinheiro.AutoSize = true;
+            lblDinheiro.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDinheiro.Location = new Point(48, 29);
+            lblDinheiro.Name = "lblDinheiro";
+            lblDinheiro.Size = new Size(123, 30);
+            lblDinheiro.TabIndex = 14;
+            lblDinheiro.Text = "1 - Dinheiro";
+            lblDinheiro.TextAlign = ContentAlignment.TopCenter;
             // 
             // popTipoPagamento
             // 
@@ -123,9 +123,9 @@
         #endregion
 
         private Panel pSkin;
-        private Label label4;
-        private Label label3;
-        private Label label2;
-        private Label label1;
+        private Label lblDebito;
+        private Label lblCredito;
+        private Label lblPix;
+        private Label lblDinheiro;
     }
 }

@@ -36,7 +36,7 @@ namespace SisLoja.UI
                 cliente.Nome = dtCliente.SelectedRows[0].Cells[1].Value.ToString();
                 cliente.Cpf = dtCliente.SelectedRows[0].Cells[2].Value.ToString();
 
-                fvendas.lblCliente.Text = string.Format("Cliente: {0}", cliente.Nome);
+                //fvendas.lblCliente.Text = string.Format("Cliente: {0}", cliente.Nome);
                 this.Close();
             }
         }
@@ -44,6 +44,7 @@ namespace SisLoja.UI
         private void popCliente_FormClosing(object sender, FormClosingEventArgs e)
         {
             fvendas.dadosvenda.ClienteId = cliente.Id;
+            fvendas.lblDescricao.Text = string.Format("Cliente: {0}",cliente.Nome);
             fvendas.tbCodBar.Focus();
         }
 

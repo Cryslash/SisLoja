@@ -34,6 +34,7 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             pInfo = new Panel();
+            lblDescricao = new Label();
             lblTipoPgto = new Label();
             kbnFinalizar = new Krypton.Toolkit.KryptonButton();
             kbnTipoPagamento = new Krypton.Toolkit.KryptonButton();
@@ -45,7 +46,6 @@
             lblNumItens = new Label();
             pLista = new Panel();
             pbUnlock = new PictureBox();
-            lblCliente = new Label();
             lblData = new Label();
             dtProdutos = new DataGridView();
             Img = new DataGridViewImageColumn();
@@ -77,6 +77,7 @@
             // pInfo
             // 
             pInfo.BackColor = Color.FromArgb(246, 247, 251);
+            pInfo.Controls.Add(lblDescricao);
             pInfo.Controls.Add(lblTipoPgto);
             pInfo.Controls.Add(kbnFinalizar);
             pInfo.Controls.Add(kbnTipoPagamento);
@@ -91,6 +92,19 @@
             pInfo.Name = "pInfo";
             pInfo.Size = new Size(305, 680);
             pInfo.TabIndex = 6;
+            // 
+            // lblDescricao
+            // 
+            lblDescricao.BackColor = Color.Black;
+            lblDescricao.Font = new Font("Segoe UI", 9.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblDescricao.ForeColor = Color.White;
+            lblDescricao.Location = new Point(0, 87);
+            lblDescricao.Name = "lblDescricao";
+            lblDescricao.Padding = new Padding(10, 0, 0, 0);
+            lblDescricao.RightToLeft = RightToLeft.No;
+            lblDescricao.Size = new Size(305, 24);
+            lblDescricao.TabIndex = 50;
+            lblDescricao.TextAlign = ContentAlignment.MiddleLeft;
             // 
             // lblTipoPgto
             // 
@@ -294,7 +308,6 @@
             // 
             pLista.BackColor = Color.White;
             pLista.Controls.Add(pbUnlock);
-            pLista.Controls.Add(lblCliente);
             pLista.Controls.Add(lblData);
             pLista.Controls.Add(dtProdutos);
             pLista.Controls.Add(lblCodVenda);
@@ -316,17 +329,6 @@
             pbUnlock.TabIndex = 33;
             pbUnlock.TabStop = false;
             pbUnlock.Click += pbUnlock_Click;
-            // 
-            // lblCliente
-            // 
-            lblCliente.AutoSize = true;
-            lblCliente.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCliente.ForeColor = Color.FromArgb(64, 70, 77);
-            lblCliente.Location = new Point(348, 62);
-            lblCliente.Name = "lblCliente";
-            lblCliente.Size = new Size(205, 25);
-            lblCliente.TabIndex = 32;
-            lblCliente.Text = "Cliente: não informado";
             // 
             // lblData
             // 
@@ -435,7 +437,7 @@
             lblCodVenda.AutoSize = true;
             lblCodVenda.Font = new Font("Segoe UI", 26.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblCodVenda.ForeColor = Color.FromArgb(64, 70, 77);
-            lblCodVenda.Location = new Point(348, 9);
+            lblCodVenda.Location = new Point(408, 27);
             lblCodVenda.Name = "lblCodVenda";
             lblCodVenda.Size = new Size(155, 47);
             lblCodVenda.TabIndex = 9;
@@ -644,7 +646,6 @@
         private Krypton.Toolkit.KryptonButton kbnDesconto;
         private Krypton.Toolkit.KryptonButton kbtnCliente;
         private Krypton.Toolkit.KryptonCustomPaletteBase kryptonCustomPaletteBase1;
-        public Label lblCliente;
         public Panel pBottom;
         private PictureBox pbUnlock;
         private DataGridViewImageColumn Img;
@@ -653,5 +654,6 @@
         private DataGridViewTextBoxColumn Valor;
         private DataGridViewImageColumn Acao;
         public Label lblTipoPgto;
+        public Label lblDescricao;
     }
 }
