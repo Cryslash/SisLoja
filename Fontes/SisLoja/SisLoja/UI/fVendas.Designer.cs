@@ -305,7 +305,7 @@
             lblDesc.Name = "lblDesc";
             lblDesc.Size = new Size(173, 25);
             lblDesc.TabIndex = 1;
-            lblDesc.Text = "Descontos:  0,00 R$";
+            lblDesc.Text = "Descontos:  R$ 0,00";
             // 
             // lblNumItens
             // 
@@ -315,9 +315,9 @@
             lblNumItens.ForeColor = Color.FromArgb(64, 70, 77);
             lblNumItens.Location = new Point(40, 188);
             lblNumItens.Name = "lblNumItens";
-            lblNumItens.Size = new Size(152, 25);
+            lblNumItens.Size = new Size(171, 25);
             lblNumItens.TabIndex = 0;
-            lblNumItens.Text = "Número de Itens";
+            lblNumItens.Text = "Número de Itens: 0";
             // 
             // pLista
             // 
@@ -651,8 +651,6 @@
         private Label lblPreco;
         private PictureBox pbImg;
         public TextBox tbCodBar;
-        private TextBox tbNum;
-        private TextBox tbQtd;
         private System.Windows.Forms.Timer timer;
         private Label lblData;
         private Krypton.Toolkit.KryptonButton kbnFinalizar;
@@ -671,5 +669,7 @@
         public Label lblDescricao;
         public Label lblTroco;
         public Label lblValorTotal;
+        public TextBox tbNum;
+        public TextBox tbQtd;
     }
 }

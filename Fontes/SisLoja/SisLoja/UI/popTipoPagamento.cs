@@ -76,6 +76,7 @@ namespace SisLoja.UI
             {
                 fvendas.lblValorPago.Visible = false;
             }
+            fvendas.dtProdutos.Visible = true;
         }
 
         private void TBTextChanged(object sender, EventArgs e)

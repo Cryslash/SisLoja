@@ -35,8 +35,9 @@ namespace SisLoja.UI
         private void fVendas_Load(object sender, EventArgs e)
         {
             timer.Start();
-            dadosvenda.Id = BLL.Proximo_ID_VendaDAL();
-            lblCodVenda.Text = string.Format("#00{0}", Convert.ToString(dadosvenda.Id));
+            NovaVenda();
+            //dadosvenda.Id = BLL.Proximo_ID_VendaDAL();
+            //lblCodVenda.Text = string.Format("#00{0}", Convert.ToString(dadosvenda.Id));
         }
 
         private void fVendas_KeyDown(object sender, KeyEventArgs e)
@@ -62,6 +63,34 @@ namespace SisLoja.UI
         {
             lblHoras.Text = DateTime.Now.ToString("HH:mm:ss");
             lblData.Text = DateTime.Now.ToString("dddd, dd MMMM yyyy");
+        }
+
+        //Realizar uma nova venda
+        private void NovaVenda()
+        {
+            dtProdutos.Rows.Clear();
+            cliente = new modeloCliente();
+            modeloproduto = new modeloProduto();
+            dadosvenda = new modeloVenda();
+            listaprodutos = new List<modeloListaDeProdutos>();
+            dadosvenda.Id = BLL.Proximo_ID_VendaDAL();
+            lblCodVenda.Text = lblCodVenda.Text = string.Format("#00{0}", Convert.ToString(dadosvenda.Id));
+            lblProduto.Text = "Produto";
+            lblPreco.Text = "Preco";
+            pbImg.Image = Image.FromFile("C:\\Users\\cryst\\Documents\\Projetos\\SistemaLoja\\Assets\\Images\\No-Image-Placeholder.png");
+            lblValorTotal.Text = "0,00";
+            lblDescricao.Text = "";
+            lblNumItens.Text = "Número de Itens: 0";
+            lblDesc.Text = "Descontos: R$ 0,00";
+            lblValorParcial.Text = "Total Parcial: 0,00 R$";
+            lblValorPago.Visible = false;
+            lblValorPago.Text = "Valor Pago:";
+            lblTroco.Visible = false;
+            lblTroco.Text = "Troco:";
+
+            numitens = 0;
+            valorparcial = 0;
+            valortotal = 0;
         }
 
         //Adicionar um produto a listaproduto
@@ -260,16 +289,27 @@ namespace SisLoja.UI
             lblNumItens.Text = string.Format("Número de Itens: {0}", numitens);
             lblValorParcial.Text = string.Format("Total Parcial: {0} R$", valorparcial);
             lblValorTotal.Text = string.Format("{0}", valortotal);
+            if (lblValorPago.Visible == true)
+            {
+                lblValorPago.Visible = false;
+                lblTroco.Visible = false;
+                lblDescricao.Text = string.Format("Cliente: {0}", cliente.Nome);
+            }
         }
 
         //botões painel direito.
         private void kbtnCliente_Click(object sender, EventArgs e)
         {
+            dtProdutos.Visible = false;
             popCliente popupCliente = new popCliente();
-            popupCliente.StartPosition = FormStartPosition.CenterScreen;
+            popupCliente.Location = new Point(280,150);
             popupCliente.cliente = this.cliente;
             popupCliente.fvendas = this;
+            popupCliente.Owner = this;
+            popupCliente.TopLevel = false;
+            pLista.Controls.Add(popupCliente);
             popupCliente.Show();
+            popupCliente.ktbNome.Focus();
         }
 
         private void kbnDesconto_Click(object sender, EventArgs e)
@@ -279,11 +319,16 @@ namespace SisLoja.UI
 
         private void kbnTipoPagamento_Click(object sender, EventArgs e)
         {
+            dtProdutos.Visible=false;
             popTipoPagamento popPgto = new popTipoPagamento();
-            popPgto.StartPosition = FormStartPosition.CenterScreen;
+            popPgto.Location = new Point(280, 150);
+            popPgto.Owner = this;
+            popPgto.TopLevel = false;
             popPgto.dadosvenda = this.dadosvenda;
             popPgto.fvendas = this;
+            pLista.Controls.Add(popPgto);
             popPgto.Show();
+            popPgto.Focus();
         }
 
         private void kbnFinalizar_Click(object sender, EventArgs e)
@@ -295,6 +340,8 @@ namespace SisLoja.UI
                 MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 BLL.GravarVendaDAL(dadosvenda, listaprodutos);
+                MessageBox.Show("Venda Realizada com Sucesso.","Mensagem do Sistema.",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                NovaVenda();
             }
         }
     }

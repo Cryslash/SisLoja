@@ -123,6 +123,7 @@ SELECT * FROM Estoque;
 SELECT * FROM Vendas;
 SELECT * FROM ItemsVenda;
 
+
 SELECT TOP 1 ID FROM Vendas ORDER BY ID DESC;
 
 

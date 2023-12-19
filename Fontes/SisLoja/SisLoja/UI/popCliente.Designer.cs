@@ -193,8 +193,8 @@
         #endregion
 
         private Panel pSkin;
-        private Krypton.Toolkit.KryptonTextBox ktbNome;
         private Krypton.Toolkit.KryptonButton kbtnConfirmar;
         public DataGridView dtCliente;
+        public Krypton.Toolkit.KryptonTextBox ktbNome;
     }
 }
