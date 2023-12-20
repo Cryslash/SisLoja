@@ -51,10 +51,11 @@ namespace SisLoja.UI
             }
             if (e.KeyCode == Keys.F4)
             {
-                kbnTipoPagamento.PerformClick();
+                kbtnTipoPagamento.PerformClick();
             }
             if (e.KeyCode == Keys.F5)
             {
+                kbtnFinalizar.PerformClick();
             }
         }
 
@@ -87,6 +88,8 @@ namespace SisLoja.UI
             lblValorPago.Text = "Valor Pago:";
             lblTroco.Visible = false;
             lblTroco.Text = "Troco:";
+            kbtnTipoPagamento.Enabled = false;
+            kbtnFinalizar.Enabled = false;
 
             numitens = 0;
             valorparcial = 0;
@@ -181,6 +184,7 @@ namespace SisLoja.UI
                         AdicionarProduto(modeloproduto);
                         AtualizarDtProdutos();
                         Limpar_Campos();
+                        kbtnTipoPagamento.Enabled = true;
                         tbCodBar.Focus();
                     }
                     else
@@ -195,6 +199,10 @@ namespace SisLoja.UI
                 {
                     Console.WriteLine("Erro ao processar a linha: " + erro.Message);
                 }
+            }
+            else
+            {
+                fVendas_KeyDown(sender, e);
             }
         }
 
@@ -215,6 +223,10 @@ namespace SisLoja.UI
             {
                 if (tbNum.Text.Length > 0)
                     tbQtd.Focus();
+            } 
+            else
+            {
+                fVendas_KeyDown(sender, e);
             }
         }
 

@@ -121,6 +121,7 @@ namespace SisLoja.UI
                 fvendas.lblValorPago.Text = string.Format("Valor Pago: R$ {0}",dadosvenda.ValorPago.ToString());
                 fvendas.lblTroco.Visible = true;
                 fvendas.lblTroco.Text = string.Format("Troco: R$ {0}", dadosvenda.ValorPago - Convert.ToDecimal(fvendas.lblValorTotal.Text));
+                fvendas.kbtnFinalizar.Enabled = true;
                 this.Close();
             }
         }

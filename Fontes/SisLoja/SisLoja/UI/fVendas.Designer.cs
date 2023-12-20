@@ -37,8 +37,8 @@
             lblTroco = new Label();
             lblDescricao = new Label();
             lblValorPago = new Label();
-            kbnFinalizar = new Krypton.Toolkit.KryptonButton();
-            kbnTipoPagamento = new Krypton.Toolkit.KryptonButton();
+            kbtnFinalizar = new Krypton.Toolkit.KryptonButton();
+            kbtnTipoPagamento = new Krypton.Toolkit.KryptonButton();
             kbnDesconto = new Krypton.Toolkit.KryptonButton();
             kbtnCliente = new Krypton.Toolkit.KryptonButton();
             lblValorTotal = new Label();
@@ -81,8 +81,8 @@
             pInfo.Controls.Add(lblTroco);
             pInfo.Controls.Add(lblDescricao);
             pInfo.Controls.Add(lblValorPago);
-            pInfo.Controls.Add(kbnFinalizar);
-            pInfo.Controls.Add(kbnTipoPagamento);
+            pInfo.Controls.Add(kbtnFinalizar);
+            pInfo.Controls.Add(kbtnTipoPagamento);
             pInfo.Controls.Add(kbnDesconto);
             pInfo.Controls.Add(kbtnCliente);
             pInfo.Controls.Add(lblValorTotal);
@@ -134,75 +134,81 @@
             lblValorPago.Text = "Valor Pago:";
             lblValorPago.Visible = false;
             // 
-            // kbnFinalizar
+            // kbtnFinalizar
             // 
-            kbnFinalizar.Cursor = Cursors.Hand;
-            kbnFinalizar.Location = new Point(40, 608);
-            kbnFinalizar.Name = "kbnFinalizar";
-            kbnFinalizar.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
-            kbnFinalizar.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
-            kbnFinalizar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            kbnFinalizar.Size = new Size(224, 40);
-            kbnFinalizar.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
-            kbnFinalizar.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
-            kbnFinalizar.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
-            kbnFinalizar.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
-            kbnFinalizar.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kbnFinalizar.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            kbnFinalizar.StateCommon.Border.Rounding = 15F;
-            kbnFinalizar.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            kbnFinalizar.StateCommon.Content.ShortText.Color1 = Color.White;
-            kbnFinalizar.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            kbnFinalizar.StateDisabled.Back.Color1 = Color.FromArgb(147, 147, 147);
-            kbnFinalizar.StateDisabled.Back.Color2 = Color.FromArgb(147, 147, 147);
-            kbnFinalizar.StateDisabled.Border.Color1 = Color.FromArgb(147, 147, 147);
-            kbnFinalizar.StateDisabled.Border.Color2 = Color.FromArgb(147, 147, 147);
-            kbnFinalizar.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kbnFinalizar.StateDisabled.Content.ShortText.Color1 = Color.FromArgb(51, 51, 51);
-            kbnFinalizar.StateDisabled.Content.ShortText.Color2 = Color.FromArgb(51, 51, 51);
-            kbnFinalizar.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
-            kbnFinalizar.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
-            kbnFinalizar.TabIndex = 17;
-            kbnFinalizar.Values.Image = (Image)resources.GetObject("kbnFinalizar.Values.Image");
-            kbnFinalizar.Values.ImageStates.ImageCheckedNormal = null;
-            kbnFinalizar.Values.ImageStates.ImageCheckedPressed = null;
-            kbnFinalizar.Values.ImageStates.ImageCheckedTracking = null;
-            kbnFinalizar.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kbnFinalizar.Values.ImageStates.ImageDisabled");
-            kbnFinalizar.Values.Text = "Finalizar Venda [F5]";
-            kbnFinalizar.Click += kbnFinalizar_Click;
+            kbtnFinalizar.Cursor = Cursors.Hand;
+            kbtnFinalizar.Enabled = false;
+            kbtnFinalizar.Location = new Point(40, 608);
+            kbtnFinalizar.Name = "kbtnFinalizar";
+            kbtnFinalizar.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnFinalizar.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnFinalizar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kbtnFinalizar.Size = new Size(224, 40);
+            kbtnFinalizar.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnFinalizar.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnFinalizar.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnFinalizar.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnFinalizar.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnFinalizar.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            kbtnFinalizar.StateCommon.Border.Rounding = 15F;
+            kbtnFinalizar.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            kbtnFinalizar.StateCommon.Content.ShortText.Color1 = Color.White;
+            kbtnFinalizar.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            kbtnFinalizar.StateDisabled.Back.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnFinalizar.StateDisabled.Back.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnFinalizar.StateDisabled.Border.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnFinalizar.StateDisabled.Border.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnFinalizar.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnFinalizar.StateDisabled.Content.ShortText.Color1 = Color.FromArgb(51, 51, 51);
+            kbtnFinalizar.StateDisabled.Content.ShortText.Color2 = Color.FromArgb(51, 51, 51);
+            kbtnFinalizar.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
+            kbtnFinalizar.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
+            kbtnFinalizar.TabIndex = 17;
+            kbtnFinalizar.Values.Image = (Image)resources.GetObject("kbtnFinalizar.Values.Image");
+            kbtnFinalizar.Values.ImageStates.ImageCheckedNormal = null;
+            kbtnFinalizar.Values.ImageStates.ImageCheckedPressed = null;
+            kbtnFinalizar.Values.ImageStates.ImageCheckedTracking = null;
+            kbtnFinalizar.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kbtnFinalizar.Values.ImageStates.ImageDisabled");
+            kbtnFinalizar.Values.Text = "Finalizar Venda [F5]";
+            kbtnFinalizar.Click += kbnFinalizar_Click;
             // 
-            // kbnTipoPagamento
+            // kbtnTipoPagamento
             // 
-            kbnTipoPagamento.Cursor = Cursors.Hand;
-            kbnTipoPagamento.Location = new Point(40, 547);
-            kbnTipoPagamento.Name = "kbnTipoPagamento";
-            kbnTipoPagamento.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
-            kbnTipoPagamento.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
-            kbnTipoPagamento.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            kbnTipoPagamento.Size = new Size(224, 40);
-            kbnTipoPagamento.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
-            kbnTipoPagamento.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
-            kbnTipoPagamento.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
-            kbnTipoPagamento.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
-            kbnTipoPagamento.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kbnTipoPagamento.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            kbnTipoPagamento.StateCommon.Border.Rounding = 15F;
-            kbnTipoPagamento.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            kbnTipoPagamento.StateCommon.Content.ShortText.Color1 = Color.White;
-            kbnTipoPagamento.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            kbnTipoPagamento.StateDisabled.Back.Color1 = Color.FromArgb(147, 147, 147);
-            kbnTipoPagamento.StateDisabled.Back.Color2 = Color.FromArgb(147, 147, 147);
-            kbnTipoPagamento.StateDisabled.Border.Color1 = Color.FromArgb(147, 147, 147);
-            kbnTipoPagamento.StateDisabled.Border.Color2 = Color.FromArgb(147, 147, 147);
-            kbnTipoPagamento.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kbnTipoPagamento.StateDisabled.Content.ShortText.Color1 = Color.FromArgb(51, 51, 51);
-            kbnTipoPagamento.StateDisabled.Content.ShortText.Color2 = Color.FromArgb(51, 51, 51);
-            kbnTipoPagamento.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
-            kbnTipoPagamento.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
-            kbnTipoPagamento.TabIndex = 16;
-            kbnTipoPagamento.Values.Image = (Image)resources.GetObject("kbnTipoPagamento.Values.Image");
-            kbnTipoPagamento.Values.Text = "Forma Pagamento [F4]";
-            kbnTipoPagamento.Click += kbnTipoPagamento_Click;
+            kbtnTipoPagamento.Cursor = Cursors.Hand;
+            kbtnTipoPagamento.Enabled = false;
+            kbtnTipoPagamento.Location = new Point(40, 547);
+            kbtnTipoPagamento.Name = "kbtnTipoPagamento";
+            kbtnTipoPagamento.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnTipoPagamento.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnTipoPagamento.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kbtnTipoPagamento.Size = new Size(224, 40);
+            kbtnTipoPagamento.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnTipoPagamento.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnTipoPagamento.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnTipoPagamento.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnTipoPagamento.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnTipoPagamento.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            kbtnTipoPagamento.StateCommon.Border.Rounding = 15F;
+            kbtnTipoPagamento.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            kbtnTipoPagamento.StateCommon.Content.ShortText.Color1 = Color.White;
+            kbtnTipoPagamento.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            kbtnTipoPagamento.StateDisabled.Back.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnTipoPagamento.StateDisabled.Back.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnTipoPagamento.StateDisabled.Border.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnTipoPagamento.StateDisabled.Border.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnTipoPagamento.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnTipoPagamento.StateDisabled.Content.ShortText.Color1 = Color.FromArgb(51, 51, 51);
+            kbtnTipoPagamento.StateDisabled.Content.ShortText.Color2 = Color.FromArgb(51, 51, 51);
+            kbtnTipoPagamento.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
+            kbtnTipoPagamento.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
+            kbtnTipoPagamento.TabIndex = 16;
+            kbtnTipoPagamento.Values.Image = (Image)resources.GetObject("kbtnTipoPagamento.Values.Image");
+            kbtnTipoPagamento.Values.ImageStates.ImageCheckedNormal = null;
+            kbtnTipoPagamento.Values.ImageStates.ImageCheckedPressed = null;
+            kbtnTipoPagamento.Values.ImageStates.ImageCheckedTracking = null;
+            kbtnTipoPagamento.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kbtnTipoPagamento.Values.ImageStates.ImageDisabled");
+            kbtnTipoPagamento.Values.Text = "Forma Pagamento [F4]";
+            kbtnTipoPagamento.Click += kbnTipoPagamento_Click;
             // 
             // kbnDesconto
             // 
@@ -653,8 +659,7 @@
         public TextBox tbCodBar;
         private System.Windows.Forms.Timer timer;
         private Label lblData;
-        private Krypton.Toolkit.KryptonButton kbnFinalizar;
-        private Krypton.Toolkit.KryptonButton kbnTipoPagamento;
+        private Krypton.Toolkit.KryptonButton kbtnTipoPagamento;
         private Krypton.Toolkit.KryptonButton kbnDesconto;
         private Krypton.Toolkit.KryptonButton kbtnCliente;
         private Krypton.Toolkit.KryptonCustomPaletteBase kryptonCustomPaletteBase1;
@@ -671,5 +676,6 @@
         public Label lblValorTotal;
         public TextBox tbNum;
         public TextBox tbQtd;
+        public Krypton.Toolkit.KryptonButton kbtnFinalizar;
     }
 }

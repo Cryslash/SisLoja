@@ -38,5 +38,11 @@ namespace SisLoja.UI
         {
             instanciaprincipal.btnSales_Click(sender, e);
         }
+
+        private void btnTerminal_Click(object sender, EventArgs e)
+        {
+            fTerminal terminal = new fTerminal();
+            terminal.Show();
+        }
     }
 }
