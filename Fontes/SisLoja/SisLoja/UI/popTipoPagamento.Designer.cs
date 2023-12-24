@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             pSkin = new Panel();
+            lblParcelado = new Label();
             lblDebito = new Label();
             lblCredito = new Label();
             lblPix = new Label();
@@ -39,6 +40,7 @@
             // pSkin
             // 
             pSkin.BackColor = Color.FromArgb(37, 77, 113);
+            pSkin.Controls.Add(lblParcelado);
             pSkin.Controls.Add(lblDebito);
             pSkin.Controls.Add(lblCredito);
             pSkin.Controls.Add(lblPix);
@@ -50,33 +52,44 @@
             pSkin.Size = new Size(387, 228);
             pSkin.TabIndex = 1;
             // 
+            // lblParcelado
+            // 
+            lblParcelado.AutoSize = true;
+            lblParcelado.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            lblParcelado.Location = new Point(48, 138);
+            lblParcelado.Name = "lblParcelado";
+            lblParcelado.Size = new Size(207, 30);
+            lblParcelado.TabIndex = 18;
+            lblParcelado.Text = "4 - Crédito Parcelado";
+            lblParcelado.TextAlign = ContentAlignment.TopCenter;
+            // 
             // lblDebito
             // 
             lblDebito.AutoSize = true;
             lblDebito.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDebito.Location = new Point(48, 170);
+            lblDebito.Location = new Point(48, 177);
             lblDebito.Name = "lblDebito";
-            lblDebito.Size = new Size(202, 30);
+            lblDebito.Size = new Size(106, 30);
             lblDebito.TabIndex = 17;
-            lblDebito.Text = "4 - Cartão de Débito";
+            lblDebito.Text = "5 - Débito";
             lblDebito.TextAlign = ContentAlignment.TopCenter;
             // 
             // lblCredito
             // 
             lblCredito.AutoSize = true;
             lblCredito.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblCredito.Location = new Point(48, 123);
+            lblCredito.Location = new Point(48, 97);
             lblCredito.Name = "lblCredito";
-            lblCredito.Size = new Size(207, 30);
+            lblCredito.Size = new Size(179, 30);
             lblCredito.TabIndex = 16;
-            lblCredito.Text = "3 - Cartão de Crédito";
+            lblCredito.Text = "3 - Crédito a Vista";
             lblCredito.TextAlign = ContentAlignment.TopCenter;
             // 
             // lblPix
             // 
             lblPix.AutoSize = true;
             lblPix.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblPix.Location = new Point(48, 76);
+            lblPix.Location = new Point(48, 58);
             lblPix.Name = "lblPix";
             lblPix.Size = new Size(71, 30);
             lblPix.TabIndex = 15;
@@ -87,7 +100,7 @@
             // 
             lblDinheiro.AutoSize = true;
             lblDinheiro.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            lblDinheiro.Location = new Point(48, 29);
+            lblDinheiro.Location = new Point(48, 21);
             lblDinheiro.Name = "lblDinheiro";
             lblDinheiro.Size = new Size(123, 30);
             lblDinheiro.TabIndex = 14;
@@ -127,5 +140,6 @@
         private Label lblCredito;
         private Label lblPix;
         private Label lblDinheiro;
+        private Label lblParcelado;
     }
 }

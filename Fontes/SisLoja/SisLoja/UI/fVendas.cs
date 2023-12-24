@@ -18,13 +18,13 @@ namespace SisLoja.UI
         VendasBLL BLL = new VendasBLL();
         modeloCliente cliente = new modeloCliente();
         modeloProduto modeloproduto = new modeloProduto();
-        public modeloVenda dadosvenda = new modeloVenda();
+        public static modeloVenda dadosvenda = new modeloVenda();
         List<modeloListaDeProdutos> listaprodutos = new List<modeloListaDeProdutos>();
         bool locked = false;
 
-        //variáveis painel info
-        int numitens;
-        decimal valorparcial, valortotal;
+        //variáveis
+        public static int numitens, ConfirmaPagamento, numparcelas;
+        public static decimal valorparcial, valortotal;
 
         public fVendas()
         {
@@ -92,6 +92,8 @@ namespace SisLoja.UI
             kbtnFinalizar.Enabled = false;
 
             numitens = 0;
+            ConfirmaPagamento = 0;
+            numparcelas = 1;
             valorparcial = 0;
             valortotal = 0;
         }
@@ -223,7 +225,7 @@ namespace SisLoja.UI
             {
                 if (tbNum.Text.Length > 0)
                     tbQtd.Focus();
-            } 
+            }
             else
             {
                 fVendas_KeyDown(sender, e);
@@ -240,7 +242,7 @@ namespace SisLoja.UI
             if (tbNum.Text == string.Empty)
                 tbNum.Text = "núm";
         }
-                
+
         //Limpar tbcodbar, tbqtd e tbnum
         private void Limpar_Campos()
         {
@@ -248,7 +250,7 @@ namespace SisLoja.UI
             tbQtd.Text = "qtd";
             tbNum.Text = "núm";
         }
-                
+
         //destrava o dtProdutos para remover uma linha
         private void pbUnlock_Click(object sender, EventArgs e)
         {
@@ -314,7 +316,7 @@ namespace SisLoja.UI
         {
             dtProdutos.Visible = false;
             popCliente popupCliente = new popCliente();
-            popupCliente.Location = new Point(280,150);
+            popupCliente.Location = new Point(280, 150);
             popupCliente.cliente = this.cliente;
             popupCliente.fvendas = this;
             popupCliente.Owner = this;
@@ -331,30 +333,51 @@ namespace SisLoja.UI
 
         private void kbnTipoPagamento_Click(object sender, EventArgs e)
         {
-            dtProdutos.Visible=false;
+            dtProdutos.Visible = false;
             popTipoPagamento popPgto = new popTipoPagamento();
             popPgto.Location = new Point(280, 150);
             popPgto.Owner = this;
             popPgto.TopLevel = false;
-            popPgto.dadosvenda = this.dadosvenda;
+            //popPgto.dadosvenda = this.dadosvenda;
             popPgto.fvendas = this;
             pLista.Controls.Add(popPgto);
             popPgto.Show();
             popPgto.Focus();
         }
 
-        private void kbnFinalizar_Click(object sender, EventArgs e)
+        private void GravarVenda()
         {
             dadosvenda.Data = DateTime.Now;
             dadosvenda.ValorVenda = Convert.ToDecimal(lblValorTotal.Text);
             dadosvenda.Descontos = 0;
-            if ( MessageBox.Show("Deseja encerrar a venda?","Mensagem do Sistema", MessageBoxButtons.YesNo,
+            if (MessageBox.Show("Deseja encerrar a venda?", "Mensagem do Sistema", MessageBoxButtons.YesNo,
                 MessageBoxIcon.Question) == DialogResult.Yes)
             {
                 BLL.GravarVendaDAL(dadosvenda, listaprodutos);
-                MessageBox.Show("Venda Realizada com Sucesso.","Mensagem do Sistema.",MessageBoxButtons.OK, MessageBoxIcon.Information);
+                MessageBox.Show("Venda Realizada com Sucesso.", "Mensagem do Sistema.", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 NovaVenda();
             }
+        }
+        private void kbnFinalizar_Click(object sender, EventArgs e)
+        {            
+                if (dadosvenda.TipoPagamento == 3 || dadosvenda.TipoPagamento == 4 || dadosvenda.TipoPagamento == 5)
+                {
+                    FrmPagamento fpag = new FrmPagamento();
+                    fpag.StartPosition = FormStartPosition.CenterParent;
+                    fpag.ShowDialog(this);
+                    if (ConfirmaPagamento == 0)
+                    {
+                        GravarVenda();
+                    }
+                    else
+                    {
+                        MessageBox.Show("Transação não Autorizada.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    }
+                }
+                if (dadosvenda.TipoPagamento == 1 || dadosvenda.TipoPagamento == 2)
+                {
+                    GravarVenda();
+                }
         }
     }
 }

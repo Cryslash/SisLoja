@@ -13,7 +13,7 @@ namespace SisLoja.UI
 {
     public partial class popTipoPagamento : KryptonForm
     {
-        public modeloVenda dadosvenda;
+        //public modeloVenda dadosvenda;
         public fVendas fvendas;
         
         public popTipoPagamento()
@@ -25,32 +25,39 @@ namespace SisLoja.UI
         {
             //1-dinheiro
             //2-pix
-            //3-crédito
-            //4-débito
+            //3-crédito a vista
+            //4-crédito parcelado
+            //5-débito
             if (e.KeyCode == Keys.D1)
             {
-                dadosvenda.TipoPagamento = 1;
-                TelaValor();
+                fVendas.dadosvenda.TipoPagamento = 1;
+                PagDinheiro();
                 //this.Close();
             }
             if (e.KeyCode == Keys.D2)
             {
-                dadosvenda.TipoPagamento = 2;
+                fVendas.dadosvenda.TipoPagamento = 2;
                 this.Close();
             }
             if (e.KeyCode == Keys.D3)
             {
-                dadosvenda.TipoPagamento = 3;
+                fVendas.dadosvenda.TipoPagamento = 3;
                 this.Close();
             }
             if (e.KeyCode == Keys.D4)
             {
-                dadosvenda.TipoPagamento = 4;
+                fVendas.dadosvenda.TipoPagamento = 4;
+                PagCreditoParcelado();
+                //this.Close();
+            }
+            if (e.KeyCode == Keys.D5)
+            {
+                fVendas.dadosvenda.TipoPagamento = 5;
                 this.Close();
             }
             if (e.KeyCode == Keys.Escape)
             {
-                dadosvenda.TipoPagamento = 0;
+                fVendas.dadosvenda.TipoPagamento = 0;
                 this.Close();
             }
         }
@@ -59,16 +66,17 @@ namespace SisLoja.UI
         {
             if (cod == 1) return "dinheiro";
             if (cod == 2) return "pix";
-            if (cod == 3) return "crédito";
-            if (cod == 4) return "débito";
+            if (cod == 3) return "crédito a vista";
+            if (cod == 4) return "crédito parcelado";
+            if (cod == 5) return "débito";
             return "inválido";
         }
 
         private void popTipoPagamento_FormClosing(object sender, FormClosingEventArgs e)
         {
-            if (dadosvenda.TipoPagamento > 0)
+            if (fVendas.dadosvenda.TipoPagamento > 0)
             {
-                fvendas.lblDescricao.Text = string.Format("Forma de Pagamento: {0}", CodigoVenda(dadosvenda.TipoPagamento));
+                fvendas.lblDescricao.Text = string.Format("Forma de Pagamento: {0}", CodigoVenda(fVendas.dadosvenda.TipoPagamento));
                 //fvendas.lblTipoPgto.Text = string.Format("Forma de Pagamento: {0}", CodigoVenda(dadosvenda.TipoPagamento));
                 //fvendas.lblTipoPgto.Visible = true;
             }
@@ -77,9 +85,11 @@ namespace SisLoja.UI
                 fvendas.lblValorPago.Visible = false;
             }
             fvendas.dtProdutos.Visible = true;
+            fvendas.kbtnFinalizar.Enabled = true;
+            fvendas.tbCodBar.Focus();
         }
 
-        private void TBTextChanged(object sender, EventArgs e)
+        private void PagDinheiroTextChanged(object sender, EventArgs e)
         {
             // 10,501
             bool tirarzero = false;
@@ -112,25 +122,40 @@ namespace SisLoja.UI
             ((TextBox)sender).SelectionStart = textofinal.Length;
         }
 
-        private void TBKeyDown(object sender, KeyEventArgs e)
+        private void PagDinheiroKeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
-                dadosvenda.ValorPago = Convert.ToDecimal(((TextBox)sender).Text.Replace("R$ ",""));
+                fVendas.dadosvenda.ValorPago = Convert.ToDecimal(((TextBox)sender).Text.Replace("R$ ",""));
                 fvendas.lblValorPago.Visible = true;
-                fvendas.lblValorPago.Text = string.Format("Valor Pago: R$ {0}",dadosvenda.ValorPago.ToString());
+                fvendas.lblValorPago.Text = string.Format("Valor Pago: R$ {0}", fVendas.dadosvenda.ValorPago.ToString());
                 fvendas.lblTroco.Visible = true;
-                fvendas.lblTroco.Text = string.Format("Troco: R$ {0}", dadosvenda.ValorPago - Convert.ToDecimal(fvendas.lblValorTotal.Text));
+                fvendas.lblTroco.Text = string.Format("Troco: R$ {0}", fVendas.dadosvenda.ValorPago - Convert.ToDecimal(fvendas.lblValorTotal.Text));
                 fvendas.kbtnFinalizar.Enabled = true;
                 this.Close();
             }
         }
 
-        private void TelaValor()
+        private void PagCreditoParceladoKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                fVendas.numparcelas = Convert.ToInt32(((TextBox)sender).Text);
+                fvendas.kbtnFinalizar.Enabled = true;
+                this.Close();
+            }
+            if (e.KeyCode == Keys.Escape)
+            { 
+                this.Close();
+            }
+        }
+
+        private void PagDinheiro()
         {
             lblDinheiro.Visible = false;
             lblPix.Visible = false;
             lblCredito.Visible = false;
+            lblParcelado.Visible = false;
             lblDebito.Visible = false;
 
             TextBox tb = new TextBox();
@@ -144,11 +169,42 @@ namespace SisLoja.UI
             tb.BorderStyle = BorderStyle.None;
             tb.Text = "R$ 0,00";
             tb.SelectionStart = tb.Text.Length;
-            tb.TextChanged += TBTextChanged;
-            tb.KeyDown += TBKeyDown;
+            tb.TextChanged += PagDinheiroTextChanged;
+            tb.KeyDown += PagDinheiroKeyDown;
             
             this.pSkin.Controls.Add(tb);
             tb.Focus();
+        }
+
+        private void PagCreditoParcelado()
+        {
+            lblDinheiro.Visible = false;
+            lblPix.Visible = false;
+            lblCredito.Visible = false;
+            lblParcelado.Visible = false;
+            lblDebito.Visible = false;
+
+            Label lbl = new Label();
+            lbl.Text = "Número de Parcelas";
+            lbl.Font = new Font("Segoe UI", 16, FontStyle.Regular);
+            lbl.ForeColor = Color.White;
+            lbl.Size = new Size(207,30);
+            lbl.Location = new Point(48, 83);
+            
+            TextBox tb = new TextBox();
+            tb.Size = new Size(50, 23);
+            tb.Location = new Point(280, 83);
+            tb.Font = new Font("Segoe UI", 16, FontStyle.Regular);
+            tb.BackColor = Color.FromArgb(37, 77, 113);
+            //tb.TextAlign = HorizontalAlignment.Center;
+            tb.ForeColor = Color.White;
+            tb.BorderStyle = BorderStyle.None;
+            tb.KeyDown += PagCreditoParceladoKeyDown;
+
+            this.pSkin.Controls.Add(lbl);
+            this.pSkin.Controls.Add(tb);
+            tb.Focus();
+
         }
     }
 }

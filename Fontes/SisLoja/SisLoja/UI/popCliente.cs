@@ -44,7 +44,7 @@ namespace SisLoja.UI
         private void popCliente_FormClosing(object sender, FormClosingEventArgs e)
         {
             fvendas.dtProdutos.Visible = true;
-            fvendas.dadosvenda.ClienteId = cliente.Id;
+            fVendas.dadosvenda.ClienteId = cliente.Id;
             fvendas.lblDescricao.Text = string.Format("Cliente: {0}",cliente.Nome);
             fvendas.tbCodBar.Focus();
         }
