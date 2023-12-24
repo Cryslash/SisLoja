@@ -32,5 +32,15 @@ namespace SisLoja
         {
             DAL.GravarVenda(dadosvenda, listaprodutos);
         }
+        public DataTable CarregarVendasDAL()
+        {
+            DataTable dt = DAL.CarregarVendas();
+            return dt;
+        }
+        public DataTable Pesquisar_VendaDAL(string s)
+        {
+            DataTable dt = DAL.Pesquisar_Venda(s);
+            return dt;
+        }
     }
 }

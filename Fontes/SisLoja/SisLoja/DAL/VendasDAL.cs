@@ -177,5 +177,51 @@ namespace SisLoja
                 throw erro;
             }
         }
+
+        public DataTable CarregarVendas()
+        {
+            try
+            {
+                string server = StringServer();
+                conexao = new SqlConnection(server);
+
+                SqlCommand qrComando = new SqlCommand("SELECT v.ID as Cód,v.Data,c.Nome as Cliente,v.TipoPagamento as Pagamento,v.ValorVenda,v.Descontos,v.ValorPago " +
+                    "FROM Vendas v, Clientes c Where v.ClienteID = c.ID ORDER BY v.ID DESC", conexao);
+                DataTable dt = new DataTable();
+                SqlDataAdapter dados = new SqlDataAdapter();
+                dados.SelectCommand = qrComando;
+                conexao.Open();
+                dados.Fill(dt);
+                conexao.Close();
+                return dt;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
+
+        public DataTable Pesquisar_Venda(string s)
+        {
+            try
+            {
+                string server = StringServer();
+                conexao = new SqlConnection(server);
+                SqlCommand qrComando = new SqlCommand("SELECT v.ID as Cód,v.Data,c.Nome as Cliente,v.TipoPagamento as Pagamento,v.ValorVenda,v.Descontos,v.ValorPago " +
+                    "FROM Vendas v, Clientes c Where v.ClienteID = c.ID AND v.ID LIKE '%'+@id+'%'", conexao);
+                qrComando.Parameters.AddWithValue("@id", s);
+                DataTable dt = new DataTable();
+                SqlDataAdapter dados = new SqlDataAdapter();
+                dados.SelectCommand= qrComando;
+                conexao.Open();
+                dados.Fill(dt);
+                conexao.Close();
+                return dt;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
     }
 }

@@ -617,7 +617,7 @@
             // 
             // ktbPesquisar
             // 
-            ktbPesquisar.Location = new Point(966, 63);
+            ktbPesquisar.Location = new Point(966, 54);
             ktbPesquisar.Name = "ktbPesquisar";
             ktbPesquisar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
             ktbPesquisar.Size = new Size(134, 29);
@@ -884,7 +884,7 @@
             // pictureBox2
             // 
             pictureBox2.Image = (Image)resources.GetObject("pictureBox2.Image");
-            pictureBox2.Location = new Point(1106, 65);
+            pictureBox2.Location = new Point(1106, 56);
             pictureBox2.Name = "pictureBox2";
             pictureBox2.Size = new Size(24, 24);
             pictureBox2.SizeMode = PictureBoxSizeMode.CenterImage;

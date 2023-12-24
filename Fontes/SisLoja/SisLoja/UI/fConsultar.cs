@@ -15,6 +15,7 @@ namespace SisLoja.UI
         public fPrincipal instanciaprincipal;
         fConCliente instanciaconcliente = new fConCliente();
         fConEstoque instanciaconestoque = new fConEstoque();
+        fConVendas instanciavendas = new fConVendas();
 
         public fConsultar()
         {
@@ -42,6 +43,17 @@ namespace SisLoja.UI
             instanciaprincipal.pDashArea.Controls.Add(instanciaconestoque);
             instanciaconestoque.Show();
             instanciaconestoque.ktbPesquisar.Focus();
+        }
+
+        private void kbtVendas_Click(object sender, EventArgs e)
+        {
+            instanciavendas.Owner = instanciaprincipal;
+            instanciavendas.TopLevel = false;
+            instanciavendas.instanciaprincipal = this.instanciaprincipal;
+            instanciaprincipal.pDashArea.Controls.Clear();
+            instanciaprincipal.pDashArea.Controls.Add(instanciavendas);
+            instanciavendas.Show();
+            instanciavendas.ktbPesquisar.Focus();
         }
     }
 }
