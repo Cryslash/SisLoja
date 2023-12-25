@@ -41,14 +41,29 @@ namespace SisLoja.UI
         {
             if (dtVendas.SelectedRows.Count > 0)
             {
-                kbtnEstornar.Enabled = true;
+                Abilitar_Botoes();
+                dtProdutos.DataSource = "";
+                dtProdutos.DataSource = BLL.Carregar_ProdutosDAL(dtVendas.SelectedRows[0].Cells[0].Value.ToString());
+                dtProdutos.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
             }
+        }
+
+        private void Abilitar_Botoes()
+        { 
+            kbtnEstornar.Enabled = true;
+            kbtnTrocar.Enabled = true;
+        }
+        private void Desabilitar_Botoes()
+        {
+            kbtnEstornar.Enabled = false;
+            kbtnTrocar.Enabled = false;
         }
 
         private void fConVendas_Click(object sender, EventArgs e)
         {
             dtVendas.ClearSelection();
-            kbtnEstornar.Enabled = false;
+            dtProdutos.DataSource = "";
+            Desabilitar_Botoes();
         }
 
         private void fConVendas_Shown(object sender, EventArgs e)
@@ -81,7 +96,9 @@ namespace SisLoja.UI
                 }
                 else
                 {
-                    MessageBox.Show("Ocorreu um Erro ao Processar o Estorno.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+
+                    MessageBox.Show("Ocorreu um Erro ao Processar o Estorno. Código: " + FrmPagamento.confirmapagamento, "Mensagem do Sistema",
+                        MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 CarregarVendas();

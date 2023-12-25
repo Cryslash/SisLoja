@@ -11,7 +11,6 @@ namespace SisLoja
         public int ID { get; set; }
         public Image Img { get; set; }
         public string Nome { get; set;}
-        public int Qtd { get; set; }
         public decimal PrecoVenda { get; set; }
     }
 }

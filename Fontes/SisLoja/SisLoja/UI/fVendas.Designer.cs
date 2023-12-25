@@ -34,12 +34,11 @@
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             pInfo = new Panel();
+            kbtnCancelarVenda = new Krypton.Toolkit.KryptonButton();
             lblTroco = new Label();
             lblDescricao = new Label();
             lblValorPago = new Label();
-            kbtnFinalizar = new Krypton.Toolkit.KryptonButton();
             kbtnTipoPagamento = new Krypton.Toolkit.KryptonButton();
-            kbnDesconto = new Krypton.Toolkit.KryptonButton();
             kbtnCliente = new Krypton.Toolkit.KryptonButton();
             lblValorTotal = new Label();
             lblValorParcial = new Label();
@@ -51,7 +50,6 @@
             dtProdutos = new DataGridView();
             Img = new DataGridViewImageColumn();
             Nome = new DataGridViewTextBoxColumn();
-            Qtd = new DataGridViewTextBoxColumn();
             Valor = new DataGridViewTextBoxColumn();
             Acao = new DataGridViewImageColumn();
             lblCodVenda = new Label();
@@ -61,7 +59,6 @@
             pBottom = new Panel();
             tbCodBar = new TextBox();
             tbNum = new TextBox();
-            tbQtd = new TextBox();
             lblProduto = new Label();
             lblPreco = new Label();
             pbImg = new PictureBox();
@@ -78,12 +75,11 @@
             // pInfo
             // 
             pInfo.BackColor = Color.FromArgb(246, 247, 251);
+            pInfo.Controls.Add(kbtnCancelarVenda);
             pInfo.Controls.Add(lblTroco);
             pInfo.Controls.Add(lblDescricao);
             pInfo.Controls.Add(lblValorPago);
-            pInfo.Controls.Add(kbtnFinalizar);
             pInfo.Controls.Add(kbtnTipoPagamento);
-            pInfo.Controls.Add(kbnDesconto);
             pInfo.Controls.Add(kbtnCliente);
             pInfo.Controls.Add(lblValorTotal);
             pInfo.Controls.Add(lblValorParcial);
@@ -94,6 +90,43 @@
             pInfo.Name = "pInfo";
             pInfo.Size = new Size(305, 680);
             pInfo.TabIndex = 6;
+            // 
+            // kbtnCancelarVenda
+            // 
+            kbtnCancelarVenda.Cursor = Cursors.Hand;
+            kbtnCancelarVenda.Enabled = false;
+            kbtnCancelarVenda.Location = new Point(40, 608);
+            kbtnCancelarVenda.Name = "kbtnCancelarVenda";
+            kbtnCancelarVenda.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnCancelarVenda.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnCancelarVenda.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kbtnCancelarVenda.Size = new Size(224, 40);
+            kbtnCancelarVenda.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnCancelarVenda.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnCancelarVenda.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnCancelarVenda.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnCancelarVenda.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnCancelarVenda.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            kbtnCancelarVenda.StateCommon.Border.Rounding = 15F;
+            kbtnCancelarVenda.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            kbtnCancelarVenda.StateCommon.Content.ShortText.Color1 = Color.White;
+            kbtnCancelarVenda.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            kbtnCancelarVenda.StateDisabled.Back.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnCancelarVenda.StateDisabled.Back.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnCancelarVenda.StateDisabled.Border.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnCancelarVenda.StateDisabled.Border.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnCancelarVenda.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnCancelarVenda.StateDisabled.Content.ShortText.Color1 = Color.FromArgb(51, 51, 51);
+            kbtnCancelarVenda.StateDisabled.Content.ShortText.Color2 = Color.FromArgb(51, 51, 51);
+            kbtnCancelarVenda.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
+            kbtnCancelarVenda.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
+            kbtnCancelarVenda.TabIndex = 52;
+            kbtnCancelarVenda.Values.Image = (Image)resources.GetObject("kryptonButton1.Values.Image");
+            kbtnCancelarVenda.Values.ImageStates.ImageCheckedNormal = null;
+            kbtnCancelarVenda.Values.ImageStates.ImageCheckedPressed = null;
+            kbtnCancelarVenda.Values.ImageStates.ImageCheckedTracking = null;
+            kbtnCancelarVenda.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kryptonButton1.Values.ImageStates.ImageDisabled");
+            kbtnCancelarVenda.Values.Text = "Cancelar Venda [F5]";
             // 
             // lblTroco
             // 
@@ -134,49 +167,11 @@
             lblValorPago.Text = "Valor Pago:";
             lblValorPago.Visible = false;
             // 
-            // kbtnFinalizar
-            // 
-            kbtnFinalizar.Cursor = Cursors.Hand;
-            kbtnFinalizar.Enabled = false;
-            kbtnFinalizar.Location = new Point(40, 608);
-            kbtnFinalizar.Name = "kbtnFinalizar";
-            kbtnFinalizar.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
-            kbtnFinalizar.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
-            kbtnFinalizar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            kbtnFinalizar.Size = new Size(224, 40);
-            kbtnFinalizar.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
-            kbtnFinalizar.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
-            kbtnFinalizar.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
-            kbtnFinalizar.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
-            kbtnFinalizar.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kbtnFinalizar.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            kbtnFinalizar.StateCommon.Border.Rounding = 15F;
-            kbtnFinalizar.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            kbtnFinalizar.StateCommon.Content.ShortText.Color1 = Color.White;
-            kbtnFinalizar.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            kbtnFinalizar.StateDisabled.Back.Color1 = Color.FromArgb(147, 147, 147);
-            kbtnFinalizar.StateDisabled.Back.Color2 = Color.FromArgb(147, 147, 147);
-            kbtnFinalizar.StateDisabled.Border.Color1 = Color.FromArgb(147, 147, 147);
-            kbtnFinalizar.StateDisabled.Border.Color2 = Color.FromArgb(147, 147, 147);
-            kbtnFinalizar.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kbtnFinalizar.StateDisabled.Content.ShortText.Color1 = Color.FromArgb(51, 51, 51);
-            kbtnFinalizar.StateDisabled.Content.ShortText.Color2 = Color.FromArgb(51, 51, 51);
-            kbtnFinalizar.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
-            kbtnFinalizar.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
-            kbtnFinalizar.TabIndex = 17;
-            kbtnFinalizar.Values.Image = (Image)resources.GetObject("kbtnFinalizar.Values.Image");
-            kbtnFinalizar.Values.ImageStates.ImageCheckedNormal = null;
-            kbtnFinalizar.Values.ImageStates.ImageCheckedPressed = null;
-            kbtnFinalizar.Values.ImageStates.ImageCheckedTracking = null;
-            kbtnFinalizar.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kbtnFinalizar.Values.ImageStates.ImageDisabled");
-            kbtnFinalizar.Values.Text = "Finalizar Venda [F5]";
-            kbtnFinalizar.Click += kbnFinalizar_Click;
-            // 
             // kbtnTipoPagamento
             // 
             kbtnTipoPagamento.Cursor = Cursors.Hand;
             kbtnTipoPagamento.Enabled = false;
-            kbtnTipoPagamento.Location = new Point(40, 547);
+            kbtnTipoPagamento.Location = new Point(40, 549);
             kbtnTipoPagamento.Name = "kbtnTipoPagamento";
             kbtnTipoPagamento.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
             kbtnTipoPagamento.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
@@ -207,46 +202,13 @@
             kbtnTipoPagamento.Values.ImageStates.ImageCheckedPressed = null;
             kbtnTipoPagamento.Values.ImageStates.ImageCheckedTracking = null;
             kbtnTipoPagamento.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kbtnTipoPagamento.Values.ImageStates.ImageDisabled");
-            kbtnTipoPagamento.Values.Text = "Forma Pagamento [F4]";
+            kbtnTipoPagamento.Values.Text = "Forma Pagamento [F2]";
             kbtnTipoPagamento.Click += kbnTipoPagamento_Click;
-            // 
-            // kbnDesconto
-            // 
-            kbnDesconto.Cursor = Cursors.Hand;
-            kbnDesconto.Location = new Point(40, 482);
-            kbnDesconto.Name = "kbnDesconto";
-            kbnDesconto.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
-            kbnDesconto.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
-            kbnDesconto.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            kbnDesconto.Size = new Size(224, 40);
-            kbnDesconto.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
-            kbnDesconto.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
-            kbnDesconto.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
-            kbnDesconto.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
-            kbnDesconto.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kbnDesconto.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            kbnDesconto.StateCommon.Border.Rounding = 15F;
-            kbnDesconto.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            kbnDesconto.StateCommon.Content.ShortText.Color1 = Color.White;
-            kbnDesconto.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            kbnDesconto.StateDisabled.Back.Color1 = Color.FromArgb(147, 147, 147);
-            kbnDesconto.StateDisabled.Back.Color2 = Color.FromArgb(147, 147, 147);
-            kbnDesconto.StateDisabled.Border.Color1 = Color.FromArgb(147, 147, 147);
-            kbnDesconto.StateDisabled.Border.Color2 = Color.FromArgb(147, 147, 147);
-            kbnDesconto.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kbnDesconto.StateDisabled.Content.ShortText.Color1 = Color.FromArgb(51, 51, 51);
-            kbnDesconto.StateDisabled.Content.ShortText.Color2 = Color.FromArgb(51, 51, 51);
-            kbnDesconto.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
-            kbnDesconto.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
-            kbnDesconto.TabIndex = 15;
-            kbnDesconto.Values.Image = (Image)resources.GetObject("kbnDesconto.Values.Image");
-            kbnDesconto.Values.Text = "Descontos [F3]";
-            kbnDesconto.Click += kbnDesconto_Click;
             // 
             // kbtnCliente
             // 
             kbtnCliente.Cursor = Cursors.Hand;
-            kbtnCliente.Location = new Point(40, 421);
+            kbtnCliente.Location = new Point(40, 490);
             kbtnCliente.Name = "kbtnCliente";
             kbtnCliente.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
             kbtnCliente.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
@@ -273,7 +235,7 @@
             kbtnCliente.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
             kbtnCliente.TabIndex = 14;
             kbtnCliente.Values.Image = (Image)resources.GetObject("kbtnCliente.Values.Image");
-            kbtnCliente.Values.Text = "Cliente [F2]";
+            kbtnCliente.Values.Text = "Cliente [F1]";
             kbtnCliente.Click += kbtnCliente_Click;
             // 
             // lblValorTotal
@@ -295,11 +257,11 @@
             lblValorParcial.BackColor = Color.Transparent;
             lblValorParcial.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblValorParcial.ForeColor = Color.FromArgb(64, 70, 77);
-            lblValorParcial.Location = new Point(40, 270);
+            lblValorParcial.Location = new Point(40, 229);
             lblValorParcial.Name = "lblValorParcial";
-            lblValorParcial.Size = new Size(182, 25);
+            lblValorParcial.Size = new Size(213, 25);
             lblValorParcial.TabIndex = 2;
-            lblValorParcial.Text = "Total Parcial: 0,00 R$";
+            lblValorParcial.Text = "Valor sem Desc.: R$ 0,00";
             // 
             // lblDesc
             // 
@@ -307,7 +269,7 @@
             lblDesc.BackColor = Color.Transparent;
             lblDesc.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             lblDesc.ForeColor = Color.FromArgb(64, 70, 77);
-            lblDesc.Location = new Point(40, 229);
+            lblDesc.Location = new Point(40, 270);
             lblDesc.Name = "lblDesc";
             lblDesc.Size = new Size(173, 25);
             lblDesc.TabIndex = 1;
@@ -381,7 +343,7 @@
             dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
             dtProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dtProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dtProdutos.Columns.AddRange(new DataGridViewColumn[] { Img, Nome, Qtd, Valor, Acao });
+            dtProdutos.Columns.AddRange(new DataGridViewColumn[] { Img, Nome, Valor, Acao });
             dtProdutos.Cursor = Cursors.Hand;
             dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle2.BackColor = Color.White;
@@ -428,14 +390,6 @@
             Nome.Name = "Nome";
             Nome.ReadOnly = true;
             Nome.Width = 550;
-            // 
-            // Qtd
-            // 
-            Qtd.DataPropertyName = "Qtd";
-            Qtd.HeaderText = "Qtd.";
-            Qtd.Name = "Qtd";
-            Qtd.ReadOnly = true;
-            Qtd.Width = 75;
             // 
             // Valor
             // 
@@ -524,7 +478,6 @@
             pBottom.BackColor = Color.FromArgb(37, 77, 113);
             pBottom.Controls.Add(tbCodBar);
             pBottom.Controls.Add(tbNum);
-            pBottom.Controls.Add(tbQtd);
             pBottom.Location = new Point(0, 187);
             pBottom.Name = "pBottom";
             pBottom.Size = new Size(945, 40);
@@ -552,7 +505,7 @@
             tbNum.BorderStyle = BorderStyle.None;
             tbNum.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             tbNum.ForeColor = Color.White;
-            tbNum.Location = new Point(408, 9);
+            tbNum.Location = new Point(463, 9);
             tbNum.Name = "tbNum";
             tbNum.RightToLeft = RightToLeft.Yes;
             tbNum.Size = new Size(100, 22);
@@ -561,22 +514,6 @@
             tbNum.Enter += tbNum_Enter;
             tbNum.KeyDown += tbNum_KeyDown;
             tbNum.Leave += tbNum_Leave;
-            // 
-            // tbQtd
-            // 
-            tbQtd.BackColor = Color.FromArgb(37, 77, 113);
-            tbQtd.BorderStyle = BorderStyle.None;
-            tbQtd.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            tbQtd.ForeColor = Color.White;
-            tbQtd.Location = new Point(542, 9);
-            tbQtd.Name = "tbQtd";
-            tbQtd.RightToLeft = RightToLeft.Yes;
-            tbQtd.Size = new Size(100, 22);
-            tbQtd.TabIndex = 3;
-            tbQtd.Text = "qtd";
-            tbQtd.Enter += tbQtd_Enter;
-            tbQtd.KeyDown += tbQtd_KeyDown;
-            tbQtd.Leave += tbQtd_Leave;
             // 
             // lblProduto
             // 
@@ -646,7 +583,6 @@
 
         private Panel pInfo;
         private Label lblValorParcial;
-        private Label lblDesc;
         private Label lblNumItens;
         private Panel pLista;
         public DataGridView dtProdutos;
@@ -660,22 +596,20 @@
         private System.Windows.Forms.Timer timer;
         private Label lblData;
         private Krypton.Toolkit.KryptonButton kbtnTipoPagamento;
-        private Krypton.Toolkit.KryptonButton kbnDesconto;
         private Krypton.Toolkit.KryptonButton kbtnCliente;
         private Krypton.Toolkit.KryptonCustomPaletteBase kryptonCustomPaletteBase1;
         public Panel pBottom;
         private PictureBox pbUnlock;
-        private DataGridViewImageColumn Img;
-        private DataGridViewTextBoxColumn Nome;
-        private DataGridViewTextBoxColumn Qtd;
-        private DataGridViewTextBoxColumn Valor;
-        private DataGridViewImageColumn Acao;
         public Label lblValorPago;
         public Label lblDescricao;
         public Label lblTroco;
         public Label lblValorTotal;
         public TextBox tbNum;
-        public TextBox tbQtd;
-        public Krypton.Toolkit.KryptonButton kbtnFinalizar;
+        private DataGridViewImageColumn Img;
+        private DataGridViewTextBoxColumn Nome;
+        private DataGridViewTextBoxColumn Valor;
+        private DataGridViewImageColumn Acao;
+        public Label lblDesc;
+        public Krypton.Toolkit.KryptonButton kbtnCancelarVenda;
     }
 }

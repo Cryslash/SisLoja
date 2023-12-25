@@ -113,10 +113,10 @@ CREATE TABLE ItemsVenda(
 ID INT IDENTITY PRIMARY KEY NOT NULL,
 VendaID INT FOREIGN KEY REFERENCES Vendas(ID),
 ProdID INT FOREIGN KEY REFERENCES Produtos(ID),
-Num INT,
-Qtd INT
+Num INT
 )
 END
+
 
 SELECT * FROM Clientes;
 SELECT * FROM Entradas;
@@ -126,14 +126,19 @@ SELECT * FROM Vendas;
 SELECT * FROM ItemsVenda;
 
 
-UPDATE Vendas SET ClienteID = 1 WHERE ID = 1251;
+SELECT iv.VendaID AS 'Cód. Venda', p.CodBar AS 'Código Barras', p.Nome AS 'Produto', iv.Num AS 'Número', iv.Qtd AS 'Qtd' 
+FROM ItemsVenda iv, Vendas v, Produtos p WHERE v.ID = iv.VendaID AND p.ID = iv.ProdID AND v.ID = 1250;
+
+
+
+
+
+
+
+UPDATE Vendas SET ClienteID = 1 WHERE ID = 1253;
+UPDATE Vendas SET VendaCancelada = 0 WHERE ID = 1252;
 SELECT * FROM Vendas;
 
-
-SELECT TOP 1 ID FROM Vendas ORDER BY ID DESC;
-
-ALTER TABLE Vendas ADD VendaCancelada INT DEFAULT(0);
-UPDATE Vendas SET VendaCancelada = 0 WHERE ID = 1251;
 
 INSERT INTO Produtos (Nome,PrecoVenda) VALUES('para excluir',10);
 

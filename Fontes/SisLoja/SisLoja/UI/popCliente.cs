@@ -36,7 +36,7 @@ namespace SisLoja.UI
                 cliente.Nome = dtCliente.SelectedRows[0].Cells[1].Value.ToString();
                 cliente.Cpf = dtCliente.SelectedRows[0].Cells[2].Value.ToString();
 
-                //fvendas.lblCliente.Text = string.Format("Cliente: {0}", cliente.Nome);
+                fvendas.kbtnCancelarVenda.Enabled = true;
                 this.Close();
             }
         }
@@ -57,7 +57,10 @@ namespace SisLoja.UI
 
         private void ktbNome_KeyDown(object sender, KeyEventArgs e)
         {
-            popCliente_KeyDown(sender, e);
+            if (e.KeyCode == Keys.Escape)
+                this.Close();
+            if (e.KeyCode == Keys.Enter)
+                kbtnConfirmar.PerformClick();
         }
     }
 }

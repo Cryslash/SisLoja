@@ -24,7 +24,7 @@ namespace SisLoja.UI
 
         //variáveis
         public static int numitens, ConfirmaPagamento, numparcelas;
-        public decimal valorparcial, valortotal;
+        public decimal valorparcial, valortotal, valordesconto;
 
         public fVendas()
         {
@@ -36,26 +36,22 @@ namespace SisLoja.UI
         {
             timer.Start();
             NovaVenda();
-            //dadosvenda.Id = BLL.Proximo_ID_VendaDAL();
-            //lblCodVenda.Text = string.Format("#00{0}", Convert.ToString(dadosvenda.Id));
         }
 
         private void fVendas_KeyDown(object sender, KeyEventArgs e)
         {
-            if (e.KeyCode == Keys.F2)
+            if (e.KeyCode == Keys.F1)
             {
                 kbtnCliente.PerformClick();
             }
-            if (e.KeyCode == Keys.F3)
-            {
-            }
-            if (e.KeyCode == Keys.F4)
+            if (e.KeyCode == Keys.F2)
             {
                 kbtnTipoPagamento.PerformClick();
             }
             if (e.KeyCode == Keys.F5)
             {
-                kbtnFinalizar.PerformClick();
+                if (MessageBox.Show("Deseja Cancelar a Venda?","Mensagem do Sistema",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                    NovaVenda();
             }
         }
 
@@ -83,31 +79,31 @@ namespace SisLoja.UI
             lblDescricao.Text = "";
             lblNumItens.Text = "Número de Itens: 0";
             lblDesc.Text = "Descontos: R$ 0,00";
-            lblValorParcial.Text = "Total Parcial: 0,00 R$";
+            lblValorParcial.Text = "Valor s/ Desc.: R$ 0,00";
             lblValorPago.Visible = false;
             lblValorPago.Text = "Valor Pago:";
             lblTroco.Visible = false;
             lblTroco.Text = "Troco:";
             kbtnTipoPagamento.Enabled = false;
-            kbtnFinalizar.Enabled = false;
+            kbtnCancelarVenda.Enabled = false;
 
             numitens = 0;
             ConfirmaPagamento = 0;
             numparcelas = 1;
             valorparcial = 0;
             valortotal = 0;
+            valordesconto = 0;
         }
 
         //Adicionar um produto a listaproduto
         public void AdicionarProduto(modeloProduto prod)
         {
             modeloListaDeProdutos itemlista = new modeloListaDeProdutos();
-            Atualizar_Info(int.Parse(tbQtd.Text), prod.PrecoVenda, "somar");
+            Atualizar_Info(prod.PrecoVenda, "somar");
 
             itemlista.ID = prod.Id;
             itemlista.Img = Image.FromFile(prod.Img);
             itemlista.Nome = String.Format("{0}-{1} {2} {3}-Num{4}", prod.CodBar, prod.Nome, prod.Modelo, prod.Ref, tbNum.Text);
-            itemlista.Qtd = int.Parse(tbQtd.Text);
             itemlista.PrecoVenda = prod.PrecoVenda;
             listaprodutos.Add(itemlista);
         }
@@ -117,7 +113,7 @@ namespace SisLoja.UI
         {
             modeloListaDeProdutos itemlista = new modeloListaDeProdutos();
             itemlista = listaprodutos.ElementAt(i);
-            Atualizar_Info(itemlista.Qtd, itemlista.PrecoVenda, "subtrair");
+            Atualizar_Info(itemlista.PrecoVenda, "subtrair");
             listaprodutos.RemoveAt(i);
         }
 
@@ -126,6 +122,7 @@ namespace SisLoja.UI
         {
             BindingList<modeloListaDeProdutos> dados = new BindingList<modeloListaDeProdutos>(listaprodutos);
             dtProdutos.DataSource = dados;
+            dtProdutos.Columns.Remove("ID");
         }
 
         //Comportamento das TextBoxes
@@ -156,75 +153,61 @@ namespace SisLoja.UI
                 tbCodBar.Text = "cód. barras";
         }
 
-        private void tbQtd_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                try
-                {
-                    // Verificando se o produto já existe no GridView, e caso exista, pegando
-                    // a quantidade e salvando na variavel qtd.
-                    int qtd = 0;
-                    if (dtProdutos.Rows.Count > 0)
-                    {
-                        foreach (DataGridViewRow row in dtProdutos.Rows)
-                        {
-                            if (row.Cells[1].Value != null)
-                            {
-                                string[] texto = row.Cells[3].FormattedValue.ToString().Split('-');
-                                if (tbCodBar.Text == texto[0] && tbNum.Text == texto[2].Replace("Num", ""))
-                                    qtd += int.Parse(row.Cells[4].Value.ToString());
-                            }
-                        }
-                    }
-
-                    //Executando o Método para verificar se o produto está disponível no estoque.
-                    if (BLL.Numero_DisponivelDAL(tbCodBar.Text, int.Parse(tbNum.Text), int.Parse(tbQtd.Text) + qtd))
-                    {
-                        // modeloproduto.Qtd = Convert.ToInt32(tbQtd.Text);
-                        // modeloproduto.Num = Convert.ToInt32(tbNum.Text);
-                        AdicionarProduto(modeloproduto);
-                        AtualizarDtProdutos();
-                        Limpar_Campos();
-                        kbtnTipoPagamento.Enabled = true;
-                        tbCodBar.Focus();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Não existe quantidade suficiente em estoque.", "Mensagem do sistema.",
-                            MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
-                        tbQtd.Text = string.Empty;
-                        tbQtd.Focus();
-                    }
-                }
-                catch (Exception erro)
-                {
-                    Console.WriteLine("Erro ao processar a linha: " + erro.Message);
-                }
-            }
-            else
-            {
-                fVendas_KeyDown(sender, e);
-            }
-        }
-
-        private void tbQtd_Enter(object sender, EventArgs e)
-        {
-            tbQtd.Text = string.Empty;
-        }
-
-        private void tbQtd_Leave(object sender, EventArgs e)
-        {
-            if (tbQtd.Text == string.Empty)
-                tbQtd.Text = "qtd";
-        }
-
         private void tbNum_KeyDown(object sender, KeyEventArgs e)
         {
             if (e.KeyCode == Keys.Enter)
             {
                 if (tbNum.Text.Length > 0)
-                    tbQtd.Focus();
+                {
+                    if (e.KeyCode == Keys.Enter)
+                    {
+                        try
+                        {
+                            // Verificando se o produto já existe no GridView, e caso exista, pegando
+                            // a quantidade e salvando na variavel qtd.
+                            int qtd = 0;
+                            if (dtProdutos.Rows.Count > 0)
+                            {
+                                foreach (DataGridViewRow row in dtProdutos.Rows)
+                                {
+                                    if (row.Cells[2].Value != null)
+                                    {
+                                        string[] texto = row.Cells[2].FormattedValue.ToString().Split('-');
+                                        if (tbCodBar.Text == texto[0] && tbNum.Text == texto[2].Replace("Num", ""))
+                                            qtd++;
+                                    }
+                                }
+                            }
+
+                            //Executando o Método para verificar se o produto está disponível no estoque.
+                            if (BLL.Numero_DisponivelDAL(tbCodBar.Text, int.Parse(tbNum.Text), 1 + qtd))
+                            {
+                                AdicionarProduto(modeloproduto);
+                                AtualizarDtProdutos();
+                                Limpar_Campos();
+                                kbtnTipoPagamento.Enabled = true;
+                                kbtnCancelarVenda.Enabled = true;
+                                tbCodBar.Focus();
+                            }
+                            else
+                            {
+                                MessageBox.Show("Não existe quantidade suficiente em estoque.", "Mensagem do sistema.",
+                                    MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                                tbNum.Text = string.Empty;
+                                tbNum.Focus();
+                            }
+                        }
+                        catch (Exception erro)
+                        {
+                            Console.WriteLine("Erro ao processar a linha: " + erro.Message);
+                        }
+                    }
+                    else
+                    {
+                        fVendas_KeyDown(sender, e);
+                    }
+                }
+                    
             }
             else
             {
@@ -247,7 +230,6 @@ namespace SisLoja.UI
         private void Limpar_Campos()
         {
             tbCodBar.Text = "cód barras";
-            tbQtd.Text = "qtd";
             tbNum.Text = "núm";
         }
 
@@ -285,23 +267,23 @@ namespace SisLoja.UI
         }
 
         //Atualizar informações do painel direito
-        private void Atualizar_Info(int qtd, decimal valor, string operacao)
+        private void Atualizar_Info(decimal valor, string operacao)
         {
             if (operacao == "somar")
             {
                 numitens++;
-                valorparcial += valor * qtd;
-                valortotal += valor * qtd;
+                valorparcial += valor;
+                valortotal += valor;
             }
             if (operacao == "subtrair")
             {
                 numitens--;
-                valorparcial -= valor * qtd;
-                valortotal -= valor * qtd;
+                valorparcial -= valor;
+                valortotal -= valor;
             }
 
             lblNumItens.Text = string.Format("Número de Itens: {0}", numitens);
-            lblValorParcial.Text = string.Format("Total Parcial: {0} R$", valorparcial);
+            lblValorParcial.Text = string.Format("Valor s/ Desc.: R$ {0}", valorparcial);
             lblValorTotal.Text = string.Format("{0}", valortotal);
             if (lblValorPago.Visible == true)
             {
@@ -338,23 +320,13 @@ namespace SisLoja.UI
             popPgto.Location = new Point(280, 150);
             popPgto.Owner = this;
             popPgto.TopLevel = false;
-            //popPgto.dadosvenda = this.dadosvenda;
             popPgto.fvendas = this;
             pLista.Controls.Add(popPgto);
             popPgto.Show();
             popPgto.Focus();
         }
 
-        private void GravarVenda()
-        {
-            dadosvenda.Data = DateTime.Now;
-            dadosvenda.ValorVenda = Convert.ToDecimal(lblValorTotal.Text);
-            dadosvenda.Descontos = 0;
-            BLL.GravarVendaDAL(dadosvenda, listaprodutos);
-            MessageBox.Show("Venda Realizada com Sucesso.", "Mensagem do Sistema.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-            NovaVenda();
-        }
-        private void kbnFinalizar_Click(object sender, EventArgs e)
+        public void FinalizarVenda()
         {
             if (dadosvenda.TipoPagamento == 3 || dadosvenda.TipoPagamento == 4 || dadosvenda.TipoPagamento == 5)
             {
@@ -363,18 +335,17 @@ namespace SisLoja.UI
                 {
                     FrmPagamento fpag = new FrmPagamento();
                     fpag.tipopagamento = dadosvenda.TipoPagamento;
-                    fpag.valortotal = valortotal;
+                    fpag.valortotal = valortotal - valordesconto;
                     FrmPagamento.confirmapagamento = 0;
                     fpag.StartPosition = FormStartPosition.CenterParent;
                     fpag.ShowDialog(this);
-                    //if (ConfirmaPagamento == 0)
                     if (FrmPagamento.confirmapagamento == 0)
                     {
                         GravarVenda();
                     }
                     else
                     {
-                        MessageBox.Show("Transação não Autorizada.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                        MessageBox.Show("Transação não Autorizada. Cód: " + FrmPagamento.confirmapagamento, "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
             }
@@ -384,6 +355,18 @@ namespace SisLoja.UI
                     MessageBoxIcon.Question) == DialogResult.Yes)
                     GravarVenda();
             }
+
         }
+
+        private void GravarVenda()
+        {           
+            dadosvenda.Data = DateTime.Now;
+            dadosvenda.ValorVenda = Convert.ToDecimal(valortotal);
+            dadosvenda.Descontos = valordesconto;
+            BLL.GravarVendaDAL(dadosvenda, listaprodutos);
+            MessageBox.Show("Venda Realizada com Sucesso.", "Mensagem do Sistema.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            NovaVenda();
+        }
+       
     }
 }

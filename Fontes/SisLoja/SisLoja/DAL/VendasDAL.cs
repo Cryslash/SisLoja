@@ -153,10 +153,10 @@ namespace SisLoja
                     //dividindo a string Nome em 3 partes, a terceira parte(índice 2) possui a informação do número
                     //ex: 7890333910205 - Sandalia BeautyMoon 1020 - num38
                     string[] num = produto.Nome.Split('-');
-                    qr += string.Format("INSERT INTO ItemsVenda (VendaID,ProdID,Num,Qtd) VALUES({0},{1},{2},{3});", dadosvenda.Id, produto.ID,
-                        num[2].Replace("Num", ""), produto.Qtd);
+                    qr += string.Format("INSERT INTO ItemsVenda (VendaID,ProdID,Num) VALUES({0},{1},{2});", dadosvenda.Id, produto.ID,
+                        num[2].Replace("Num", ""));
 
-                    qr += string.Format("UPDATE Estoque SET {0} = {0} - {1} WHERE ProdID = {2};", num[2], produto.Qtd, produto.ID);
+                    qr += string.Format("UPDATE Estoque SET {0} = {0} - 1 WHERE ProdID = {1};", num[2], produto.ID);
                 }
                 qr += "COMMIT";
 
@@ -240,6 +240,30 @@ namespace SisLoja
             catch (Exception erro)
             {
                 return -1;
+                throw erro;
+            }
+        }
+
+        public DataTable Carregar_Produto(string id)
+        {
+            try
+            {
+                string server = StringServer();
+                conexao = new SqlConnection(server);
+                String qr = "SELECT p.CodBar AS 'C. Barras', p.Nome AS 'Produto', iv.Num FROM ItemsVenda iv, Vendas v, Produtos p " +
+                    "WHERE v.ID = iv.VendaID AND p.ID = iv.ProdID AND v.ID = @id;";
+                SqlCommand qrComando = new SqlCommand(qr, conexao);
+                qrComando.Parameters.AddWithValue("@id", id);
+                SqlDataAdapter dados = new SqlDataAdapter();
+                dados.SelectCommand = qrComando;
+                DataTable dt = new DataTable();
+                conexao.Open();
+                dados.Fill(dt);
+                conexao.Close();
+                return dt;
+            }
+            catch (Exception erro)
+            {
                 throw erro;
             }
         }

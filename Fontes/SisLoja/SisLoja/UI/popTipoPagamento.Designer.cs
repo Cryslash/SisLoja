@@ -127,6 +127,7 @@
             StateInactive.Border.Rounding = 25F;
             Text = "popTipoPagamento";
             FormClosing += popTipoPagamento_FormClosing;
+            FormClosed += popTipoPagamento_FormClosed;
             KeyDown += popTipoPagamento_KeyDown;
             pSkin.ResumeLayout(false);
             pSkin.PerformLayout();

@@ -41,11 +41,11 @@
             ktbPesquisar = new Krypton.Toolkit.KryptonTextBox();
             dtVendas = new DataGridView();
             kbtnVoltar = new Krypton.Toolkit.KryptonButton();
-            kbtnExcluir = new Krypton.Toolkit.KryptonButton();
+            kbtnTrocar = new Krypton.Toolkit.KryptonButton();
             kbtnCancelar = new Krypton.Toolkit.KryptonButton();
             kbtnConfirmar = new Krypton.Toolkit.KryptonButton();
             kbtnEstornar = new Krypton.Toolkit.KryptonButton();
-            dataGridView1 = new DataGridView();
+            dtProdutos = new DataGridView();
             label1 = new Label();
             ktbCodeBar = new Krypton.Toolkit.KryptonTextBox();
             kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
@@ -55,7 +55,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtVendas).BeginInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
+            ((System.ComponentModel.ISupportInitialize)dtProdutos).BeginInit();
             SuspendLayout();
             // 
             // pictureBox2
@@ -190,42 +190,42 @@
             kbtnVoltar.Values.Text = "Voltar";
             kbtnVoltar.Click += kbtnVoltar_Click;
             // 
-            // kbtnExcluir
+            // kbtnTrocar
             // 
-            kbtnExcluir.Cursor = Cursors.Hand;
-            kbtnExcluir.Enabled = false;
-            kbtnExcluir.Location = new Point(403, 602);
-            kbtnExcluir.Name = "kbtnExcluir";
-            kbtnExcluir.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
-            kbtnExcluir.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
-            kbtnExcluir.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            kbtnExcluir.Size = new Size(136, 40);
-            kbtnExcluir.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
-            kbtnExcluir.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
-            kbtnExcluir.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
-            kbtnExcluir.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
-            kbtnExcluir.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kbtnExcluir.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
-            kbtnExcluir.StateCommon.Border.Rounding = 15F;
-            kbtnExcluir.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
-            kbtnExcluir.StateCommon.Content.ShortText.Color1 = Color.White;
-            kbtnExcluir.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            kbtnExcluir.StateDisabled.Back.Color1 = Color.FromArgb(147, 147, 147);
-            kbtnExcluir.StateDisabled.Back.Color2 = Color.FromArgb(147, 147, 147);
-            kbtnExcluir.StateDisabled.Border.Color1 = Color.FromArgb(147, 147, 147);
-            kbtnExcluir.StateDisabled.Border.Color2 = Color.FromArgb(147, 147, 147);
-            kbtnExcluir.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kbtnExcluir.StateDisabled.Content.ShortText.Color1 = Color.FromArgb(51, 51, 51);
-            kbtnExcluir.StateDisabled.Content.ShortText.Color2 = Color.FromArgb(51, 51, 51);
-            kbtnExcluir.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
-            kbtnExcluir.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
-            kbtnExcluir.TabIndex = 69;
-            kbtnExcluir.Values.Image = (Image)resources.GetObject("kbtnExcluir.Values.Image");
-            kbtnExcluir.Values.ImageStates.ImageCheckedNormal = null;
-            kbtnExcluir.Values.ImageStates.ImageCheckedPressed = null;
-            kbtnExcluir.Values.ImageStates.ImageCheckedTracking = null;
-            kbtnExcluir.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kbtnExcluir.Values.ImageStates.ImageDisabled");
-            kbtnExcluir.Values.Text = "Troca";
+            kbtnTrocar.Cursor = Cursors.Hand;
+            kbtnTrocar.Enabled = false;
+            kbtnTrocar.Location = new Point(403, 602);
+            kbtnTrocar.Name = "kbtnTrocar";
+            kbtnTrocar.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnTrocar.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnTrocar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            kbtnTrocar.Size = new Size(136, 40);
+            kbtnTrocar.StateCommon.Back.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnTrocar.StateCommon.Back.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnTrocar.StateCommon.Border.Color1 = Color.FromArgb(37, 77, 113);
+            kbtnTrocar.StateCommon.Border.Color2 = Color.FromArgb(37, 77, 113);
+            kbtnTrocar.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnTrocar.StateCommon.Border.GraphicsHint = Krypton.Toolkit.PaletteGraphicsHint.AntiAlias;
+            kbtnTrocar.StateCommon.Border.Rounding = 15F;
+            kbtnTrocar.StateCommon.Content.Image.ImageV = Krypton.Toolkit.PaletteRelativeAlign.Center;
+            kbtnTrocar.StateCommon.Content.ShortText.Color1 = Color.White;
+            kbtnTrocar.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            kbtnTrocar.StateDisabled.Back.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnTrocar.StateDisabled.Back.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnTrocar.StateDisabled.Border.Color1 = Color.FromArgb(147, 147, 147);
+            kbtnTrocar.StateDisabled.Border.Color2 = Color.FromArgb(147, 147, 147);
+            kbtnTrocar.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            kbtnTrocar.StateDisabled.Content.ShortText.Color1 = Color.FromArgb(51, 51, 51);
+            kbtnTrocar.StateDisabled.Content.ShortText.Color2 = Color.FromArgb(51, 51, 51);
+            kbtnTrocar.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
+            kbtnTrocar.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
+            kbtnTrocar.TabIndex = 69;
+            kbtnTrocar.Values.Image = (Image)resources.GetObject("kbtnTrocar.Values.Image");
+            kbtnTrocar.Values.ImageStates.ImageCheckedNormal = null;
+            kbtnTrocar.Values.ImageStates.ImageCheckedPressed = null;
+            kbtnTrocar.Values.ImageStates.ImageCheckedTracking = null;
+            kbtnTrocar.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kbtnTrocar.Values.ImageStates.ImageDisabled");
+            kbtnTrocar.Values.Text = "Troca";
             // 
             // kbtnCancelar
             // 
@@ -339,15 +339,15 @@
             kbtnEstornar.Values.Text = "Estornar";
             kbtnEstornar.Click += kbtnEstornar_Click;
             // 
-            // dataGridView1
+            // dtProdutos
             // 
-            dataGridView1.AllowUserToAddRows = false;
-            dataGridView1.AllowUserToDeleteRows = false;
-            dataGridView1.AllowUserToResizeRows = false;
-            dataGridView1.BackgroundColor = Color.White;
-            dataGridView1.BorderStyle = BorderStyle.None;
-            dataGridView1.CellBorderStyle = DataGridViewCellBorderStyle.None;
-            dataGridView1.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
+            dtProdutos.AllowUserToAddRows = false;
+            dtProdutos.AllowUserToDeleteRows = false;
+            dtProdutos.AllowUserToResizeRows = false;
+            dtProdutos.BackgroundColor = Color.White;
+            dtProdutos.BorderStyle = BorderStyle.None;
+            dtProdutos.CellBorderStyle = DataGridViewCellBorderStyle.None;
+            dtProdutos.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
             dataGridViewCellStyle4.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle4.BackColor = Color.FromArgb(37, 77, 113);
             dataGridViewCellStyle4.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -356,9 +356,9 @@
             dataGridViewCellStyle4.SelectionBackColor = Color.FromArgb(37, 77, 113);
             dataGridViewCellStyle4.SelectionForeColor = Color.White;
             dataGridViewCellStyle4.WrapMode = DataGridViewTriState.True;
-            dataGridView1.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Cursor = Cursors.Hand;
+            dtProdutos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle4;
+            dtProdutos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dtProdutos.Cursor = Cursors.Hand;
             dataGridViewCellStyle5.Alignment = DataGridViewContentAlignment.MiddleCenter;
             dataGridViewCellStyle5.BackColor = Color.White;
             dataGridViewCellStyle5.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
@@ -366,26 +366,26 @@
             dataGridViewCellStyle5.SelectionBackColor = Color.FromArgb(147, 147, 147);
             dataGridViewCellStyle5.SelectionForeColor = Color.White;
             dataGridViewCellStyle5.WrapMode = DataGridViewTriState.False;
-            dataGridView1.DefaultCellStyle = dataGridViewCellStyle5;
-            dataGridView1.EnableHeadersVisualStyles = false;
-            dataGridView1.Location = new Point(66, 366);
-            dataGridView1.MultiSelect = false;
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.ReadOnly = true;
+            dtProdutos.DefaultCellStyle = dataGridViewCellStyle5;
+            dtProdutos.EnableHeadersVisualStyles = false;
+            dtProdutos.Location = new Point(66, 397);
+            dtProdutos.MultiSelect = false;
+            dtProdutos.Name = "dtProdutos";
+            dtProdutos.ReadOnly = true;
             dataGridViewCellStyle6.BackColor = SystemColors.Control;
             dataGridViewCellStyle6.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             dataGridViewCellStyle6.ForeColor = SystemColors.Control;
             dataGridViewCellStyle6.SelectionBackColor = SystemColors.Control;
             dataGridViewCellStyle6.SelectionForeColor = SystemColors.Control;
-            dataGridView1.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
-            dataGridView1.RowHeadersVisible = false;
-            dataGridView1.RowTemplate.Height = 35;
-            dataGridView1.RowTemplate.ReadOnly = true;
-            dataGridView1.RowTemplate.Resizable = DataGridViewTriState.False;
-            dataGridView1.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
-            dataGridView1.Size = new Size(469, 196);
-            dataGridView1.StandardTab = true;
-            dataGridView1.TabIndex = 71;
+            dtProdutos.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dtProdutos.RowHeadersVisible = false;
+            dtProdutos.RowTemplate.Height = 35;
+            dtProdutos.RowTemplate.ReadOnly = true;
+            dtProdutos.RowTemplate.Resizable = DataGridViewTriState.False;
+            dtProdutos.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
+            dtProdutos.Size = new Size(469, 165);
+            dtProdutos.StandardTab = true;
+            dtProdutos.TabIndex = 71;
             // 
             // label1
             // 
@@ -504,9 +504,9 @@
             Controls.Add(label2);
             Controls.Add(ktbCodeBar);
             Controls.Add(label1);
-            Controls.Add(dataGridView1);
+            Controls.Add(dtProdutos);
             Controls.Add(kbtnVoltar);
-            Controls.Add(kbtnExcluir);
+            Controls.Add(kbtnTrocar);
             Controls.Add(kbtnCancelar);
             Controls.Add(kbtnConfirmar);
             Controls.Add(kbtnEstornar);
@@ -524,7 +524,7 @@
             ((System.ComponentModel.ISupportInitialize)pictureBox2).EndInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).EndInit();
             ((System.ComponentModel.ISupportInitialize)dtVendas).EndInit();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
+            ((System.ComponentModel.ISupportInitialize)dtProdutos).EndInit();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -537,11 +537,11 @@
         public Krypton.Toolkit.KryptonTextBox ktbPesquisar;
         public DataGridView dtVendas;
         private Krypton.Toolkit.KryptonButton kbtnVoltar;
-        private Krypton.Toolkit.KryptonButton kbtnExcluir;
+        private Krypton.Toolkit.KryptonButton kbtnTrocar;
         private Krypton.Toolkit.KryptonButton kbtnCancelar;
         private Krypton.Toolkit.KryptonButton kbtnConfirmar;
         private Krypton.Toolkit.KryptonButton kbtnEstornar;
-        public DataGridView dataGridView1;
+        public DataGridView dtProdutos;
         private Label label1;
         private Krypton.Toolkit.KryptonTextBox ktbCodeBar;
         private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;

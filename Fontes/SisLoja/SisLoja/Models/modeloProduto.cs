@@ -8,7 +8,7 @@ namespace SisLoja
 {
     public class modeloProduto
     {
-        int id, estoquemin, qtd, num, num18, num19, num20, num21, num22, num23, num24, num25, num26, num27, num28, num29, num30,
+        int id, estoquemin, num, num18, num19, num20, num21, num22, num23, num24, num25, num26, num27, num28, num29, num30,
              num31, num32, num33, num34, num35, num36, num37, num38, num39, num40, num41, num42, num43, num44;
         string codbar, qrcode, referencia, img, nome, modelo, cor;
         decimal precoVenda;
@@ -23,11 +23,11 @@ namespace SisLoja
             get { return estoquemin; }
             set { estoquemin = value; }
         }
-        public int Qtd
-        {
-            get { return qtd; }
-            set { qtd = value; }
-        }
+        //public int Qtd
+        //{
+        //    get { return qtd; }
+        //    set { qtd = value; }
+        //}
         public int Num
         {
             get { return num; }

@@ -156,7 +156,7 @@
         0QpIZSSSRY8cx5wQMjG4v+OGGXv1AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="kbtnExcluir.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="kbtnTrocar.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAVJJREFUSEvtlb1KA0EURtdX0EbENwgqWATBWjsrsYu1r5DK1i692ETSammhnYVd
@@ -168,7 +168,7 @@
         AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="kbtnExcluir.Values.ImageStates.ImageDisabled" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="kbtnTrocar.Values.ImageStates.ImageDisabled" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
         iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
         DAAACwwBP0AiyAAAAYRJREFUSEvtlDFLw2AQhtO/oIuI/0DUJk1DwFk3J3HT2b/QydXNvbhUuurooJuD
