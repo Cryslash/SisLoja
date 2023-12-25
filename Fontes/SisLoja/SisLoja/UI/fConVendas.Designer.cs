@@ -337,6 +337,7 @@
             kbtnEstornar.Values.ImageStates.ImageCheckedTracking = null;
             kbtnEstornar.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kbtnEstornar.Values.ImageStates.ImageDisabled");
             kbtnEstornar.Values.Text = "Estornar";
+            kbtnEstornar.Click += kbtnEstornar_Click;
             // 
             // dataGridView1
             // 

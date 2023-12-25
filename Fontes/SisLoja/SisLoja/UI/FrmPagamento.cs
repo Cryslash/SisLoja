@@ -18,6 +18,11 @@ namespace SisLoja
     {
         public static int waitResp;
         public static byte[] amount = new byte[12];
+        public decimal valortotal;
+        public int tipopagamento;
+        public static int confirmapagamento;
+        public bool estorno = false;
+        public string codestorno;
 
         [DllImport("libtefseguro.dll", CallingConvention = CallingConvention.Cdecl)]        
         unsafe static extern int TEFSEG_PaymentCredit(byte[] amount);
@@ -99,7 +104,8 @@ namespace SisLoja
                     fixed (byte* p = amount)
                     {
                         //convertToByte(p, FrmCompras.vlTotal);
-                        convertToByte(p, Convert.ToInt32(fVendas.valortotal.ToString().Replace(",","")));
+                        //convertToByte(p, Convert.ToInt32(fVendas.valortotal.ToString().Replace(",","")));
+                        convertToByte(p, Convert.ToInt32(valortotal.ToString().Replace(",", "")));
                     }
                 }
 
@@ -109,12 +115,22 @@ namespace SisLoja
                 int resp = 0;
 
                 //if (FrmCompras.vlTotal != 0)
-                if (fVendas.valortotal != 0)
+                //if (fVendas.valortotal != 0)
+                if (valortotal != 0)
                 {
                     result trsResult = new result();
                     byte[] comport = Encoding.ASCII.GetBytes(GetPortFromFile());
                     //byte[] codvenda = Encoding.ASCII.GetBytes("Cafe");
-                    byte[] codvenda = Encoding.ASCII.GetBytes(fVendas.dadosvenda.Id.ToString());
+                    byte[] codvenda;
+                    if (estorno == false)
+                    {
+                        codvenda = Encoding.ASCII.GetBytes(fVendas.dadosvenda.Id.ToString());
+                    }
+                    else
+                    {
+                        codvenda = Encoding.ASCII.GetBytes(codestorno);
+                        estorno = false;
+                    }
 
                     int size = Marshal.SizeOf(trsResult);
                     IntPtr ptr = Marshal.AllocHGlobal(size);
@@ -125,7 +141,9 @@ namespace SisLoja
                     SetVersionName(appName, version);
 
                     //switch (FrmCompras.tipoPagamento)
-                    switch (fVendas.dadosvenda.TipoPagamento)
+                    //switch (fVendas.dadosvenda.TipoPagamento)
+                    switch (tipopagamento)
+
                     {
                         case 0:
                             try
@@ -196,12 +214,14 @@ namespace SisLoja
                     Marshal.FreeHGlobal(ptr);
 
                     //FrmCompras.ConfirmaPagamento = resp;
-                    fVendas.ConfirmaPagamento = resp;
+                    //fVendas.ConfirmaPagamento = resp;
+                    confirmapagamento = resp;
                 }
                 else
                 {
                     //FrmCompras.ConfirmaPagamento = 1;
-                    fVendas.ConfirmaPagamento = 1;
+                    //fVendas.ConfirmaPagamento = 1;
+                    confirmapagamento = 1;
                 }
 
                 //circularProgressBar1.Style = ProgressBarStyle.Blocks;
@@ -231,22 +251,26 @@ namespace SisLoja
             timer1.Enabled = false;
 
             //if (FrmCompras.vlTotal != 0)
-            if (fVendas.valortotal != 0)
+            //if (fVendas.valortotal != 0)
+            if (valortotal != 0)
             {
                 //switch (FrmCompras.tipoPagamento)
-                switch (fVendas.dadosvenda.TipoPagamento)
+                //switch (fVendas.dadosvenda.TipoPagamento)
+                switch (tipopagamento)
                 {
                     case 3: resp = TEFSEG_PaymentCredit(amount); break;
                     case 4: resp = TEFSEG_PaymentDebit(amount); break;
                 }
 
                 //FrmCompras.ConfirmaPagamento = resp;
-                fVendas.ConfirmaPagamento = resp;
+                // fVendas.ConfirmaPagamento = resp;
+                confirmapagamento = resp;
             }
             else
             {
                 //FrmCompras.ConfirmaPagamento = 1;
-                fVendas.ConfirmaPagamento = 1;
+                //fVendas.ConfirmaPagamento = 1;
+                confirmapagamento = 1;
             }
             
             timer1.Interval = 1000;

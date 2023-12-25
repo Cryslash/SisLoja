@@ -24,7 +24,7 @@ namespace SisLoja.UI
 
         //variáveis
         public static int numitens, ConfirmaPagamento, numparcelas;
-        public static decimal valorparcial, valortotal;
+        public decimal valorparcial, valortotal;
 
         public fVendas()
         {
@@ -350,22 +350,25 @@ namespace SisLoja.UI
             dadosvenda.Data = DateTime.Now;
             dadosvenda.ValorVenda = Convert.ToDecimal(lblValorTotal.Text);
             dadosvenda.Descontos = 0;
-            if (MessageBox.Show("Deseja encerrar a venda?", "Mensagem do Sistema", MessageBoxButtons.YesNo,
-                MessageBoxIcon.Question) == DialogResult.Yes)
-            {
-                BLL.GravarVendaDAL(dadosvenda, listaprodutos);
-                MessageBox.Show("Venda Realizada com Sucesso.", "Mensagem do Sistema.", MessageBoxButtons.OK, MessageBoxIcon.Information);
-                NovaVenda();
-            }
+            BLL.GravarVendaDAL(dadosvenda, listaprodutos);
+            MessageBox.Show("Venda Realizada com Sucesso.", "Mensagem do Sistema.", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            NovaVenda();
         }
         private void kbnFinalizar_Click(object sender, EventArgs e)
-        {            
-                if (dadosvenda.TipoPagamento == 3 || dadosvenda.TipoPagamento == 4 || dadosvenda.TipoPagamento == 5)
+        {
+            if (dadosvenda.TipoPagamento == 3 || dadosvenda.TipoPagamento == 4 || dadosvenda.TipoPagamento == 5)
+            {
+                if (MessageBox.Show("Deseja encerrar a venda?", "Mensagem do Sistema", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
                 {
                     FrmPagamento fpag = new FrmPagamento();
+                    fpag.tipopagamento = dadosvenda.TipoPagamento;
+                    fpag.valortotal = valortotal;
+                    FrmPagamento.confirmapagamento = 0;
                     fpag.StartPosition = FormStartPosition.CenterParent;
                     fpag.ShowDialog(this);
-                    if (ConfirmaPagamento == 0)
+                    //if (ConfirmaPagamento == 0)
+                    if (FrmPagamento.confirmapagamento == 0)
                     {
                         GravarVenda();
                     }
@@ -374,10 +377,13 @@ namespace SisLoja.UI
                         MessageBox.Show("Transação não Autorizada.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     }
                 }
-                if (dadosvenda.TipoPagamento == 1 || dadosvenda.TipoPagamento == 2)
-                {
+            }
+            if (dadosvenda.TipoPagamento == 1 || dadosvenda.TipoPagamento == 2)
+            {
+                if (MessageBox.Show("Deseja encerrar a venda?", "Mensagem do Sistema", MessageBoxButtons.YesNo,
+                    MessageBoxIcon.Question) == DialogResult.Yes)
                     GravarVenda();
-                }
+            }
         }
     }
 }

@@ -102,7 +102,8 @@ ClienteID INT FOREIGN KEY REFERENCES Clientes(ID) DEFAULT(1),
 TipoPagamento INT,
 ValorVenda DECIMAL(10,2) NOT NULL DEFAULT(0),
 ValorPago DECIMAL(10,2) NOT NULL DEFAULT(0),
-Descontos DECIMAL(10,2) NOT NULL DEFAULT(0)
+Descontos DECIMAL(10,2) NOT NULL DEFAULT(0),
+VendaCanceleda INT DEFAULT(0)
 )
 INSERT INTO Vendas (ID) Values(1234);
 END
@@ -124,14 +125,20 @@ SELECT * FROM Estoque;
 SELECT * FROM Vendas;
 SELECT * FROM ItemsVenda;
 
-UPDATE Vendas SET ClienteID = 1 WHERE ID = 1250;
+
+UPDATE Vendas SET ClienteID = 1 WHERE ID = 1251;
+SELECT * FROM Vendas;
 
 
 SELECT TOP 1 ID FROM Vendas ORDER BY ID DESC;
 
+ALTER TABLE Vendas ADD VendaCancelada INT DEFAULT(0);
+UPDATE Vendas SET VendaCancelada = 0 WHERE ID = 1251;
 
 INSERT INTO Produtos (Nome,PrecoVenda) VALUES('para excluir',10);
 
 SELECT p.Img, p.CodBar, p.QrCode, p.Referencia, p.Nome, p.Modelo, p.Cor, p.EstoqueMin, p.PrecoVenda,e.Num44,e.Num43,e.Num42,e.Num41,e.Num40,e.Num39,e.Num38,e.Num37,e.Num36,
 e.Num35,e.Num34,e.Num33,e.Num32,e.Num31,e.Num30,e.Num29, e.Num28,e.Num27,e.Num26,e.Num25,e.Num24,e.Num23,e.Num22,e.Num21,e.Num20,e.Num19,e.Num18 FROM Produtos p, Estoque e 
 WHERE p.Codbar = '7890333910205' AND p.ID = e.ProdID AND p.EstaAtivo = 1
+
+

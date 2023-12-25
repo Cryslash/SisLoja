@@ -42,5 +42,11 @@ namespace SisLoja
             DataTable dt = DAL.Pesquisar_Venda(s);
             return dt;
         }
+        public int Estornar_VendaDAL(string id)
+        {
+            int cod = DAL.Estornar_Venda(id);
+            return cod;
+        }
+
     }
 }

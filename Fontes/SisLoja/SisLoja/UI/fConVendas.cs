@@ -13,6 +13,7 @@ namespace SisLoja.UI
     public partial class fConVendas : Form
     {
         public fPrincipal instanciaprincipal;
+        public static int confirmapagamento;
         VendasBLL BLL = new VendasBLL();
 
         public fConVendas()
@@ -59,6 +60,33 @@ namespace SisLoja.UI
         {
             dtVendas.DataSource = BLL.Pesquisar_VendaDAL(ktbPesquisar.Text);
             dtVendas.ClearSelection();
+        }
+
+        private void kbtnEstornar_Click(object sender, EventArgs e)
+        {
+            if (MessageBox.Show("Deseja Estornar a Venda?", "Mensagem do Sistema.", MessageBoxButtons.YesNo,
+                MessageBoxIcon.Question) == DialogResult.Yes)
+            {
+                FrmPagamento fpag = new FrmPagamento();
+                fpag.tipopagamento = 0;
+                fpag.estorno = true;
+                fpag.valortotal = Convert.ToDecimal(dtVendas.SelectedRows[0].Cells[4].Value.ToString());
+                FrmPagamento.confirmapagamento = 0;
+                fpag.codestorno = dtVendas.SelectedRows[0].Cells[0].Value.ToString();
+                fpag.StartPosition = FormStartPosition.CenterParent;
+                fpag.ShowDialog(this);
+                if (FrmPagamento.confirmapagamento == 0 && BLL.Estornar_VendaDAL(dtVendas.SelectedRows[0].Cells[0].Value.ToString()) == 0)
+                {
+                    MessageBox.Show("Estorno Realizado com Sucesso.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                else
+                {
+                    MessageBox.Show("Ocorreu um Erro ao Processar o Estorno.", "Mensagem do Sistema", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+                CarregarVendas();
+                dtVendas.ClearSelection();
+            }
         }
     }
 }

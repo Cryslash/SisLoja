@@ -186,7 +186,7 @@ namespace SisLoja
                 conexao = new SqlConnection(server);
 
                 SqlCommand qrComando = new SqlCommand("SELECT v.ID as Cód,v.Data,c.Nome as Cliente,v.TipoPagamento as Pagamento,v.ValorVenda,v.Descontos,v.ValorPago " +
-                    "FROM Vendas v, Clientes c Where v.ClienteID = c.ID ORDER BY v.ID DESC", conexao);
+                    "FROM Vendas v, Clientes c Where v.ClienteID = c.ID AND VendaCancelada = 0 ORDER BY v.ID DESC", conexao);
                 DataTable dt = new DataTable();
                 SqlDataAdapter dados = new SqlDataAdapter();
                 dados.SelectCommand = qrComando;
@@ -208,7 +208,7 @@ namespace SisLoja
                 string server = StringServer();
                 conexao = new SqlConnection(server);
                 SqlCommand qrComando = new SqlCommand("SELECT v.ID as Cód,v.Data,c.Nome as Cliente,v.TipoPagamento as Pagamento,v.ValorVenda,v.Descontos,v.ValorPago " +
-                    "FROM Vendas v, Clientes c Where v.ClienteID = c.ID AND v.ID LIKE '%'+@id+'%'", conexao);
+                    "FROM Vendas v, Clientes c Where v.ClienteID = c.ID AND v.ID LIKE '%'+@id+'%' AND VendaCancelada = 0 ORDER BY v.ID DESC", conexao);
                 qrComando.Parameters.AddWithValue("@id", s);
                 DataTable dt = new DataTable();
                 SqlDataAdapter dados = new SqlDataAdapter();
@@ -220,6 +220,26 @@ namespace SisLoja
             }
             catch (Exception erro)
             {
+                throw erro;
+            }
+        }
+
+        public int Estornar_Venda(string id)
+        {
+            try
+            {
+                string server = StringServer();
+                conexao = new SqlConnection(server);
+                SqlCommand qrComando = new SqlCommand("UPDATE Vendas SET VendaCancelada = 1 WHERE ID = @id", conexao);
+                qrComando.Parameters.AddWithValue("@id", id);
+                conexao.Open();
+                qrComando.ExecuteNonQuery();
+                conexao.Close();
+                return 0;
+            }
+            catch (Exception erro)
+            {
+                return -1;
                 throw erro;
             }
         }
