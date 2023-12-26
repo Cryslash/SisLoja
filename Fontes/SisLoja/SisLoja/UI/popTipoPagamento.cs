@@ -57,6 +57,9 @@ namespace SisLoja.UI
             if (e.KeyCode == Keys.D4)
             {
                 fVendas.dadosvenda.TipoPagamento = 4;
+                fvendas.valordesconto = 0;
+                fvendas.lblDesc.Text = "Descontos: R$ 0,00";
+                fvendas.lblValorTotal.Text = string.Format("{0}", fvendas.valortotal - fvendas.valordesconto);
                 fvendas.lblValorPago.Visible = false;
                 fvendas.lblTroco.Visible = false;
                 PagCreditoParcelado();
@@ -144,30 +147,24 @@ namespace SisLoja.UI
         {
             if (e.KeyCode == Keys.Enter)
             {
-                fVendas.dadosvenda.ValorPago = Convert.ToDecimal(((TextBox)sender).Text.Replace("R$ ", ""));
-                fvendas.lblValorPago.Visible = true;
-                fvendas.lblValorPago.Text = string.Format("Valor Pago: R$ {0}", fVendas.dadosvenda.ValorPago.ToString());
-                fvendas.lblTroco.Visible = true;
-                fvendas.lblTroco.Text = string.Format("Troco: R$ {0}", fVendas.dadosvenda.ValorPago + fvendas.valordesconto - fvendas.valorparcial);
-                this.Close();
+                decimal valordigitado = Convert.ToDecimal(((TextBox)sender).Text.Replace("R$ ", ""));
+                if (valordigitado >= fvendas.valortotal - fvendas.valordesconto)
+                {
+                    fVendas.dadosvenda.ValorPago = valordigitado;
+                    fvendas.lblValorPago.Visible = true;
+                    fvendas.lblValorPago.Text = string.Format("Valor Pago: R$ {0}", fVendas.dadosvenda.ValorPago.ToString());
+                    fvendas.lblTroco.Visible = true;
+                    fvendas.lblTroco.Text = string.Format("Troco: R$ {0}", fVendas.dadosvenda.ValorPago + fvendas.valordesconto - fvendas.valortotal);
+                    this.Close();
+                }
+                else
+                {
+                    MessageBox.Show("O valor informado não é suficiente para o pagamento.", "Mensagem do Sistema.",
+                        MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
+                    ((TextBox)sender).Text = "R$ 0,00";
+                }
             }
         }
-
-        private void PagCreditoParceladoKeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                fVendas.numparcelas = Convert.ToInt32(((TextBox)sender).Text);
-                fvendas.valordesconto = 0;
-                fvendas.lblDesc.Text = "Descontos: R$ 0,00";
-                this.Close();
-            }
-            if (e.KeyCode == Keys.Escape)
-            {
-                this.Close();
-            }
-        }
-
         private void PagDinheiro()
         {
             lblDinheiro.Visible = false;
@@ -192,6 +189,23 @@ namespace SisLoja.UI
 
             this.pSkin.Controls.Add(tb);
             tb.Focus();
+        }
+
+        private void PagCreditoParceladoKeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Enter)
+            {
+                fVendas.numparcelas = Convert.ToInt32(((TextBox)sender).Text);
+                fvendas.lblValorPago.Text = string.Format("Número de Parcelas: {0}", fVendas.numparcelas);
+                fvendas.lblValorPago.Visible = true;
+                fvendas.lblTroco.Text = string.Format("Valor da Parcela: R$: {0}", Math.Round(fvendas.valortotal / fVendas.numparcelas,2));
+                fvendas.lblTroco.Visible = true;
+                this.Close();
+            }
+            if (e.KeyCode == Keys.Escape)
+            {
+                this.Close();
+            }
         }
 
         private void PagCreditoParcelado()

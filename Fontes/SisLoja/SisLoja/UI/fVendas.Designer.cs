@@ -41,7 +41,7 @@
             kbtnTipoPagamento = new Krypton.Toolkit.KryptonButton();
             kbtnCliente = new Krypton.Toolkit.KryptonButton();
             lblValorTotal = new Label();
-            lblValorParcial = new Label();
+            lblValorSemDesconto = new Label();
             lblDesc = new Label();
             lblNumItens = new Label();
             pLista = new Panel();
@@ -82,7 +82,7 @@
             pInfo.Controls.Add(kbtnTipoPagamento);
             pInfo.Controls.Add(kbtnCliente);
             pInfo.Controls.Add(lblValorTotal);
-            pInfo.Controls.Add(lblValorParcial);
+            pInfo.Controls.Add(lblValorSemDesconto);
             pInfo.Controls.Add(lblDesc);
             pInfo.Controls.Add(lblNumItens);
             pInfo.Dock = DockStyle.Right;
@@ -121,12 +121,13 @@
             kbtnCancelarVenda.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
             kbtnCancelarVenda.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
             kbtnCancelarVenda.TabIndex = 52;
-            kbtnCancelarVenda.Values.Image = (Image)resources.GetObject("kryptonButton1.Values.Image");
+            kbtnCancelarVenda.Values.Image = (Image)resources.GetObject("kbtnCancelarVenda.Values.Image");
             kbtnCancelarVenda.Values.ImageStates.ImageCheckedNormal = null;
             kbtnCancelarVenda.Values.ImageStates.ImageCheckedPressed = null;
             kbtnCancelarVenda.Values.ImageStates.ImageCheckedTracking = null;
-            kbtnCancelarVenda.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kryptonButton1.Values.ImageStates.ImageDisabled");
+            kbtnCancelarVenda.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kbtnCancelarVenda.Values.ImageStates.ImageDisabled");
             kbtnCancelarVenda.Values.Text = "Cancelar Venda [F5]";
+            kbtnCancelarVenda.Click += kbtnCancelarVenda_Click;
             // 
             // lblTroco
             // 
@@ -251,17 +252,17 @@
             lblValorTotal.Text = "0.00";
             lblValorTotal.TextAlign = ContentAlignment.MiddleLeft;
             // 
-            // lblValorParcial
+            // lblValorSemDesconto
             // 
-            lblValorParcial.AutoSize = true;
-            lblValorParcial.BackColor = Color.Transparent;
-            lblValorParcial.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
-            lblValorParcial.ForeColor = Color.FromArgb(64, 70, 77);
-            lblValorParcial.Location = new Point(40, 229);
-            lblValorParcial.Name = "lblValorParcial";
-            lblValorParcial.Size = new Size(213, 25);
-            lblValorParcial.TabIndex = 2;
-            lblValorParcial.Text = "Valor sem Desc.: R$ 0,00";
+            lblValorSemDesconto.AutoSize = true;
+            lblValorSemDesconto.BackColor = Color.Transparent;
+            lblValorSemDesconto.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
+            lblValorSemDesconto.ForeColor = Color.FromArgb(64, 70, 77);
+            lblValorSemDesconto.Location = new Point(40, 229);
+            lblValorSemDesconto.Name = "lblValorSemDesconto";
+            lblValorSemDesconto.Size = new Size(213, 25);
+            lblValorSemDesconto.TabIndex = 2;
+            lblValorSemDesconto.Text = "Valor sem Desc.: R$ 0,00";
             // 
             // lblDesc
             // 
@@ -582,7 +583,7 @@
         #endregion
 
         private Panel pInfo;
-        private Label lblValorParcial;
+        private Label lblValorSemDesconto;
         private Label lblNumItens;
         private Panel pLista;
         public DataGridView dtProdutos;

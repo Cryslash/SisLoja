@@ -118,29 +118,27 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Drawing" name="System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a" />
-  <data name="kryptonButton1.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="kbtnCancelarVenda.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAFGSURBVEhL3ZVRTsJAEIYbDHgJQA/hi8SD+AZvkGgggrdQ
-        OZmBcAiUQ4D1++kQWjpd2+KLfsmXlJnZadndbqP/TxzHF3iHM5ybU4s1rKw6DL7EJ9xgEZ84wZYNKwcD
-        2viOZVnhtQ0PQ+EV6smq8oFda+NDgaZFT1OXBRZPF0kt3rmMrV0WEtot3oLe4Ah3+18JulZMuVM0Vfnd
-        RVDbzmNk+QGqsRxYTDfx6CmfgeBzksuRbqibpK/T/yrNVDUZCOoFKuILh1b6U3PxaqVHCL4lORc161up
-        au9xq0QBL1Z6hKCOAo9fm6I6izxED3eRG+i9wVW36Rr9Q5CEDq5zebB2eUi2cLkvq4cOyKa186Ggi3ob
-        q6Kp6VibMBTqJjq4yqInb9vwcjBA0zXG0L9R7hHD0xKCwdpdPdTX7fDJ1PUt1v9k/hGi6Bu0E71H1dA9
-        PwAAAABJRU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAUZJREFUSEvdlVFOwkAQhhsMeAlAD+GLxIP4Bm+QaCCCt1A5mYFwCJRDgPX76RBa
+        Ol3b4ot+yZeUmdlp2d1uo/9PHMcXeIcznJtTizWsrDoMvsQn3GARnzjBlg0rBwPa+I5lWeG1DQ9D4RXq
+        yarygV1r40OBpkVPU5cFFk8XSS3euYytXRYS2i3egt7gCHf7Xwm6Vky5UzRV+d1FUNvOY2T5AaqxHFhM
+        N/HoKZ+B4HOSy5FuqJukr9P/Ks1UNRkI6gUq4guHVvpTc/FqpUcIviU5FzXrW6lq73GrRAEvVnqEoI4C
+        j1+bojqLPEQPd5Eb6L3BVbfpGv1DkIQOrnN5sHZ5SLZwuS+rhw7IprXzoaCLehuroqnpWJswFOomOrjK
+        oidv2/ByMEDTNcbQv1HuEcPTEoLB2l091Nft8MnU9S3W/2T+EaLoG7QTvUfV0D0/AAAAAElFTkSuQmCC
 </value>
   </data>
-  <data name="kryptonButton1.Values.ImageStates.ImageDisabled" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
+  <data name="kbtnCancelarVenda.Values.ImageStates.ImageDisabled" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">
     <value>
-        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAAAXNSR0IArs4c6QAAAARnQU1BAACxjwv8
-        YQUAAAAJcEhZcwAACxMAAAsTAQCanBgAAAF8SURBVEhL3VXbToNAFCQY9ScUfeCJFwIlJBp/g8Q3fSuJ
-        pk1b/8LLlzU1/YhWP8KqM+FgYTlZLvGpk0zY7JkZ4OwuOIePLMuORqPRDbiI4/iNxHjOOZTdQjUAvu+f
-        ImSGwE9cfzSi9gFOgyA4EVs3pGl6hoClGWjhOgzDS7HbEUXRBZ9MCWnjFvQkRoe0ZV0x9SIebGVtF0Rc
-        PNXcgxOJq4O7RVtQtCzBNQd3lXmOc6nV9OAWcc3dhQK3oikmc9Zx83uMGbzjWDy8ccOTJMk16zXA9KSJ
-        wb9AXqtj1gxtyTk1NcDAA6SJyW9wLNK2cPJFpHvA9KoISzLsTqQOWnAL/ZehqfJZpHtgcmGISv5PizA5
-        ZJHHoqlRXWTAhbFxggds0w2zikgDuMFUMfQiMh4krgkecwjeNWNH8gN5LHE6IPBAfri0ABs36P25xNgB
-        sYc3WRkBNi75iRd7N7BdME5A29uw9gja29ICl9sOIfy7lb/MGXbQFWuF5HDhOL++jbwb17cOQgAAAABJ
-        RU5ErkJggg==
+        iVBORw0KGgoAAAANSUhEUgAAABgAAAAYCAYAAADgdz34AAAABGdBTUEAALGPC/xhBQAAAAlwSFlzAAAL
+        EwAACxMBAJqcGAAAAXxJREFUSEvdVdtOg0AUJBj1JxR94IkXAiUkGn+DxDd9K4mmTVv/wsuXNTX9iFY/
+        wqoz4WBhOVku8amTTNjsmRng7C44h48sy45Go9ENuIjj+I3EeM45lN1CNQC+758iZIbAT1x/NKL2AU6D
+        IDgRWzekaXqGgKUZaOE6DMNLsdsRRdEFn0wJaeMW9CRGh7RlXTH1Ih5sZW0XRFw81dyDE4mrg7tFW1C0
+        LME1B3eVeY5zqdX04BZxzd2FAreiKSZz1nHze4wZvONYPLxxw5MkyTXrNcD0pInBv0Beq2PWDG3JOTU1
+        wMADpInJb3As0rZw8kWke8D0qghLMuxOpA5acAv9l6Gp8lmke2ByYYhK/k+LMDlkkceiqVFdZMCFsXGC
+        B2zTDbOKSAO4wVQx9CIyHiSuCR5zCN41Y0fyA3kscTog8EB+uLQAGzfo/bnE2AGxhzdZGQE2LvmJF3s3
+        sF0wTkDb27D2CNrb0gKX2w4h/LuVv8wZdtAVa4XkcOE4v76NvBvXtw5CAAAAAElFTkSuQmCC
 </value>
   </data>
   <data name="kbtnTipoPagamento.Values.Image" type="System.Drawing.Bitmap, System.Drawing" mimetype="application/x-microsoft.net.object.bytearray.base64">

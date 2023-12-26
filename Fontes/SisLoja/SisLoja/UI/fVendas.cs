@@ -24,7 +24,7 @@ namespace SisLoja.UI
 
         //variáveis
         public static int numitens, ConfirmaPagamento, numparcelas;
-        public decimal valorparcial, valortotal, valordesconto;
+        public decimal valortotal, valordesconto;
 
         public fVendas()
         {
@@ -50,7 +50,7 @@ namespace SisLoja.UI
             }
             if (e.KeyCode == Keys.F5)
             {
-                if (MessageBox.Show("Deseja Cancelar a Venda?","Mensagem do Sistema",MessageBoxButtons.YesNo,MessageBoxIcon.Question) == DialogResult.Yes)
+                if (MessageBox.Show("Deseja Cancelar a Venda?", "Mensagem do Sistema", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                     NovaVenda();
             }
         }
@@ -79,7 +79,7 @@ namespace SisLoja.UI
             lblDescricao.Text = "";
             lblNumItens.Text = "Número de Itens: 0";
             lblDesc.Text = "Descontos: R$ 0,00";
-            lblValorParcial.Text = "Valor s/ Desc.: R$ 0,00";
+            lblValorSemDesconto.Text = "Valor s/ Desc.: R$ 0,00";
             lblValorPago.Visible = false;
             lblValorPago.Text = "Valor Pago:";
             lblTroco.Visible = false;
@@ -90,7 +90,6 @@ namespace SisLoja.UI
             numitens = 0;
             ConfirmaPagamento = 0;
             numparcelas = 1;
-            valorparcial = 0;
             valortotal = 0;
             valordesconto = 0;
         }
@@ -207,7 +206,7 @@ namespace SisLoja.UI
                         fVendas_KeyDown(sender, e);
                     }
                 }
-                    
+
             }
             else
             {
@@ -272,18 +271,16 @@ namespace SisLoja.UI
             if (operacao == "somar")
             {
                 numitens++;
-                valorparcial += valor;
                 valortotal += valor;
             }
             if (operacao == "subtrair")
             {
                 numitens--;
-                valorparcial -= valor;
                 valortotal -= valor;
             }
 
             lblNumItens.Text = string.Format("Número de Itens: {0}", numitens);
-            lblValorParcial.Text = string.Format("Valor s/ Desc.: R$ {0}", valorparcial);
+            lblValorSemDesconto.Text = string.Format("Valor s/ Desc.: R$ {0}", valortotal);
             lblValorTotal.Text = string.Format("{0}", valortotal);
             if (lblValorPago.Visible == true)
             {
@@ -359,7 +356,7 @@ namespace SisLoja.UI
         }
 
         private void GravarVenda()
-        {           
+        {
             dadosvenda.Data = DateTime.Now;
             dadosvenda.ValorVenda = Convert.ToDecimal(valortotal);
             dadosvenda.Descontos = valordesconto;
@@ -367,6 +364,11 @@ namespace SisLoja.UI
             MessageBox.Show("Venda Realizada com Sucesso.", "Mensagem do Sistema.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             NovaVenda();
         }
-       
+
+        private void kbtnCancelarVenda_Click(object sender, EventArgs e)
+        {
+            if(MessageBox.Show("Deseja Cancelar a Venda?", "Mensagem do Sistema.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
+                NovaVenda();
+        }
     }
 }
