@@ -272,7 +272,7 @@
             ktbCep.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbCep.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbCep.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            ktbCep.TabIndex = 6;
+            ktbCep.TabIndex = 9;
             ktbCep.KeyPress += ApenasNumeros;
             // 
             // ktbRua
@@ -290,7 +290,7 @@
             ktbRua.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbRua.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbRua.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            ktbRua.TabIndex = 8;
+            ktbRua.TabIndex = 6;
             // 
             // ktbBairro
             // 
@@ -307,7 +307,7 @@
             ktbBairro.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbBairro.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbBairro.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            ktbBairro.TabIndex = 10;
+            ktbBairro.TabIndex = 7;
             // 
             // ktbCidade
             // 
@@ -324,7 +324,7 @@
             ktbCidade.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbCidade.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbCidade.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            ktbCidade.TabIndex = 9;
+            ktbCidade.TabIndex = 8;
             // 
             // kbtnSalvar
             // 
@@ -430,7 +430,7 @@
             kcbUf.StateCommon.Item.Content.ShortText.Color2 = Color.White;
             kcbUf.StateCommon.Item.Content.ShortText.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             kcbUf.StateCommon.Item.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Near;
-            kcbUf.TabIndex = 7;
+            kcbUf.TabIndex = 10;
             kcbUf.Text = "UF";
             // 
             // kryptonCustomPaletteBase1

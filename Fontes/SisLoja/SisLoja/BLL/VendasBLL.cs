@@ -47,10 +47,5 @@ namespace SisLoja
             int cod = DAL.Estornar_Venda(id);
             return cod;
         }
-        public DataTable Carregar_ProdutosDAL(string id)
-        {
-            DataTable dt = DAL.Carregar_Produto(id);
-            return dt;
-        }
     }
 }

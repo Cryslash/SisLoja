@@ -162,6 +162,7 @@
             // 
             // ktbCodBar
             // 
+            ktbCodBar.Enabled = false;
             ktbCodBar.Location = new Point(71, 222);
             ktbCodBar.Name = "ktbCodBar";
             ktbCodBar.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -175,10 +176,19 @@
             ktbCodBar.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbCodBar.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbCodBar.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbCodBar.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbCodBar.StateDisabled.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbCodBar.StateDisabled.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbCodBar.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbCodBar.StateDisabled.Border.Rounding = 20F;
+            ktbCodBar.StateDisabled.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbCodBar.StateDisabled.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbCodBar.StateDisabled.Content.Padding = new Padding(10, 0, 10, 0);
             ktbCodBar.TabIndex = 3;
             // 
             // ktbNome
             // 
+            ktbNome.Enabled = false;
             ktbNome.Location = new Point(277, 220);
             ktbNome.Name = "ktbNome";
             ktbNome.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -192,10 +202,19 @@
             ktbNome.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbNome.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbNome.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbNome.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbNome.StateDisabled.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbNome.StateDisabled.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbNome.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbNome.StateDisabled.Border.Rounding = 20F;
+            ktbNome.StateDisabled.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbNome.StateDisabled.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbNome.StateDisabled.Content.Padding = new Padding(10, 0, 10, 0);
             ktbNome.TabIndex = 4;
             // 
             // ktbModelo
             // 
+            ktbModelo.Enabled = false;
             ktbModelo.Location = new Point(71, 283);
             ktbModelo.Name = "ktbModelo";
             ktbModelo.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -209,10 +228,19 @@
             ktbModelo.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbModelo.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbModelo.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbModelo.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbModelo.StateDisabled.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbModelo.StateDisabled.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbModelo.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbModelo.StateDisabled.Border.Rounding = 20F;
+            ktbModelo.StateDisabled.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbModelo.StateDisabled.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbModelo.StateDisabled.Content.Padding = new Padding(10, 0, 10, 0);
             ktbModelo.TabIndex = 5;
             // 
             // ktbCor
             // 
+            ktbCor.Enabled = false;
             ktbCor.Location = new Point(278, 283);
             ktbCor.Name = "ktbCor";
             ktbCor.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -226,10 +254,19 @@
             ktbCor.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbCor.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbCor.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbCor.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbCor.StateDisabled.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbCor.StateDisabled.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbCor.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbCor.StateDisabled.Border.Rounding = 20F;
+            ktbCor.StateDisabled.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbCor.StateDisabled.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbCor.StateDisabled.Content.Padding = new Padding(10, 0, 10, 0);
             ktbCor.TabIndex = 6;
             // 
             // ktbRef
             // 
+            ktbRef.Enabled = false;
             ktbRef.Location = new Point(71, 345);
             ktbRef.Name = "ktbRef";
             ktbRef.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -243,6 +280,14 @@
             ktbRef.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbRef.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbRef.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbRef.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbRef.StateDisabled.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbRef.StateDisabled.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbRef.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbRef.StateDisabled.Border.Rounding = 20F;
+            ktbRef.StateDisabled.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbRef.StateDisabled.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbRef.StateDisabled.Content.Padding = new Padding(10, 0, 10, 0);
             ktbRef.TabIndex = 7;
             // 
             // ktbPreco

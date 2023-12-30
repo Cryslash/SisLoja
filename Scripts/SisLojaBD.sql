@@ -10,6 +10,22 @@ GO
 USE SisLoja;
 GO
 
+
+--#Para excluir o DB
+--USE master;
+--GO
+--ALTER DATABASE SisLoja SET SINGLE_USER WITH ROLLBACK IMMEDIATE;
+--GO
+--DROP DATABASE SisLoja;
+
+--#Renomear Coluna
+--EXEC sp_rename 'Vendas.VendaCanceleda', 'VendaCancelada', 'COLUMN';
+
+--#Adicionar Coluna
+--ALTER TABLE ItemsVenda ADD FeitoTroca CHAR(1) DEFAULT(0);
+
+
+
 IF NOT EXISTS (SELECT 1 FROM SYS.COLUMNS WHERE OBJECT_ID = OBJECT_ID(N'Clientes') AND NAME = N'ID')
 BEGIN
 CREATE TABLE Clientes (
@@ -103,7 +119,7 @@ TipoPagamento INT,
 ValorVenda DECIMAL(10,2) NOT NULL DEFAULT(0),
 ValorPago DECIMAL(10,2) NOT NULL DEFAULT(0),
 Descontos DECIMAL(10,2) NOT NULL DEFAULT(0),
-VendaCanceleda INT DEFAULT(0)
+VendaCancelada INT DEFAULT(0)
 )
 INSERT INTO Vendas (ID) Values(1234);
 END
@@ -117,7 +133,7 @@ Num INT
 )
 END
 
-
+SELECT * FROM SYS.tables;
 SELECT * FROM Clientes;
 SELECT * FROM Entradas;
 SELECT * FROM Produtos;
@@ -130,20 +146,10 @@ SELECT iv.VendaID AS 'Cód. Venda', p.CodBar AS 'Código Barras', p.Nome AS 'Pro
 FROM ItemsVenda iv, Vendas v, Produtos p WHERE v.ID = iv.VendaID AND p.ID = iv.ProdID AND v.ID = 1250;
 
 
+UPDATE Vendas SET VendaCancelada = 0 WHERE ID = 1235;
+UPDATE Vendas SET TipoPagamento = 3 WHERE ID = 1237;
+GO
+SELECT * FROM Produtos;
 
-
-
-
-
-UPDATE Vendas SET ClienteID = 1 WHERE ID = 1253;
-UPDATE Vendas SET VendaCancelada = 0 WHERE ID = 1252;
-SELECT * FROM Vendas;
-
-
-INSERT INTO Produtos (Nome,PrecoVenda) VALUES('para excluir',10);
-
-SELECT p.Img, p.CodBar, p.QrCode, p.Referencia, p.Nome, p.Modelo, p.Cor, p.EstoqueMin, p.PrecoVenda,e.Num44,e.Num43,e.Num42,e.Num41,e.Num40,e.Num39,e.Num38,e.Num37,e.Num36,
-e.Num35,e.Num34,e.Num33,e.Num32,e.Num31,e.Num30,e.Num29, e.Num28,e.Num27,e.Num26,e.Num25,e.Num24,e.Num23,e.Num22,e.Num21,e.Num20,e.Num19,e.Num18 FROM Produtos p, Estoque e 
-WHERE p.Codbar = '7890333910205' AND p.ID = e.ProdID AND p.EstaAtivo = 1
 
 

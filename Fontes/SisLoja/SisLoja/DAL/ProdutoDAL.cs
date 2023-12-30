@@ -234,5 +234,82 @@ namespace SisLoja
                 throw erro;
             }
         }
+
+        public DataTable Carregar_Produto(string id)
+        {
+            try
+            {
+                string server = StringServer();
+                conexao = new SqlConnection(server);
+                String qr = "SELECT iv.ID, p.CodBar AS 'C. Barras', p.Nome AS 'Produto', iv.Num FROM ItemsVenda iv, Vendas v, Produtos p " +
+                    "WHERE v.ID = iv.VendaID AND p.ID = iv.ProdID AND v.ID = @id AND iv.FeitoTroca = 0;";
+                SqlCommand qrComando = new SqlCommand(qr, conexao);
+                qrComando.Parameters.AddWithValue("@id", id);
+                SqlDataAdapter dados = new SqlDataAdapter();
+                dados.SelectCommand = qrComando;
+                DataTable dt = new DataTable();
+                conexao.Open();
+                dados.Fill(dt);
+                conexao.Close();
+                return dt;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
+
+        public int RetornarId(string codbar)
+        {
+            try
+            {
+                string server = StringServer();
+                conexao = new SqlConnection(server);
+                SqlCommand qrComando = new SqlCommand("SELECT * FROM Produtos WHERE CodBar = @codbar", conexao);
+                qrComando.Parameters.AddWithValue("@codbar", codbar);
+                int id = 0;
+                conexao.Open();
+                SqlDataReader dados = qrComando.ExecuteReader();
+                while (dados.Read())
+                {
+                    id = dados.GetInt32("ID");
+                }
+                conexao.Close();
+                return id;
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
+
+        public void Fazer_Troca(modeloProduto produto, int codtroca, int codvenda)
+        {
+            try
+            {
+                string server = StringServer();
+                conexao = new SqlConnection(server);
+
+
+                string num = "Num" + produto.Num;
+                string qr = "BEGIN TRANSACTION; INSERT INTO ItemsVenda(VendaID, ProdID, Num) Values(@codvenda, @prod, @num) ";
+                qr += "UPDATE ItemsVenda set FeitoTroca = 1 WHERE ID = @codtroca; ";
+                qr += string.Format("UPDATE Estoque SET {0} = {0} - 1 WHERE ProdID = @prod; COMMIT", num);
+
+                SqlCommand qrComando = new SqlCommand(qr, conexao);
+                qrComando.Parameters.AddWithValue("@codvenda", codvenda);
+                qrComando.Parameters.AddWithValue("@prod", produto.Id);
+                qrComando.Parameters.AddWithValue("@num", produto.Num);
+                qrComando.Parameters.AddWithValue("@codtroca", codtroca);
+                conexao.Open();
+                qrComando.ExecuteNonQuery();
+                conexao.Close();
+
+            }
+            catch (Exception erro)
+            {
+                throw erro;
+            }
+        }
     }
 }

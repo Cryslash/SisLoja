@@ -56,5 +56,19 @@ namespace SisLoja
         {
             DAL.Excluir_Produto(code);
         }
+
+        public DataTable Carregar_ProdutosDAL(string id)
+        {
+            DataTable dt = DAL.Carregar_Produto(id);
+            return dt;
+        }
+        public int RetornarIDDAL(string codbar)
+        {
+            return DAL.RetornarId(codbar);
+        }
+        public void Fazer_TrocaDAL(modeloProduto produto, int codtroca, int codvenda)
+        {
+            DAL.Fazer_Troca(produto, codtroca, codvenda);
+        }
     }
 }

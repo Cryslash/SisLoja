@@ -5,6 +5,8 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data;
 using System.Data.SqlClient;
+using System.Drawing;
+using System.Transactions;
 
 namespace SisLoja
 {
@@ -244,28 +246,5 @@ namespace SisLoja
             }
         }
 
-        public DataTable Carregar_Produto(string id)
-        {
-            try
-            {
-                string server = StringServer();
-                conexao = new SqlConnection(server);
-                String qr = "SELECT p.CodBar AS 'C. Barras', p.Nome AS 'Produto', iv.Num FROM ItemsVenda iv, Vendas v, Produtos p " +
-                    "WHERE v.ID = iv.VendaID AND p.ID = iv.ProdID AND v.ID = @id;";
-                SqlCommand qrComando = new SqlCommand(qr, conexao);
-                qrComando.Parameters.AddWithValue("@id", id);
-                SqlDataAdapter dados = new SqlDataAdapter();
-                dados.SelectCommand = qrComando;
-                DataTable dt = new DataTable();
-                conexao.Open();
-                dados.Fill(dt);
-                conexao.Close();
-                return dt;
-            }
-            catch (Exception erro)
-            {
-                throw erro;
-            }
-        }
     }
 }

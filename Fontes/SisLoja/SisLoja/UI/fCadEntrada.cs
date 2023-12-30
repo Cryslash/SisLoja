@@ -34,6 +34,7 @@ namespace SisLoja.UI
             ktbCor.Text = produto.Cor;
             ktbRef.Text = produto.Ref;
             pbImg.ImageLocation = produto.Img;
+            ktbPreco.Focus();
         }
 
         private void btnVoltar_Click(object sender, EventArgs e)
@@ -86,18 +87,10 @@ namespace SisLoja.UI
             pbImg.Image = Image.FromFile("C:\\Users\\cryst\\Documents\\Projetos\\SistemaLoja\\Assets\\Images\\No-Image-Placeholder.png");
         }
 
-        private void tbPesquisa_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Enter)
-            {
-                kbtnPesquisa.PerformClick();
-                ktbPreco.Focus();
-            }
-        }
-
         private void ktbPesquisa_KeyDown(object sender, KeyEventArgs e)
         {
-            kbtnPesquisa.PerformClick();
+            if (e.KeyCode == Keys.Enter)
+                kbtnPesquisa.PerformClick();
         }
     }
 }

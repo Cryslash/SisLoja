@@ -153,7 +153,7 @@
             lblDescricao.RightToLeft = RightToLeft.No;
             lblDescricao.Size = new Size(305, 24);
             lblDescricao.TabIndex = 50;
-            lblDescricao.TextAlign = ContentAlignment.MiddleLeft;
+            lblDescricao.TextAlign = ContentAlignment.MiddleCenter;
             // 
             // lblValorPago
             // 

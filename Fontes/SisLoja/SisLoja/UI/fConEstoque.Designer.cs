@@ -668,6 +668,7 @@
             // 
             // ktbRef
             // 
+            ktbRef.Enabled = false;
             ktbRef.Location = new Point(406, 152);
             ktbRef.Name = "ktbRef";
             ktbRef.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -690,6 +691,7 @@
             // 
             // ktbModelo
             // 
+            ktbModelo.Enabled = false;
             ktbModelo.Location = new Point(363, 222);
             ktbModelo.Name = "ktbModelo";
             ktbModelo.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -712,6 +714,7 @@
             // 
             // ktbCor
             // 
+            ktbCor.Enabled = false;
             ktbCor.Location = new Point(663, 221);
             ktbCor.Name = "ktbCor";
             ktbCor.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -734,6 +737,7 @@
             // 
             // ktbQrCode
             // 
+            ktbQrCode.Enabled = false;
             ktbQrCode.Location = new Point(234, 152);
             ktbQrCode.Name = "ktbQrCode";
             ktbQrCode.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -756,6 +760,7 @@
             // 
             // ktbNome
             // 
+            ktbNome.Enabled = false;
             ktbNome.Location = new Point(64, 222);
             ktbNome.Name = "ktbNome";
             ktbNome.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -778,6 +783,7 @@
             // 
             // ktbMin
             // 
+            ktbMin.Enabled = false;
             ktbMin.Location = new Point(833, 221);
             ktbMin.Name = "ktbMin";
             ktbMin.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -800,6 +806,7 @@
             // 
             // ktbPreco
             // 
+            ktbPreco.Enabled = false;
             ktbPreco.Location = new Point(996, 221);
             ktbPreco.Name = "ktbPreco";
             ktbPreco.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;

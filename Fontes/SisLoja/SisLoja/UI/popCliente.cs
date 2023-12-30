@@ -27,6 +27,13 @@ namespace SisLoja.UI
             dtCliente.DataSource = BLL.PesquisarClienteDAL(ktbNome.Text);
             dtCliente.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);
         }
+        private void ktbNome_KeyDown(object sender, KeyEventArgs e)
+        {
+            if (e.KeyCode == Keys.Escape)
+                this.Close();
+            if (e.KeyCode == Keys.Enter)
+                kbtnConfirmar.PerformClick();
+        }
 
         private void kbtnConfirmar_Click(object sender, EventArgs e)
         {
@@ -53,14 +60,6 @@ namespace SisLoja.UI
         {
             if (e.KeyCode == Keys.Escape)
                 this.Close();
-        }
-
-        private void ktbNome_KeyDown(object sender, KeyEventArgs e)
-        {
-            if (e.KeyCode == Keys.Escape)
-                this.Close();
-            if (e.KeyCode == Keys.Enter)
-                kbtnConfirmar.PerformClick();
         }
     }
 }

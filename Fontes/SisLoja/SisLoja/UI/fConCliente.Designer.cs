@@ -29,9 +29,9 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
-            DataGridViewCellStyle dataGridViewCellStyle7 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle8 = new DataGridViewCellStyle();
-            DataGridViewCellStyle dataGridViewCellStyle9 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(fConCliente));
             label12 = new Label();
             label4 = new Label();
@@ -189,35 +189,35 @@
             dtClientes.BorderStyle = BorderStyle.None;
             dtClientes.CellBorderStyle = DataGridViewCellBorderStyle.None;
             dtClientes.ColumnHeadersBorderStyle = DataGridViewHeaderBorderStyle.None;
-            dataGridViewCellStyle7.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle7.BackColor = Color.FromArgb(37, 77, 113);
-            dataGridViewCellStyle7.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle7.ForeColor = Color.White;
-            dataGridViewCellStyle7.Padding = new Padding(0, 7, 0, 7);
-            dataGridViewCellStyle7.SelectionBackColor = Color.FromArgb(37, 77, 113);
-            dataGridViewCellStyle7.SelectionForeColor = Color.White;
-            dataGridViewCellStyle7.WrapMode = DataGridViewTriState.True;
-            dtClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle7;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = Color.FromArgb(37, 77, 113);
+            dataGridViewCellStyle1.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle1.ForeColor = Color.White;
+            dataGridViewCellStyle1.Padding = new Padding(0, 7, 0, 7);
+            dataGridViewCellStyle1.SelectionBackColor = Color.FromArgb(37, 77, 113);
+            dataGridViewCellStyle1.SelectionForeColor = Color.White;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dtClientes.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dtClientes.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle8.Alignment = DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle8.BackColor = Color.White;
-            dataGridViewCellStyle8.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle8.ForeColor = SystemColors.ControlText;
-            dataGridViewCellStyle8.SelectionBackColor = Color.FromArgb(147, 147, 147);
-            dataGridViewCellStyle8.SelectionForeColor = Color.White;
-            dataGridViewCellStyle8.WrapMode = DataGridViewTriState.False;
-            dtClientes.DefaultCellStyle = dataGridViewCellStyle8;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = Color.White;
+            dataGridViewCellStyle2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle2.ForeColor = SystemColors.ControlText;
+            dataGridViewCellStyle2.SelectionBackColor = Color.FromArgb(147, 147, 147);
+            dataGridViewCellStyle2.SelectionForeColor = Color.White;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.False;
+            dtClientes.DefaultCellStyle = dataGridViewCellStyle2;
             dtClientes.EnableHeadersVisualStyles = false;
             dtClientes.Location = new Point(94, 335);
             dtClientes.MultiSelect = false;
             dtClientes.Name = "dtClientes";
             dtClientes.ReadOnly = true;
-            dataGridViewCellStyle9.BackColor = SystemColors.Control;
-            dataGridViewCellStyle9.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            dataGridViewCellStyle9.ForeColor = SystemColors.Control;
-            dataGridViewCellStyle9.SelectionBackColor = SystemColors.Control;
-            dataGridViewCellStyle9.SelectionForeColor = SystemColors.Control;
-            dtClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle9;
+            dataGridViewCellStyle3.BackColor = SystemColors.Control;
+            dataGridViewCellStyle3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            dataGridViewCellStyle3.ForeColor = SystemColors.Control;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Control;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.Control;
+            dtClientes.RowHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dtClientes.RowHeadersVisible = false;
             dtClientes.RowTemplate.Height = 35;
             dtClientes.SelectionMode = DataGridViewSelectionMode.FullRowSelect;
@@ -381,6 +381,7 @@
             // 
             // ktbNome
             // 
+            ktbNome.Enabled = false;
             ktbNome.Location = new Point(94, 152);
             ktbNome.Name = "ktbNome";
             ktbNome.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -403,6 +404,7 @@
             // 
             // ktbCpf
             // 
+            ktbCpf.Enabled = false;
             ktbCpf.Location = new Point(462, 152);
             ktbCpf.Name = "ktbCpf";
             ktbCpf.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -425,6 +427,7 @@
             // 
             // ktbFone
             // 
+            ktbFone.Enabled = false;
             ktbFone.Location = new Point(668, 152);
             ktbFone.Name = "ktbFone";
             ktbFone.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -447,6 +450,7 @@
             // 
             // ktbWhatsapp
             // 
+            ktbWhatsapp.Enabled = false;
             ktbWhatsapp.Location = new Point(829, 152);
             ktbWhatsapp.Name = "ktbWhatsapp";
             ktbWhatsapp.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -469,6 +473,7 @@
             // 
             // ktbEmail
             // 
+            ktbEmail.Enabled = false;
             ktbEmail.Location = new Point(94, 215);
             ktbEmail.Name = "ktbEmail";
             ktbEmail.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -491,6 +496,7 @@
             // 
             // ktbCep
             // 
+            ktbCep.Enabled = false;
             ktbCep.Location = new Point(462, 215);
             ktbCep.Name = "ktbCep";
             ktbCep.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -513,6 +519,7 @@
             // 
             // ktbRua
             // 
+            ktbRua.Enabled = false;
             ktbRua.Location = new Point(643, 215);
             ktbRua.Name = "ktbRua";
             ktbRua.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -535,6 +542,7 @@
             // 
             // ktbCidade
             // 
+            ktbCidade.Enabled = false;
             ktbCidade.Location = new Point(94, 279);
             ktbCidade.Name = "ktbCidade";
             ktbCidade.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
@@ -557,6 +565,7 @@
             // 
             // ktbBairro
             // 
+            ktbBairro.Enabled = false;
             ktbBairro.Location = new Point(462, 279);
             ktbBairro.Name = "ktbBairro";
             ktbBairro.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;

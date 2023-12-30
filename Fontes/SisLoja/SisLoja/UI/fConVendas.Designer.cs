@@ -48,10 +48,8 @@
             dtProdutos = new DataGridView();
             label1 = new Label();
             ktbCodeBar = new Krypton.Toolkit.KryptonTextBox();
-            kryptonTextBox1 = new Krypton.Toolkit.KryptonTextBox();
+            ktbNum = new Krypton.Toolkit.KryptonTextBox();
             label2 = new Label();
-            kryptonTextBox2 = new Krypton.Toolkit.KryptonTextBox();
-            label3 = new Label();
             ((System.ComponentModel.ISupportInitialize)pictureBox2).BeginInit();
             ((System.ComponentModel.ISupportInitialize)pictureBox1).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dtVendas).BeginInit();
@@ -194,7 +192,7 @@
             // 
             kbtnTrocar.Cursor = Cursors.Hand;
             kbtnTrocar.Enabled = false;
-            kbtnTrocar.Location = new Point(403, 602);
+            kbtnTrocar.Location = new Point(394, 602);
             kbtnTrocar.Name = "kbtnTrocar";
             kbtnTrocar.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
             kbtnTrocar.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
@@ -226,6 +224,7 @@
             kbtnTrocar.Values.ImageStates.ImageCheckedTracking = null;
             kbtnTrocar.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kbtnTrocar.Values.ImageStates.ImageDisabled");
             kbtnTrocar.Values.Text = "Troca";
+            kbtnTrocar.Click += kbtnTrocar_Click;
             // 
             // kbtnCancelar
             // 
@@ -263,12 +262,13 @@
             kbtnCancelar.Values.ImageStates.ImageCheckedTracking = null;
             kbtnCancelar.Values.ImageStates.ImageDisabled = (Image)resources.GetObject("kbtnCancelar.Values.ImageStates.ImageDisabled");
             kbtnCancelar.Values.Text = "Cancelar";
+            kbtnCancelar.Click += kbtnCancelar_Click;
             // 
             // kbtnConfirmar
             // 
             kbtnConfirmar.Cursor = Cursors.Hand;
             kbtnConfirmar.Enabled = false;
-            kbtnConfirmar.Location = new Point(734, 602);
+            kbtnConfirmar.Location = new Point(735, 602);
             kbtnConfirmar.Name = "kbtnConfirmar";
             kbtnConfirmar.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
             kbtnConfirmar.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
@@ -305,7 +305,7 @@
             // 
             kbtnEstornar.Cursor = Cursors.Hand;
             kbtnEstornar.Enabled = false;
-            kbtnEstornar.Location = new Point(239, 602);
+            kbtnEstornar.Location = new Point(249, 602);
             kbtnEstornar.Name = "kbtnEstornar";
             kbtnEstornar.OverrideDefault.Back.Color1 = Color.FromArgb(37, 77, 113);
             kbtnEstornar.OverrideDefault.Back.Color2 = Color.FromArgb(37, 77, 113);
@@ -386,6 +386,7 @@
             dtProdutos.Size = new Size(469, 165);
             dtProdutos.StandardTab = true;
             dtProdutos.TabIndex = 71;
+            dtProdutos.Click += dtProdutos_Click;
             // 
             // label1
             // 
@@ -421,76 +422,43 @@
             ktbCodeBar.StateDisabled.Content.Color1 = Color.Gray;
             ktbCodeBar.StateDisabled.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbCodeBar.TabIndex = 73;
+            ktbCodeBar.KeyDown += ktbCodeBar_KeyDown;
             // 
-            // kryptonTextBox1
+            // ktbNum
             // 
-            kryptonTextBox1.Enabled = false;
-            kryptonTextBox1.Location = new Point(590, 489);
-            kryptonTextBox1.Name = "kryptonTextBox1";
-            kryptonTextBox1.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            kryptonTextBox1.Size = new Size(138, 36);
-            kryptonTextBox1.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
-            kryptonTextBox1.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
-            kryptonTextBox1.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
-            kryptonTextBox1.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kryptonTextBox1.StateActive.Border.Rounding = 20F;
-            kryptonTextBox1.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
-            kryptonTextBox1.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            kryptonTextBox1.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
-            kryptonTextBox1.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kryptonTextBox1.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
-            kryptonTextBox1.StateDisabled.Border.Color1 = Color.FromArgb(242, 241, 242);
-            kryptonTextBox1.StateDisabled.Border.Color2 = Color.FromArgb(242, 241, 242);
-            kryptonTextBox1.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kryptonTextBox1.StateDisabled.Border.Rounding = 20F;
-            kryptonTextBox1.StateDisabled.Content.Color1 = Color.Gray;
-            kryptonTextBox1.StateDisabled.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            kryptonTextBox1.TabIndex = 75;
+            ktbNum.Enabled = false;
+            ktbNum.Location = new Point(590, 494);
+            ktbNum.Name = "ktbNum";
+            ktbNum.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
+            ktbNum.Size = new Size(138, 36);
+            ktbNum.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbNum.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
+            ktbNum.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
+            ktbNum.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbNum.StateActive.Border.Rounding = 20F;
+            ktbNum.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
+            ktbNum.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbNum.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
+            ktbNum.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbNum.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
+            ktbNum.StateDisabled.Border.Color1 = Color.FromArgb(242, 241, 242);
+            ktbNum.StateDisabled.Border.Color2 = Color.FromArgb(242, 241, 242);
+            ktbNum.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
+            ktbNum.StateDisabled.Border.Rounding = 20F;
+            ktbNum.StateDisabled.Content.Color1 = Color.Gray;
+            ktbNum.StateDisabled.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
+            ktbNum.TabIndex = 75;
+            ktbNum.KeyDown += ktbNum_KeyDown;
             // 
             // label2
             // 
             label2.AutoSize = true;
             label2.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label2.Location = new Point(590, 465);
+            label2.Location = new Point(590, 470);
             label2.Name = "label2";
             label2.Size = new Size(68, 21);
             label2.TabIndex = 74;
             label2.Text = "Número";
-            // 
-            // kryptonTextBox2
-            // 
-            kryptonTextBox2.Enabled = false;
-            kryptonTextBox2.Location = new Point(742, 489);
-            kryptonTextBox2.Name = "kryptonTextBox2";
-            kryptonTextBox2.PaletteMode = Krypton.Toolkit.PaletteMode.ProfessionalSystem;
-            kryptonTextBox2.Size = new Size(138, 36);
-            kryptonTextBox2.StateActive.Back.Color1 = Color.FromArgb(242, 241, 242);
-            kryptonTextBox2.StateActive.Border.Color1 = Color.FromArgb(224, 224, 224);
-            kryptonTextBox2.StateActive.Border.Color2 = Color.FromArgb(224, 224, 224);
-            kryptonTextBox2.StateActive.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kryptonTextBox2.StateActive.Border.Rounding = 20F;
-            kryptonTextBox2.StateActive.Content.Color1 = Color.FromArgb(51, 51, 51);
-            kryptonTextBox2.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            kryptonTextBox2.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
-            kryptonTextBox2.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kryptonTextBox2.StateDisabled.Back.Color1 = Color.FromArgb(242, 241, 242);
-            kryptonTextBox2.StateDisabled.Border.Color1 = Color.FromArgb(242, 241, 242);
-            kryptonTextBox2.StateDisabled.Border.Color2 = Color.FromArgb(242, 241, 242);
-            kryptonTextBox2.StateDisabled.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            kryptonTextBox2.StateDisabled.Border.Rounding = 20F;
-            kryptonTextBox2.StateDisabled.Content.Color1 = Color.Gray;
-            kryptonTextBox2.StateDisabled.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            kryptonTextBox2.TabIndex = 77;
-            // 
-            // label3
-            // 
-            label3.AutoSize = true;
-            label3.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
-            label3.Location = new Point(742, 465);
-            label3.Name = "label3";
-            label3.Size = new Size(39, 21);
-            label3.TabIndex = 76;
-            label3.Text = "Qtd.";
             // 
             // fConVendas
             // 
@@ -498,9 +466,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.White;
             ClientSize = new Size(1250, 680);
-            Controls.Add(kryptonTextBox2);
-            Controls.Add(label3);
-            Controls.Add(kryptonTextBox1);
+            Controls.Add(ktbNum);
             Controls.Add(label2);
             Controls.Add(ktbCodeBar);
             Controls.Add(label1);
@@ -544,9 +510,7 @@
         public DataGridView dtProdutos;
         private Label label1;
         private Krypton.Toolkit.KryptonTextBox ktbCodeBar;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox1;
+        private Krypton.Toolkit.KryptonTextBox ktbNum;
         private Label label2;
-        private Krypton.Toolkit.KryptonTextBox kryptonTextBox2;
-        private Label label3;
     }
 }

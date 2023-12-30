@@ -86,6 +86,8 @@ namespace SisLoja.UI
             lblTroco.Text = "Troco:";
             kbtnTipoPagamento.Enabled = false;
             kbtnCancelarVenda.Enabled = false;
+            cliente.Id = 1;
+            lblDescricao.Text = "Cliente não informado.";
 
             numitens = 0;
             ConfirmaPagamento = 0;

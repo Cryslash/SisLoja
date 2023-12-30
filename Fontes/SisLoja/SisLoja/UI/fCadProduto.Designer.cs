@@ -181,7 +181,7 @@
             ktbNome.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbNome.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbNome.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            ktbNome.TabIndex = 28;
+            ktbNome.TabIndex = 2;
             // 
             // ktbModelo
             // 
@@ -198,7 +198,7 @@
             ktbModelo.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbModelo.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbModelo.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            ktbModelo.TabIndex = 29;
+            ktbModelo.TabIndex = 3;
             // 
             // ktbRef
             // 
@@ -215,7 +215,7 @@
             ktbRef.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbRef.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbRef.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            ktbRef.TabIndex = 30;
+            ktbRef.TabIndex = 7;
             // 
             // ktbCor
             // 
@@ -232,7 +232,7 @@
             ktbCor.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbCor.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbCor.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            ktbCor.TabIndex = 31;
+            ktbCor.TabIndex = 4;
             // 
             // ktbMin
             // 
@@ -249,7 +249,7 @@
             ktbMin.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbMin.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbMin.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            ktbMin.TabIndex = 32;
+            ktbMin.TabIndex = 5;
             ktbMin.KeyPress += tbMin_KeyPress;
             // 
             // ktbPreco
@@ -267,7 +267,7 @@
             ktbPreco.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbPreco.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbPreco.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            ktbPreco.TabIndex = 33;
+            ktbPreco.TabIndex = 6;
             ktbPreco.KeyPress += tbPreco_KeyPress;
             // 
             // ktbQrCode
@@ -285,7 +285,7 @@
             ktbQrCode.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbQrCode.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbQrCode.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            ktbQrCode.TabIndex = 34;
+            ktbQrCode.TabIndex = 8;
             ktbQrCode.Leave += ktbQrCode_Leave;
             // 
             // ktbCodBar
@@ -303,7 +303,7 @@
             ktbCodBar.StateActive.Content.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point);
             ktbCodBar.StateActive.Content.Padding = new Padding(10, 0, 10, 0);
             ktbCodBar.StateCommon.Border.DrawBorders = Krypton.Toolkit.PaletteDrawBorders.Top | Krypton.Toolkit.PaletteDrawBorders.Bottom | Krypton.Toolkit.PaletteDrawBorders.Left | Krypton.Toolkit.PaletteDrawBorders.Right;
-            ktbCodBar.TabIndex = 35;
+            ktbCodBar.TabIndex = 9;
             // 
             // kbtnVoltar
             // 
@@ -326,7 +326,7 @@
             kbtnVoltar.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             kbtnVoltar.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
             kbtnVoltar.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
-            kbtnVoltar.TabIndex = 37;
+            kbtnVoltar.TabIndex = 11;
             kbtnVoltar.Values.Image = (Image)resources.GetObject("kbtnVoltar.Values.Image");
             kbtnVoltar.Values.Text = "Voltar";
             kbtnVoltar.Click += btnVoltar_Click;
@@ -352,7 +352,7 @@
             kbtnSalvar.StateCommon.Content.ShortText.Font = new Font("Segoe UI", 14.25F, FontStyle.Regular, GraphicsUnit.Point);
             kbtnSalvar.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
             kbtnSalvar.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
-            kbtnSalvar.TabIndex = 36;
+            kbtnSalvar.TabIndex = 10;
             kbtnSalvar.Values.Image = (Image)resources.GetObject("kbtnSalvar.Values.Image");
             kbtnSalvar.Values.Text = "Salvar";
             kbtnSalvar.Click += btnSalvar_Click;
@@ -400,7 +400,7 @@
             kbtnImg.StateCommon.Content.ShortText.TextH = Krypton.Toolkit.PaletteRelativeAlign.Far;
             kbtnImg.StateTracking.Back.Color1 = Color.FromArgb(80, 60, 90);
             kbtnImg.StateTracking.Back.Color2 = Color.FromArgb(80, 60, 90);
-            kbtnImg.TabIndex = 40;
+            kbtnImg.TabIndex = 1;
             kbtnImg.Values.Image = (Image)resources.GetObject("kbtnImg.Values.Image");
             kbtnImg.Values.Text = "Selec. imagem";
             kbtnImg.Click += btnImg_Click;
