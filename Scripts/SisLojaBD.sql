@@ -19,7 +19,7 @@ GO
 --DROP DATABASE SisLoja;
 
 --#Renomear Coluna
---EXEC sp_rename 'Vendas.VendaCanceleda', 'VendaCancelada', 'COLUMN';
+--EXEC sp_rename 'Vendas.ValorVenda', 'ValorSemDesc', 'COLUMN';
 
 --#Adicionar Coluna
 --ALTER TABLE ItemsVenda ADD FeitoTroca CHAR(1) DEFAULT(0);
@@ -116,7 +116,7 @@ ID INT PRIMARY KEY NOT NULL,
 Data DATETIME,
 ClienteID INT FOREIGN KEY REFERENCES Clientes(ID) DEFAULT(1),
 TipoPagamento INT,
-ValorVenda DECIMAL(10,2) NOT NULL DEFAULT(0),
+ValorSemDesc DECIMAL(10,2) NOT NULL DEFAULT(0),
 ValorPago DECIMAL(10,2) NOT NULL DEFAULT(0),
 Descontos DECIMAL(10,2) NOT NULL DEFAULT(0),
 VendaCancelada INT DEFAULT(0)

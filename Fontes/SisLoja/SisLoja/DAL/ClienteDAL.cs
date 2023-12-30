@@ -25,7 +25,7 @@ namespace SisLoja
                 string server = StringServer();
                 conexao = new SqlConnection(server);
                 SqlCommand qrComando = new SqlCommand("SELECT ID, Nome, CPF, Telefone, Whatsapp, Email, Cep, Rua, Bairro," +
-                    " Cidade, Estado FROM Clientes WHERE EstaAtivo = 1", conexao);
+                    " Cidade, Estado FROM Clientes WHERE EstaAtivo = 1 AND ID > 1", conexao);
                 SqlDataAdapter dados = new SqlDataAdapter();
                 DataTable dt = new DataTable();
                 dados.SelectCommand = qrComando;
@@ -46,8 +46,8 @@ namespace SisLoja
                 SqlDataAdapter dados = new SqlDataAdapter();
                 DataTable dt = new DataTable();
                 conexao = new SqlConnection(server);
-                SqlCommand qrComando = new SqlCommand("SELECT ID, Nome, CPF, Telefone, Whatsapp, Email, Cep, Rua, Bairro, " +
-                    " Cidade, Estado FROM Clientes WHERE (Nome LIKE '%'+@s+'%' OR Telefone LIKE '%'+@s+'%') AND EstaAtivo = 1", conexao);
+                SqlCommand qrComando = new SqlCommand("SELECT ID, Nome, CPF, Telefone, Whatsapp, Email, Cep, Rua, Bairro, Cidade, " +
+                    "Estado FROM Clientes WHERE (Nome LIKE '%'+@s+'%' OR Telefone LIKE '%'+@s+'%') AND EstaAtivo = 1 AND ID > 1", conexao);
                 qrComando.Parameters.AddWithValue("@s", s);
                 dados.SelectCommand = qrComando;
                 dados.Fill(dt);

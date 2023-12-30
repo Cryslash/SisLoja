@@ -32,7 +32,7 @@ namespace SisLoja.UI
             instanciaprincipal.btnConsultar_Click(sender, e);
         }
 
-        private void CarregarVendas()
+        public void CarregarVendas()
         {
             dtVendas.DataSource = VendaBLL.CarregarVendasDAL();
             dtVendas.AutoResizeColumns(DataGridViewAutoSizeColumnsMode.AllCells);

@@ -119,7 +119,8 @@ namespace SisLoja
                 DataTable dt = new DataTable();
                 string server = StringServer();
                 conexao = new SqlConnection (server);
-                SqlCommand qrComando = new SqlCommand("SELECT ID,Nome,CPF FROM Clientes WHERE (Nome LIKE '%'+@nome+'%' OR CPF LIKE '%'+@cpf+'%') AND EstaAtivo = 1",conexao);
+                SqlCommand qrComando = new SqlCommand("SELECT ID,Nome,CPF FROM Clientes WHERE (Nome LIKE '%'+@nome+'%' OR CPF LIKE '%'+@cpf+'%')" +
+                    " AND EstaAtivo = 1 AND ID > 1",conexao);
                 qrComando.Parameters.AddWithValue("@nome", s);
                 qrComando.Parameters.AddWithValue("@cpf", s);
                 SqlDataAdapter dados = new SqlDataAdapter();
@@ -145,7 +146,7 @@ namespace SisLoja
                   if (dadosvenda.ClienteId != 0)
                     qr += "ClienteID,";
 
-                qr += "TipoPagamento,ValorVenda,ValorPago,Descontos) VALUES(@id,@data,";
+                qr += "TipoPagamento,ValorSemDesc,ValorPago,Descontos) VALUES(@id,@data,";
                 if (dadosvenda.ClienteId != 0)
                     qr += "@clienteid,";
 
@@ -187,8 +188,9 @@ namespace SisLoja
                 string server = StringServer();
                 conexao = new SqlConnection(server);
 
-                SqlCommand qrComando = new SqlCommand("SELECT v.ID as Cód,v.Data,c.Nome as Cliente,v.TipoPagamento as Pagamento,v.ValorVenda,v.Descontos,v.ValorPago " +
-                    "FROM Vendas v, Clientes c Where v.ClienteID = c.ID AND VendaCancelada = 0 ORDER BY v.ID DESC", conexao);
+                SqlCommand qrComando = new SqlCommand("SELECT v.ID as Cód,v.Data,c.Nome as Cliente,v.TipoPagamento as Pagamento,v.ValorSemDesc as " +
+                    "'ValorSemDesc.',v.Descontos,v.ValorPago FROM Vendas v, Clientes c Where v.ClienteID = c.ID AND VendaCancelada = 0 AND " +
+                    "v.ID > 1234 ORDER BY v.ID DESC", conexao);
                 DataTable dt = new DataTable();
                 SqlDataAdapter dados = new SqlDataAdapter();
                 dados.SelectCommand = qrComando;
@@ -209,8 +211,9 @@ namespace SisLoja
             {
                 string server = StringServer();
                 conexao = new SqlConnection(server);
-                SqlCommand qrComando = new SqlCommand("SELECT v.ID as Cód,v.Data,c.Nome as Cliente,v.TipoPagamento as Pagamento,v.ValorVenda,v.Descontos,v.ValorPago " +
-                    "FROM Vendas v, Clientes c Where v.ClienteID = c.ID AND v.ID LIKE '%'+@id+'%' AND VendaCancelada = 0 ORDER BY v.ID DESC", conexao);
+                SqlCommand qrComando = new SqlCommand("SELECT v.ID as Cód,v.Data,c.Nome as Cliente,v.TipoPagamento as Pagamento,v.ValorSemDesc," +
+                    "v.Descontos,v.ValorPago FROM Vendas v, Clientes c Where v.ClienteID = c.ID AND v.ID LIKE '%'+@id+'%' AND VendaCancelada = 0 " +
+                    "AND v.ID > 1234 ORDER BY v.ID DESC", conexao);
                 qrComando.Parameters.AddWithValue("@id", s);
                 DataTable dt = new DataTable();
                 SqlDataAdapter dados = new SqlDataAdapter();

@@ -54,6 +54,7 @@ namespace SisLoja.UI
             instanciaprincipal.pDashArea.Controls.Add(instanciavendas);
             instanciavendas.Show();
             instanciavendas.ktbPesquisar.Focus();
+            instanciavendas.CarregarVendas();
         }
     }
 }
