@@ -14,6 +14,7 @@ namespace SisLoja.UI
     public partial class MenuLado : KryptonForm
     {
         public fPrincipal instanciaprincipal;
+
         public MenuLado()
         {
             InitializeComponent();
@@ -39,10 +40,9 @@ namespace SisLoja.UI
             instanciaprincipal.btnSales_Click(sender, e);
         }
 
-        private void btnTerminal_Click(object sender, EventArgs e)
+        private void btnCfg_Click(object sender, EventArgs e)
         {
-            fTerminal terminal = new fTerminal();
-            terminal.Show();
+            instanciaprincipal.btnCfg_Click(sender, e);
         }
     }
 }

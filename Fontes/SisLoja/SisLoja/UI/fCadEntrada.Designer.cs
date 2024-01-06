@@ -123,7 +123,7 @@
             // pbImg
             // 
             pbImg.Image = (Image)resources.GetObject("pbImg.Image");
-            pbImg.InitialImage = (Image)resources.GetObject("pbImg.InitialImage");
+            pbImg.InitialImage = null;
             pbImg.Location = new Point(520, 198);
             pbImg.Name = "pbImg";
             pbImg.Size = new Size(224, 224);

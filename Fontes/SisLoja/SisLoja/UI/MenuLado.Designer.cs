@@ -30,19 +30,19 @@
         {
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(MenuLado));
             pSkin = new Panel();
+            btnCfg = new Button();
             btnClose = new Button();
             btnSales = new Button();
             btnConsultar = new Button();
             btnCadastrar = new Button();
             btnHome = new Button();
-            btnTerminal = new Button();
             pSkin.SuspendLayout();
             SuspendLayout();
             // 
             // pSkin
             // 
             pSkin.BackColor = Color.FromArgb(37, 77, 113);
-            pSkin.Controls.Add(btnTerminal);
+            pSkin.Controls.Add(btnCfg);
             pSkin.Controls.Add(btnClose);
             pSkin.Controls.Add(btnSales);
             pSkin.Controls.Add(btnConsultar);
@@ -53,6 +53,23 @@
             pSkin.Name = "pSkin";
             pSkin.Size = new Size(44, 702);
             pSkin.TabIndex = 7;
+            // 
+            // btnCfg
+            // 
+            btnCfg.BackColor = Color.FromArgb(37, 77, 113);
+            btnCfg.Cursor = Cursors.Hand;
+            btnCfg.FlatAppearance.BorderSize = 0;
+            btnCfg.FlatStyle = FlatStyle.Flat;
+            btnCfg.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
+            btnCfg.ForeColor = Color.White;
+            btnCfg.Image = (Image)resources.GetObject("btnCfg.Image");
+            btnCfg.Location = new Point(6, 575);
+            btnCfg.Name = "btnCfg";
+            btnCfg.Size = new Size(32, 32);
+            btnCfg.TabIndex = 9;
+            btnCfg.TextImageRelation = TextImageRelation.ImageBeforeText;
+            btnCfg.UseVisualStyleBackColor = false;
+            btnCfg.Click += btnCfg_Click;
             // 
             // btnClose
             // 
@@ -138,23 +155,6 @@
             btnHome.TextImageRelation = TextImageRelation.ImageBeforeText;
             btnHome.UseVisualStyleBackColor = false;
             // 
-            // btnTerminal
-            // 
-            btnTerminal.BackColor = Color.FromArgb(37, 77, 113);
-            btnTerminal.Cursor = Cursors.Hand;
-            btnTerminal.FlatAppearance.BorderSize = 0;
-            btnTerminal.FlatStyle = FlatStyle.Flat;
-            btnTerminal.Font = new Font("Segoe UI", 15.75F, FontStyle.Regular, GraphicsUnit.Point);
-            btnTerminal.ForeColor = Color.White;
-            btnTerminal.Image = (Image)resources.GetObject("btnTerminal.Image");
-            btnTerminal.Location = new Point(6, 575);
-            btnTerminal.Name = "btnTerminal";
-            btnTerminal.Size = new Size(32, 32);
-            btnTerminal.TabIndex = 9;
-            btnTerminal.TextImageRelation = TextImageRelation.ImageBeforeText;
-            btnTerminal.UseVisualStyleBackColor = false;
-            btnTerminal.Click += btnTerminal_Click;
-            // 
             // MenuLado
             // 
             AutoScaleDimensions = new SizeF(7F, 15F);
@@ -178,6 +178,6 @@
         public Button btnCadastrar;
         private Button btnHome;
         private Button btnClose;
-        private Button btnTerminal;
+        private Button btnCfg;
     }
 }

@@ -351,10 +351,9 @@ namespace SisLoja.UI
             if (dadosvenda.TipoPagamento == 1 || dadosvenda.TipoPagamento == 2)
             {
                 if (MessageBox.Show("Deseja encerrar a venda?", "Mensagem do Sistema", MessageBoxButtons.YesNo,
-                    MessageBoxIcon.Question) == DialogResult.Yes)
+                    MessageBoxIcon.Question) == DialogResult.Yes)                   
                     GravarVenda();
             }
-
         }
 
         private void GravarVenda()
@@ -363,6 +362,7 @@ namespace SisLoja.UI
             dadosvenda.ValorVenda = Convert.ToDecimal(valortotal);
             dadosvenda.Descontos = valordesconto;
             BLL.GravarVendaDAL(dadosvenda, listaprodutos);
+            ImprimirCupom();
             MessageBox.Show("Venda Realizada com Sucesso.", "Mensagem do Sistema.", MessageBoxButtons.OK, MessageBoxIcon.Information);
             NovaVenda();
         }
@@ -371,6 +371,98 @@ namespace SisLoja.UI
         {
             if(MessageBox.Show("Deseja Cancelar a Venda?", "Mensagem do Sistema.", MessageBoxButtons.YesNo, MessageBoxIcon.Question) == DialogResult.Yes)
                 NovaVenda();
+        }
+
+        private void ImprimirCupom()
+        {
+            using (var doc = new System.Drawing.Printing.PrintDocument())
+            {
+                doc.PrinterSettings.PrinterName = "Microsoft Print to PDF";
+                doc.PrintPage += PrintPage;
+                doc.Print();
+            }
+        }
+
+        private void PrintPage(object sender, System.Drawing.Printing.PrintPageEventArgs e)
+        {
+
+            StringBuilder cupomBuilder = new StringBuilder();
+            cupomBuilder.AppendLine("BeautyMoon Calçados");
+            cupomBuilder.AppendLine("Mercado Central de Maranguape - Box:xx");
+            cupomBuilder.AppendLine("Whatsapp:  (85) XXXXX-XXXX");
+            //cupomBuilder.AppendLine("@BeautyMoonCalçados");
+            cupomBuilder.AppendLine("Data/Hora: " + DateTime.Now.ToShortDateString() + " " + DateTime.Now.ToShortTimeString());
+            if (cliente.Id == 1)
+                cupomBuilder.AppendLine("Cliente: Não informado!");
+            else
+                cupomBuilder.AppendLine("Cliente: " + cliente.Id + " - " + cliente.Nome);
+            cupomBuilder.AppendLine("Venda N.°: " + dadosvenda.Id);
+            cupomBuilder.AppendLine(new string('-', 48)); // Linha separadora
+            cupomBuilder.AppendLine("Cód.   Barras   -   Produto   -  Preço  -   Qtd.");
+
+            foreach (DataGridViewRow row in dtProdutos.Rows)
+            {
+                string produto = row.Cells[2].Value.ToString();
+                string quantidade = "1";
+                string preco = row.Cells[3].Value.ToString();
+                string linhaProduto = $"{produto}-R${preco} x{quantidade}";
+
+
+                // Dividir a linha do produto em várias linhas com 48 caracteres
+                int maxCharactersPerLine = 48;
+                int startIndex = 0;
+
+                while (startIndex < linhaProduto.Length)
+                {
+                    int charactersInLine = Math.Min(maxCharactersPerLine, linhaProduto.Length - startIndex);
+                    string linhaParcial = linhaProduto.Substring(startIndex, charactersInLine);
+                    cupomBuilder.AppendLine(linhaParcial);
+                    startIndex += charactersInLine;
+                }
+              
+            }
+
+            cupomBuilder.AppendLine(new string('-', 48)); // Linha separadora
+            cupomBuilder.AppendLine("Total:            R$ " + Convert.ToString(valortotal));
+            if (dadosvenda.TipoPagamento == 1)
+            {
+                cupomBuilder.AppendLine("Descontos:      R$ " + Convert.ToString(valordesconto));
+                cupomBuilder.AppendLine("Valor Pago:     R$ " + Convert.ToString(dadosvenda.ValorPago));
+                cupomBuilder.AppendLine("Troco:            R$ " + Convert.ToString(dadosvenda.ValorPago + valordesconto - valortotal));
+            }
+            if (dadosvenda.TipoPagamento == 2)
+            {
+                cupomBuilder.AppendLine("Descontos:      R$ " + Convert.ToString(valordesconto));
+                cupomBuilder.AppendLine("Forma de pagamento:     Pix");
+            }
+            if (dadosvenda.TipoPagamento == 3)
+            {
+                cupomBuilder.AppendLine("Descontos:      R$ " + Convert.ToString(valordesconto));
+                cupomBuilder.AppendLine("Forma de pagamento:     Crédito à vista");
+            }
+            if (dadosvenda.TipoPagamento == 4)
+            {
+                cupomBuilder.AppendLine("Forma de pagamento:     Crédito parcelado");
+                cupomBuilder.AppendLine("Número de parcelas:     x" + numparcelas);
+                cupomBuilder.AppendLine("Valor da parcela:       R$ " + Convert.ToString(Math.Round(valortotal / fVendas.numparcelas, 2)));
+            }
+            if (dadosvenda.TipoPagamento == 5)
+            {
+                cupomBuilder.AppendLine("Descontos:      R$ " + Convert.ToString(valordesconto));
+                cupomBuilder.AppendLine("Forma de pagamento:     Débito");
+            }
+
+            cupomBuilder.AppendLine("");
+
+            string agradecimento = "Obrigado e Volte Sempre!";
+            int espacosAntes = (48 - agradecimento.Length) / 2;
+            cupomBuilder.AppendLine(new string(' ', espacosAntes) + agradecimento);
+
+            using (var font = new Font("Segoi UI", 9))
+            using (var brush = new SolidBrush(Color.Black))
+            {
+                e.Graphics.DrawString(cupomBuilder.ToString(),font,brush,e.MarginBounds);
+            }
         }
     }
 }

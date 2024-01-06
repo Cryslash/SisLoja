@@ -19,6 +19,7 @@ namespace SisLoja
         fRegister instanciaRegistro = new fRegister();
         public fConsultar instanciaconsultar = new fConsultar();
         fVendas instanciavenda = new fVendas();
+        fCfg cfg = new fCfg();
         public fDashArea pDashArea = new fDashArea();
 
         public fPrincipal()
@@ -86,7 +87,6 @@ namespace SisLoja
             pDashArea.Controls.Clear();
             pDashArea.Controls.Add(instanciaHome);
             instanciaHome.Show();
-
         }
 
         public void btnRegistrar_Click(object sender, EventArgs e)
@@ -109,10 +109,14 @@ namespace SisLoja
             instanciaconsultar.Show();
         }
 
-        private void btnCfg_Click(object sender, EventArgs e)
+        public void btnCfg_Click(object sender, EventArgs e)
         {
-            fTerminal terminal = new fTerminal();
-            terminal.Show();
+            cfg.Owner = this;
+            cfg.TopLevel = false;
+            cfg.instanciaprincipal = this;
+            pDashArea.Controls.Clear();
+            pDashArea.Controls.Add(cfg);
+            cfg.Show();
         }
 
         public void btnSales_Click(object sender, EventArgs e)
